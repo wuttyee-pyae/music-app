@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="115" height="25" viewBox="0 0 115 25">
+  <g id="Group_1371" data-name="Group 1371" transform="translate(-12 -13)">
+    <g id="music-player" transform="translate(12.347 13.146)">
+      <rect id="Rectangle_3468" data-name="Rectangle 3468" width="22" height="25" transform="translate(4.653 -0.146)" fill="#ef6129"/>
+      <g id="Group_6" data-name="Group 6" transform="translate(2.145 2.184)">
+        <rect id="Rectangle_3469" data-name="Rectangle 3469" width="3" height="21" transform="translate(24.508 -0.329)" fill="#ebba16"/>
+        <path id="Path_991" data-name="Path 991" d="M0,0H2.145V20.38H0Z" fill="#ebba16"/>
+      </g>
+      <g id="Group_7" data-name="Group 7" transform="translate(0 4.706)">
+        <rect id="Rectangle_3471" data-name="Rectangle 3471" width="1" height="15" transform="translate(29.653 0.148)" fill="#efce4a"/>
+        <rect id="Rectangle_3472" data-name="Rectangle 3472" width="3" height="15" transform="translate(-0.347 0.148)" fill="#efce4a"/>
+      </g>
+      <path id="Path_990" data-name="Path 990" d="M28.974,12.129a.536.536,0,0,0-.432-.122l-10.19,1.609a.537.537,0,0,0-.453.53V24.7a3.628,3.628,0,0,0-2.413-.9A3.364,3.364,0,0,0,12,27.017a3.364,3.364,0,0,0,3.486,3.218,3.369,3.369,0,0,0,3.482-3.143c0-.007,0-.013,0-.02v-9.25l9.117-1.439v5.1a3.626,3.626,0,0,0-2.413-.9A3.364,3.364,0,0,0,22.19,23.8a3.5,3.5,0,0,0,6.972,0V12.536A.536.536,0,0,0,28.974,12.129Z" transform="translate(-5.564 -8.744)" fill="#fff"/>
+    </g>
+    <text id="Ring_World" data-name="Ring World" transform="translate(50 30)" fill="#fff" font-size="15" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">Ring World</tspan></text>
+  </g>
+</svg>

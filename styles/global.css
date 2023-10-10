@@ -1,0 +1,378 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: "Nunito Sans 7pt";
+  src: url("./fonts/NunitoSans_7pt-Regular.ttf") format("truetype");
+  /* Safari, Android, iOS */
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --main-ringbg-color: #171717;
+  --main-rintext-color: #fff;
+  --main-cardbg-color: #373737;
+  --main-nav-color: #171717;
+  --pan-box-text: #2b2b2b;
+  --orange: #ef6129;
+  --pink: #ef2d62;
+  --green-light: #4bbc80;
+  --blue-light: #2d8eef;
+  --vilot-light: #fd5759;
+  --blue: #8c52ff;
+  --misic-type-color: #a4a4a4;
+  --music-play-type: #a4a4a4;
+  --footer-platyer-bg: #000000;
+  --view-all-text: #99999f;
+  --sidebar-border: #707070;
+
+  --font-family: "Nunito Sans 7pt";
+  --font-style-normal: normal;
+  --font-weight-medium: medium;
+  --font-size-18: 16px;
+  --font-line-spacing-26: 26px;
+  --font-spacing: 1.8px;
+  --font-uppercase: uppercase;
+  --text-shadow: 0px 3px 6px #00000029;
+  --main-gradient-opt: linear-gradient(90deg, #fd575987 0%, #8c52ff87 100%);
+  --main-gradient: linear-gradient(90deg, #fd5759 0%, #8c52ff 100%);
+  --main-gradient-scroll: linear-gradient(0deg, #fd5759 0%, #8c52ff 100%);
+  --main-gradient-scroll-hover: linear-gradient(180deg, #fd5759 0%, #8c52ff 100%);
+  --background-noise: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=")
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+html {
+  /* height: 100%;
+  overflow: auto; */
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background-color: #171717;
+  margin: 0px;
+  font-family: "Nunito Sans 7pt", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  /* position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 20px;
+  right: 0px;
+  overflow-y: scroll;
+  overflow-x: hidden; */
+}
+
+.glass {
+  -webkit-backdrop-filter: blur(4px) saturate(180%);
+  backdrop-filter: blur(4px) saturate(180%);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.top-area {
+  top: 69.35px;
+  position: relative;
+}
+
+.sidebar-dark {
+  box-shadow: 8px 4px 6px #00000029;
+}
+
+.sidebar {
+  min-width: 254px;
+  max-width: 254px;
+  /* min-height: calc(100vh - 120px); */
+  position: fixed;
+  height: 100%;
+  backdrop-filter: blur(20px) saturate(100%);
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.sidebar-card{
+  transition: all 0.3s;
+}
+
+.menu-link{
+  margin: 10px 0px;
+}
+
+a.menu-link:hover {
+  color: rgba(255, 255, 255, 1);
+  background: rgba(0, 0, 0, 0.15);
+}
+
+a.menu-link a:hover,
+.menu-link .active a {
+  color: rgba(255, 255, 255, 1);
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.nav-bg {
+  background-color: #000;
+  color: #fff;
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.navbar-expand {
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.navbar {
+  display: flex;
+  padding: 0.5rem 1rem;
+}
+
+.navbar-brand {
+  display: inline-block;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+.sidebar-close {
+  margin-left: -16rem;
+}
+
+.full-artical {
+  margin-left: 0rem !important;
+}
+
+a {
+  color: #fff;
+}
+
+.active {
+  position: relative;
+  border-left: 3px solid #fd5759;
+  margin-left: 0px;
+  height: 50px !important;
+  content: "" !important;
+  transition: all 0.5s ease-out;
+}
+
+.menu-name {
+  position: relative;
+  font-family: "Nunito Sans 7pt", Fallback, sans-serif;
+  font: 18px/24px "Nunito Sans 7pt", sans-serif;
+}
+
+.sidebar-dark ul li a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.sidebar-dark ul li a:hover,
+.sidebar-dark ul .active a {
+  color: rgba(255, 255, 255, 1);
+  background: rgba(0, 0, 0, 0.15);
+}
+
+hr {
+  border: 1px solid var(--sidebar-border);
+  opacity: 0.5;
+}
+
+.w-3 {
+  width: 2rem;
+}
+
+.h-3 {
+  height: 0.25rem;
+}
+
+.border-line {
+  border-top: 2px solid #707070;
+  opacity: 0.5;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+.fixed-bottom {
+  height: auto;
+  /* background: var(--main-gradient-opt, linear-gradient(90deg, #FD5759 0%, #8C52FF 100%), 1); */
+  background-color: var(--main-ringbg-color, 1);
+  padding: 10px 0;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  border-top: 1px solid;
+  box-shadow: 0px -3px 6px #000000eb;
+  backdrop-filter: blur(20px) saturate(100%);
+  /* filter: blur(4px) saturate(0%); */
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+.border-gradient {
+  border-top: 4px solid;
+  border-image-slice: 1;
+  border-width: 1px;
+}
+.border-gradient-purple {
+  border-image-source: linear-gradient(to left, var(--pink), var(--blue));
+}
+
+.only-top {
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+
+.music-wapper {
+  border-top: 1px solid #2d2d2d;
+  /* margin: 0 20px; */
+}
+
+.menu-icon {
+  /* width: 24px; */
+  height: 24px;
+}
+
+.wapper{
+  /* margin: 0 20px; */
+}
+
+.title {
+  font-family: "Nunito Sans", sans-serif;
+  font: Bold 22px/30px "Nunito Sans", sans-serif;
+  color: var(--main-rintext-color);
+}
+
+.artist_list_name{
+  color: var(--misic-type-color);
+  font-family: "Nunito Sans", sans-serif;
+  font: Bold 16px/18px "Nunito Sans", sans-serif;
+}
+
+.browse_title{
+
+}
+
+.img-gradient{
+  position:relative;
+}
+
+/* 
+#002f4b,#dc4225 
+Convert HEX to RGBA - http://hex2rgba.devoth.com/
+*/
+.img-gradient:after {
+  content:'';
+  position:absolute;
+  left:0; top:0;
+  width:100%; 
+  height:100%;
+  display:inline-block;
+  backdrop-filter: blur(1px) saturate(10%);
+  background: -moz-linear-gradient(top, rgba(0,0,0,0.6) 50%, rgba(0, 0, 0, 1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0, 0, 0, 0.6)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.6) 50%,rgba(0, 0, 0, 1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(0,0,0,0.6) 50%,rgba(0, 0, 0, 1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(0,0,0,0.6) 50%,rgba(0, 0, 0, 1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6) 50%,rgba(0, 0, 0, 1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+
+}
+
+.img-gradient img{
+  display:block;
+}
+
+.image-text{
+  bottom: 20px;
+  display: block;
+  color: var(--main-rintext-color);
+  font-family: "Nunito Sans", sans-serif;
+  font: normal 30px/40px "Nunito Sans", sans-serif;
+  text-shadow: var(--text-shadow);
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  letter-spacing: 2px;
+  z-index: 100;
+}
+
+
+.fixed-card {
+  height: auto;
+  /* padding: 10px 0; */
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+  border-top: 1px solid;
+  box-shadow: 0px -3px 6px #000000eb;
+  -webkit-backdrop-filter: blur(20px) saturate(100%);
+  backdrop-filter: blur(20px) saturate(100%);
+  /* filter: blur(4px) saturate(0%); */
+}
+
+.back{
+  /* position: absolute; */
+  z-index: 99;
+  margin: 10px;
+  background-color: rgba(0,0,0,.7);
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  display: inline-flex;
+  border-radius: 50%;
+  color: var(--main-rintext-color);
+}
+
+
+.select_item{
+  width: 130px;
+  min-width: 150px;
+}
+
+.border-medium {
+  /* border-width: 0px; */
+  border-color: #fff;
+}
+
+
+.heart_icon{
+  background: var(--main-gradient-scroll-hover);
+}
+
+.w-3 {
+  width: 0.75rem;
+}
+.h-3 {
+  height: 0.75rem;
+}
+
+.sort_bg{
+  background: var(--main-gradient);
+}

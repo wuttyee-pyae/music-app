@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="76.195" height="76.282" viewBox="0 0 76.195 76.282">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.763" y1="-0.332" x2="0" y2="1.102" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ef29b4"/>
+      <stop offset="1" stop-color="#4c2def"/>
+    </linearGradient>
+    <filter id="Union_118" x="0" y="0" width="76.195" height="76.282" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feFlood flood-color="#02f" flood-opacity="0.322"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Skips" transform="translate(21.003 20.998)">
+    <g transform="matrix(1, 0, 0, 1, -21, -21)" filter="url(#Union_118)">
+      <path id="Union_118-2" data-name="Union 118" d="M16792.393-9355.315V-9389.6h3.6v34.282ZM16761.8-9389.6l26.143,17.417-26.143,16.865Z" transform="translate(-16740.8 9410.6)" fill="url(#linear-gradient)"/>
+    </g>
+  </g>
+</svg>
