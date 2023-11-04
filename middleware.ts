@@ -13,13 +13,14 @@ const verifyJWT = async (jwt) => {
 
 export default async function middleware(req, res) {
   const {pathname} = req.nextUrl
-
+  console.log("Home", pathname);
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||
+    pathname.startsWith("/") ||
     pathname.startsWith("/static") ||
-    pathname.startsWith("/signin") ||
-    pathname.startsWith("/register") ||
+    // pathname.startsWith("/signin") ||
+    // pathname.startsWith("/register") ||
     PUBLIC_FILE.test(pathname)
   ) {
     return NextResponse.next();
@@ -28,16 +29,16 @@ export default async function middleware(req, res) {
   const jwt = req.cookies.get(process.env.COOKIE_NAME)
   console.log(jwt)
 
-  if (!jwt) {
-    req.nextUrl.pathname = '/signin'
-    return NextResponse.redirect(req.nextUrl)
-  }
+  // if (!jwt) {
+  //   req.nextUrl.pathname = '/signin'
+  //   return NextResponse.redirect(req.nextUrl)
+  // }
 
-  try {
-    await verifyJWT(jwt.value)
-    return NextResponse.next();
-  } catch(e) {
-    req.nextUrl.pathname = "/signin";
-    return NextResponse.redirect(req.nextUrl);
-  }
+  // try {
+  //   await verifyJWT(jwt.value)
+  //   return NextResponse.next();
+  // } catch(e) {
+  //   req.nextUrl.pathname = "/signin";
+  //   return NextResponse.redirect(req.nextUrl);
+  // }
 }

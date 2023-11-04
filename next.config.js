@@ -1,5 +1,7 @@
 
 /** @type {import('next').NextConfig} */
+const { withNextVideo } = require('next-video/process');
+
 const nextConfig = {
   reactStrictMode: true,
     experimental: {
@@ -9,6 +11,8 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
+
+module.exports = withNextVideo(nextConfig);
 
 module.exports = {
     webpack(config) {

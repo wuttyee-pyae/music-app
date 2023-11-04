@@ -1,0 +1,12 @@
+.user_name{
+    font-family: "Nunito Sans", sans-serif;
+    font: Bold 18px/30px "Nunito Sans", sans-serif;
+    color: var(--main-rintext-color);
+}
+
+.user_lable{
+    font-family: "Nunito Sans", sans-serif;
+    font: normal 16px/30px "Nunito Sans", sans-serif;
+    color: var(--misic-type-color);
+
+}

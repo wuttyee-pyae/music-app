@@ -1,13 +1,14 @@
 import React from "react";
 import Image from "next/image";
+import styles from "./artistscover.module.css"
 
-import Artistscover01 from "@/assets/artists/big_bag/cover_banner/baner-01.jpg";
-import Artistscover02 from "@/assets/artists/big_bag/cover_banner/baner-02.jpg";
+import Artistscover01 from "@/assets/artists/big_bag/about_image/baner-01.jpg";
 
 export default function Artistscover() {
   return (
       <div className="">
-            <Image
+        <div className={styles.cover_gradient}>
+        <Image
                   className=""
                   alt="..."
                   src={Artistscover01}
@@ -15,6 +16,8 @@ export default function Artistscover() {
                   layout="responsive"
                   suppressHydrationWarning
                 />
+        </div>
+            
       </div>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 import Head from "next/head";
-import 'tailwindcss/tailwind.css'
+import "tailwindcss/tailwind.css";
 
 import "@/styles/global.css";
 import Asidebar from "@/components/sidebar/Asidebar";
@@ -8,16 +8,23 @@ import Section from "@/components/Section";
 
 import clsx from "clsx";
 import Glass from "@/components/login/Glass";
-import Nav from "@/components/Nav";
 
+import Headbar from "@/components/Headbar";
+import { NavbarWrapper } from "@/components/nav/navbar";
 import Footer from "@/components/Footer";
 import { Providers } from "./providers";
+import { Provider } from "react-redux";
+
 import { NextUIProvider } from "@nextui-org/system";
 
-
 import React from "react";
+import LogoIcon from "@/components/icons/LogoIcon";
+import Logobar from "@/components/sidebar/Logobar";
+import BackNext from "@/components/nav/BackNext";
 
 import { ScrollShadow } from "@nextui-org/react";
+import { store } from "../../../redux/store";
+import SidebarProvider from "../../../context/SidebarContext";
 
 export default function DashboardRootLayout({
   children,
@@ -26,7 +33,6 @@ export default function DashboardRootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning={true} className="dark">
-
       <Head>
         <title>Yours App</title>
         <meta charSet="utf-8" />
@@ -37,26 +43,42 @@ export default function DashboardRootLayout({
       </Head>
 
       <body className="">
+        <SidebarProvider>
         <Providers>
-          <Nav />
-
-          <Glass className="w-full mx-auto top-area">
-            <div className="sidebar sidebar-dark left-bar left-0 z-30 w-64 transition-transform md:transition-translate-x-full lg:translate-x-0">
-              <Asidebar />
-            </div>
-              <div className="p-0 lg:ml-64 md:ml-64">
-                <div className="mb-4 pb-36">
-                  <div className="drop-shadow-xl">
-                      <main className="">{children}</main>
-                  </div>
+          <Provider store={store}>
+            <div className="layout">
+              <div className="flex hederbar items-center">
+                <div className="w-auto logobar">
+                  <Logobar />
+                </div>
+                <div className="w-auto">
+                  <BackNext />
+                </div>
+                <div className="flex-auto">
+                  <NavbarWrapper />
                 </div>
               </div>
-          </Glass>
+              <Glass className="w-full mx-auto top-area">
+                
+                  <Asidebar />
+                
+                <div className="p-0 lg:ml-64">
+                  <div className="mb-4 pb-36 min-h-screen">
+                    <div className="drop-shadow-xl">
+                      <main className="layout__main-content">{children}</main>
+                    </div>
+                  </div>
+                </div>
+              </Glass>
+            </div>
 
-          <div className="">
-            <Footer />
-          </div>
-        </Providers>
+            <div className="">
+              <Footer />
+            </div>
+          </Provider>
+        </Providers> 
+        </SidebarProvider>
+        
       </body>
     </html>
   );

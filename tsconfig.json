@@ -28,6 +28,6 @@
       "@/assets/*": ["./assets/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/Button.tsx"],
+  "include": ["video.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/Button.tsx"],
   "exclude": ["node_modules"]
 }

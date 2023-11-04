@@ -13,11 +13,24 @@ import ArtistIcon from "@/components/icons/ArtistIcon";
 import UserIcon from "@/components/icons/UserIcon";
 import PlaylistIcon from "@/components/icons/PlaylistIcon";
 
-const icons = { Settings, User, Grid, Calendar, LogoIcon, MusicIcon, ArtistIcon, UserIcon, PlaylistIcon, FiMusic, BiUser, FaUserPen,};
+const icons = {
+  Settings,
+  User,
+  Grid,
+  Calendar,
+  LogoIcon,
+  MusicIcon,
+  ArtistIcon,
+  UserIcon,
+  PlaylistIcon,
+  FiMusic,
+  BiUser,
+  FaUserPen,
+};
 
 const UserSidebarLink = ({ link }) => {
   const pathname = usePathname();
-  let isActive = false; 
+  let isActive = false;
 
   if (pathname === link.link) {
     isActive = true;
@@ -25,16 +38,24 @@ const UserSidebarLink = ({ link }) => {
 
   const Icon = icons[link.icon];
   return (
-    <Link href={link.link} key={link.label} className="flex justify-start items-start py-4 menu-link px-2">
-      <Icon
-        size={25}
-        className={clsx(
-          "menu-icon stroke-gray-400 hover:stroke-violet-600 transition duration-200 ease-in-out",
-          isActive && "stroke-violet-600 active"
-        )}
-      />
-      <span className="ml-2 menu-name self-center menu-name">{link.label}</span>
-    </Link>
+    <div>
+      <Link
+        href={link.link}
+        key={link.label}
+        className="flex justify-start items-start py-4 menu-link px-2"
+      >
+        <Icon
+          size={25}
+          className={clsx(
+            "menu-icon stroke-gray-400 hover:stroke-violet-600 transition duration-200 ease-in-out",
+            isActive && "stroke-violet-600 active"
+          )}
+        />
+        <span className="ml-2 menu-name self-center menu-name">
+          {link.label}
+        </span>
+      </Link>
+    </div>
   );
 };
 

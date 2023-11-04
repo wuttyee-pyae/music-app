@@ -15,7 +15,6 @@ import { ShuffleIcon } from "./ShuffleIcon";
 
 export default function CrbtPlayer() {
   const [liked, setLiked] = React.useState(false);
-
   return (
     <div className="flex items-center">
       <div className="flex-auto ml-4">

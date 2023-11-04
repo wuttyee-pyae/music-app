@@ -1,0 +1,15 @@
+.albums_name{
+    color: var(--misic-type-color);
+    font-family: "Nunito Sans", sans-serif;
+    font: Bold 14px/18px "Nunito Sans", sans-serif;
+}
+
+.albums_date{
+    color: var(--main-rintext-color);
+    font-family: "Nunito Sans", sans-serif;
+    font: Bold 14px/18px "Nunito Sans", sans-serif;
+}
+
+.foreground:hover {
+    transform: translateY(-10px);
+  }

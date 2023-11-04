@@ -11,7 +11,11 @@ const Crbtitems = () => {
   return (
     <div className={styles.music_card}>
       <div className="grid grid-cols-12 gap-4 items-center">
-        <div className="ml-4 col-span-3 md:col-span-1">
+        <div className="flex items-center gap-4 justify-center">
+          <div className="ml-4">ID</div>
+          <BsPlayFill className="h-8 w-8" />
+        </div>
+        <div className="mr-4 col-span-3 md:col-span-1">
           <Skeleton className="rounded-lg">
             <Image
               src="/images/lazy_music_lg.jpg"
@@ -22,9 +26,7 @@ const Crbtitems = () => {
             />
           </Skeleton>
         </div>
-        <div>
-          <BsPlayFill className="h-8 w-8" />
-        </div>
+
         <div className="col-span-5 md:col-span-2">
           <div>
             <div className={styles.music_name}>Music Name</div>

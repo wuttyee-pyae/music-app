@@ -17,10 +17,10 @@ import { Tooltip } from "@nextui-org/react";
   return (
     <div className="">
       <div className="w-full scroll-smooth sort_bg p-2 mb-4">
-        <div className="mb-4 wapper mx-4 ">
-          <div className="grid grid-cols-3 lg:grid-cols-6 xl:grid-cols-6 md:grid-cols-3 sm:grid-cols-3 gap-4">
+        <div className="mb-4 wapper mx-4">
+          <div className="grid grid-cols-3 lg:grid-cols-6 xl:grid-cols-6 md:grid-cols-3 sm:grid-cols-3 gap-4 items-center">
             <div className="">
-              <div className="flex items-center">
+              {/* <div className="flex items-center">
                 <Tooltip
                   color="secondary"
                   showArrow={true}
@@ -52,7 +52,7 @@ import { Tooltip } from "@nextui-org/react";
                     <NextIcon width={20} height={20} />
                   </Link>
                 </Tooltip>
-              </div>
+              </div> */}
               <h3 className="title ml-4">Moods Id</h3>
             </div>
             <div>

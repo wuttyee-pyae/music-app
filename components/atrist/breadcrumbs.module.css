@@ -1,0 +1,6 @@
+.breadcrumb_item{
+    font-family: var(--lato-font);
+    font-size: var(--font-size-18);
+    color: var(--main-rintext-color);
+   }
+
