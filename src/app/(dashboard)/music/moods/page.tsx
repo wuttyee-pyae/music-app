@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import MoodsGenres from "@/components/music/modes";
+import MoodsGenres from "@/components/music/Moods";
 
 export default function Home() {
   return (

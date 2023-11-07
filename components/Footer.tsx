@@ -3,7 +3,7 @@
 import React from "react";
 
 // import CrbtPlayer from "@/components/crbtplayer/CrbtPlayer"
-import MusicPlayer from "@/components/MusicPlayer/index"
+import MusicPlayer from "@/components/MusicPlayer/MusicPlayer"
 
 export default function Footer() {
   return (

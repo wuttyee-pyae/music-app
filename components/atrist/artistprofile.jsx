@@ -2,23 +2,24 @@
 import React from "react";
 import Image from "next/image";
 
-import Breadcrumb from "@/components/atrist/breadcrumb";
+import Breadcrumb from "@/components/atrist/Breadcrumb";
 
 import ArtistProfileImg from "@/assets/artists/big_bag/about_image/profile_img.jpg";
 
-import ShuffPlayIcon from "./shufffplay";
-import ArtistMoreIcon from "./artistmoreicon";
-import FollowBtn from "./flollowbtn";
-import PopularSong from "./popularsong";
+import ShuffPlayIcon from "./ShufffPlay";
+import ArtistMoreIcon from "./ArtistsMoreIcon";
+import FollowBtn from "./FollowBtn";
+import PopularSong from "./PopularSong";
 
-import styles from "./artistprofile.module.css";
+// import styles from "./ArtistsCover.module.css";
+import styles from "./ArtistProfile.module.css";
 
-import PopularMusic from "@/components/atrist/popularmusic";
+import PopularMusic from "@/components/atrist/PopularMusic";
 
-import PoopularSoungList from './poopularsounglist';
-import Albumcover from "./albums/albumcover"
+import PoopularSoungList from './PoopularSoungList';
+import Albumcover from "./albums/AlbumCover"
 
-import Crbtitems from '@/components/crbt/crbtitems';
+import Crbtitems from '@/components/crbt/Crbtitems';
 import VideoList from './video/videolist';
 // import { columns, users, statusOptions, accessToken } from "./data";
 

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import { Card, CardFooter, Button } from "@nextui-org/react";
 import {Spacer} from "@nextui-org/react";
-import styles from "./albumcover.module.css";
+import styles from "./AlbumCover.module.css";
 
 
 import Artist01 from "@/assets/artists/big_bag/cover_img/narmelkyee.jpg";

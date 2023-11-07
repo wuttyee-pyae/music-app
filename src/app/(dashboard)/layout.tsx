@@ -9,8 +9,7 @@ import Section from "@/components/Section";
 import clsx from "clsx";
 import Glass from "@/components/login/Glass";
 
-import Headbar from "@/components/Headbar";
-import { NavbarWrapper } from "@/components/nav/navbar";
+import { NavbarWrapper } from "@/components/nav/NavbarWrapper";
 import Footer from "@/components/Footer";
 import { Providers } from "./providers";
 import { Provider } from "react-redux";
@@ -25,6 +24,8 @@ import BackNext from "@/components/nav/BackNext";
 import { ScrollShadow } from "@nextui-org/react";
 import { store } from "../../../redux/store";
 import SidebarProvider from "../../../context/SidebarContext";
+import {SSRProvider} from 'react-aria';
+
 
 export default function DashboardRootLayout({
   children,

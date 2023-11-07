@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { Card, CardFooter, Button } from "@nextui-org/react";
 
-import Albumcover from "@/components/atrist/albums/albumcover";
+import Albumcover from "@/components/atrist/albums/AlbumCover";
 
 export default function ArtistAlbums() {
   return (

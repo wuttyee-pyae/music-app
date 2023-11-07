@@ -26,3 +26,6 @@ export const register = (user) => {
 export const signin = (user) => {
   return fetcher({url: '/api/signin', method: 'post', body: user})
 }
+export const leading = (user) => {
+  return fetcher({url: '/', method: 'post', body: user})
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import CrbtBanner from "./crbt/banner";
-import CrbtTag from "./crbt/tag";
+import CrbtBanner from "./crbt/Banner";
+import CrbtTag from "./crbt/CrbtTag";
 import Crbtlist from "./crbt/Crbtlist";
 
 

@@ -112,8 +112,17 @@ body {
   background: #00000085;
 }
 
+.font-normal {
+  color: var(--main-rintext-color);
+}
+
+.mtv_title{
+  color: var(--main-rintext-color);
+}
+
 .languagbar {
   max-width: 160px;
+  color: var(--main-rintext-color);
 }
 
 .top-area {
