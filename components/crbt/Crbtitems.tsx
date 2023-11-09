@@ -5,15 +5,18 @@ import { BsPlayFill } from "react-icons/bs";
 import { FaCartShopping } from "react-icons/fa6";
 import Image from "next/image";
 import { Card, Skeleton } from "@nextui-org/react";
+import { Tooltip, Button } from "@nextui-org/react";
 
 import styles from "./crbtitems.module.css";
 const Crbtitems = () => {
   return (
+    <Tooltip content={<BsPlayFill className="h-10 w-10 z-0" />} className="text-white music_hover" offset={0} placement="left">
     <div className={styles.music_card}>
+
       <div className="grid grid-cols-12 gap-4 items-center">
-        <div className="flex items-center gap-4 justify-center">
+
+        <div className="flex items-center gap-4 justify-start">
           <div className="ml-4">ID</div>
-          <BsPlayFill className="h-8 w-8" />
         </div>
         <div className="mr-4 col-span-3 md:col-span-1">
           <Skeleton className="rounded-lg">
@@ -30,7 +33,7 @@ const Crbtitems = () => {
         <div className="col-span-5 md:col-span-2">
           <div>
             <div className={styles.music_name}>Music Name</div>
-            <div className={styles.music_type}>Music Type</div>
+            <div className={styles.music_type}>Artist Name</div>
           </div>
         </div>
         <div className="col-span-4 md:col-span-3">
@@ -56,6 +59,7 @@ const Crbtitems = () => {
         </div>
       </div>
     </div>
+    </Tooltip>
   );
 };
 

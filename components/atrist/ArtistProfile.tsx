@@ -109,9 +109,9 @@ export default function ArtistProfile() {
                       <div className="tabs py-10 pb-36">
                         <div className="flex flex-col pb-32 mb-36">
                           <p className="text-lg text-white mb-4">Popular songs</p>
-                          {/* <PoopularSoungList/>
-                          <PoopularSoungList/> */}
-                          <PopularSong/>
+                          <PoopularSoungList/>
+                          <PoopularSoungList/>
+                          {/* <PopularSong/> */}
                           <Albumcover/>
                         </div>
                       </div>

@@ -403,6 +403,22 @@ Convert HEX to RGBA - http://hex2rgba.devoth.com/
   /* filter: blur(4px) saturate(0%); */
 }
 
+.play_hover{
+  background: none;
+  padding: 0px;
+  box-shadow: none;
+  right: 0px;
+  position: absolute;
+}
+
+.truncate {
+  width: 100%;
+  max-height: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
 .back {
   /* position: absolute; */
   z-index: 99;
@@ -417,7 +433,23 @@ Convert HEX to RGBA - http://hex2rgba.devoth.com/
   border-radius: 50%;
   color: var(--main-rintext-color);
 }
+.music_hover{
+    background: none;
+    box-shadow: none;
+    position: relative;
+    margin-left: 112px;
+}
 
+.music_card{
+  width: 100%;
+  height: auto;
+  background: none;
+}
+.playlist_card{
+  width: 100%;
+  height: auto;
+  background: none;
+}
 .select_item {
   width: 130px;
   min-width: 150px;
