@@ -1,9 +1,8 @@
-"use client"
 
 import React from "react";
 
 // import CrbtPlayer from "@/components/crbtplayer/CrbtPlayer"
-import MusicPlayer from "@/components/MusicPlayer/MusicPlayer"
+import MusicPlayer from "@/components/musicplayer/MusicPlayer"
 
 export default function Footer() {
   return (

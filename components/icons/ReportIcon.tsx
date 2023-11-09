@@ -1,5 +1,5 @@
 import React from "react";
-export const ReportIcon = ({ size = 16, width, height, ...props }) => (
+export const ReportIcon = ({ size = 16, width=16, height=16, ...props }) => (
   <svg
     aria-hidden="true"
     fill="none"

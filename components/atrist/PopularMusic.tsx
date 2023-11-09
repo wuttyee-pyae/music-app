@@ -17,18 +17,19 @@ import {
   Chip,
   User,
   Pagination,
+  SortDescriptor,
 } from "@nextui-org/react";
-import { useState, useEffect, hasSearchFilter } from 'react';
+import { useState, useEffect } from "react";
 
 import { PlusIcon } from "./PlusIcon";
 import { VerticalDotsIcon } from "./VerticalDotsIcon";
 import { SearchIcon } from "./SearchIcon";
 import { ChevronDownIcon } from "./ChevronDownIcon";
-import { columns, users, statusOptions, accessToken } from "./data";
+import { columns, users, statusOptions } from "./data";
 import { capitalize } from "./utils";
 import { BsPlayFill } from "react-icons/bs";
 
-const statusColorMap = {
+const statusColorMap: any = {
   active: "success",
   paused: "danger",
   vacation: "warning",
@@ -55,7 +56,7 @@ export default function PopularMusic() {
   const hasSearchFilter = Boolean(filterValue);
 
   const headerColumns = React.useMemo(() => {
-    if (visibleColumns === "all") return columns;
+    if (visibleColumns.has("all")) return columns;
 
     return columns.filter((column) =>
       Array.from(visibleColumns).includes(column.uid)
@@ -90,7 +91,7 @@ export default function PopularMusic() {
   }, [page, filteredItems, rowsPerPage]);
 
   const sortedItems = React.useMemo(() => {
-    return [...items].sort((a, b) => {
+    return [...items].sort((a: any, b: any) => {
       const first = a[sortDescriptor.column];
       const second = b[sortDescriptor.column];
       const cmp = first < second ? -1 : first > second ? 1 : 0;
@@ -99,7 +100,7 @@ export default function PopularMusic() {
     });
   }, [sortDescriptor, items]);
 
-  const renderCell = React.useCallback((user, columnKey) => {
+  const renderCell = React.useCallback((user: any, columnKey: any) => {
     const cellValue = user[columnKey];
 
     switch (columnKey) {
@@ -189,12 +190,12 @@ export default function PopularMusic() {
     }
   }, []);
 
-  const onRowsPerPageChange = React.useCallback((e) => {
+  const onRowsPerPageChange = React.useCallback((e: any) => {
     setRowsPerPage(Number(e.target.value));
     setPage(1);
   }, []);
 
-  const onSearchChange = React.useCallback((value) => {
+  const onSearchChange = React.useCallback((value: string) => {
     if (value) {
       setFilterValue(value);
       setPage(1);
@@ -224,18 +225,18 @@ export default function PopularMusic() {
 
   return (
     <Table
-    fullWidth
+      fullWidth
       isCompact
       removeWrapper
       aria-label="Example table with custom cells, pagination and sorting"
       // bottomContent={bottomContent}
       bottomContentPlacement="outside"
       classNames={classNames}
-      selectedKeys={selectedKeys}
+      selectedKeys={selectedKeys as any}
       selectionMode="single"
-      sortDescriptor={sortDescriptor}
-      onSelectionChange={setSelectedKeys}
-      onSortChange={setSortDescriptor}
+      sortDescriptor={sortDescriptor as SortDescriptor}
+      onSelectionChange={setSelectedKeys as any}
+      onSortChange={setSortDescriptor as any}
     >
       <TableHeader columns={headerColumns}>
         {(column) => (

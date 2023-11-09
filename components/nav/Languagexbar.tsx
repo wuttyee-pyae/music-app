@@ -12,8 +12,6 @@ export default function Languagexbar() {
       variant="flat"
       labelPlacement="outside"
       aria-hidden="true"
-
-
     >
       <SelectItem
       className="text-white"

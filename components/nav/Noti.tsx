@@ -11,7 +11,7 @@ export default function Noti() {
         aria-label="more than notifications"
         variant="light"
       >
-        <NotificationIcon size={24} />
+        <NotificationIcon />
       </Button>
     </Badge>
   );

@@ -14,11 +14,11 @@ import { MoreIcon } from "./icons/MoreIcon";
 import { Tooltip } from "@nextui-org/react";
 import { PlusIcon } from "./icons/PlusIcon";
 
-export default function MoreOption(props, ref) {
+export default function MoreOption() {
   return (
     <div className="flex items-center gap-4">
       <Dropdown placement="bottom-end">
-        <DropdownTrigger passHref>
+        <DropdownTrigger>
           <Button
             isIconOnly
             className="data-[hover]:bg-foreground/10"

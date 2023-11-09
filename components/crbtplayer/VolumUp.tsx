@@ -1,5 +1,5 @@
 import React from "react";
-export const VolumUp = ({ size = 20, width, height, ...props }) => (
+export const VolumUp = ({ size = 20, width=20, height=20, ...props }) => (
   <svg
     aria-hidden="true"
     fill="none"

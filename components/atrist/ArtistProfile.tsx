@@ -98,10 +98,10 @@ export default function ArtistProfile() {
                 {variants.map((variant) => (
                   <Tabs
                     key={variant}
-                    variant={variant}
+                    variant={variant as any}
                     aria-label="Options"
                     selectedKey={selected}
-                    onSelectionChange={setSelected}
+                    onSelectionChange={setSelected as any}
                     items={tabs}
                   >
                     {/* Get Overview data place tab */}
@@ -109,8 +109,9 @@ export default function ArtistProfile() {
                       <div className="tabs py-10 pb-36">
                         <div className="flex flex-col pb-32 mb-36">
                           <p className="text-lg text-white mb-4">Popular songs</p>
-                          <PoopularSoungList/>
-                          <PoopularSoungList/>
+                          {/* <PoopularSoungList/>
+                          <PoopularSoungList/> */}
+                          <PopularSong/>
                           <Albumcover/>
                         </div>
                       </div>

@@ -1,5 +1,5 @@
-import Recommended from "@/components/atrist/recommended";
-import BrowseArtists from "@/components/atrist/browseartists";
+import BrowseArtists from "@/components/atrist/BrowseArtists";
+import Recommended from "@/components/atrist/Recommended";
 import Image from "next/image";
 
 

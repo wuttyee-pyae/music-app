@@ -30,7 +30,7 @@ export default function App() {
       // If no cursor is available, then we're loading the first page.
       // Otherwise, the cursor is the next URL to load, as returned from the previous page.
       const res = await fetch(
-        cursor || "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg/top-tracks",
+        cursor || "https://swapi.py4e.com/api/people/?search=",
         { signal }
       );
       let json = await res.json();
@@ -100,7 +100,7 @@ export default function App() {
               className="aspect-square right-0 rounded-md"
             />
         </TableColumn>
-        <TableColumn key="play_icon"></TableColumn>
+        <TableColumn key="play_icon"> </TableColumn>
         <TableColumn key="name">TITTLE</TableColumn>
         <TableColumn key="artist_name">ARTIST</TableColumn>
         <TableColumn key="alblum_name">ALBUM</TableColumn>
@@ -112,7 +112,7 @@ export default function App() {
         items={list.items}
         loadingContent={<Spinner label="Loading..." />}
       >
-        {(item) => (
+        {(item:any) => (
           <TableRow key={item.name}>
             {(columnKey) => (
               <TableCell>{getKeyValue(item, columnKey)}</TableCell>

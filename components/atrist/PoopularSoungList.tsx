@@ -12,7 +12,7 @@ import { Button, Progress } from "@nextui-org/react";
 import { HeartIcon } from "@/components/music/icons/HeartIcon";
 import MoreOption from "@/components/music/MoreOption";
 
-const PoopularSoungList =  (props, ref) => {
+const PoopularSoungList =  (props:{}, ref:{}) => {
   const [liked, setLiked] = React.useState(false);
   return (
     <div className={styles.music_card}>

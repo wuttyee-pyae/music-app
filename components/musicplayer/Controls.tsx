@@ -7,13 +7,15 @@ import { NextIcon } from "@/components/crbtplayer/NextIcon";
 import { PreviousIcon } from "@/components/crbtplayer/PreviousIcon";
 import { RepeatOneIcon } from "@/components/crbtplayer/RepeatOneIcon";
 import { ShuffleIcon } from "@/components/crbtplayer/ShuffleIcon";
+import { Repeat } from 'react-feather';
 
 // import { MdSkipNext, MdSkipPrevious } from 'react-icons/md';
 // import { BsArrowRepeat, BsFillPauseFill, BsFillPlayFill, BsShuffle } from 'react-icons/bs';
 
-const Controls = ({ isPlaying, repeat, setRepeat, shuffle, setShuffle, currentSongs, handlePlayPause, handlePrevSong, handleNextSong }) => (
+const Controls = ({ isPlaying = false, repeat= "", setRepeat=[], shuffle="", setShuffle="", currentSongs="", handlePlayPause="", handlePrevSong="", handleNextSong="" }) => (
+  
   <div className="flex items-center justify-around md:w-64 lg:w-52 2xl:w-80 gap-4">
-    <RepeatOneIcon size={20} color={repeat ? 'blue' : 'white'} onClick={() => setRepeat((prev) => !prev)} className="sm:block cursor-pointer" />
+    <RepeatOneIcon size={20} color={repeat ? 'blue' : 'white'} onClick={() => setRepeat((prev : any) => !prev)} className="sm:block cursor-pointer" />
      <PreviousIcon size={30} color="#FFF" className="cursor-pointer" onClick={handlePrevSong} />
     {isPlaying ? (
       <PauseCircleIcon size={45} color="#FFF" onClick={handlePlayPause} className="cursor-pointer" />

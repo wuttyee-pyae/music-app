@@ -73,13 +73,13 @@ module.exports = {
         // // when true, every image will be unoptimized
         // unoptimized: false,
       },      
-      remotePatterns: [
-        {
-          protocol: 'https',
-          hostname: 'assets.example.com',
-          port: '',
-          pathname: '/account123/**',
-        },
-      ],
+      // remotePatterns: [
+      //   {
+      //     protocol: 'https',
+      //     hostname: 'assets.example.com',
+      //     port: '',
+      //     pathname: '/account123/**',
+      //   },
+      // ],
   }
   

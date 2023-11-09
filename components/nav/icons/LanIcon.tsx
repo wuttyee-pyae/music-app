@@ -1,11 +1,11 @@
 import React from "react";
 export const LanIcon = ({
   fill = "currentColor",
-  filled,
-  size,
-  height,
-  width,
-  label,
+  filled = '',
+  size = 24,
+  height = 24,
+  width = 24,
+  label = '',
   ...props
 }) => {
   return (

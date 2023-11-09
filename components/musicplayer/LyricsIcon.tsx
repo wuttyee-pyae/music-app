@@ -1,5 +1,5 @@
 import React from "react";
-export const LyricsIcon = ({ size = 18, width, height, ...props }) => (
+export const LyricsIcon = ({ size = 18, width=18, height=18, ...props }) => (
   <svg
     aria-hidden="true"
     fill="none"

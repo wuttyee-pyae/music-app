@@ -18,14 +18,14 @@ export default function ArtistsMoreIcon() {
   return (
     <div className="flex items-center gap-4">
       <Dropdown placement="bottom-end">
-        <DropdownTrigger passHref>
+        <DropdownTrigger >
           <Button
             isIconOnly
             className="data-[hover]:bg-foreground/10"
             radius="full"
             variant="light"
           >
-            <MoreIcon />
+            <MoreIcon/>
           </Button>
         </DropdownTrigger>
         <DropdownMenu aria-label="Music Actions" variant="flat">
