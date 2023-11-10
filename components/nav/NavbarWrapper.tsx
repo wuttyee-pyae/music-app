@@ -1,9 +1,9 @@
 import { Input, Link, Navbar, NavbarContent } from "@nextui-org/react";
 import React from "react";
-import { SearchIcon } from "./icons/SearchIcon";
-import { NotificationsDropdown } from "./NotificationsDropdown";
 import { UserDropdown } from "./UserDropdown";
 import  Languagexbar from "./Languagexbar";
+import { SearchIcon } from "../atrist/SearchIcon";
+import { NotificationsDropdown } from "./NotificationsDropdown";
 
 interface Props {
   children?: React.ReactNode;
@@ -45,7 +45,7 @@ export const NavbarWrapper = ({ children }: Props) => {
           </NavbarContent>
         </NavbarContent>
       </Navbar>
-      {children}
+      {/* {children} */}
     </div>
   );
 };
