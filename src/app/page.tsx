@@ -7,7 +7,7 @@ const { isMobile } = getSelectorsByUserAgent(
   headers().get("user-agent") ?? ""
 )
 export default function Leading({}) {
-  return (isMobile ? <MobileRootLayout /> : <DesktopRootLayout />
+  return (isMobile ? <MobileRootLayout children></MobileRootLayout> : <DesktopRootLayout children></DesktopRootLayout>
     // <div className="drop-shadow-xl">
     //   <div className="">
     //     <div className="pt-6">

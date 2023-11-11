@@ -1,8 +1,5 @@
 
 import Crbt from "@/components/Crbt";
-import Image from "next/image";
-import { Sidebar } from 'flowbite-react';
-import {Button} from '@nextui-org/react'
 
 // async function getAccessToken() {
 //   const url = "https://accounts.spotify.com/api/token";

@@ -1,6 +1,3 @@
-import Image from "next/image";
-
-
 export default function Player() {
   return (
         <div className="pt-6">

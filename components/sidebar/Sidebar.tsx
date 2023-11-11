@@ -9,9 +9,9 @@ import MusicIcon from "@/components/icons/MusicIcon";
 import ArtistIcon from "@/components/icons/ArtistIcon";
 
 const links = [
-  { label: "Home", icon: "LogoIcon", link: "/home" },
-  { label: "Music", icon: "MusicIcon", link: "/music" },
-  { label: "Artists", icon: "ArtistIcon", link: "/artists" },
+  { id:1 , label: "Home", icon: "LogoIcon", link: "home" },
+  { id:2 , label: "Music", icon: "MusicIcon", link: "music" },
+  { id:3 , label: "Artists", icon: "ArtistIcon", link: "artists" },
   // { label: "My Playlist", icon: "FaUserPen", link: "/palylist" },
   // { label: "My Profile", icon: "FaUserPen", link: "/profile" },
   // { label: "My Playlist", icon: "FiMusic", link: "/playlist" },
@@ -25,7 +25,7 @@ const Sidebar = () => {
   return (
       <CardSidebar className="sidebar-card mb-2">
         {links.map((link) => (
-          <SidebarLink link={link} key={link.label} />
+          <SidebarLink link={link} key={link.id} />
         ))}
       </CardSidebar>
   );

@@ -9,15 +9,15 @@ import MusicIcon from "@/components/icons/MusicIcon";
 import ArtistIcon from "@/components/icons/ArtistIcon";
 
 const links = [
-  { label: "My Profile", icon: "UserIcon", link: "/profile" },
-  { label: "Playlist", icon: "PlaylistIcon", link: "/playlist" },
+  { id: 1 , label: "My Profile", icon: "UserIcon", link: "profile" },
+  { id :2 ,label: "Playlist", icon: "PlaylistIcon", link: "playlist" },
 ];
 
 const UserSidebar = () => {
   return (
       <CardSidebar className="sidebar-card mb-2">
         {links.map((link) => (
-          <UserbarLink link={link} key={link.label} />
+          <UserbarLink link={link} key={link.id} />
         ))}
       </CardSidebar>  
   );

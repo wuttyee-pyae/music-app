@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import MusicGenres from "@/components/music/Genres";
 
 export default function Home() {

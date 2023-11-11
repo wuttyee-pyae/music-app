@@ -1,7 +1,7 @@
 import PopularMusic from "@/components/atrist/PopularMusic";
 import CadPlayList from "@/components/yoursplaylist/CadPlayList";
-// import UsersPage from "@/components/uers/UsersPage";
-import { Input, Link, Navbar, NavbarContent, Button } from "@nextui-org/react";
+import { Link } from "@nextui-org/react";
+import ContactUs from "./contactus/page";
 export default function Desktop(){
     return (
         <div className="drop-shadow-xl">
@@ -20,8 +20,9 @@ export default function Desktop(){
                <CadPlayList />
                <CadPlayList />
                <CadPlayList />
-              <CadPlayList />
                <CadPlayList />
+               <CadPlayList />
+               <ContactUs/>
              </div>
            </div>
          </div>

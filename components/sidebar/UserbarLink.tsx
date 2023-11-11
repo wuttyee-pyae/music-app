@@ -28,7 +28,7 @@ const icons = {
   FaUserPen,
 };
 
-const UserSidebarLink = ({ link }) => {
+const UserSidebarLink = ({ link } : any) => {
   const pathname = usePathname();
   let isActive = false;
 
@@ -41,7 +41,7 @@ const UserSidebarLink = ({ link }) => {
     <div>
       <Link
         href={link.link}
-        key={link.label}
+        key={link.id}
         className="flex justify-start items-start py-4 menu-link px-2"
       >
         <Icon

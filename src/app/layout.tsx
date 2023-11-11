@@ -3,29 +3,8 @@ import Head from "next/head";
 import "tailwindcss/tailwind.css";
 
 import "@/styles/global.css";
-import Asidebar from "@/components/sidebar/Asidebar";
-import Section from "@/components/Section";
-
-import clsx from "clsx";
-import Glass from "@/components/login/Glass";
-
-import LoginFooter from "@/components/LoginFooter";
-import { Providers } from "./desktop/providers";
-import { Provider } from "react-redux";
-
-import { NextUIProvider } from "@nextui-org/system";
 
 import React from "react";
-import LogoIcon from "@/components/icons/LogoIcon";
-import Logobar from "@/components/sidebar/Logobar";
-import BackNext from "@/components/nav/BackNext";
-
-import { ScrollShadow } from "@nextui-org/react";
-import { store } from "../../redux/store";
-import SidebarProvider from "../../context/SidebarContext";
-import {SSRProvider} from 'react-aria';
-import { NavbarWrapperUser } from "@/components/nav/NavbarWrapperUser";
-
 
 
 export default function LogindRootLayout({

@@ -1,13 +1,7 @@
 "use client";
 
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { Link } from "@nextui-org/react";
-
-
-
-import SelectBar from "@/components/music/selectbar";
-import Musiclist from "@/components/music/musiclist";
+import Musiclist from "@/components/music/Musiclist";
+import SelectBar from "@/components/music/SelectBar";
 
 
 export default function MoodsId() {
