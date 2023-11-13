@@ -22,8 +22,7 @@ export default function DesktopRootLayout({children} : {
   children : React.ReactNode 
 }) {
   console.log("Desktop")
-  const router = useRouter()
-  router.push('/desktop')
+  
   return (
     
    <section>

@@ -2,24 +2,17 @@
 import React from "react";
 import Image from "next/image";
 
-import Breadcrumb from "@/components/atrist/Breadcrumb";
 
 import ArtistProfileImg from "@/assets/artists/big_bag/about_image/profile_img.jpg";
 
 import ShuffPlayIcon from "./ShufffPlay";
 import ArtistMoreIcon from "./ArtistsMoreIcon";
 import FollowBtn from "./FollowBtn";
-import PopularSong from "./PopularSong";
 
 // import styles from "./ArtistsCover.module.css";
 import styles from "./ArtistProfile.module.css";
-
-import PopularMusic from "@/components/atrist/PopularMusic";
-
 import PoopularSoungList from './PoopularSoungList';
 import Albumcover from "./albums/AlbumCover"
-
-import Crbtitems from '@/components/crbt/Crbtitems';
 import VideoList from './video/videolist';
 // import { columns, users, statusOptions, accessToken } from "./data";
 
@@ -34,6 +27,8 @@ import {
   CardBody,
   CardHeader,
 } from "@nextui-org/react";
+import Breadcrumb from "./Breadcrumb";
+import Crbtitems from "../crbt/Crbtitems";
 
 export default function ArtistProfile() {
   const variants = ["underlined"];

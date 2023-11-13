@@ -9,8 +9,8 @@ import styles from "./poopularsounglist.module.css";
 import { Tooltip } from "@nextui-org/react";
 
 import { Button, Progress } from "@nextui-org/react";
-import { HeartIcon } from "@/components/music/icons/HeartIcon";
-import MoreOption from "@/components/music/MoreOption";
+import { HeartIcon } from "../musicplayer/HeartIcon";
+import MoreOption from "../music/MoreOption";
 
 const PoopularSoungList = (props: {}, ref: {}) => {
   const [liked, setLiked] = React.useState(false);

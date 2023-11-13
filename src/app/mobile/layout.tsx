@@ -9,7 +9,7 @@ import { NavbarWrapper } from "@/components/desktop/nav/NavbarWrapper";
 import Footer from "@/components/desktop/Footer";
 import { Provider } from "react-redux";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Logobar from "@/components/desktop/sidebar/Logobar";
 import BackNext from "@/components/desktop/nav/BackNext";
 import { store } from "../../../redux/store";
@@ -24,8 +24,7 @@ export default function MobileRootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const router = useRouter()
-    router.push('/mobile')
+
   return (
   <section>
         <SidebarProvider>

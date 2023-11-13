@@ -1,10 +1,10 @@
 import React from "react";
 
 import { Image } from "@nextui-org/react";
-import MoreOption from "@/components/music/MoreOption";
+import MoreOption from "../../music/MoreOption";
 
 
-export default function VideoImage(props, ref) {
+export default function VideoImage({}) {
   return (
     <div>
       <Image

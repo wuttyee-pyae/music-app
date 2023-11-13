@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@nextui-org/react";
-import { PlayIcon } from "@/components/crbtplayer/PlayIcon";
+import { PlayIcon } from "../crbtplayer/PlayIcon";
 
 export default function ShufffPlay() {
   return (

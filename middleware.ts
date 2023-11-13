@@ -18,8 +18,12 @@ export default async function middleware(request: NextRequest , response : NextR
    
   const url = request.nextUrl
   const { device } = userAgent(request)
-  // const viewport = device.type === 'mobile' ? 'mobile' : 'desktop'
+  const device_dir = device.type === 'mobile' ? 'mobile' : 'desktop'
   // url.searchParams.set('viewport', viewport)
+  if(pathname.endsWith('/')){
+    request.nextUrl.pathname += device_dir
+    return NextResponse.redirect(request.nextUrl)
+  }
   
   if (
     pathname.startsWith("/_next") ||
@@ -33,7 +37,7 @@ export default async function middleware(request: NextRequest , response : NextR
     return NextResponse.next();
   }
 
-  const jwt = request.cookies.get(process.env.COOKIE_NAME)
+  const jwt = request.cookies.get(process.env.COOKIE_NAME || '')
   console.log(jwt)
 
   // if (!jwt) {
