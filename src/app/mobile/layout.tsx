@@ -50,8 +50,7 @@ export default function MobileRootLayout({
                 <div className="p-0 lg:ml-64">
                   <div className="mb-4 pb-36 min-h-screen">
                     <div className="drop-shadow-xl">
-                    <main><Mobile/> </main>
-                    {/* <Mobile/> */}
+                    <main className="layout__main-content" >{children}</main>
                     </div>
                   </div>
                 </div>
