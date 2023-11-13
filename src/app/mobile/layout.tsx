@@ -14,13 +14,16 @@ import Logobar from "@/components/sidebar/Logobar";
 import BackNext from "@/components/nav/BackNext";
 import { store } from "../../../redux/store";
 import SidebarProvider from "../../../context/SidebarContext";
-import Mobile from "./page";
 import { Providers } from "../desktop/providers";
+import Mobile from "./page";
 
 
-export default function MobileRootLayout({children} : {
-  children : React.ReactNode
+export default function MobileRootLayout({
+  children
+}: {
+  children: React.ReactNode;
 }) {
+  console.log("mobile")
   return (
   <section>
         <SidebarProvider>
@@ -45,7 +48,8 @@ export default function MobileRootLayout({children} : {
                 <div className="p-0 lg:ml-64">
                   <div className="mb-4 pb-36 min-h-screen">
                     <div className="drop-shadow-xl">
-                    <main className="layout__main-content">{children}</main>
+                    <main><Mobile/> </main>
+                    {/* <Mobile/> */}
                     </div>
                   </div>
                 </div>
@@ -53,7 +57,7 @@ export default function MobileRootLayout({children} : {
             </div>
 
             <div className="">
-              <Footer />
+              {/* <Footer /> */}
             </div>
           </Provider>
         </Providers> 

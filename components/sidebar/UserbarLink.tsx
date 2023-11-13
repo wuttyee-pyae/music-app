@@ -13,7 +13,7 @@ import ArtistIcon from "@/components/icons/ArtistIcon";
 import UserIcon from "@/components/icons/UserIcon";
 import PlaylistIcon from "@/components/icons/PlaylistIcon";
 
-const icons = {
+const icons :any = {
   Settings,
   User,
   Grid,

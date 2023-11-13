@@ -1,3 +1,15 @@
-export default function Mobile(){
-    return <h1>My Mobile</h1>
+export default function Mobile({}){
+
+    console.log("MOBILE page")
+    return (
+        <>
+        <h1>My Mobile fjshfsjnfldsk
+
+
+        adskfoppo
+     </h1>
+        </>
+    )
+  
+  
 }

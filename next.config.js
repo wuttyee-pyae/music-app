@@ -1,6 +1,7 @@
 
 /** @type {import('next').NextConfig} */
 const { withNextVideo } = require('next-video/process');
+const { isMobile } = require('react-device-detect')
 
 const nextConfig = {
   reactStrictMode: true,
@@ -8,6 +9,19 @@ const nextConfig = {
         appDir: true,
     },    
     serverComponentsExternalPackages: ['bcrypt'],
+}
+
+module.exports = {
+  async redirects() {
+    console.log("is module -- " , isMobile)
+    return [
+      
+    ]
+  },
+}
+
+module.exports = {
+  skipMiddlewareUrlNormalize: true,
 }
 
 module.exports = nextConfig

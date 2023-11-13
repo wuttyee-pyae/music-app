@@ -20,7 +20,10 @@ import Desktop from "./page";
 export default function DesktopRootLayout({children} : {
   children : React.ReactNode 
 }) {
+  console.log("DEsktop")
+
   return (
+    
    <section>
         <SidebarProvider>
         <Providers>
@@ -44,7 +47,8 @@ export default function DesktopRootLayout({children} : {
                 <div className="p-0 lg:ml-64">
                   <div className="mb-4 pb-36 min-h-screen">
                     <div className="drop-shadow-xl">
-                      <main className="layout__main-content">{children}</main>
+                    <main className="layout__main-content"><Desktop/></main>
+                    {/* <Desktop/> */}
                     </div>
                   </div>
                 </div>

@@ -6,8 +6,20 @@ import "@/styles/global.css";
 
 import React from "react";
 
+import Asidebar from "@/components/sidebar/Asidebar";
+import Glass from "@/components/login/Glass";
 
-export default function LogindRootLayout({
+import { NavbarWrapper } from "@/components/nav/NavbarWrapper";
+import Footer from "@/components/Footer";
+import { Provider } from "react-redux";
+import Logobar from "@/components/sidebar/Logobar";
+import BackNext from "@/components/nav/BackNext";
+
+import Desktop from "./page";
+import SidebarProvider from "../../context/SidebarContext";
+import { Providers } from "./desktop/providers";
+import { store } from "../../redux/store";
+export default function MainRootLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -23,8 +35,45 @@ export default function LogindRootLayout({
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <body className="">
-                      <main className="layout__main-content">{children}</main>
+      <body className=""> 
+        {/* <SidebarProvider>
+        <Providers>
+          <Provider store={store}>
+            <div className="layout">
+              <div className="flex hederbar items-center">
+                <div className="w-auto logobar">
+                  <Logobar />
+                </div>
+                <div className="w-auto">
+                  <BackNext />
+                </div>
+                <div className="flex-auto">
+                  <NavbarWrapper />
+                </div>
+              </div>
+              <Glass className="w-full mx-auto top-area">
+                
+                  <Asidebar />
+                
+                <div className="p-0 lg:ml-64">
+                  <div className="mb-4 pb-36 min-h-screen">
+                    <div className="drop-shadow-xl"> */}
+                    <main className="layout__main-content">
+                        {children}
+                        </main>
+                    {/* </div>
+                  </div>
+                </div>
+              </Glass>
+            </div>
+
+            <div className="">
+              <Footer />
+            </div>
+          </Provider>
+        </Providers> 
+        </SidebarProvider> */}
+                      
         
       </body>
     </html>

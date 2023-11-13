@@ -1,17 +1,26 @@
 
 import { headers } from "next/headers"
 import { getSelectorsByUserAgent } from "react-device-detect"
-import MobileRootLayout from "./mobile/layout";
 import DesktopRootLayout from "./desktop/layout";
+import CadPlayList from "@/components/yoursplaylist/CadPlayList";
+import Link from "next/link";
+import MobileRootLayout from "./mobile/layout";
 const { isMobile } = getSelectorsByUserAgent(
   headers().get("user-agent") ?? ""
 )
 export default function Leading({}) {
-  return (isMobile ? <MobileRootLayout children></MobileRootLayout> : <DesktopRootLayout children></DesktopRootLayout>
+  console.log("iHeader  " , headers)
+  return (
+    isMobile ? <MobileRootLayout children></MobileRootLayout> : <DesktopRootLayout children></DesktopRootLayout>
+    // isMobile ? <Mobile></Mobile> : <Desktop></Desktop>
     // <div className="drop-shadow-xl">
     //   <div className="">
     //     <div className="pt-6">
     //       <div className="mb-4 wapper mx-4">
+
+    //       <main className="layout__main-content">
+    //                   {isMobile ? Mobile : Desktop}
+    //                     </main>
     //         <Link
     //           href="/"
     //           color="foreground"
@@ -27,10 +36,12 @@ export default function Leading({}) {
     //           <CadPlayList />
     //           <CadPlayList />
     //         </div>
+
+
     //       </div>
     //     </div>
 
     //   </div>
-    // </div>
+    // </div>  
   );
 }

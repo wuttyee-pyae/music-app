@@ -1,3 +1,4 @@
+'use client'
 import PopularMusic from "@/components/atrist/PopularMusic";
 import CadPlayList from "@/components/yoursplaylist/CadPlayList";
 import { Link } from "@nextui-org/react";

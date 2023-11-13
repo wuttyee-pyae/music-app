@@ -10,11 +10,18 @@ import clsx from "clsx";
 import LogoIcon from "@/components/icons/LogoIcon";
 import MusicIcon from "@/components/icons/MusicIcon";
 import ArtistIcon from "@/components/icons/ArtistIcon";
+import { NextRequest } from "next/server";
 
-const icons = { Settings, User, Grid, Calendar, LogoIcon, MusicIcon, ArtistIcon, FiMusic, BiUser, FaUserPen,};
+const icons : any = { Settings, User, Grid, Calendar, LogoIcon, MusicIcon, ArtistIcon, FiMusic, BiUser, FaUserPen,};
 
 const SidebarLink = ({ link  } :any) => {
+  
   const pathname = usePathname();
+  // console.log("Link --- " , link  , pathname)
+  // if(pathname == '/' && !link.link.includes('desktop/')){
+  //   link.link = 'desktop/' + link.link
+  //   console.log(link.link)
+  // }
   let isActive = false; 
 
   if (pathname === link.link) {
