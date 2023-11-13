@@ -123,6 +123,10 @@ body {
 .languagbar {
   max-width: 160px;
   color: var(--main-rintext-color);
+  margin: 0px;
+  padding: 0px;
+  top: -10px;
+  position: absolute;
 }
 
 .top-area {

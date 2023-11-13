@@ -1,7 +1,7 @@
 "use client";
 
-import Musiclist from "@/components/music/Musiclist";
-import SelectBar from "@/components/music/SelectBar";
+import Musiclist from "@/components/desktop/music/Musiclist";
+import SelectBar from "@/components/desktop/music/SelectBar";
 
 
 export default function MoodsId() {

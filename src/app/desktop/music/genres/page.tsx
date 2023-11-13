@@ -1,4 +1,4 @@
-import MusicGenres from "@/components/music/Genres";
+import MusicGenres from "@/components/desktop/music/Genres";
 
 export default function Home() {
   return (

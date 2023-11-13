@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import UserProfile from "@/components/profile/UserProfile";
+import UserProfile from "@/components/desktop/profile/UserProfile";
 
 export default function Profile() {
   return (

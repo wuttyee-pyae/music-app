@@ -1,8 +1,9 @@
 
-import Crbt from "@/components/Crbt";
 
 // async function getAccessToken() {
 //   const url = "https://accounts.spotify.com/api/token";
+
+import Crbt from "../crbt/page";
 
 //   var formBody = new URLSearchParams();
 //   formBody.append("grant_type", "client_credentials");

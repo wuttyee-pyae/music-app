@@ -1,16 +1,16 @@
 "use client";
 import "tailwindcss/tailwind.css";
 import "@/styles/global.css";
-import Asidebar from "@/components/sidebar/Asidebar";
-import Glass from "@/components/login/Glass";
+import Asidebar from "@/components/desktop/sidebar/Asidebar";
+import Glass from "@/components/desktop/login/Glass";
 
-import { NavbarWrapper } from "@/components/nav/NavbarWrapper";
-import Footer from "@/components/Footer";
+import { NavbarWrapper } from "@/components/desktop/nav/NavbarWrapper";
+import Footer from "@/components/desktop/Footer";
 import { Providers } from "./providers";
 import { Provider } from "react-redux";
 import React, { useEffect } from "react";
-import Logobar from "@/components/sidebar/Logobar";
-import BackNext from "@/components/nav/BackNext";
+import Logobar from "@/components/desktop/sidebar/Logobar";
+import BackNext from "@/components/desktop/nav/BackNext";
 
 import { store } from "../../../redux/store";
 import SidebarProvider from "../../../context/SidebarContext";
@@ -21,7 +21,7 @@ import { useRouter } from 'next/navigation'
 export default function DesktopRootLayout({children} : {
   children : React.ReactNode 
 }) {
-  console.log("DEsktop")
+  console.log("Desktop")
   const router = useRouter()
   router.push('/desktop')
   return (

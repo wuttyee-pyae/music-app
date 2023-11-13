@@ -1,4 +1,4 @@
-import MoodsGenres from "@/components/music/Moods";
+import MoodsGenres from "@/components/desktop/music/Moods";
 
 export default function Home() {
   return (

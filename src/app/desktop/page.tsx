@@ -1,6 +1,6 @@
 'use client'
-import PopularMusic from "@/components/atrist/PopularMusic";
-import CadPlayList from "@/components/yoursplaylist/CadPlayList";
+import PopularMusic from "@/components/desktop/atrist/PopularMusic";
+import CadPlayList from "@/components/desktop/yoursplaylist/CadPlayList";
 import { Link } from "@nextui-org/react";
 import ContactUs from "./contactus/page";
 import { useEffect } from "react";

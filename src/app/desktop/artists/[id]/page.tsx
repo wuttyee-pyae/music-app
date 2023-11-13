@@ -2,8 +2,8 @@ import React from "react";
 import Image from "next/image";
 
 import { Card, CardFooter, Button } from "@nextui-org/react";
-import Artistscover from "@/components/atrist/ArtistsCover";
-import ArtistProfile from "@/components/atrist/ArtistProfile";
+import Artistscover from "@/components/desktop/atrist/ArtistsCover";
+import ArtistProfile from "@/components/desktop/atrist/ArtistProfile";
 
 
 export default function ArtistId() {
