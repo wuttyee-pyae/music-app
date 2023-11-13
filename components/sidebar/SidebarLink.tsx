@@ -17,11 +17,7 @@ const icons : any = { Settings, User, Grid, Calendar, LogoIcon, MusicIcon, Artis
 const SidebarLink = ({ link  } :any) => {
   
   const pathname = usePathname();
-  // console.log("Link --- " , link  , pathname)
-  // if(pathname == '/' && !link.link.includes('desktop/')){
-  //   link.link = 'desktop/' + link.link
-  //   console.log(link.link)
-  // }
+  // console.log("Link --- " , pathname  )
   let isActive = false; 
 
   if (pathname === link.link) {
@@ -30,7 +26,7 @@ const SidebarLink = ({ link  } :any) => {
 
   const Icon = icons[link.icon];
   return (
-    <Link href={link.link} key ={link.id} className="flex justify-start items-start py-4 menu-link px-2" passHref>
+    <Link href={'/desktop' + link.link} key ={link.id} className="flex justify-start items-start py-4 menu-link px-2">
       <Icon
         size={25}
         className={clsx(

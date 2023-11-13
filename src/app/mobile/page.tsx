@@ -4,8 +4,6 @@ export default function Mobile({}){
     return (
         <>
         <h1>My Mobile fjshfsjnfldsk
-
-
         adskfoppo
      </h1>
         </>

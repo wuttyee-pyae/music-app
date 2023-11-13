@@ -16,6 +16,7 @@ import { store } from "../../../redux/store";
 import SidebarProvider from "../../../context/SidebarContext";
 import { Providers } from "../desktop/providers";
 import Mobile from "./page";
+import { useRouter } from 'next/navigation'
 
 
 export default function MobileRootLayout({
@@ -23,7 +24,8 @@ export default function MobileRootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  console.log("mobile")
+  const router = useRouter()
+    router.push('/mobile')
   return (
   <section>
         <SidebarProvider>

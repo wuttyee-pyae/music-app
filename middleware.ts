@@ -20,26 +20,7 @@ export default async function middleware(request: NextRequest , response : NextR
   const { device } = userAgent(request)
   // const viewport = device.type === 'mobile' ? 'mobile' : 'desktop'
   // url.searchParams.set('viewport', viewport)
-  // if(url.host.endsWith("3000")){
-  //  url.host += await '/desktop' ;
-  // console.log('------ URL --- ' , url)
-  // return NextResponse.rewrite(url)
-  // }
-
-  console.log(" url ------ " , request.nextUrl);
-  if(pathname.endsWith("/")){
-    console.log("here --- ")
-    request.nextUrl.pathname += 'desktop'
-    
-  //   // const url = request.nextUrl.clone();
-    // request.nextUrl.origin = request.nextUrl.origin + 'desktop'
-  //   console.log(" --- " + request.nextUrl);
-    // return NextResponse.redirect(request.nextUrl);
-    // return NextResponse.rewrite(new URL('/desktop', request.nextUrl))
-  //   requestHeaders.set('x-next-pathname',  request.nextUrl.pathname);
-
-  //   // return NextResponse.redirect(request.nextUrl)
-  }
+  
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||

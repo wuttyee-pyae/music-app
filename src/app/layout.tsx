@@ -5,20 +5,6 @@ import "tailwindcss/tailwind.css";
 import "@/styles/global.css";
 
 import React from "react";
-
-import Asidebar from "@/components/sidebar/Asidebar";
-import Glass from "@/components/login/Glass";
-
-import { NavbarWrapper } from "@/components/nav/NavbarWrapper";
-import Footer from "@/components/Footer";
-import { Provider } from "react-redux";
-import Logobar from "@/components/sidebar/Logobar";
-import BackNext from "@/components/nav/BackNext";
-
-import Desktop from "./page";
-import SidebarProvider from "../../context/SidebarContext";
-import { Providers } from "./desktop/providers";
-import { store } from "../../redux/store";
 export default function MainRootLayout({
   children,
 }: {
@@ -58,7 +44,7 @@ export default function MainRootLayout({
                 <div className="p-0 lg:ml-64">
                   <div className="mb-4 pb-36 min-h-screen">
                     <div className="drop-shadow-xl"> */}
-                    <main className="layout__main-content">
+                    <main className="layout__main-content" >
                         {children}
                         </main>
                     {/* </div>

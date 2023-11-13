@@ -8,20 +8,22 @@ import { NavbarWrapper } from "@/components/nav/NavbarWrapper";
 import Footer from "@/components/Footer";
 import { Providers } from "./providers";
 import { Provider } from "react-redux";
-import React from "react";
+import React, { useEffect } from "react";
 import Logobar from "@/components/sidebar/Logobar";
 import BackNext from "@/components/nav/BackNext";
 
 import { store } from "../../../redux/store";
 import SidebarProvider from "../../../context/SidebarContext";
 import Desktop from "./page";
+import { useRouter } from 'next/navigation'
 
 
 export default function DesktopRootLayout({children} : {
   children : React.ReactNode 
 }) {
   console.log("DEsktop")
-
+  const router = useRouter()
+  router.push('/desktop')
   return (
     
    <section>

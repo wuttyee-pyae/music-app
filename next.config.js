@@ -12,16 +12,11 @@ const nextConfig = {
 }
 
 module.exports = {
-  async redirects() {
-    console.log("is module -- " , isMobile)
-    return [
-      
-    ]
-  },
+  basePath: '/desktop',
 }
 
 module.exports = {
-  skipMiddlewareUrlNormalize: true,
+  skipMiddlewareUrlNormalize: false,
 }
 
 module.exports = nextConfig
