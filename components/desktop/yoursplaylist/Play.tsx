@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@nextui-org/react";
-import { PlayIcon } from "./PlayIcon";
+import { PlayIcon } from "./icons/PlayIcon";
 
 export default function play() {
   return (

@@ -35,7 +35,7 @@ const statusColorMap: any = {
   vacation: "warning",
 };
 
-const INITIAL_VISIBLE_COLUMNS = ["id", "name", "role", "status", "actions"];
+const INITIAL_VISIBLE_COLUMNS = ["id", "title", "album", "date", "duration", "actions"];
 
 export default function PopularMusic() {
   const [filterValue, setFilterValue] = React.useState("");
@@ -44,7 +44,7 @@ export default function PopularMusic() {
     new Set(INITIAL_VISIBLE_COLUMNS)
   );
   const [statusFilter, setStatusFilter] = React.useState("all");
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [rowsPerPage, setRowsPerPage] = React.useState(12);
   const [sortDescriptor, setSortDescriptor] = React.useState({
     column: "id",
     direction: "ascending",
@@ -69,6 +69,11 @@ export default function PopularMusic() {
     if (hasSearchFilter) {
       filteredUsers = filteredUsers.filter((user) =>
         user.name.toLowerCase().includes(filterValue.toLowerCase())
+      );
+    }
+    if (hasSearchFilter) {
+      filteredUsers = filteredUsers.filter((user) =>
+        user.title.toLowerCase().includes(filterValue.toLowerCase())
       );
     }
     if (
@@ -102,18 +107,20 @@ export default function PopularMusic() {
 
   const renderCell = React.useCallback((user: any, columnKey: any) => {
     const cellValue = user[columnKey];
-
+    
     switch (columnKey) {
+      
       case "id":
         return (
           <div className="flex flex-col">
-            <p className="text-bold text-small capitalize">{user.id}</p>
+            <p className="text-small capitalize">{user.id}</p>
           </div>
         );
-      case "name":
+      case "title":
         return (
-          <div className="flex gap-8 items-center">
-            <div>
+          <div className="gird gap-8">
+            
+            {/* <div>
               <Tooltip
                 color="secondary"
                 showArrow={true}
@@ -134,27 +141,47 @@ export default function PopularMusic() {
                   <BsPlayFill className="h-8 w-8" />
                 </Button>
               </Tooltip>
-            </div>
+            </div> */}
 
             <User
               avatarProps={{ radius: "sm", size: "lg", src: user.avatar }}
               classNames={{
                 description: "text-default-500",
               }}
-              description={user.email}
               name={cellValue}
+              description={user.name}
+              className="text-bold"
             >
-              {user.email}
+              {user.name}
+              
             </User>
           </div>
         );
-      case "role":
+      case "album":
         return (
           <div className="flex flex-col">
-            <p className="text-bold text-small capitalize">{cellValue}</p>
-            <p className="text-bold text-tiny capitalize text-default-500">
-              {user.team}
-            </p>
+            <p className="text-small capitalize">{cellValue}</p>
+            {/* <p className="text-tiny capitalize text-default-500">
+              {user.date}
+            </p> */}
+          </div>
+        );
+      case "date":
+        return (
+          <div className="flex flex-col">
+            <p className="text-small capitalize">{cellValue}</p>
+            {/* <p className="text-tiny capitalize text-default-500">
+              {user.date}
+            </p> */}
+          </div>
+        );
+      case "duration":
+        return (
+          <div className="flex flex-col">
+            <p className="text-small capitalize">{cellValue}</p>
+            {/* <p className="text-tiny capitalize text-default-500">
+              {user.date}
+            </p> */}
           </div>
         );
       case "status":
@@ -171,7 +198,7 @@ export default function PopularMusic() {
       case "actions":
         return (
           <div className="relative flex items-center gap-2">
-            <Dropdown className="bg-background border-1 border-default-200">
+            <Dropdown className="bg-background border-1 border-default-200 justify-end">
               <DropdownTrigger>
                 <Button isIconOnly radius="full" size="sm" variant="light">
                   <VerticalDotsIcon className="text-default-400" />
@@ -249,6 +276,7 @@ export default function PopularMusic() {
           </TableColumn>
         )}
       </TableHeader>
+      
       <TableBody emptyContent={"No users found"} items={sortedItems}>
         {(item) => (
           <TableRow key={item.id}>
