@@ -9,8 +9,9 @@ import styles from "./poopularsounglist.module.css";
 import { Tooltip } from "@nextui-org/react";
 
 import { Button, Progress } from "@nextui-org/react";
-import { HeartIcon } from "../musicplayer/HeartIcon";
-import MoreOption from "../music/MoreOption";
+import { HeartIcon } from "@/components/desktop/music/icons/HeartIcon";
+import MoreOption from "@/components/desktop/music/MoreOption";
+import NowPlaying from "./NowPlaying";
 
 const PoopularSoungList = (props: {}, ref: {}) => {
   const [liked, setLiked] = React.useState(false);
@@ -26,6 +27,7 @@ const PoopularSoungList = (props: {}, ref: {}) => {
           <div className="col-span-3 md:col-span-1">
             <div className="flex items-center gap-4">
               <div className="ml-4">ID</div>
+              <NowPlaying />
             </div>
           </div>
           <div className="mr-4 col-span-3 md:col-span-1">

@@ -18,7 +18,7 @@ const Logobar = () => {
       >
         <Image
           className="relative mt-2"
-          src="/icons/mobile/mobile-logo.png"
+          src="/mobile-logo.png"
           alt="Logo"
           width={136}
           height={30}

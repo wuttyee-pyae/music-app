@@ -2,6 +2,9 @@ import React from "react";
 const columns = [
   {name: "ID", uid: "id", sortable: true},
   {name: "NAME", uid: "name", sortable: true},
+  {name: "MUSIC", uid: "music"},
+  {name: "ALUBM", uid: "album", sortable: true},
+  {name: "DATE", uid: "date", sortable: true},
   {name: "AGE", uid: "age", sortable: true},
   {name: "ROLE", uid: "role", sortable: true},
   {name: "TEAM", uid: "team"},
@@ -20,6 +23,9 @@ const users = [
   {
     id: 1,
     name: "Tony Reichert",
+    music: "Music Name",
+    album: "Album Name",
+    date:"MM/DD/YYYY",
     role: "CEO",
     team: "Management",
     status: "active",
@@ -30,6 +36,9 @@ const users = [
   {
     id: 2,
     name: "Zoey Lang",
+    music: "Music Name",
+    album: "Album Name",
+    date:"MM/DD/YYYY",
     role: "Tech Lead",
     team: "Development",
     status: "paused",
@@ -40,6 +49,9 @@ const users = [
   {
     id: 3,
     name: "Jane Fisher",
+    music: "Music Name",
+    album: "Album Name",
+    date:"MM/DD/YYYY",
     role: "Sr. Dev",
     team: "Development",
     status: "active",
@@ -50,6 +62,9 @@ const users = [
   {
     id: 4,
     name: "William Howard",
+    music: "Music Name",
+    album: "Album Name",
+    date:"MM/DD/YYYY",
     role: "C.M.",
     team: "Marketing",
     status: "vacation",
@@ -60,6 +75,9 @@ const users = [
   {
     id: 5,
     name: "Kristen Copper",
+    music: "Music Name",
+    album: "Album Name",
+    date:"MM/DD/YYYY",
     role: "S. Manager",
     team: "Sales",
     status: "active",
@@ -70,6 +88,9 @@ const users = [
   {
     id: 6,
     name: "Brian Kim",
+    music: "Music Name",
+    album: "Album Name",
+    date:"MM/DD/YYYY",
     role: "P. Manager",
     team: "Management",
     age: "29",
@@ -80,6 +101,9 @@ const users = [
   {
     id: 7,
     name: "Michael Hunt",
+    music: "Music Name",
+    album: "Album Name",
+    date:"MM/DD/YYYY",
     role: "Designer",
     team: "Design",
     status: "paused",
@@ -90,6 +114,9 @@ const users = [
   {
     id: 8,
     name: "Samantha Brooks",
+    music: "Music Name",
+    album: "Album Name",
+    date:"MM/DD/YYYY",
     role: "HR Manager",
     team: "HR",
     status: "active",
@@ -100,6 +127,9 @@ const users = [
   {
     id: 9,
     name: "Frank Harrison",
+    music: "Music Name",
+    album: "Album Name",
+    date:"MM/DD/YYYY",
     role: "F. Manager",
     team: "Finance",
     status: "vacation",
@@ -110,6 +140,9 @@ const users = [
   {
     id: 10,
     name: "Emma Adams",
+    music: "Music Name",
+    album: "Album Name",
+    date:"MM/DD/YYYY",
     role: "Ops Manager",
     team: "Operations",
     status: "active",
@@ -120,6 +153,9 @@ const users = [
   {
     id: 11,
     name: "Brandon Stevens",
+    music: "Music Name",
+    album: "Album Name",
+    date:"MM/DD/YYYY",
     role: "Jr. Dev",
     team: "Development",
     status: "active",
@@ -130,6 +166,9 @@ const users = [
   {
     id: 12,
     name: "Megan Richards",
+    music: "Music Name",
+    album: "Album Name",
+    date:"MM/DD/YYYY",
     role: "P. Manager",
     team: "Product",
     status: "paused",
@@ -140,6 +179,9 @@ const users = [
   {
     id: 13,
     name: "Oliver Scott",
+    music: "Music Name",
+    album: "Album Name",
+    date:"MM/DD/YYYY",
     role: "S. Manager",
     team: "Security",
     status: "active",
@@ -150,6 +192,9 @@ const users = [
   {
     id: 14,
     name: "Grace Allen",
+    music: "Music Name",
+    album: "Album Name",
+    date:"MM/DD/YYYY",
     role: "M. Specialist",
     team: "Marketing",
     status: "active",
@@ -160,6 +205,9 @@ const users = [
   {
     id: 15,
     name: "Noah Carter",
+    music: "Music Name",
+    album: "Album Name",
+    date:"MM/DD/YYYY",
     role: "IT Specialist",
     team: "I. Technology",
     status: "paused",
@@ -170,6 +218,9 @@ const users = [
   {
     id: 16,
     name: "Ava Perez",
+    music: "Music Name",
+    album: "Album Name",
+    date:"MM/DD/YYYY",
     role: "Manager",
     team: "Sales",
     status: "active",
@@ -180,6 +231,9 @@ const users = [
   {
     id: 17,
     name: "Liam Johnson",
+    music: "Music Name",
+    album: "Album Name",
+    date:"MM/DD/YYYY",
     role: "Data Analyst",
     team: "Analysis",
     status: "active",
@@ -190,6 +244,9 @@ const users = [
   {
     id: 18,
     name: "Sophia Taylor",
+    music: "Music Name",
+    album: "Album Name",
+    date:"MM/DD/YYYY",
     role: "QA Analyst",
     team: "Testing",
     status: "active",
@@ -200,6 +257,9 @@ const users = [
   {
     id: 19,
     name: "Lucas Harris",
+    music: "Music Name",
+    album: "Album Name",
+    date:"MM/DD/YYYY",
     role: "Administrator",
     team: "Information Technology",
     status: "paused",
@@ -210,6 +270,9 @@ const users = [
   {
     id: 20,
     name: "Mia Robinson",
+    music: "Music Name",
+    album: "Album Name",
+    date:"MM/DD/YYYY",
     role: "Coordinator",
     team: "Operations",
     status: "active",
