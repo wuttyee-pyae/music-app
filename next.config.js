@@ -11,13 +11,19 @@ const nextConfig = {
     serverComponentsExternalPackages: ['bcrypt'],
 }
 
-module.exports = {
-  basePath: '/desktop',
-}
 
 module.exports = {
   skipMiddlewareUrlNormalize: false,
 }
+
+module.exports = {
+  webpack5: true,
+  webpack: (config) => {
+    config.resolve.fallback = { fs: false };
+
+    return config;
+  },
+};
 
 module.exports = nextConfig
 
