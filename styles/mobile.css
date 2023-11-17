@@ -11,14 +11,24 @@
   top: 60px;
   z-index: 2;
 }
-.bg-gray {
+.scroll-sticky {
   background-color: #171717;
   position: sticky;
-  left: 0;
-  right: 0;
+  transition-property: all; 
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
   z-index: 2;
-  top: 0px;
-  display: block;
+  top:0;
+  left:0;
+  right: 0;
+}
+
+.scroll-sticky.hide {
+  top: -6rem;
+}
+
+.scroll-top-tab{
+  top: 45px
 }
 
 .data-\[justify\=start\]\:basis-0[data-justify="start"] {

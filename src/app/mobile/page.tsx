@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Tabs, Tab, Card, CardBody } from "@nextui-org/react";
 import { HomeIcon } from "@/components/mobile/nav/icons/HomeIcon";
 import { MusicIcon } from "@/components/mobile/nav/icons/MusicIcon";
@@ -12,14 +12,35 @@ import { NavbarWrapper } from "@/components/mobile/nav/NavbarWrapper";
 import TopChart from "@/components/mobile/topchart/TopChart";
 
 export default function Mobile({}) {
-  console.log("MOBILE page");
+  const [scrollDirection, setScrollDirection] = useState(null); 
+
+  useEffect(()=> {
+    let lastScrollY = window.scrollY;
+
+    const updateScrollDirection = () => {
+      const scrollY = window.scrollY;
+      const direction : any = scrollY > lastScrollY ? "down" : "up";
+      if (direction !== scrollDirection && (scrollY - lastScrollY > 10 || scrollY - lastScrollY < -10)) {
+        setScrollDirection(direction);
+      }
+      lastScrollY = scrollY > 0 ? scrollY : 0;
+    };
+    console.log(" scrool --- " , lastScrollY , scrollDirection  )
+    window.addEventListener("scroll", updateScrollDirection); // add event listener
+    return () => {
+      window.removeEventListener("scroll", updateScrollDirection); // clean up
+    }
+  },[scrollDirection])
   return (
-    <div className="flex w-full flex-col relative">
-      <NavbarWrapper />
+    <>
+    <div className={` scroll-sticky  ${ scrollDirection === "down" ? "hide" : "show"} `}>
+      <NavbarWrapper/>
+      </div>
+    <div className="flex w-full flex-col">
       <Tabs
         aria-label="Options"
         variant="underlined"
-        className="bg-gray"
+        className={`scroll-sticky ${ scrollDirection === "down" ? "hide" : "show"} scroll-top-tab`}
         classNames={{
           tabList:
             "w-full relative justify-evenly rounded-none p-0 border-b border-divider",
@@ -101,5 +122,6 @@ export default function Mobile({}) {
         </Tab>
       </Tabs>
     </div>
+    </>
   );
 }

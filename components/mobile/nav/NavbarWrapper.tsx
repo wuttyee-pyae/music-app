@@ -10,9 +10,9 @@ interface Props {
 
 export const NavbarWrapper = ({ children }: Props) => {
   return (
-    <div className="relative flex flex-col flex-1 overflow-hidden items-center justify-center">
+    <div className={`relative flex flex-col flex-1 items-center justify-center `}>
       <Navbar
-        className="w-full bg-gray"
+        className="w-full"
         classNames={{
           wrapper: "w-full max-w-full",
         }}
