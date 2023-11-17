@@ -1,0 +1,83 @@
+.hederbar {
+  position: fixed;
+  top: 0px;
+  z-index: 0;
+  width: 100%;
+  background: none;
+}
+
+.menubar {
+  position: relative;
+  top: 60px;
+  z-index: 2;
+}
+.bg-gray {
+  background-color: #171717;
+  position: sticky;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  top: 0px;
+  display: block;
+}
+
+.data-\[justify\=start\]\:basis-0[data-justify="start"] {
+  flex-basis: auto !important;
+}
+
+.top-area {
+  top: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+span.absolute {
+  width: 70px;
+  background-color: blueviolet;
+}
+
+.image-text {
+  bottom: 70px;
+  display: block;
+  color: var(--main-rintext-color);
+  font-family: "Nunito Sans", sans-serif;
+  font: normal 22px/40px "Nunito Sans", sans-serif;
+  text-shadow: var(--text-shadow);
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  word-break: break-word;
+  letter-spacing: 2px;
+  z-index: 100;
+}
+
+.img-gradient:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  mix-blend-mode: hard-light;
+  -webkit-backdrop-filter: blur(0px) saturate(10%);
+  backdrop-filter: blur(0px) saturate(10%);
+  border-radius: 0.375rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(253, 87, 89, 1) 50%,
+    rgba(140, 82, 255, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#00000000',GradientType=0 );
+}
+
+@media screen and (max-width: 420px) {
+  span.absolute {
+    width: 64px;
+  }
+
+  .image-text {
+    bottom: 70px;
+    font: normal 18px/20px "Nunito Sans", sans-serif;
+  }
+}

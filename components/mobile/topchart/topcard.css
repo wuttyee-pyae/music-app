@@ -1,0 +1,8 @@
+.card-img{
+    height: 214px;
+}
+
+.img-bland{
+    mix-blend-mode: luminosity;
+    border-radius: 0.375rem;
+}

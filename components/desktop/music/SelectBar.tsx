@@ -3,15 +3,12 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Link } from "@nextui-org/react";
 
-import Popular from "@/components/music/popular/populer";
-import Order from "@/components/music/order/order";
-import Gender from "@/components/music/gender/gender";
-import Genre from "@/components/music/genre/genre";
-import Mood from "@/components/music/mood/mood";
-
-import { BackIcon } from "@/components/music/icons/BackIcon";
-import { NextIcon } from "@/components/music/icons/NextIcon";
 import { Tooltip } from "@nextui-org/react";
+import Popular from "./popular/Populer";
+import Order from "./order/Order";
+import Gender from "./gender/Gender";
+import Genre from "./genre/Genre";
+import Mood from "./mood/Mood";
 
   export default function SelectBar() {
   return (
