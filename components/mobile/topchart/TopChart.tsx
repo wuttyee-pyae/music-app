@@ -69,7 +69,7 @@ export default function TopChart() {
                   </div>
                 </div>
               </div>
-              <div className="truncate break-words music_type">
+              <div className="truncate break-words music_type justify-end">
                 Tomer Katz ft. VIGZ
               </div>
             </div>
@@ -82,7 +82,7 @@ export default function TopChart() {
                   </div>
                 </div>
               </div>
-              <div className="truncate break-words music_type">
+              <div className="truncate break-words music_type justify-end">
                 Tomer Katz ft. VIGZ
               </div>
             </div>
@@ -95,7 +95,7 @@ export default function TopChart() {
                   </div>
                 </div>
               </div>
-              <div className="truncate break-words music_type">
+              <div className="truncate break-words music_type justify-end">
                 Tomer Katz ft. VIGZ
               </div>
             </div>
@@ -127,7 +127,7 @@ export default function TopChart() {
                   </div>
                 </div>
               </div>
-              <div className="truncate break-words music_type">
+              <div className="truncate break-words music_type justify-end">
                 Tomer Katz ft. VIGZ
               </div>
             </div>
@@ -140,7 +140,7 @@ export default function TopChart() {
                   </div>
                 </div>
               </div>
-              <div className="truncate break-words music_type">
+              <div className="truncate break-words music_type justify-end">
                 Tomer Katz ft. VIGZ
               </div>
             </div>
@@ -153,7 +153,7 @@ export default function TopChart() {
                   </div>
                 </div>
               </div>
-              <div className="truncate break-words music_type">
+              <div className="truncate break-words music_type justify-end">
                 Tomer Katz ft. VIGZ
               </div>
             </div>
@@ -185,7 +185,7 @@ export default function TopChart() {
                   </div>
                 </div>
               </div>
-              <div className="truncate break-words music_type">
+              <div className="truncate break-words music_type justify-end">
                 Tomer Katz ft. VIGZ
               </div>
             </div>
@@ -198,7 +198,7 @@ export default function TopChart() {
                   </div>
                 </div>
               </div>
-              <div className="truncate break-words music_type">
+              <div className="truncate break-words music_type justify-end">
                 Tomer Katz ft. VIGZ
               </div>
             </div>
@@ -211,7 +211,7 @@ export default function TopChart() {
                   </div>
                 </div>
               </div>
-              <div className="truncate break-words music_type">
+              <div className="truncate break-words music_type justify-end">
                 Tomer Katz ft. VIGZ
               </div>
             </div>

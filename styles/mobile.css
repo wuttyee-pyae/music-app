@@ -1,3 +1,8 @@
+body{
+  max-width: 768px;
+  margin: 0px auto !important;
+  display: block;
+}
 .hederbar {
   position: fixed;
   top: 0px;
@@ -11,6 +16,11 @@
   top: 60px;
   z-index: 2;
 }
+
+.music_type {
+  font-size: 12px;
+}
+
 .scroll-sticky {
   background-color: #171717;
   position: sticky;
@@ -80,6 +90,23 @@ span.absolute {
   );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#00000000',GradientType=0 );
 }
+
+.music_play_icon{
+  position: absolute;
+  bottom: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  align-content: start;
+  background-color: rgba(48, 48, 51, 0.4);
+  box-shadow: 0px -3px 6px #000000eb;
+}
+
+.view-all{
+  color: var(--view-all-text);
+}
+
 
 @media screen and (max-width: 420px) {
   span.absolute {
