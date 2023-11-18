@@ -53,7 +53,7 @@ export default function Recommended(props : any) {
               <Image
               className="rounded-lg"
               alt="..."
-              src={Artist01}
+              src={data.picture}
               style={{ objectFit: "cover" }}
               width={200}
               height={200}

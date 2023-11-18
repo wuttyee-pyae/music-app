@@ -14,9 +14,6 @@
 .scroll-sticky {
   background-color: #171717;
   position: sticky;
-  transition-property: all; 
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 500ms;
   z-index: 2;
   top:0;
   left:0;
@@ -24,6 +21,9 @@
 }
 
 .scroll-sticky.hide {
+  top: 0;
+}
+.scroll-sticky.hide-sticky {
   top: -6rem;
 }
 

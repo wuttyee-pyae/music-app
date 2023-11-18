@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 
 
@@ -30,7 +30,7 @@ import {
 import Breadcrumb from "./Breadcrumb";
 import Crbtitems from "../crbt/Crbtitems";
 
-export default function ArtistProfile() {
+export default function ArtistProfile(props : any) {
   const variants = ["underlined"];
   const [selected, setSelected] = React.useState("overview");
   let tabs = [
@@ -59,7 +59,10 @@ export default function ArtistProfile() {
         "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     },
   ];
-
+  const data = props.data
+  useEffect(()=>{
+    // console.log(props.data)
+  })
   return (
     <div className="relative">
       <div className={styles.artist_area}>
@@ -69,8 +72,10 @@ export default function ArtistProfile() {
               <Image
                 className="rounded-lg shadow-lg mb-4"
                 alt="..."
-                src={ArtistProfileImg}
+                src={data.picture}
                 style={{ objectFit: "cover" }}
+                width={200}
+                height={200}
                 // layout="responsive"
                 suppressHydrationWarning
               />
@@ -83,7 +88,7 @@ export default function ArtistProfile() {
               </div>
               <div className="flex flex-wrap gap-4 items-center py-4">
                 <div>
-                  <p className="artist_name lg:text-5xl md:text-3xl sm:text-4xl">Big Bag</p>
+                  <p className="artist_name lg:text-5xl md:text-3xl sm:text-4xl">{data.name}</p>
                 </div>
                 <div>
                   <FollowBtn />
@@ -104,8 +109,8 @@ export default function ArtistProfile() {
                       <div className="tabs py-10 pb-36">
                         <div className="flex flex-col pb-32 mb-36">
                           <p className="text-lg text-white mb-4">Popular songs</p>
-                          <PoopularSoungList/>
-                          <PoopularSoungList/>
+                          <PoopularSoungList data={data.songs} />
+                          {/* <PoopularSoungList data={data.songs} /> */}
                           {/* <PopularSong/> */}
                           <Albumcover/>
                         </div>

@@ -16,7 +16,6 @@ export default function Mobile({}) {
 
   useEffect(()=> {
     let lastScrollY = window.scrollY;
-
     const updateScrollDirection = () => {
       const scrollY = window.scrollY;
       const direction : any = scrollY > lastScrollY ? "down" : "up";
@@ -25,7 +24,6 @@ export default function Mobile({}) {
       }
       lastScrollY = scrollY > 0 ? scrollY : 0;
     };
-    console.log(" scrool --- " , lastScrollY , scrollDirection  )
     window.addEventListener("scroll", updateScrollDirection); // add event listener
     return () => {
       window.removeEventListener("scroll", updateScrollDirection); // clean up
@@ -33,7 +31,7 @@ export default function Mobile({}) {
   },[scrollDirection])
   return (
     <>
-    <div className={` scroll-sticky  ${ scrollDirection === "down" ? "hide" : "show"} `}>
+    <div className={` scroll-sticky  ${ scrollDirection === "down" ? "hide-sticky" : "show"} `}>
       <NavbarWrapper/>
       </div>
     <div className="flex w-full flex-col">
