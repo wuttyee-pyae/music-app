@@ -13,28 +13,11 @@ import TopChart from "@/components/mobile/topchart/TopChart";
 import MusicCard from "@/components/mobile/musiccard/MusicCard";
 import ViewAll from "@/components/mobile/musiccard/ViewAll";
 import ArtistCart from "@/components/mobile/artistcard/ArtistCart";
+import useScrollDirection from "@/hooks/scrollDirection"
 
 export default function Mobile({}) {
-  const [scrollDirection, setScrollDirection] = useState(null);
-
-  useEffect(() => {
-    let lastScrollY = window.scrollY;
-    const updateScrollDirection = () => {
-      const scrollY = window.scrollY;
-      const direction: any = scrollY > lastScrollY ? "down" : "up";
-      if (
-        direction !== scrollDirection &&
-        (scrollY - lastScrollY > 10 || scrollY - lastScrollY < -10)
-      ) {
-        setScrollDirection(direction);
-      }
-      lastScrollY = scrollY > 0 ? scrollY : 0;
-    };
-    window.addEventListener("scroll", updateScrollDirection); // add event listener
-    return () => {
-      window.removeEventListener("scroll", updateScrollDirection); // clean up
-    };
-  }, [scrollDirection]);
+  const scrollDirection = useScrollDirection();
+  
   return (
     <>
       <div

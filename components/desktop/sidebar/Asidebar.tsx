@@ -17,7 +17,6 @@ const Asidebar = () => {
   useEffect(() => {
     if(window.innerWidth < 1024){
       toggleSidebarcollapse()
-      console.log('asdasdas')
     }
   },[])
 

@@ -21,7 +21,6 @@ const filePath = path.join(process.cwd(), 'mockup_json/artists.json');
 const jsonData : any = await fs.readFile(filePath);
 // Parse data as json
 const responseData = JSON.parse(jsonData);
-
 const extractData = responseData[id-1]
 
 return extractData

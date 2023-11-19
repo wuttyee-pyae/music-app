@@ -16,14 +16,14 @@ import NowPlaying from "./NowPlaying";
 export default function PoopularSoungList(props: any) {
   const songList: [] = props.data
   useEffect(() => {
-    console.log("popular souung -- ", props.data, songList)
+    // console.log("popular souung -- ", props.data, songList)
   })
   const [liked, setLiked] = React.useState(false);
   return (
     <>
       {
         songList.map((item: any , index : number) => (
-          <>
+       
             <Tooltip
               content={<BsPlayFill className="h-10 w-10 z-0" />}
               className="text-white music_hover"
@@ -103,7 +103,7 @@ export default function PoopularSoungList(props: any) {
                 </div>
               </div>
             </Tooltip>
-          </>
+        
         ))
       }
 

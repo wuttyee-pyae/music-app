@@ -28,6 +28,6 @@
       "@/assets/*": ["./assets/*"]
     }
   },
-  "include": ["video.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/Button.tsx"],
+  "include": ["video.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/Button.tsx", "hooks/extractArtist.ts", "hooks/scrollDirection.js"],
   "exclude": ["node_modules"]
 }

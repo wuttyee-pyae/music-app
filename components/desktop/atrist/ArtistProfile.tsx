@@ -1,36 +1,22 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import Image from "next/image";
-
-
-import ArtistProfileImg from "@/assets/artists/big_bag/about_image/profile_img.jpg";
-
 import ShuffPlayIcon from "./ShufffPlay";
 import ArtistMoreIcon from "./ArtistsMoreIcon";
 import FollowBtn from "./FollowBtn";
-
-// import styles from "./ArtistsCover.module.css";
 import styles from "./ArtistProfile.module.css";
 import PoopularSoungList from './PoopularSoungList';
 import Albumcover from "./albums/AlbumCover"
 import VideoList from './video/videolist';
-// import { columns, users, statusOptions, accessToken } from "./data";
-
-
 import {
   Tabs,
   Tab,
-  Input,
-  Link,
-  Button,
-  Card,
-  CardBody,
-  CardHeader,
 } from "@nextui-org/react";
 import Breadcrumb from "./Breadcrumb";
 import Crbtitems from "../crbt/Crbtitems";
 
 export default function ArtistProfile(props : any) {
+  const artist = props.data
   const variants = ["underlined"];
   const [selected, setSelected] = React.useState("overview");
   let tabs = [
@@ -59,10 +45,6 @@ export default function ArtistProfile(props : any) {
         "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     },
   ];
-  const data = props.data
-  useEffect(()=>{
-    // console.log(props.data)
-  })
   return (
     <div className="relative">
       <div className={styles.artist_area}>
@@ -72,7 +54,7 @@ export default function ArtistProfile(props : any) {
               <Image
                 className="rounded-lg shadow-lg mb-4"
                 alt="..."
-                src={data.picture}
+                src={artist.picture}
                 style={{ objectFit: "cover" }}
                 width={200}
                 height={200}
@@ -88,7 +70,7 @@ export default function ArtistProfile(props : any) {
               </div>
               <div className="flex flex-wrap gap-4 items-center py-4">
                 <div>
-                  <p className="artist_name lg:text-5xl md:text-3xl sm:text-4xl">{data.name}</p>
+                  <p className="artist_name lg:text-5xl md:text-3xl sm:text-4xl">{artist.name}</p>
                 </div>
                 <div>
                   <FollowBtn />
@@ -109,8 +91,8 @@ export default function ArtistProfile(props : any) {
                       <div className="tabs py-10 pb-36">
                         <div className="flex flex-col pb-32 mb-36">
                           <p className="text-lg text-white mb-4">Popular songs</p>
-                          <PoopularSoungList data={data.songs} />
-                          {/* <PoopularSoungList data={data.songs} /> */}
+                          <PoopularSoungList data={artist.songs} />
+                          {/* <PoopularSoungList data={artist.songs} /> */}
                           {/* <PopularSong/> */}
                           <Albumcover/>
                         </div>
