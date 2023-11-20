@@ -1,0 +1,69 @@
+.music_card {
+  border-bottom: 1px solid rgba(122, 122, 122, 0.5);
+  color: #fff !important;
+  padding: 10px 0px 10px 0px;
+  margin: 0px;
+  overflow: visible;
+  transition: opacity 0.5s ease-in-out;
+  font-size: 14px;
+}
+
+.music_card:hover {
+  -webkit-backdrop-filter: blur(20px) saturate(100%);
+  backdrop-filter: blur(20px) saturate(100%);
+  /* filter: blur(4px) saturate(0%);  */
+  background-color: rgba(255, 255, 255, 0.09);
+}
+
+.music_card:active {
+  -webkit-backdrop-filter: blur(20px) saturate(100%);
+  backdrop-filter: blur(20px) saturate(100%);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.music_number,
+.music_name {
+  color: #fff;
+}
+
+.music_type {
+  color: #a4a4a4;
+  display: inline-block;
+}
+
+.new_play_lable {
+  color: #8c52ff;
+}
+
+.new_play_music_type,
+.ctbt_id,
+.crbt_price {
+  color: #a4a4a4;
+}
+
+.news_item {
+  padding-right: 6px;
+  float: left;
+  word-break: break-word;
+}
+
+
+.crbt_child{
+  background-color: #373737;
+  border-left:0px ;
+  border-right:0px ;
+  border-top:0px ;
+  border-bottom: 4px solid;
+  border-image-slice: 1;
+  border-width: 1px;
+  border-image-source: linear-gradient(to left, var(--pink), var(--blue));
+}
+
+.crbt_has_child{
+  margin-bottom: 12px;
+}
+/* .crbt_has_child::after{
+  margin-bottom: 12px;
+  display: block;
+  content: "";
+} */

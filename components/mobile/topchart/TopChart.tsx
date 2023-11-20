@@ -9,10 +9,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "./topcard.css";
 
-// import "./Banner.css";
-
 // import required modules
-import { Pagination } from "swiper/modules";
 import TopCard from "./TopCard";
 
 import Banner01 from "@/assets/collection_music_image/poster-01.jpg";
@@ -22,13 +19,6 @@ import Banner04 from "@/assets/collection_music_image/poster-04.jpg";
 import { Card, CardBody } from "@nextui-org/react";
 
 export default function TopChart() {
-  const pagination = {
-    loop: true,
-    clickable: true,
-    renderBullet: function (index: number, className: string) {
-      return '<span class="' + className + '">' + (index + 1) + "</span>";
-    },
-  };
 
   return (
     <div className="my-2">
@@ -36,11 +26,6 @@ export default function TopChart() {
         slidesPerView={1.4}
         loop={true}
         spaceBetween={20}
-        // pagination={{
-        //   clickable: true,
-
-        // }}
-        // modules={[Pagination]}
         className="mySwiper"
       >
         <SwiperSlide>

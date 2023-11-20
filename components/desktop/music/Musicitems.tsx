@@ -14,7 +14,7 @@ import { BuysIcon } from "./icons/BuysIcon";
 import { HeartIcon } from "./icons/HeartIcon";
 import MoreOption from "./MoreOption";
 
-const Musicitems = (props, ref) => {
+const Musicitems = (props: any, ref: any) => {
   const [liked, setLiked] = React.useState(false);
 
   return (
