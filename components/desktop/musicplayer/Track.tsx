@@ -6,7 +6,8 @@ import { Button, Progress } from "@nextui-org/react";
 import { HeartIcon } from "./HeartIcon";
 // const [liked, setLiked] = React.useState(false);
 
-const Track = ({ isPlaying, isActive, activeSong}) => (
+const Track = ({ isPlaying , isActive, activeSong , data} : { isPlaying : any , 
+  isActive  : any , activeSong  : any , data  : any}) => (
   <div className="flex-1 flex items-center justify-start col-span-12 lg:col-span-3">
     <div
       className={`${
@@ -17,7 +18,7 @@ const Track = ({ isPlaying, isActive, activeSong}) => (
       <Image
         priority
         fetchPriority="high"
-        src={MusicCover}
+        src={data?.picture || MusicCover}
         // src={MusicCover?.activeSong?.images?.coverart}
         style={{ objectFit: "cover" }}
         width={58}
@@ -28,10 +29,10 @@ const Track = ({ isPlaying, isActive, activeSong}) => (
     </div>
     <div className="w-[50%]">
       <p className="truncate break-words music_name">
-        {activeSong?.title ? activeSong?.title : "No active Song"}
+        {data?.name ? data?.name : "No active Song"}
       </p>
       <p className="truncate break-words music_type">
-        {activeSong?.subtitle ? activeSong?.subtitle : "No active Artist"}
+        {data?.singer ? data?.singer : "No active Artist"}
       </p>
     </div>
     <div className="flex-initial m-4">

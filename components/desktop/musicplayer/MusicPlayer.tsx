@@ -13,10 +13,12 @@ import Seekbar from "./Seekbar";
 import Track from "./Track";
 import VolumeBar from "./VolumeBar";
 import { LyricsIcon } from "./LyricsIcon";
+import useStorage from "@/hooks/useStorage";
+import { subscribeToValue } from '@/hooks/observableService';
 
 const MusicPlayer = () => {
   const { activeSong, currentSongs, currentIndex, isActive, isPlaying } =
-  useSelector((state) => state.player);
+  useSelector((state : any) => state.player);
   const [duration, setDuration] = useState(0);
   const [seekTime, setSeekTime] = useState(0);
   const [appTime, setAppTime] = useState(0);
@@ -24,9 +26,18 @@ const MusicPlayer = () => {
   const [repeat, setRepeat] = useState(false);
   const [shuffle, setShuffle] = useState(false);
   const dispatch = useDispatch();
-
+ 
+  const [music, setMusic] = useState(null);
   useEffect(() => {
     if (currentSongs.length) dispatch(playPause(true));
+   const subscription = subscribeToValue((value : any) => {
+      const isSessionSong = useStorage().getItem('play-music');
+      if(isSessionSong) setMusic(isSessionSong)
+    });
+    return () => {
+      subscription.unsubscribe();
+    };
+    
   }, [currentIndex]);
 
   const handlePlayPause = () => {
@@ -59,22 +70,23 @@ const MusicPlayer = () => {
     }
   };
   
-
+  
   return (
     <div className="relative sm:px-4 px-8 my-3 w-full items-center justify-between grid grid-cols-12 gap-4">
       <Track
         isPlaying={isPlaying}
         isActive={isActive}
         activeSong={activeSong}
+        data={music}
       />
       <div className="flex-1 flex flex-col items-center justify-center lg:col-span-6 col-span-8">
         <Controls
           isPlaying={isPlaying}
           isActive={isActive}
-          repeat={repeat}
-          setRepeat={setRepeat}
-          shuffle={shuffle}
-          setShuffle={setShuffle}
+          repeat={repeat as any}
+          setRepeat={setRepeat as any}
+          shuffle={shuffle as any}
+          setShuffle={setShuffle as any}
           currentSongs={currentSongs}
           handlePlayPause={handlePlayPause}
           handlePrevSong={handlePrevSong}
@@ -84,7 +96,7 @@ const MusicPlayer = () => {
           value={appTime}
           min="0"
           max={duration}
-          onInput={(event) => setSeekTime(event.target.value)}
+          onInput={(event : any) => setSeekTime(event.target.value)}
           setSeekTime={setSeekTime}
           appTime={appTime}
         />
@@ -94,10 +106,10 @@ const MusicPlayer = () => {
           isPlaying={isPlaying}
           seekTime={seekTime}
           repeat={repeat}
-          currentIndex={currentIndex}
+          currentIndex={currentIndex as any}
           onEnded={handleNextSong}
-          onTimeUpdate={(event) => setAppTime(event.target.currentTime)}
-          onLoadedData={(event) => setDuration(event.target.duration)}
+          onTimeUpdate={(event : any ) => setAppTime(event.target.currentTime)}
+          onLoadedData={(event : any) => setDuration(event.target.duration)}
         />
       </div>
       <div className="flex-1 flex items-center justify-end gap-4 lg:col-span-3 col-span-4">
@@ -106,7 +118,7 @@ const MusicPlayer = () => {
         value={volume}
         min="0"
         max="1"
-        onChange={(event) => setVolume(event.target.value)}
+        onChange={(event : any) => setVolume(event.target.value)}
         setVolume={setVolume}
       />
       </div>
