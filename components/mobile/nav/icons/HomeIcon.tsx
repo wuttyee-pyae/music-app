@@ -4,11 +4,13 @@ export const HomeIcon = (props: any) => (
     aria-hidden="true"
     fill="none"
     focusable="false"
-    height="1em"
+    height="20px"
     role="presentation"
     viewBox="0 0 16.011 19.027"
-    width="1em"
+    width="20px"
+    size="20"
     className=""
+   
     {...props}
   >
     <path

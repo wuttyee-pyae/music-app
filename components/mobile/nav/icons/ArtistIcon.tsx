@@ -4,10 +4,11 @@ export const ArtistIcon = (props: any) => (
     aria-hidden="true"
     fill="none"
     focusable="false"
-    height="1em"
+    height="20px"
     role="presentation"
     viewBox="0 0 18.988 18.992"
-    width="1em"
+    width="20px"
+    size="20"
     className=""
     {...props}
   >

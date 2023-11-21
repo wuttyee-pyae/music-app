@@ -3,8 +3,9 @@ export const UserIcon = (props:any) => (
   <svg
     aria-hidden="true"
     focusable="false"
-    width="17"
-    height="15"
+    width="20px"
+    height="17px"
+    size="20"
     role="presentation"
     viewBox="0 0 19.654 16.78"
     fill="none"

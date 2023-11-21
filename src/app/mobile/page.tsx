@@ -46,7 +46,7 @@ export default function Mobile({}) {
             tabContent: "group-data-[selected=true]:text-[#fff]",
           }}
         >
-          <Tab key="home" title={<HomeIcon />}>
+          <Tab key="home" title={<HomeIcon/>}>
             <Banner />
             <div className="m-4">
               <div className="flex row my-2 gap-2 items-center">
@@ -155,7 +155,7 @@ export default function Mobile({}) {
               </CardBody>
             </Card>
           </Tab>
-          <Tab key="artist" title={<ArtistIcon />}>
+          <Tab key="artist" title={<ArtistIcon size={20} />}>
             <Card>
               <CardBody>
                 Artist Ut enim ad minim veniam, quis nostrud exercitation

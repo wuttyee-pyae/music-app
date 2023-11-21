@@ -3,8 +3,9 @@ export const VideoIcon = (props:any) => (
   <svg
     aria-hidden="true"
     focusable="false"
-    width="17"
-    height="17"
+    width="22px"
+    height="22px"
+    size="22"
     role="presentation"
     viewBox="0 0 24 24"
     fill="none"
