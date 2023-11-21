@@ -40,8 +40,8 @@ export default function Footer(props: any, ref: any) {
             <div className="music-gradient flex">
               <Image
                 src="/images/crbt_lg.jpg"
-                width={120}
-                height={120}
+                width={45}
+                height={45}
                 alt="Picture of the author"
                 className="aspect-square right-0 rounded-md"
               />
@@ -55,7 +55,7 @@ export default function Footer(props: any, ref: any) {
               </div>
             </div>
             <div>
-              <div className="mr-2">
+              <div className="">
                 <Tooltip
                   color="secondary"
                   showArrow={true}
@@ -92,7 +92,7 @@ export default function Footer(props: any, ref: any) {
                 aria-label="Play"
                 className="bg-none"
               >
-                <PlayIcon size={22} />
+                <PlayIcon size={20} />
               </Button>
             </div> */}
             <div>
@@ -101,9 +101,9 @@ export default function Footer(props: any, ref: any) {
                 color="danger"
                 radius="full"
                 aria-label="Play"
-                className="bg-none mr-4"
+                className="bg-none"
               >
-                <PauseCircleIcon size={22} />
+                <PauseCircleIcon size={20} />
               </Button>
             </div>
           </div>

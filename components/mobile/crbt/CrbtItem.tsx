@@ -14,8 +14,8 @@ const CrbtList = () => {
         <div className="music-gradient flex">
             <Image
               src="/images/aung-htet.jpg"
-              width={80}
-              height={80}
+              width={45}
+              height={45}
               alt="Picture of the author"
               className="aspect-square right-0 rounded-md"
             />
