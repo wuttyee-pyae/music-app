@@ -49,7 +49,7 @@ export default function Mobile({}) {
           <Tab key="home" title={<HomeIcon />}>
             <Banner />
             <div className="m-4">
-              <div className="flex row my-4 py-4 gap-2 items-center">
+              <div className="flex row my-2 gap-2 items-center">
                 <h3 className="title text-white font-bold">Top Charts</h3>
                 <span className="foreground">
                   <svg

@@ -105,9 +105,9 @@ export default function MusicCard() {
             <Image
               alt="Woman listing to music"
               className="object-cover rounded-md"
-              height={200}
+              height={150}
               src="/images/k3.jpg"
-              width={200}
+              width={260}
             />
             <Button
               isIconOnly
@@ -136,9 +136,9 @@ export default function MusicCard() {
             <Image
               alt="Woman listing to music"
               className="object-cover rounded-md"
-              height={200}
+              height={150}
               src="/images/k4.jpg"
-              width={200}
+              width={260}
             />
             <Button
               isIconOnly

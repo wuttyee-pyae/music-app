@@ -5,13 +5,13 @@ import ShuffPlayIcon from "./ShufffPlay";
 import ArtistMoreIcon from "./ArtistsMoreIcon";
 import FollowBtn from "./FollowBtn";
 import styles from "./ArtistProfile.module.css";
-import PoopularSoungList from './PoopularSoungList';
 import Albumcover from "./albums/AlbumCover"
 import VideoList from './video/videolist';
 import {
   Tabs,
   Tab,
 } from "@nextui-org/react";
+import PopularSongList from "./PopularSongList";
 import Breadcrumb from "./Breadcrumb";
 import Crbtitems from "../crbt/Crbtitems";
 
@@ -66,7 +66,7 @@ export default function ArtistProfile(props : any) {
           <div className="col-span-7">
             <div className="grid grid-flow-row auto-rows-max justify-between">
               <div>
-                <Breadcrumb />
+                <Breadcrumb data={artist}/>
               </div>
               <div className="flex flex-wrap gap-4 items-center py-4">
                 <div>
@@ -91,7 +91,7 @@ export default function ArtistProfile(props : any) {
                       <div className="tabs py-10 pb-36">
                         <div className="flex flex-col pb-32 mb-36">
                           <p className="text-lg text-white mb-4">Popular songs</p>
-                          <PoopularSoungList data={artist.songs} />
+                          <PopularSongList data={artist.songs} />
                           {/* <PoopularSoungList data={artist.songs} /> */}
                           {/* <PopularSong/> */}
                           <Albumcover/>

@@ -201,6 +201,11 @@ a.menu-link a:hover,
   line-height: inherit;
   white-space: nowrap;
 }
+
+#recommended_artists_id{
+  cursor: pointer;
+}
+
 .playlist_create_btn{
   width: 100%;
   height: 300px;

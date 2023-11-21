@@ -39,7 +39,7 @@ export default function MobileRootLayout({
               </div> */}
               <Glass className="w-full mx-auto">
                 <div className="p-0">
-                  <div className="mb-4 pb-28 min-h-screen">
+                  <div className="mb-4 pb-24 min-h-screen">
                     <div className="drop-shadow-xl">
                     <main className="layout__main-content" >{children}</main>
                     </div>

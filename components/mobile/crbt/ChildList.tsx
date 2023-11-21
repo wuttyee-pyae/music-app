@@ -10,15 +10,15 @@ import { PlayIcon } from "../musiccard/PlayIcon";
 const CrbtList = () => {
   return (
     <div className={styles.crbt_child}>
-      <div className="flex gap-4 items-center my-3 p-4">
+      <div className="flex gap-4 items-center mt-3 p-4">
         <div className="flex w-16 justify-center">
           <UpIcon />
         </div>
         <div className="music-gradient flex">
             <Image
               src="/images/crbt_lg.jpg"
-              width={80}
-              height={80}
+              width={120}
+              height={120}
               alt="Picture of the author"
               className="aspect-square right-0 rounded-md"
             />
