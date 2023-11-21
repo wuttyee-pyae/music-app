@@ -1,33 +1,34 @@
 /* eslint-disable jsx-a11y/media-has-caption */
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { playPause } from '../../../redux/features/playMusicSlice';
 
-const Player = ({ activeSong, isPlaying, volume, seekTime, onEnded, onTimeUpdate, onLoadedData, repeat }) => {
-  const ref = useRef(null);
-  // eslint-disable-next-line no-unused-expressions
-  if (ref.current) {
-    if (isPlaying) {
-      ref.current.play();
-    } else {
-      ref.current.pause();
+const Player = ({ activeSong, volume, isPlaying, seekTime, repeat, currentIndex ,  onEnded, onTimeUpdate, onLoadedData }) => {
+  const audioRef = useRef(null);
+  const [maxTime,setMaxTime] = useState(0)
+  useEffect(() => {
+    // console.log(activeSong )
+    audioRef.current.volume = volume;
+    seekTime = audioRef.current.currentTime
+    setMaxTime(audioRef.current.duration)
+    if (isPlaying && activeSong?.audio) {
+      audioRef.current.play();
+    } 
+    else {
+       audioRef.current.pause()
     }
-  }
-
-  useEffect(() => {
-    ref.current.volume = volume;
-  }, [volume]);
-  // updates audio element only on seekTime change (and not on each rerender):
-  useEffect(() => {
-    ref.current.currentTime = seekTime;
-  }, [seekTime]);
+  
+  }, [volume,seekTime,isPlaying,maxTime]);
+    // };
 
   return (
     <audio
-      src={activeSong?.hub?.actions[1]?.uri}
-      ref={ref}
+      src={activeSong?.audio || ''}
+      ref={audioRef}
       loop={repeat}
       onEnded={onEnded}
       onTimeUpdate={onTimeUpdate}
-      onLoadedData={onLoadedData}
+      onLoadedData={onLoadedData(maxTime || 0.00)}
     />
   );
 };
