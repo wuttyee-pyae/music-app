@@ -1,6 +1,6 @@
 import styles from "./buttontag.module.css"
 
-const ButtonTag = (props) => {
+const ButtonTag = (props:any) => {
   return (
     <div className="mb-4 mt-6">
       <button

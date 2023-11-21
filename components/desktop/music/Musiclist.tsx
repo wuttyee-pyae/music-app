@@ -1,5 +1,5 @@
 import React from "react";
-import Musicitems from './musicitems';
+import Musicitems from "./Musicitems";
 
 export default function Musiclist() {
   return (

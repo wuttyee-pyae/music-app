@@ -1,5 +1,5 @@
 import React from "react";
-export const GenderIcon = (props) => (
+export const GenderIcon = (props: any) => (
   <svg
     aria-hidden="true"
     fill="none"

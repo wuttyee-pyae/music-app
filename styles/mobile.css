@@ -132,7 +132,7 @@ span.absolute {
   align-self: center;
   align-content: start;
   background: none;
-  left: 15%;
+  left: 0;
   z-index: 1;
 }
 .view-all {
@@ -172,6 +172,10 @@ span.absolute {
 
 .bg-none {
   background: none;
+}
+
+.fixed-bottom{
+  padding: 0px;
 }
 
 @media screen and (max-width: 420px) {

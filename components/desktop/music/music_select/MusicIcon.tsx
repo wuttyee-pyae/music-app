@@ -1,5 +1,5 @@
 import React from "react";
-export const MusicIcon = (props) => (
+export const MusicIcon = (props: any) => (
   <svg
     aria-hidden="true"
     fill="none"

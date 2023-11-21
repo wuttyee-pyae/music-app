@@ -1,4 +1,4 @@
-import CardBox from "@/components/CardBox";
+import CardBox from "@/components/desktop/CardBox";
 
 const BannerSkeleton = () => {
   return (

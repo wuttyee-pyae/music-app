@@ -1,5 +1,5 @@
 import React from "react";
-export const GenreIcon = (props) => (
+export const GenreIcon = (props: any) => (
   <svg
     aria-hidden="true"
     fill="none"

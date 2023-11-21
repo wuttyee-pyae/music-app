@@ -2,11 +2,11 @@
   {
     "user_id": "655b0728ef4c772f0ca84786",
     "id": 1,
-    "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
+    "picture": "/artists/idiots/about_image/idiots.jpeg",
     "released": true,
     "age": 29,
     "eyeColor": "green",
-    "name": "Aung Htet",
+    "name": "IDIOTS",
     "gender": "female",
     "company": "HOTCAKES",
     "email": "junedunn@hotcakes.com",
@@ -17,51 +17,51 @@
     "albums": [
       {
         "id": 1,
-        "album_name": "Kimberly Burt",
-        "date": "Thu Jan 13 1994 05:14:52 GMT+0630 (Myanmar Time)",
+        "album_name": "Khit Thit Kyaut",
+        "date": "Thu Jan 13 2016 05:14:52 GMT+0630 (Myanmar Time)",
         "songs": [
           {
             "id": 1,
-            "name": "Riley Mooney",
-            "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
-            "type": "jazz",
-            "singer": "Hamilton Kirby",
+            "name": "Lu Ah",
+            "picture": "/artists/idiots/albums/cover.jpeg",
+            "type": "rock",
+            "singer": "IDIOTS",
             "viewer": 4679638590,
             "liked": false
           },
           {
             "id": 2,
-            "name": "Aimee Coffey",
-            "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
+            "name": "Distortion",
+            "picture": "/artists/idiots/albums/cover.jpeg",
             "type": "rock",
-            "singer": "Rodriguez Stone",
+            "singer": "IDIOTS",
             "viewer": 4430502035,
             "liked": false
           },
           {
             "id": 3,
-            "name": "Dalton Mcpherson",
-            "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
-            "type": "jazz",
-            "singer": "Mcknight Sanford",
+            "name": "D Lo Pal",
+            "picture": "/artists/idiots/albums/cover.jpeg",
+            "type": "rock",
+            "singer": "IDIOTS",
             "viewer": 629328751,
             "liked": false
           },
           {
             "id": 4,
-            "name": "Chase Duffy",
-            "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
-            "type": "pop",
-            "singer": "Rae Alston",
+            "name": "Ma Lo Top Bu",
+            "picture": "/artists/idiots/albums/cover.jpeg",
+            "type": "rock",
+            "singer": "IDIOTS",
             "viewer": 1838408229,
             "liked": false
           },
           {
             "id": 5,
-            "name": "Geneva Preston",
-            "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
-            "type": "pop",
-            "singer": "Garrett Daniels",
+            "name": "Tu Ye Kaung",
+            "picture": "/artists/idiots/albums/cover.jpeg",
+            "type": "rock",
+            "singer": "IDIOTS",
             "viewer": 7948584028,
             "liked": false
           }
@@ -176,10 +176,10 @@
       {
         "id": 1,
         "name": "Tha Bar Wa Nhint Twe Sone Chin",
-        "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
+        "picture": "/artists/idiots/albums/khit_thit_kyaut/cover.jpeg",
         "audio":"/artists/aung_htet/albums/nhit/tha_bar_wa nhint_twe_sone_chin.mp3",
         "type": "rock",
-        "singer": "Aung Htet",
+        "singer": "IDIOTS",
         "viewer": 5461573909,
         "liked": false,
         "isPlaying": false
@@ -187,10 +187,10 @@
       {
         "id": 2,
         "name": "A Phay",
-        "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
+        "picture": "/artists/idiots/albums/lu-ah_gita/cover.jpeg",
         "audio":"/artists/aung_htet/albums/nhit/a_phay.mp3",
-        "type": "pop",
-        "singer": "Aung Htet",
+        "type": "rock",
+        "singer": "IDIOTS",
         "viewer": 8532542578,
         "liked": false,
         "isPlaying": false
@@ -198,10 +198,10 @@
       {
         "id": 3,
         "name": "A Yaung Twe Yae Tan Phoe",
-        "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
+        "picture": "/artists/idiots/albums/khit_thit_kyaut/cover.jpeg",
         "audio":"/artists/aung_htet/albums/nhit/a_yaung_twe_yae_tan_phoe.mp3",
-        "type": "pop",
-        "singer": "Aung Htet",
+        "type": "rock",
+        "singer": "IDIOTS",
         "viewer": 2328831906,
         "liked": false,
         "isPlaying": false
@@ -209,10 +209,10 @@
       {
         "id": 4,
         "name": "Chit Thet Tit Yar A Mone Thet Kabar",
-        "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
+        "picture": "/artists/idiots/albums/lu-ah_gita/cover.jpeg",
         "audio":"/artists/aung_htet/albums/nhit/chit_thet_tit_yar_a_mone_thet kabar.mp3",
-        "type": "jazz",
-        "singer": "Aung Htet",
+        "type": "rock",
+        "singer": "IDIOTS",
         "viewer": 6083855100,
         "liked": false,
         "isPlaying": false
@@ -220,10 +220,10 @@
       {
         "id": 5,
         "name": "Koh A Chit December",
-        "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
+        "picture": "/artists/idiots/albums/khit_thit_kyaut/cover.jpeg",
         "audio":"/artists/aung_htet/albums/nhit/koh_a_chit_december.mp3",
         "type": "rock",
-        "singer": "Aung Htet",
+        "singer": "IDIOTS",
         "viewer": 2537381817,
         "liked": false,
         "isPlaying": false

@@ -10,15 +10,15 @@ import { PlayIcon } from "../musiccard/PlayIcon";
 const CrbtList = () => {
   return (
     <div className={styles.crbt_child}>
-      <div className="flex gap-4 items-center mt-3 p-4">
-        <div className="flex w-16 justify-center">
+      <div className="flex items-center m-2 pt-2">
+        <div className="flex-aut0 justify-center ml-2">
           <UpIcon />
         </div>
-        <div className="music-gradient flex">
+        <div className="music-gradient flex ml-6">
             <Image
               src="/images/crbt_lg.jpg"
-              width={120}
-              height={120}
+              width={45}
+              height={45}
               alt="Picture of the author"
               className="aspect-square right-0 rounded-md"
             />
@@ -32,7 +32,7 @@ const CrbtList = () => {
               <PlayIcon />
             </Button>
         </div>
-        <div className="flex-auto w-64">
+        <div className="flex-auto w-64 ml-4">
           <div className="truncate break-words music_name">Music Name</div>
           <div className="flex gap-4 items-center">
             <div className={styles.new_play_lable}>News</div>
@@ -40,7 +40,7 @@ const CrbtList = () => {
           </div>
         </div>
         <div>
-          <FaCartShopping className="h-5 w-5 float-right text-white" />
+          <FaCartShopping className="h-5 w-5 float-right text-white mr-2" />
         </div>
       </div>
     </div>
