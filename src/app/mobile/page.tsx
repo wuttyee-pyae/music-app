@@ -13,11 +13,15 @@ import TopChart from "@/components/mobile/topchart/TopChart";
 import MusicCard from "@/components/mobile/musiccard/MusicCard";
 import ViewAll from "@/components/mobile/musiccard/ViewAll";
 import ArtistCart from "@/components/mobile/artistcard/ArtistCart";
-import useScrollDirection from "@/hooks/scrollDirection"
+import useScrollDirection from "@/hooks/scrollDirection";
+import MoodCard from "@/components/mobile/musiccard/MoodCard";
+import CrbtList from "../../../components/mobile/crbt/CrbtList";
+import CrbtItem from "@/components/mobile/crbt/CrbtItem";
+import MtvCard from "@/components/mobile/mtv/MtvCard";
 
 export default function Mobile({}) {
   const scrollDirection = useScrollDirection();
-  
+
   return (
     <>
       <div
@@ -46,7 +50,7 @@ export default function Mobile({}) {
             <Banner />
             <div className="m-4">
               <div className="flex row my-4 py-4 gap-2 items-center">
-                <h3 className="text-white font-bold">Top Charts</h3>
+                <h3 className="title text-white font-bold">Top Charts</h3>
                 <span className="foreground">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +73,7 @@ export default function Mobile({}) {
 
               <div className="flex">
                 <div className="flex-auto w-64">
-                  <h3 className="text-white font-bold py-4">
+                  <h3 className="title text-white font-bold py-4">
                     New releases for you
                   </h3>
                 </div>
@@ -81,13 +85,64 @@ export default function Mobile({}) {
 
               <div className="flex">
                 <div className="flex-auto w-64">
-                  <h3 className="text-white font-bold py-4">Top Artists </h3>
+                  <h3 className="title text-white font-bold py-4">
+                    Top Artists{" "}
+                  </h3>
                 </div>
                 <div className="flex-auto w-32 flex justify-end items-center">
                   <ViewAll />
                 </div>
               </div>
               <ArtistCart />
+
+              <div className="flex">
+                <div className="flex-auto w-64">
+                  <h3 className="title text-white font-bold py-4">Mood </h3>
+                </div>
+                <div className="flex-auto w-32 flex justify-end items-center">
+                  <ViewAll />
+                </div>
+              </div>
+              <MoodCard />
+
+              <div className="flex">
+                <div className="flex-auto w-64">
+                  <h3 className="title text-white font-bold py-4">
+                    Recommended Ringtunes
+                  </h3>
+                </div>
+                <div className="flex-auto w-32 flex justify-end items-center">
+                  <ViewAll />
+                </div>
+              </div>
+              <MusicCard />
+
+              <div className="flex">
+                <div className="flex-auto w-64">
+                  <h3 className="title text-white font-bold py-4">
+                    Top 10 Ringtunes
+                  </h3>
+                </div>
+                <div className="flex-auto w-32 flex justify-end items-center">
+                  <ViewAll />
+                </div>
+              </div>
+              <CrbtList />
+              <CrbtItem />
+              <CrbtItem />
+
+              <div className="flex">
+                <div className="flex-auto w-64">
+                  <h3 className="title text-white font-bold py-4">
+                    MTV Music
+                  </h3>
+                </div>
+                <div className="flex-auto w-32 flex justify-end items-center">
+                  <ViewAll />
+                </div>
+              </div>
+              <MtvCard/>
+              
             </div>
           </Tab>
           <Tab key="music" title={<MusicIcon />}>

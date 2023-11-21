@@ -7,7 +7,7 @@ import Asidebar from "@/components/desktop/sidebar/Asidebar";
 import Glass from "@/components/desktop/login/Glass";
 
 import { NavbarWrapper } from "@/components/mobile/nav/NavbarWrapper";
-import Footer from "@/components/desktop/Footer";
+import Footer from "@/components/mobile/footer/Footer";
 import { Provider } from "react-redux";
 
 import React, { useEffect } from "react";
@@ -39,18 +39,18 @@ export default function MobileRootLayout({
               </div> */}
               <Glass className="w-full mx-auto">
                 <div className="p-0">
-                  <div className="mb-4 pb-36 min-h-screen">
+                  <div className="mb-4 pb-28 min-h-screen">
                     <div className="drop-shadow-xl">
                     <main className="layout__main-content" >{children}</main>
                     </div>
                   </div>
                 </div>
               </Glass>
-            </div>
 
-            <div className="">
-              {/* <Footer /> */}
             </div>
+            <Footer />
+
+            
           </Provider>
         </Providers> 
         </SidebarProvider>
