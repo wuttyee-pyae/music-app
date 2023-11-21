@@ -8,6 +8,7 @@ import { NextIcon } from "@/components/desktop/music/icons/NextIcon";
 import { Tooltip } from "@nextui-org/react";
 
 export default function App() {
+  const router = useRouter()
     return (
         <div className="flex items-center">
         <Tooltip
@@ -21,7 +22,7 @@ export default function App() {
             </div>
           }
         >
-          <Link href="/" className="back">
+          <Link onClick={() => router.back()} className="back">
             <BackIcon width={20} height={20} />
           </Link>
         </Tooltip>
