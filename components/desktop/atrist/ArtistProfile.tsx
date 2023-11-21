@@ -4,7 +4,7 @@ import Image from "next/image";
 import ShuffPlayIcon from "./ShufffPlay";
 import ArtistMoreIcon from "./ArtistsMoreIcon";
 import FollowBtn from "./FollowBtn";
-import styles from "./ArtistProfile.module.css";
+import styles from "./artistprofile.module.css";
 import Albumcover from "./albums/AlbumCover"
 import VideoList from './video/videolist';
 import {

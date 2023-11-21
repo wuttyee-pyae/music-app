@@ -7,7 +7,7 @@ import Image from "next/image";
 import { Card, Skeleton } from "@nextui-org/react";
 import { Tooltip, Button } from "@nextui-org/react";
 
-import styles from "./Crbtitems.module.css";
+import styles from "./crbtitems.module.css";
 const Crbtitems = () => {
   return (
     <Tooltip content={<BsPlayFill className="h-10 w-10 z-0" />} className="text-white music_hover" offset={0} placement="left">
