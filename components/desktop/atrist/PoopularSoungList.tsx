@@ -17,7 +17,7 @@ import { updateValue } from '@/hooks/observableService';
 export default function PoopularSoungList(props: any) {
   const [songList, setSongList] = React.useState(props?.data || null);
   const [playingSong, setPlayingSong] = useState<any>(useStorage().getItem('play-music', 'session') || null);
-  const [favSongs, setFavSongs] = useState<any>(useStorage().getItem('fav-songs', 'local') || null);
+  const [favSongs, setFavSongs] = useState<any>(useStorage().getItem('fav-songs', 'local') || []);
   useEffect(() => {
     // For active music from session storage
     const updatedList = songList.map((item: any) => {
