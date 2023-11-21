@@ -6,7 +6,7 @@ import { FaCartShopping } from "react-icons/fa6";
 import Image from "next/image";
 import { Card, Skeleton } from "@nextui-org/react";
 
-import styles from "./musicitems.module.css";
+import styles from "./Musicitems.module.css";
 import { Tooltip } from "@nextui-org/react";
 
 import { Button, Progress } from "@nextui-org/react";

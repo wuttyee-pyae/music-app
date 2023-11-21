@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 
 
-function Layout(props) {
+function Layout(props: any) {
   return (
     <div className="page-layout">
 

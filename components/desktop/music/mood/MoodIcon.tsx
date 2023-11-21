@@ -1,5 +1,5 @@
 import React from "react";
-export const MoodIcon = (props) => (
+export const MoodIcon = (props: any) => (
   <svg
     aria-hidden="true"
     fill="none"
