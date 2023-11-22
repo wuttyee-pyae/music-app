@@ -25,7 +25,7 @@ export default function MobileRootLayout({
 }: {
   children: React.ReactNode;
 }) {
-
+console.log(" --- " , children)
   return (
   <section>
         <SidebarProvider>

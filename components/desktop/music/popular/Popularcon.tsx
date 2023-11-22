@@ -1,5 +1,5 @@
 import React from "react";
-export const PopularIcon = (props) => (
+export const PopularIcon = (props : any) => (
   <svg
     aria-hidden="true"
     fill="none"

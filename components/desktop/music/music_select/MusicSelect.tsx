@@ -13,13 +13,13 @@ export default function MusicSelect() {
       <Select
         startContent={<MusicIcon />}
         aria-hidden="true"
-        tabindex="0"
+        tabIndex={0}
         aria-labelledby="music"
         placeholder="Select musics"
         variant="bordered"
         selectedKeys={value}
         className="max-w-xs"
-        onSelectionChange={setValue}
+        onSelectionChange={(e : any) => setValue(e.target.value)}
         defaultSelectedKeys={["all_time"]}
         id="music"
         aria-checked="false"
@@ -30,7 +30,7 @@ export default function MusicSelect() {
             value={music.value}
             role="checkbox"
             aria-checked="false"
-            tabindex="0"
+            tabIndex={0}
             aria-labelledby="music"
           >
             {music.label}

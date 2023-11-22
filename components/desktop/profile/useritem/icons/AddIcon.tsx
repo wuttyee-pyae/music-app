@@ -1,5 +1,5 @@
 import React from "react";
-export const AddIcon = ({ size, height, width, ...props }) => {
+export const AddIcon = ({ size, height, width, ...props } : { size : number, height : number, width : number}) => {
   return (
     <svg
       fill="none"

@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-const Card = ({ className, children }) => {
+const Card = ({ className, children } : { className : string, children : any }) => {
   return (
     <div id="cta-button-sidebar" className={clsx("drop-shadow-xl", className)}>
       <aside

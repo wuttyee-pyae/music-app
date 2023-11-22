@@ -21,7 +21,7 @@ import { useRouter } from 'next/navigation'
 export default function DesktopRootLayout({children} : {
   children : React.ReactNode 
 }) {
-  console.log("Desktop")
+  console.log("Desktop " , children) 
   
   return (
     

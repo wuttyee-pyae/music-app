@@ -1,15 +1,18 @@
-"use client";
+'use client'
 import Head from "next/head";
 import "tailwindcss/tailwind.css";
 
 import "@/styles/global.css";
 
 import React from "react";
+import useDeviceType from '@/hooks/useDeviceType';
 export default function MainRootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const isMobile = useDeviceType() === 'mobile' ? true : false
+
   return (
     <html lang="en" suppressHydrationWarning={true} className="dark">
       <Head>
@@ -21,46 +24,15 @@ export default function MainRootLayout({
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <body className=""> 
-        {/* <SidebarProvider>
-        <Providers>
-          <Provider store={store}>
-            <div className="layout">
-              <div className="flex hederbar items-center">
-                <div className="w-auto logobar">
-                  <Logobar />
-                </div>
-                <div className="w-auto">
-                  <BackNext />
-                </div>
-                <div className="flex-auto">
-                  <NavbarWrapper />
-                </div>
-              </div>
-              <Glass className="w-full mx-auto top-area">
-                
-                  <Asidebar />
-                
-                <div className="p-0 lg:ml-64">
-                  <div className="mb-4 pb-36 min-h-screen">
-                    <div className="drop-shadow-xl"> */}
-                    <main className="layout__main-content" >
-                        {children}
-                        </main>
-                    {/* </div>
-                  </div>
-                </div>
-              </Glass>
-            </div>
+      <body className="">
+        <main className="layout__main-content" >
+          {children}
+          {/* {isMobile ? (<MobileRootLayout>{children}</MobileRootLayout>) :
+            (<DesktopRootLayout>{children}</DesktopRootLayout>)
+          } */}
+        </main>
 
-            <div className="">
-              <Footer />
-            </div>
-          </Provider>
-        </Providers> 
-        </SidebarProvider> */}
-                      
-        
+
       </body>
     </html>
   );

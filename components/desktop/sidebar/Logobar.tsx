@@ -32,7 +32,7 @@ const Logobar = () => {
         aria-controls="cta-button-sidebar"
         type="button"
         className="inline-flex items-center p-2 ml-0"
-        onClick={toggleSidebarcollapse}
+        onClick={()=> toggleSidebarcollapse}
       >
         <span className="sr-only">Open sidebar</span>
         <svg

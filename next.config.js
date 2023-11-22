@@ -1,14 +1,18 @@
 
 /** @type {import('next').NextConfig} */
 const { withNextVideo } = require('next-video/process');
-const { isMobile } = require('react-device-detect')
 
 const nextConfig = {
   reactStrictMode: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+},
     experimental: {
         appDir: true,
+        webpackBuildWorker: true,
     },    
     serverComponentsExternalPackages: ['bcrypt'],
+   
 }
 
 

@@ -1,5 +1,5 @@
 import React from "react";
-export const PetIcon = (props) => (
+export const PetIcon = (props :any) => (
   <svg
     aria-hidden="true"
     fill="none"

@@ -1,5 +1,5 @@
 import React from "react";
-export const OrderIcon = (props) => (
+export const OrderIcon = (props : any) => (
   <svg
     aria-hidden="true"
     fill="none"

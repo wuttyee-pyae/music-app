@@ -35,15 +35,16 @@ const MusicPlayer = () => {
 
   useEffect(() => {
     setMusicPlaying(isPlaying)
+    // setSeekTime =
     // if (currentSongs.length > 0) dispatch(playPause(true));
     let sessionSong = storage.getItem('play-music', 'session');
    const subscription = subscribeToValue((value : any) => {
      sessionSong = storage.getItem('play-music', 'session');
     setMusic(sessionSong);
-    console.log(music , sessionSong)
-      if(sessionSong && isPlaying) {
+    // console.log(music , sessionSong)
+    //   if(sessionSong && isPlaying) {
 
-      }
+    //   }
     });
     
     return () => {
