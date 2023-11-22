@@ -6,7 +6,7 @@ export default function Breadcrumb(props: any) {
   const artist = props.data 
 
   return (
-    <Breadcrumbs underline="active" onAction={(key) => setCurrentPage(key)}>
+    <Breadcrumbs underline="active" onAction={(key : any) => setCurrentPage(key)}>
       <BreadcrumbItem key="artist" href="/desktop/artists">
         Artist
       </BreadcrumbItem>

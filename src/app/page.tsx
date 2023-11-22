@@ -5,7 +5,7 @@ import MobileRootLayout from "./mobile/layout";
 const { isMobile } = getSelectorsByUserAgent(headers().get("user-agent") ?? "");
 export default function Leading({ 
   children,
-}: {
+} : {
   children: React.ReactNode;
 }) {
   return isMobile ? (

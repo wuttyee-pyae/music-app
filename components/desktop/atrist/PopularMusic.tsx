@@ -86,7 +86,7 @@ export default function PopularMusic() {
     }
 
     return filteredUsers;
-  }, [users, filterValue, statusFilter]);
+  }, [filterValue, hasSearchFilter, statusFilter]);
 
   const items = React.useMemo(() => {
     const start = (page - 1) * rowsPerPage;
