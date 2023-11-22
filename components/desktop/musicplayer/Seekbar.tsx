@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Seekbar = ({ value, min, max, onInput, setSeekTime, appTime }) => {
+const Seekbar = ({ value, min, max, onInput, setSeekTime, appTime } : { value : any  , min : number, max : number, onInput : any, setSeekTime : any, appTime : any }) => {
   // converts the time to format 0:00
   
-  const getTime = (time) => `${Math.floor(time / 60)}:${(`0${Math.floor(time % 60)}`).slice(-2)}`;
+  const getTime = (time : any) => `${Math.floor(time / 60)}:${(`0${Math.floor(time % 60)}`).slice(-2)}`;
   const maxTime = getTime(max)
   return (
     <div className="flex flex-row items-center">

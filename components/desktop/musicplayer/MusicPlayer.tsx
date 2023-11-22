@@ -26,15 +26,19 @@ const MusicPlayer = () => {
   const [volume, setVolume] = useState(0.3);
   const [repeat, setRepeat] = useState(false);
   const [shuffle, setShuffle] = useState(false);
+  // const [shuffle, setShuffle] = useState(false);
   const dispatch = useDispatch();
  
   const [music, setMusic] = useState(null);
   useEffect(() => {
     if (currentSongs.length > 0) dispatch(playPause(true));
    const subscription = subscribeToValue((value : any) => {
-      const sessionSong = useStorage().getItem('play-music');
+      const sessionSong = useStorage().getItem('play-music', 'session');
       if(sessionSong) {
         setMusic(sessionSong);
+        dispatch(playPause(true));
+        // isPlaying = true
+
         // console.log(isPlaying)
         // handlePlayPause()
       }
@@ -86,19 +90,17 @@ const MusicPlayer = () => {
       <div className="flex-1 flex flex-col items-center justify-center lg:col-span-6 col-span-8">
         <Controls
           isPlaying={isPlaying}
-          isActive={isActive}
           repeat={repeat as any}
           setRepeat={setRepeat as any}
           shuffle={shuffle as any}
           setShuffle={setShuffle as any}
-          currentSongs={currentSongs}
           handlePlayPause={handlePlayPause}
           handlePrevSong={handlePrevSong}
           handleNextSong={handleNextSong}
         />
         <Seekbar
           value={appTime}
-          min="0"
+          min= {0}
           max={duration}
           onInput={(event : any) =>{ setSeekTime(event.target.value)}}
           setSeekTime={setSeekTime}
@@ -122,7 +124,7 @@ const MusicPlayer = () => {
         value={volume}
         min="0"
         max="1"
-        onChange={(event : any) => {console.log(event.target.value); setVolume(event.target.value)}}
+        onChange={(event : any) => setVolume(event.target.value)}
         setVolume={setVolume}
       />
       </div>

@@ -1,10 +1,8 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import React, { useRef, useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { playPause } from '../../../redux/features/playMusicSlice';
 
-const Player = ({ activeSong, volume, isPlaying, seekTime, repeat, currentIndex ,  onEnded, onTimeUpdate, onLoadedData }) => {
-  const audioRef = useRef(null);
+const Player = ({ activeSong, volume, isPlaying, seekTime, repeat, currentIndex ,  onEnded, onTimeUpdate, onLoadedData } : { activeSong : any, volume : any , isPlaying : any , seekTime : any, repeat : any,  currentIndex : any,  onEnded : any, onTimeUpdate : any, onLoadedData : any }) => {
+  const audioRef = useRef<any>(null);
   const [maxTime,setMaxTime] = useState(0)
   useEffect(() => {
     // console.log(activeSong )
@@ -19,7 +17,6 @@ const Player = ({ activeSong, volume, isPlaying, seekTime, repeat, currentIndex 
     }
   
   }, [volume,seekTime,isPlaying,maxTime]);
-    // };
 
   return (
     <audio
