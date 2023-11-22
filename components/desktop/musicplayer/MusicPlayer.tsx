@@ -50,7 +50,7 @@ const MusicPlayer = () => {
       subscription.unsubscribe();
     };
     
-  }, [isPlaying]);
+  }, [isPlaying, music, storage]);
 
   const handlePlayPause = () => {
     // if (!isActive) return;

@@ -16,10 +16,6 @@ import {
   User,
   SortDescriptor,
 } from "@nextui-org/react";
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 import { VerticalDotsIcon } from "./VerticalDotsIcon";
 import { columns, users, statusOptions } from "./data";
 
