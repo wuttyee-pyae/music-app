@@ -92,8 +92,6 @@ export default function ArtistProfile(props : any) {
                         <div className="flex flex-col pb-32 mb-36">
                           <p className="text-lg text-white mb-4">Popular songs</p>
                           <PopularSongList data={artist.songs} />
-                          {/* <PoopularSoungList data={artist.songs} /> */}
-                          {/* <PopularSong/> */}
                           <Albumcover/>
                         </div>
                       </div>

@@ -16,9 +16,14 @@ import { updateValue } from '@/hooks/observableService';
 
 export default function PopularSongList(props: any) {
   const [songList, setSongList] = React.useState(props?.data || null);
-  const [playingSong, setPlayingSong] = useState<any>(useStorage().getItem('play-music', 'session') || null);
-  const [favSongs, setFavSongs] = useState<any>(useStorage().getItem('fav-songs', 'local') || []);
+  const [playingSong, setPlayingSong] = useState<any>(null);
+  const [favSongs, setFavSongs] = useState<any>(null);
+  const storage = useStorage();
+
+
   useEffect(() => {
+    setPlayingSong(storage.getItem('play-music', 'session') || null)
+    setFavSongs(storage.getItem('fav-songs', 'local') || [])
     // For active music from session storage
     const updatedList = songList.map((item: any) => {
       if (item.id == playingSong?.id && item.name == playingSong?.name && item.picture == playingSong?.picture)
@@ -30,7 +35,7 @@ export default function PopularSongList(props: any) {
     // console.log("songList ----- ", songList)
 
     // For Fav List from local storage
-    if(favSongs.length > 0){
+    if(favSongs && favSongs.length > 0){
       songList.map((obj1:any )=>
         favSongs.some((obj2:any) => {
           if(obj1.id === obj2.id && obj1.name === obj2.name && obj1.picture === obj2.picture)
@@ -38,13 +43,14 @@ export default function PopularSongList(props: any) {
         })
         );
     }
-    const getFavList  = useStorage().getItem('fav-songs', 'local')
-    // console.log("get fav list --- " , getFavList)
+    const getFavList  = storage.getItem('fav-songs', 'local')
+    console.log("get fav list --- " , getFavList)
   }, [])
 
   const playMusic = async (data: any, index: number) => {
-    const setData = useStorage().setItem('play-music', data, 'session');
-    setPlayingSong(useStorage().getItem('play-music', 'session'))
+    const setData = storage.setItem('play-music', data, 'session');
+    setPlayingSong(storage.getItem('play-music', 'session'))
+    console.log(" ----  "  , playingSong)
     updateValue(setData);
     const updateSongList = await songList.map((item: any, i: number) => {
       if (i == index) return { ...item, isPlaying: true }
@@ -64,7 +70,7 @@ export default function PopularSongList(props: any) {
     await updatedItems.map((item: any) => {
       if (item.liked === true) favList.push(item) ;
     });
-    favList.length > 0 ? useStorage().setItem('fav-songs',favList, 'local') : null
+    favList.length > 0 ? storage.setItem('fav-songs',favList, 'local') : null
     
   };
 

@@ -50,6 +50,7 @@ const playMusicSlice = createSlice({
     },
 
     playPause: (state, action) => {
+      console.log(" play pause -- " , action.payload)
       state.isPlaying = action.payload;
     },
 

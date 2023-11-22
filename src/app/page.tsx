@@ -8,9 +8,14 @@ export default function Leading({
 } : {
   children: React.ReactNode;
 }) {
-  return isMobile ? (
-    <MobileRootLayout>{children}</MobileRootLayout>
-  ) : (
-    <DesktopRootLayout>{children}</DesktopRootLayout>
+  // return isMobile ? (
+  //   <MobileRootLayout>{children}</MobileRootLayout>
+  // ) : (
+  //   <DesktopRootLayout>{children}</DesktopRootLayout>
+  // );
+
+
+  return(
+    isMobile ? <MobileRootLayout>{children}</MobileRootLayout> : <DesktopRootLayout>{children}</DesktopRootLayout>
   );
 }

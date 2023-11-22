@@ -1,25 +1,26 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import React, { useRef, useEffect, useState } from 'react';
 
-const Player = ({ activeSong, volume, isPlaying, seekTime, repeat, currentIndex ,  onEnded, onTimeUpdate, onLoadedData } : { activeSong : any, volume : any , isPlaying : any , seekTime : any, repeat : any,  currentIndex : any,  onEnded : any, onTimeUpdate : any, onLoadedData : any }) => {
-  const audioRef = useRef<any>(null);
-  const [maxTime,setMaxTime] = useState(0)
+const Player = ({ activeSong, volume, isPlaying, seekTime, repeat ,  onEnded, onTimeUpdate, onLoadedData } : { activeSong : any, volume : any , isPlaying : boolean , seekTime : any, repeat : any, onEnded : any, onTimeUpdate : any, onLoadedData : any }) => {
+  const audioRef = useRef<any>();
+  const [maxTime,setMaxTime] = useState<any>()
   useEffect(() => {
-    // console.log(activeSong )
-    audioRef.current.volume = volume;
-    seekTime = audioRef.current.currentTime
-    setMaxTime(audioRef.current.duration)
-    if (isPlaying && activeSong?.audio) {
+    console.log(activeSong , isPlaying )
+    if(audioRef.current){
+    if (isPlaying) {
       audioRef.current.play();
     } 
     else {
        audioRef.current.pause()
     }
-  
-  }, [volume,seekTime,isPlaying,maxTime]);
+    audioRef.current.volume = volume;
+    seekTime = audioRef.current.currentTime
+    setMaxTime(audioRef.current.duration)
+    }
+  }, [activeSong]);
 
   return (
-    <audio
+    <audio 
       src={activeSong?.audio || ''}
       ref={audioRef}
       loop={repeat}

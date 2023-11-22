@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React , {  useMemo} from "react";
 import {
   Table,
   TableHeader,
@@ -19,15 +19,8 @@ import {
   Pagination,
   SortDescriptor,
 } from "@nextui-org/react";
-import { useState, useEffect } from "react";
-
-import { PlusIcon } from "./PlusIcon";
 import { VerticalDotsIcon } from "./VerticalDotsIcon";
-import { SearchIcon } from "./SearchIcon";
-import { ChevronDownIcon } from "./ChevronDownIcon";
 import { columns, users, statusOptions } from "./data";
-import { capitalize } from "./utils";
-import { BsPlayFill } from "react-icons/bs";
 
 const statusColorMap: any = {
   active: "success",
@@ -55,7 +48,7 @@ export default function PopularMusic() {
 
   const hasSearchFilter = Boolean(filterValue);
 
-  const headerColumns = React.useMemo(() => {
+  const headerColumns = useMemo(() => {
     if (visibleColumns.has("all")) return columns;
 
     return columns.filter((column) =>
@@ -63,7 +56,7 @@ export default function PopularMusic() {
     );
   }, [visibleColumns]);
 
-  const filteredItems = React.useMemo(() => {
+  const filteredItems = useMemo(() => {
     let filteredUsers = [...users];
 
     if (hasSearchFilter) {
@@ -88,14 +81,14 @@ export default function PopularMusic() {
     return filteredUsers;
   }, [filterValue, hasSearchFilter, statusFilter]);
 
-  const items = React.useMemo(() => {
+  const items = useMemo(() => {
     const start = (page - 1) * rowsPerPage;
     const end = start + rowsPerPage;
 
     return filteredItems.slice(start, end);
   }, [page, filteredItems, rowsPerPage]);
 
-  const sortedItems = React.useMemo(() => {
+  const sortedItems = useMemo(() => {
     return [...items].sort((a: any, b: any) => {
       const first = a[sortDescriptor.column];
       const second = b[sortDescriptor.column];
@@ -231,7 +224,7 @@ export default function PopularMusic() {
     }
   }, []);
 
-  const classNames = React.useMemo(
+  const classNames = useMemo(
     () => ({
       wrapper: ["max-h-[382px]", "max-w-3xl"],
       th: ["bg-transparent", "text-default-500", "border-b", "border-divider"],
