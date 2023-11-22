@@ -13,13 +13,13 @@ export default function Mood() {
       <Select
         startContent={<MoodIcon />}
         aria-hidden="true"
-        tabindex="0"
+        tabIndex={0}
         aria-labelledby="mood"
         placeholder="Select mood"
         variant="bordered"
         selectedKeys={value}
         className="max-w-xs"
-        onSelectionChange={setValue}
+        onSelectionChange={(e : any) => setValue(e.target.value)}
         defaultSelectedKeys={["other"]}
         id="mood"
         aria-checked="false"
@@ -31,7 +31,7 @@ export default function Mood() {
             value={mood.value}
             role="checkbox"
             aria-checked="false"
-            tabindex="0"
+            tabIndex={0}
             aria-labelledby="mood"
           >
             {mood.label}

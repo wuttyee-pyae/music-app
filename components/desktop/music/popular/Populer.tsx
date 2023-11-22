@@ -14,13 +14,13 @@ export default function Popular() {
       <Select
         startContent={<PopularIcon />}
         aria-hidden="true"
-        tabindex="0"
+        tabIndex={0}
         aria-labelledby="popular"
         placeholder="Select Popular"
         variant="bordered"
         selectedKeys={value}
         className="max-w-xs"
-        onSelectionChange={setValue}
+        onSelectionChange={(e : any) => setValue(e.target.value)}
         defaultSelectedKeys={["monthly"]}
         id="popular"
         aria-checked="false"
@@ -31,7 +31,7 @@ export default function Popular() {
             value={popular.value}
             role="checkbox"
             aria-checked="false"
-            tabindex="0"
+            tabIndex={0}
             aria-labelledby="popular"
             className="max-w-xs"
           >

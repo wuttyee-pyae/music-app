@@ -1,14 +1,8 @@
 "use client";
 import React from "react";
 import {
-  Tooltip,
-  Button,
-  Card,
-  CardHeader,
-  CardBody,
-  Image,
+  Button
 } from "@nextui-org/react";
-import Play from "./Play";
 import AddPlayIcon from "./icons/AddPlayIcon";
 
 export default function CardBtn() {

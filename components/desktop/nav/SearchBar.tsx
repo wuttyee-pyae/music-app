@@ -1,8 +1,5 @@
 import { Input } from "@nextui-org/react";
 import { SearchIcon } from "./icons/SearchIcon";
-import { CloseFilledIcon } from "./icons/CloseFilledIcon";
-import { Kbd } from "@nextui-org/react";
-
 export default function SearchBar() {
   return (
     <div className="text-white shadow-lg">

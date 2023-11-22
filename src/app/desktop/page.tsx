@@ -1,10 +1,6 @@
 'use client'
-import PopularMusic from "@/components/desktop/atrist/PopularMusic";
 import CadPlayList from "@/components/desktop/yoursplaylist/CadPlayList";
 import { Link } from "@nextui-org/react";
-import ContactUs from "./contactus/page";
-import { useEffect } from "react";
-import router from "next/router";
 
 
 
@@ -28,7 +24,6 @@ export default function Desktop(){
                <CadPlayList />
                <CadPlayList />
                <CadPlayList />
-               <ContactUs/>
              </div>
            </div>
          </div>

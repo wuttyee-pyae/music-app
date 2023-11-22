@@ -7,8 +7,6 @@ import {
   TableBody,
   TableRow,
   TableCell,
-  Tooltip,
-  Input,
   Button,
   DropdownTrigger,
   Dropdown,
@@ -16,9 +14,12 @@ import {
   DropdownItem,
   Chip,
   User,
-  Pagination,
   SortDescriptor,
 } from "@nextui-org/react";
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 import { VerticalDotsIcon } from "./VerticalDotsIcon";
 import { columns, users, statusOptions } from "./data";
 
@@ -163,18 +164,12 @@ export default function PopularMusic() {
         return (
           <div className="flex flex-col">
             <p className="text-small capitalize">{cellValue}</p>
-            {/* <p className="text-tiny capitalize text-default-500">
-              {user.date}
-            </p> */}
           </div>
         );
       case "duration":
         return (
           <div className="flex flex-col">
             <p className="text-small capitalize">{cellValue}</p>
-            {/* <p className="text-tiny capitalize text-default-500">
-              {user.date}
-            </p> */}
           </div>
         );
       case "status":

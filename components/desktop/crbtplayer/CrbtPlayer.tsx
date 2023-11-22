@@ -72,7 +72,8 @@ export default function CrbtPlayer() {
             >
               <PreviousIcon />
             </Button>
-            <Button css={{ borderRadius: 0 }}
+            <Button
+              style={{ borderRadius: 0 }}
               isIconOnly
               className="w-auto h-auto data-[hover]:bg-foreground/0"
               radius="none"

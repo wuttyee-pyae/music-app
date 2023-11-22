@@ -13,13 +13,13 @@ export default function Gender() {
       <Select
         startContent={<GenderIcon />}
         aria-hidden="true"
-        tabindex="0"
+        tabIndex={0}
         aria-labelledby="gender"
         placeholder="Select gender"
         variant="bordered"
         selectedKeys={value}
         className="max-w-xs"
-        onSelectionChange={setValue}
+        onSelectionChange={(e : any) => setValue(e.target.value)}
         defaultSelectedKeys={["other"]}
         id="gender"
         aria-checked="false"
@@ -31,7 +31,7 @@ export default function Gender() {
             value={gender.value}
             role="checkbox"
             aria-checked="false"
-            tabindex="0"
+            tabIndex={0}
             aria-labelledby="gender"
           >
             {gender.label}

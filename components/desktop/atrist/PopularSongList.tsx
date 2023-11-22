@@ -1,9 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { BsPlayFill } from "react-icons/bs";
-import { FaCartShopping } from "react-icons/fa6";
 import Image from "next/image";
-import { Card, Skeleton } from "@nextui-org/react";
 import styles from "./PopularSongList.module.css";
 import { Tooltip } from "@nextui-org/react";
 

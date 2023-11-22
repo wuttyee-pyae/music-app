@@ -9,10 +9,6 @@ import Banner03 from "@/assets/images/poster_03.jpg";
 import Banner04 from "@/assets/images/poster_04.jpg";
 
 export default function Banner() {
-  const loaderProp = ({ src }) => {
-    return src;
-  };
-
   return (
     <div className="">
       <div className="relative h-96 w-full">

@@ -1,10 +1,6 @@
 import Image from "next/image";
-
-import { FaCartShopping } from "react-icons/fa6";
 import MusicCover from "@/assets/images/crbt_lg.jpg";
-
 import { Tooltip } from "@nextui-org/react";
-
 import React from "react";
 import { Button, Progress } from "@nextui-org/react";
 import { HeartIcon } from "./HeartIcon";
@@ -19,6 +15,10 @@ import { VolumUp } from "./VolumUp";
 
 export default function CrbtPlayer() {
   const [liked, setLiked] = React.useState(false);
+
+  function setValue(value: any): void {
+    throw new Error("Function not implemented.");
+  }
 
   return (
     <div className="flex items-center">
@@ -42,30 +42,30 @@ export default function CrbtPlayer() {
             <p className="music-type">David Bowie</p>
           </div>
           <div className="flex-initial m-4">
-          <Tooltip
-                color="secondary"
-                showArrow={true}
-                placement="top"
-                className="secondary"
-                content={
-                  <div className="px-1 py-2 w-max">
-                    <div className="text-tiny text-center">Like This Item</div>
-                  </div>
-                }
+            <Tooltip
+              color="secondary"
+              showArrow={true}
+              placement="top"
+              className="secondary"
+              content={
+                <div className="px-1 py-2 w-max">
+                  <div className="text-tiny text-center">Like This Item</div>
+                </div>
+              }
+            >
+              <Button
+                isIconOnly
+                className="text-default-900/60 data-[hover]:bg-foreground/10 -translate-y-2 translate-x-2 mt-4"
+                radius="full"
+                variant="light"
+                onPress={() => setLiked((v) => !v)}
               >
-                <Button
-                  isIconOnly
-                  className="text-default-900/60 data-[hover]:bg-foreground/10 -translate-y-2 translate-x-2 mt-4"
-                  radius="full"
-                  variant="light"
-                  onPress={() => setLiked((v) => !v)}
-                >
-                  <HeartIcon
-                    className={liked ? "[&>path]:stroke-transparent" : ""}
-                    fill={liked ? "#ef2d62" : "none"}
-                  />
-                </Button>
-              </Tooltip>
+                <HeartIcon
+                  className={liked ? "[&>path]:stroke-transparent" : ""}
+                  fill={liked ? "#ef2d62" : "none"}
+                />
+              </Button>
+            </Tooltip>
           </div>
         </div>
       </div>
@@ -89,7 +89,8 @@ export default function CrbtPlayer() {
             >
               <PreviousIcon />
             </Button>
-            <Button css={{ borderRadius: 0 }}
+            <Button
+              style={{ borderRadius: 0 }}
               isIconOnly
               className="w-auto h-auto data-[hover]:bg-foreground/0"
               radius="none"
@@ -148,7 +149,14 @@ export default function CrbtPlayer() {
             <LyricsIcon className="h-5 w-5" />
           </div>
           <VolumUp className="h-5 w-5" />
-          <input type="range" min="1" max="100" value="50" className="volume_slider" onChange="setVolume()" />
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="50"
+            className="volume_slider"
+            onChange={(e : any) => setValue(e.target.value)}
+          />
         </div>
       </div>
     </div>

@@ -1,8 +1,8 @@
 import React from "react";
 export const HeartIcon = ({
   size = 24,
-  width =24,
-  height =24,
+  width = 24,
+  height = 24,
   strokeWidth = 1.5,
   fill = "none",
   ...props

@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-const Glass = ({ children, className }) => {
+const Glass = ({ children, className } : { children: React.ReactNode, className: any }) => {
   return (
     <div
       className={clsx(

@@ -1,25 +1,7 @@
-// import React from 'react';
-// import { PauseCircleIcon } from "./PauseCircleIcon";
-// import { PlayIcon } from "./PlayIcon";
-
-// const PlayPause = ({ isPlaying, activeSong, song, handlePause, handlePlay }) => (isPlaying && activeSong?.title === song.title ? (
-//   <PauseCircleIcon
-//     size={35}
-//     onClick={handlePause}
-//   />
-// ) : (
-//   <PlayIcon
-//     size={35}
-//     onClick={handlePlay}
-//   />
-// ));
-
-// export default PlayPause;
-
 import React from 'react';
 import { FaPauseCircle, FaPlayCircle } from 'react-icons/fa';
 
-const PlayPause = ({ isPlaying, activeSong, song, handlePause, handlePlay }) => (isPlaying && activeSong?.title === song.title ? (
+const PlayPause = ({ isPlaying, activeSong, song, handlePause, handlePlay }: { isPlaying: boolean, activeSong: object, song: any, handlePause: any, handlePlay: any }) => (isPlaying && activeSong?.title === song.title ? (
   <FaPauseCircle
     size={35}
     className="text-gray-300"

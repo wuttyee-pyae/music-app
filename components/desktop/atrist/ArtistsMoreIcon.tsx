@@ -11,7 +11,6 @@ import {
 } from "@nextui-org/react";
 
 import { MoreIcon } from "../music/icons/MoreIcon";
-import { Tooltip } from "@nextui-org/react";
 import { ReportIcon } from "../icons/ReportIcon";
 
 export default function ArtistsMoreIcon() {

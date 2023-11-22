@@ -1,9 +1,15 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import React, { useRef, useEffect, useState } from 'react';
 
+<<<<<<< Updated upstream
 const Player = ({ activeSong, volume, isPlaying, seekTime, repeat ,  onEnded, onTimeUpdate, onLoadedData } : { activeSong : any, volume : any , isPlaying : boolean , seekTime : any, repeat : any, onEnded : any, onTimeUpdate : any, onLoadedData : any }) => {
   const audioRef = useRef<any>();
   const [maxTime,setMaxTime] = useState<any>()
+=======
+const Player = ({ activeSong, volume, isPlaying, seekTime, repeat, currentIndex ,  onEnded, onTimeUpdate, onLoadedData } : { activeSong : any, volume : any , isPlaying : any , seekTime : any, repeat : any,  currentIndex : any,  onEnded : any, onTimeUpdate : any, onLoadedData : any }) => {
+  const audioRef = useRef<any>();
+  const [maxTime,setMaxTime] = useState(0)
+>>>>>>> Stashed changes
   useEffect(() => {
     console.log(activeSong , isPlaying )
     if(audioRef.current){

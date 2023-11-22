@@ -13,13 +13,13 @@ export default function Order() {
       <Select
         startContent={<OrderIcon />}
         aria-hidden="true"
-        tabindex="0"
+        tabIndex={0}
         aria-labelledby="order"
         placeholder="Select order"
         variant="bordered"
         selectedKeys={value}
         className="max-w-xs"
-        onSelectionChange={setValue}
+        onSelectionChange={(e : any) => setValue(e.target.value)}
         defaultSelectedKeys={["all_time"]}
         id="order"
         aria-checked="false"
@@ -30,7 +30,7 @@ export default function Order() {
             value={order.value}
             role="checkbox"
             aria-checked="false"
-            tabindex="0"
+            tabIndex={0}
             aria-labelledby="order"
           >
             {order.label}

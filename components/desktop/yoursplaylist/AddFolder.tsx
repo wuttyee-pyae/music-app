@@ -8,7 +8,6 @@ import {
   CardBody,
   Image,
 } from "@nextui-org/react";
-import Play from "./Play";
 import AddFolderIcon from "./icons/AddFolderIcon";
 
 export default function AddFolder() {

@@ -5,24 +5,17 @@ import React from "react";
 import Sidebar from "./Sidebar";
 import UserSidebar from "./UserSidebar";
 import Logobar from "./Logobar";
-import Image from "next/image";
 import { useSidebarContext } from "../../../context/SidebarContext";
 
 import { useState, useEffect } from 'react';
 
 const Asidebar = () => {
-  const {isCollapsed,toggleSidebarcollapse} = useSidebarContext()
-
-
+  const {isCollapsed , toggleSidebarcollapse} = useSidebarContext()
   useEffect(() => {
     if(window.innerWidth < 1024){
-      toggleSidebarcollapse()
+      toggleSidebarcollapse
     }
-  },[])
-
- 
-
-
+  },[toggleSidebarcollapse])
   return (
     <div  className={clsx("sidebar sidebar-dark left-bar left-0 z-30 w-64 transition-transform md:transition-translate-x-full lg:translate-x-0",isCollapsed ? 'hidden' :"block")}>
       <div className={` sidebar__wrapper overflow-y-auto`}>
@@ -31,9 +24,7 @@ const Asidebar = () => {
         className=""
         aria-label="Sidebar"  
       >
-        
         <Sidebar />    
-
         <UserSidebar />
       </aside>
     </div>

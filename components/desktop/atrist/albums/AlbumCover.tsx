@@ -2,7 +2,6 @@
 import React from "react";
 import Image from "next/image";
 
-import { Card, CardFooter, Button } from "@nextui-org/react";
 import {Spacer} from "@nextui-org/react";
 import styles from "./albumcover.module.css";
 

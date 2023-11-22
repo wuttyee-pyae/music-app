@@ -1,9 +1,4 @@
 "use client";
-
-// import React from "react";
-// import { useState } from "react";
-// import { Button } from "@nextui-org/react";
-
 import ButtonTag from "./ButtonTag";
 
 export default function CrbtTag() {

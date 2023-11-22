@@ -6,9 +6,7 @@ import {
   DropdownTrigger,
   Button,
   DropdownMenu,
-  DropdownItem,
-  Avatar,
-  User,
+  DropdownItem
 } from "@nextui-org/react";
 
 import { Tooltip } from "@nextui-org/react";
