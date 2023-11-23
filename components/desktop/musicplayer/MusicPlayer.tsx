@@ -34,14 +34,14 @@ const MusicPlayer = () => {
 
 
   useEffect(() => {
-    setMusicPlaying(isPlaying)
+    // setMusicPlaying(isPlaying)
     // setSeekTime =
     // if (currentSongs.length > 0) dispatch(playPause(true));
-    let sessionSong = storage.getItem('play-music', 'session');
+    // let sessionSong = storage.getItem('play-music', 'session');
    const subscription = subscribeToValue((value : any) => {
-     sessionSong = storage.getItem('play-music', 'session');
-    setMusic(sessionSong);
-    // console.log(music , sessionSong)
+    const sessionSong = storage.getItem('play-music', 'session');
+      dispatch(setActiveSong(sessionSong))
+    console.log(activeSong)
     //   if(sessionSong && isPlaying) {
 
     //   }
@@ -51,7 +51,7 @@ const MusicPlayer = () => {
       subscription.unsubscribe();
     };
     
-  }, [isPlaying, music, storage]);
+  }, [isPlaying]);
 
   const handlePlayPause = () => {
     // if (!isActive) return;
@@ -89,7 +89,7 @@ const MusicPlayer = () => {
         isPlaying={isPlaying}
         isActive={isActive}
         activeSong={activeSong}
-        data={music}
+        data={activeSong}
       />
       <div className="flex-1 flex flex-col items-center justify-center lg:col-span-6 col-span-8">
         <Controls
@@ -110,9 +110,8 @@ const MusicPlayer = () => {
           setSeekTime={setSeekTime}
           appTime={appTime}
         />
-        {
-          music ? <Player
-          activeSong={music}
+       <Player
+          activeSong={activeSong}
           volume={volume}
           isPlaying={musicPlaying}
           seekTime={seekTime}
@@ -120,9 +119,7 @@ const MusicPlayer = () => {
           onEnded={handleNextSong}
           onTimeUpdate={(event : any ) => setAppTime(event.target.currentTime)}
           onLoadedData={(time  : any) =>  setDuration(time)}
-        />  : null
-        }
-        
+        /> 
       </div>
       <div className="flex-1 flex items-center justify-end gap-4 lg:col-span-3 col-span-4">
         <LyricsIcon />
