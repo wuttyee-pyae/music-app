@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardFooter, Button } from "@nextui-org/react";
-import Artistscover from "@/components/desktop/atrist/ArtistsCover";
-import ArtistProfile from "@/components/desktop/atrist/ArtistProfile";
+import Artistscover from "@/components/desktop/artist/ArtistsCover";
+import ArtistProfile from "@/components/desktop/artist/ArtistProfile";
 import { getArtistsDataById } from "@/lib/artists";
 
 export default async function ArtistId({ params }: { params: { id: number } }) {

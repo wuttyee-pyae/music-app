@@ -18,7 +18,7 @@ const Player = ({ activeSong, volume, isPlaying, seekTime, repeat ,  onEnded, on
     seekTime = audioRef.current.currentTime
     setMaxTime(audioRef.current.duration)
     }
-  }, [activeSong]);
+  }, []);
 
   return (
     <audio 

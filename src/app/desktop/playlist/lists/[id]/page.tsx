@@ -8,7 +8,7 @@ import { Button, Progress, Tooltip } from "@nextui-org/react";
 import { HeartIcon } from "@/components/desktop/musicplayer/HeartIcon";
 import React from "react";
 import PlayListMore from "@/components/desktop/yoursplaylist/PlayListMore";
-import PopularMusic from "@/components/desktop/atrist/PopularMusic";
+import PopularMusic from "@/components/desktop/artist/PopularMusic";
 
 export default function PlaylistId() {
   const [liked, setLiked] = React.useState(false);

@@ -1,6 +1,6 @@
 
-import BrowseArtists from "@/components/desktop/atrist/BrowseArtists";
-import Recommended from "@/components/desktop/atrist/Recommended";
+import BrowseArtists from "@/components/desktop/artist/BrowseArtists";
+import Recommended from "@/components/desktop/artist/Recommended";
 import getArtistsData from '@/lib/artists';
 import React, { useState } from 'react';
 

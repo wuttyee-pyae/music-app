@@ -1,5 +1,5 @@
 import React from "react";
-import Artists from "./atrist/Artists";
+import Artists from "./artist/Artists";
 
 export default function Artist({ }) {
   return (

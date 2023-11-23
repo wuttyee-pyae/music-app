@@ -28,7 +28,6 @@ export default function MainRootLayout({
       <body className="">
         <main className="layout__main-content" >
           <ConstantContext.Provider value={isMobile}>
-            {/* Other layout elements */}
             {children}
           </ConstantContext.Provider>
         </main>

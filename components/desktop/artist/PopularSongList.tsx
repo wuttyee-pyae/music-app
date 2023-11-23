@@ -43,7 +43,7 @@ export default function PopularSongList(props: any) {
     }
     const getFavList  = storage.getItem('fav-songs', 'local')
     console.log("get fav list --- " , getFavList)
-  }, [favSongs, playingSong?.id, playingSong?.name, playingSong?.picture, songList, storage])
+  }, [])
 
   const playMusic = async (data: any, index: number) => {
     const setData = storage.setItem('play-music', data, 'session');
