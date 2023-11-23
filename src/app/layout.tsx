@@ -6,6 +6,7 @@ import "@/styles/global.css";
 
 import React from "react";
 import useDeviceType from '@/hooks/useDeviceType';
+import ConstantContext from "../../context/ConstantContent";
 export default function MainRootLayout({
   children,
 }: {
@@ -26,10 +27,10 @@ export default function MainRootLayout({
 
       <body className="">
         <main className="layout__main-content" >
-          {children}
-          {/* {isMobile ? (<MobileRootLayout>{children}</MobileRootLayout>) :
-            (<DesktopRootLayout>{children}</DesktopRootLayout>)
-          } */}
+          <ConstantContext.Provider value={isMobile}>
+            {/* Other layout elements */}
+            {children}
+          </ConstantContext.Provider>
         </main>
 
 
