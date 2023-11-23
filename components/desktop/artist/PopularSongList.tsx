@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { BsPlayFill } from "react-icons/bs";
 import Image from "next/image";
-import styles from "./popularsongList.module.css";
+import styles from "./popularsonglist.module.css";
 import { Tooltip } from "@nextui-org/react";
 
 import { Button, Progress } from "@nextui-org/react";
