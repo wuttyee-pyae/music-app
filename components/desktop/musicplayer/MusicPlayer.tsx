@@ -16,8 +16,11 @@ import VolumeBar from "./VolumeBar";
 import { LyricsIcon } from "./LyricsIcon";
 import useStorage from "@/hooks/useStorage";
 import { subscribeToValue } from '@/hooks/observableService';
+import { Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from '@nextui-org/react';
+import LyricsCard from './lyrics/LyricsCard';
 
 const MusicPlayer = () => {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const dispatch = useDispatch();
   const storage = useStorage();
   const { activeSong ,songList ,  currentIndex  , isActive  , isPlaying  } =
@@ -110,7 +113,35 @@ const MusicPlayer = () => {
         /> 
       </div>
       <div className="flex-1 flex items-center justify-end gap-4 lg:col-span-3 col-span-4">
-        <LyricsIcon />
+        <Button
+          onPress={onOpen}
+          style={{
+            background: "none",
+          }}
+        >
+          <LyricsIcon />
+        </Button>
+        <Modal
+          isOpen={isOpen}
+          onOpenChange={onOpenChange}
+          size={"3xl"}
+          placement={"top-center"}
+          backdrop={"blur"}
+        >
+          <ModalContent>
+            {(onClose) => (
+              <>
+                <ModalHeader className="flex flex-col gap-1 text-white">
+                  <p>{activeSong.name}</p>
+                </ModalHeader>
+                <ModalBody className="text-white">
+                  <LyricsCard />
+                </ModalBody>
+                <ModalFooter></ModalFooter>
+              </>
+            )}
+          </ModalContent>
+        </Modal>
         <VolumeBar
         value={volume}
         min={0}
