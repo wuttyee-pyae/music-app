@@ -29,7 +29,7 @@ const MusicPlayer = () => {
   const [volume, setVolume] = useState(0.3);
   const [repeat, setRepeat] = useState(false);
   const [shuffle, setShuffle] = useState(false);
-  const [musicPlaying, setMusicPlaying] = useState(true);
+  const [musicPlaying, setMusicPlaying] = useState(false);
   useEffect( () => {
     console.log( " active song  in use effect -- "  , activeSong , isActive , volume)
    const subscription = subscribeToValue((value : any) => {
@@ -37,6 +37,7 @@ const MusicPlayer = () => {
     const sessionSong = storage.getItem('play-music', 'session');
       dispatch(setActiveSong(sessionSong))
     console.log( " active song  in use effect -- "  , sessionSong , activeSong , isActive)
+    dispatch(playPause(true));
       // if(sessionSong && isPlaying) {
         setCurrentSong(sessionSong)
       // }
@@ -46,7 +47,7 @@ const MusicPlayer = () => {
       subscription.unsubscribe();
     };
     
-  }, [isPlaying]);
+  }, []);
 
   const handlePlayPause = () => {
     // if (!isActive) return;
@@ -114,7 +115,7 @@ const MusicPlayer = () => {
         value={volume}
         min={0}
         max={1}
-        onChange={(event : any) => { console.log("set volumn ");setVolume(event.target.value)}}
+        onChange={(event : any) => {setVolume(event.target.value)}}
       />
       </div>
       
