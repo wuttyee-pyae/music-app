@@ -5,18 +5,15 @@ import ShuffPlayIcon from "./ShufffPlay";
 import ArtistMoreIcon from "./ArtistsMoreIcon";
 import FollowBtn from "./FollowBtn";
 import styles from "./artistprofile.module.css";
-import Albumcover from "./albums/AlbumCover"
-import VideoList from './video/videolist';
-import {
-  Tabs,
-  Tab,
-} from "@nextui-org/react";
+import Albumcover from "./albums/AlbumCover";
+import VideoList from "./video/videolist";
+import { Tabs, Tab } from "@nextui-org/react";
 import PopularSongList from "./PopularSongList";
 import Breadcrumb from "./Breadcrumb";
 import Crbtitems from "../crbt/Crbtitems";
 
-export default function ArtistProfile(props : any) {
-  const artist = props.data
+export default function ArtistProfile(props: any) {
+  const artist = props.data;
   const variants = ["underlined"];
   const [selected, setSelected] = React.useState("overview");
   let tabs = [
@@ -66,11 +63,13 @@ export default function ArtistProfile(props : any) {
           <div className="col-span-7">
             <div className="grid grid-flow-row auto-rows-max justify-between">
               <div>
-                <Breadcrumb data={artist}/>
+                <Breadcrumb data={artist} />
               </div>
               <div className="flex flex-wrap gap-4 items-center py-4">
                 <div>
-                  <p className="artist_name lg:text-5xl md:text-3xl sm:text-4xl">{artist.name}</p>
+                  <p className="artist_name lg:text-5xl md:text-3xl sm:text-4xl">
+                    {artist.name}
+                  </p>
                 </div>
                 <div>
                   <FollowBtn />
@@ -90,9 +89,11 @@ export default function ArtistProfile(props : any) {
                     <Tab key="overview" title="Overview">
                       <div className="tabs py-10 pb-36">
                         <div className="flex flex-col pb-32 mb-36">
-                          <p className="text-lg text-white mb-4">Popular songs</p>
+                          <p className="text-lg text-white mb-4">
+                            Popular songs
+                          </p>
                           <PopularSongList data={artist.songs} />
-                          <Albumcover/>
+                          <Albumcover />
                         </div>
                       </div>
                     </Tab>
@@ -101,7 +102,10 @@ export default function ArtistProfile(props : any) {
                     <Tab key="about" title="About">
                       <div className="tabs py-10">
                         <div className="flex flex-col gap-4 pb-32 mb-36">
-                        <p className="text-lg text-white mb-4">About</p>
+                          <p className="text-lg text-white mb-4">
+                            About {artist.name}
+                          </p>
+                          <p className="text-white">{artist.about}</p>
                         </div>
                       </div>
                     </Tab>
@@ -110,7 +114,7 @@ export default function ArtistProfile(props : any) {
                     <Tab key="videos" title="Videos">
                       <div className="tabs py-10">
                         <div className="flex flex-col gap-4 pb-32 mb-36">
-                        <p className="text-lg text-white mb-4">MTV Music</p>
+                          <p className="text-lg text-white mb-4">MTV Music</p>
                           <VideoList />
                         </div>
                       </div>
@@ -120,7 +124,7 @@ export default function ArtistProfile(props : any) {
                     <Tab key="crbt" title="CRBT">
                       <div className="tabs py-10">
                         <div className="flex flex-col pb-32 mb-36">
-                        <p className="text-lg text-white mb-4">CRBT</p>
+                          <p className="text-lg text-white mb-4">CRBT</p>
                           <Crbtitems />
                           <Crbtitems />
                           <Crbtitems />
