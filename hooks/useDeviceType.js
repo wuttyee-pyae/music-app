@@ -12,20 +12,16 @@ const DeviceType = {
     
     useEffect(() => {
       const handleResize = () => {
-        const { userAgent } = window.navigator;
-  
-        if (/Mobi/.test(userAgent)) {
-          if (/Tablet|iPad/.test(userAgent)) {
-            setDeviceType(DeviceType.Tablet);
-          } else {
+        const  windowsize  = window.innerWidth;
+        // console.log(" ---  size  -- " , windowsize)
+        if (windowsize <= 768) {
             setDeviceType(DeviceType.Mobile);
-          }
         } else {
           setDeviceType(DeviceType.Desktop);
         }
       };
   
-      // handleResize();
+      handleResize();
   
       window.addEventListener('resize', handleResize);
       return () => window.removeEventListener('resize', handleResize);

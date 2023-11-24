@@ -4,16 +4,34 @@ import "tailwindcss/tailwind.css";
 
 import "@/styles/global.css";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useDeviceType from '@/hooks/useDeviceType';
 import ConstantContext from "../../context/ConstantContent";
+
+
 export default function MainRootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const isMobile = useDeviceType() === 'mobile' ? true : false
+  // const device = useDeviceType()
+  // const isMobile = device === 'mobile' ? true : false
 
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize()
+    // console.log(screenWidth)
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [screenWidth]);
   return (
     <html lang="en" suppressHydrationWarning={true} className="dark">
       <Head>
@@ -27,7 +45,7 @@ export default function MainRootLayout({
 
       <body className="">
         <main className="layout__main-content" >
-          <ConstantContext.Provider value={isMobile}>
+          <ConstantContext.Provider value={screenWidth}>
             {children}
           </ConstantContext.Provider>
         </main>

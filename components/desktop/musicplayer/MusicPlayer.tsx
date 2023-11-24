@@ -19,32 +19,27 @@ import { subscribeToValue } from '@/hooks/observableService';
 
 const MusicPlayer = () => {
   const dispatch = useDispatch();
-  const { activeSong , currentSongs, currentIndex  , isActive  , isPlaying  } =
+  const storage = useStorage();
+  const { activeSong ,songList ,  currentIndex  , isActive  , isPlaying  } =
   useSelector((state : any) => state.musicplay);
   
-  const [duration, setDuration] = useState(0);
-  const [seekTime, setSeekTime] = useState(0);
-  const [appTime, setAppTime] = useState(0);
+  // const [duration, setDuration] = useState(0);
+  // const [seekTime, setSeekTime] = useState(0);
+  const [currentSong, setCurrentSong] = useState(storage.getItem('play-music', 'session'));
   const [volume, setVolume] = useState(0.3);
   const [repeat, setRepeat] = useState(false);
   const [shuffle, setShuffle] = useState(false);
-  const [music, setMusic] = useState({});
-  const [musicPlaying, setMusicPlaying] = useState(false);
-  const storage = useStorage();
-
-
-  useEffect(() => {
-    // setMusicPlaying(isPlaying)
-    // setSeekTime =
-    // if (currentSongs.length > 0) dispatch(playPause(true));
-    // let sessionSong = storage.getItem('play-music', 'session');
+  const [musicPlaying, setMusicPlaying] = useState(true);
+  useEffect( () => {
+    console.log( " active song  in use effect -- "  , activeSong , isActive , volume)
    const subscription = subscribeToValue((value : any) => {
+
     const sessionSong = storage.getItem('play-music', 'session');
       dispatch(setActiveSong(sessionSong))
-    console.log(activeSong)
-    //   if(sessionSong && isPlaying) {
-
-    //   }
+    console.log( " active song  in use effect -- "  , sessionSong , activeSong , isActive)
+      // if(sessionSong && isPlaying) {
+        setCurrentSong(sessionSong)
+      // }
     });
     
     return () => {
@@ -66,17 +61,17 @@ const MusicPlayer = () => {
   const handleNextSong = () => {
     dispatch(playPause(false));
     if (!shuffle) {
-      dispatch(nextSong((currentIndex + 1) % currentSongs.length));
+      dispatch(nextSong((currentIndex + 1) % songList.length));
     } else {
-      dispatch(nextSong(Math.floor(Math.random() * currentSongs.length)));
+      dispatch(nextSong(Math.floor(Math.random() * songList.length)));
     }
   };
 
   const handlePrevSong = () => {
     if (currentIndex === 0) {
-      dispatch(prevSong(currentSongs.length - 1));
+      dispatch(prevSong(songList.length - 1));
     } else if (shuffle) {
-      dispatch(prevSong(Math.floor(Math.random() * currentSongs.length)));
+      dispatch(prevSong(Math.floor(Math.random() * songList.length)));
     } else {
       dispatch(prevSong(currentIndex - 1));
     }
@@ -88,8 +83,8 @@ const MusicPlayer = () => {
       <Track
         isPlaying={isPlaying}
         isActive={isActive}
-        activeSong={activeSong}
-        data={activeSong}
+        activeSong={currentSong}
+        data={currentSong}
       />
       <div className="flex-1 flex flex-col items-center justify-center lg:col-span-6 col-span-8">
         <Controls
@@ -102,23 +97,15 @@ const MusicPlayer = () => {
           handlePrevSong={handlePrevSong}
           handleNextSong={handleNextSong}
         />
-        <Seekbar
-          value={appTime}
-          min= {0}
-          max={duration}
-          onInput={(event : any) => setSeekTime(event.target.value)}
-          setSeekTime={setSeekTime}
-          appTime={appTime}
-        />
        <Player
-          activeSong={activeSong}
+          activeSong={currentSong}
           volume={volume}
           isPlaying={musicPlaying}
-          seekTime={seekTime}
+          // seekTime={seekTime}
           repeat={repeat}
           onEnded={handleNextSong}
-          onTimeUpdate={(event : any ) => setAppTime(event.target.currentTime)}
-          onLoadedData={(time  : any) =>  setDuration(time)}
+          // onTimeUpdate={(event : any ) => setAppTime(event.target.currentTime)}
+          // onLoadedData={(time  : any) =>  setDuration(time)}
         /> 
       </div>
       <div className="flex-1 flex items-center justify-end gap-4 lg:col-span-3 col-span-4">
@@ -127,7 +114,7 @@ const MusicPlayer = () => {
         value={volume}
         min={0}
         max={1}
-        onChange={(event : any) => setVolume(event.target.value)}
+        onChange={(event : any) => { console.log("set volumn ");setVolume(event.target.value)}}
       />
       </div>
       

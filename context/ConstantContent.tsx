@@ -3,4 +3,4 @@ import { createContext } from 'react';
 
 const ConstantContext = createContext<any>(null);
 
-export default ConstantContext;
+export default  ConstantContext ;

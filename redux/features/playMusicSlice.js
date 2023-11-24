@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  currentSongs: [],
+  songList: [],
   currentIndex: 0,
   isActive: false,
   isPlaying: false,
@@ -50,7 +50,6 @@ const playMusicSlice = createSlice({
     },
 
     playPause: (state, action) => {
-      console.log(" play pause -- " , action.payload)
       state.isPlaying = action.payload;
     },
 

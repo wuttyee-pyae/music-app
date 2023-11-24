@@ -13,10 +13,11 @@ import useStorage from "@/hooks/useStorage";
 import { updateValue } from '@/hooks/observableService';
 
 export default function PopularSongList(props: any) {
-  const [songList, setSongList] = React.useState(props?.data || null);
-  const [playingSong, setPlayingSong] = useState<any>(null);
-  const [favSongs, setFavSongs] = useState<any>(null);
   const storage = useStorage();
+  const [songList, setSongList] = React.useState(props?.data || null);
+  const [playingSong, setPlayingSong] = useState<any>(storage.getItem('play-music', 'session') || null);
+  const [favSongs, setFavSongs] = useState<any>(storage.getItem('fav-songs', 'local') || []);
+  
 
 
   useEffect(() => {
