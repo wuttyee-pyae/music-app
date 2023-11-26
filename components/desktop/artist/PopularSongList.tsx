@@ -12,8 +12,16 @@ import NowPlaying from "./NowPlaying";
 import useStorage from "@/hooks/useStorage";
 import { updateValue } from '@/hooks/observableService';
 
+import {
+  playPause,
+  setActiveSong,
+  setSongLists
+} from "../../../redux/features/playMusicSlice";
+import { useDispatch } from "react-redux";
+
 export default function PopularSongList(props: any) {
   const storage = useStorage();
+  const dispatch = useDispatch();
   const [songList, setSongList] = React.useState(props?.data || null);
   const [playingSong, setPlayingSong] = useState<any>(storage.getItem('play-music', 'session') || null);
   const [favSongs, setFavSongs] = useState<any>(storage.getItem('fav-songs', 'local') || []);
@@ -23,6 +31,7 @@ export default function PopularSongList(props: any) {
   useEffect(() => {
     setPlayingSong(storage.getItem('play-music', 'session') || null)
     setFavSongs(storage.getItem('fav-songs', 'local') || [])
+    dispatch(setActiveSong(playingSong))
     // For active music from session storage
     const updatedList = songList.map((item: any) => {
       if (item.id == playingSong?.id && item.name == playingSong?.name && item.picture == playingSong?.picture)
@@ -49,12 +58,15 @@ export default function PopularSongList(props: any) {
   const playMusic = async (data: any, index: number) => {
     const setData = storage.setItem('play-music', data, 'session');
     setPlayingSong(storage.getItem('play-music', 'session'))
+    dispatch(playPause(true))
     console.log(" ----  "  , playingSong)
     updateValue(setData);
     const updateSongList = await songList.map((item: any, i: number) => {
       if (i == index) return { ...item, isPlaying: true }
       else return { ...item, isPlaying: false }
     })
+    dispatch(setSongLists(updateSongList))
+    
     await setSongList(updateSongList);
   }
 

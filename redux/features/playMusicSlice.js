@@ -51,14 +51,19 @@ const playMusicSlice = createSlice({
 
     playPause: (state, action) => {
       state.isPlaying = action.payload;
+      console.log(state.isPlaying)
     },
 
     selectGenreListId: (state, action) => {
       state.genreListId = action.payload;
     },
+
+    setSongLists: (state, action) => {
+      state.songList = action.payload;
+    },
   },
 });
 
-export const { setActiveSong, nextSong, prevSong, playPause, selectGenreListId } = playMusicSlice.actions;
+export const { setActiveSong, nextSong, prevSong, playPause, selectGenreListId, setSongLists } = playMusicSlice.actions;
 
 export default playMusicSlice.reducer;

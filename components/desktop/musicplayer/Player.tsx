@@ -1,21 +1,33 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import { Slider } from '@nextui-org/react';
 import React, { useRef, useEffect, useState } from 'react';
+import { subscribeToValue } from '@/hooks/observableService';
+import { useDispatch } from 'react-redux';
+import {
+  playPause,
+} from "../../../redux/features/playMusicSlice";
+
 
 const Player = ({ activeSong, volume, isPlaying, repeat ,  onEnded } : 
   { activeSong : any, volume : any , isPlaying : boolean , repeat : any, onEnded : any }) => {
-  const audioRef = useRef<any>(new Audio());
-  const [maxTime,setMaxTime] = useState<any>()
+    // const dispatch = useDispatch();
+  const audioRef = useRef<any>(null);
+  const [maxTime,setMaxTime] = useState(0)
   const [appTime, setAppTime] = useState(0);
   const [seekTime, setSeekTime] = useState(0);
   const getTime = (time : any) => `${Math.floor(time / 60)}:${(`0${Math.floor(time % 60)}`).slice(-2)}`;
+
 
   // const maxTime = getTime(max)
   useEffect(() => {
     console.log(activeSong , isPlaying , volume  )
     audioRef.current.volume = volume;
     setSeekTime(audioRef.current.currentTime);
-    setMaxTime(audioRef.current.duration);
+    setMaxTime(audioRef.current.duration || 0);
+    // const subscription = subscribeToValue((value : any) => {
+    //   console.log("subscription in player componnet -- ")
+    //   isPlaying ? dispatch(playPause(true))  : dispatch(playPause(false))
+    // });
     if(audioRef.current || activeSong){
     if (isPlaying) {
       audioRef.current.play();
@@ -25,6 +37,9 @@ const Player = ({ activeSong, volume, isPlaying, repeat ,  onEnded } :
     }
     
     }
+    return () => {
+      // subscription.unsubscribe();
+    };
   }, [isPlaying,maxTime, volume ]);
 
  

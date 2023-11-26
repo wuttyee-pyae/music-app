@@ -15,9 +15,9 @@ import Logobar from "@/components/mobile/nav/Logobar";
 import BackNext from "@/components/desktop/nav/BackNext";
 import { store } from "../../../redux/store";
 import SidebarProvider from "../../../context/SidebarContext";
-import { Providers } from "../desktop/providers";
 import Mobile from "./page";
 import { useRouter } from 'next/navigation'
+import { Providers } from "../providers";
 
 
 export default function MobileRootLayout({

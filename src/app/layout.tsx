@@ -4,9 +4,10 @@ import "tailwindcss/tailwind.css";
 
 import "@/styles/global.css";
 
-import React, { useEffect, useState } from "react";
-import useDeviceType from '@/hooks/useDeviceType';
-import ConstantContext from "../../context/ConstantContent";
+import React from "react";
+import useDeviceType from "@/hooks/useDeviceType";
+import MobileLayout from "@/components/mobile/root/MobileLayout";
+import DesktopLayout from "@/components/desktop/root/DesktopLayout";
 
 
 export default function MainRootLayout({
@@ -14,24 +15,7 @@ export default function MainRootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // const device = useDeviceType()
-  // const isMobile = device === 'mobile' ? true : false
-
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
-    window.addEventListener('resize', handleResize);
-    handleResize()
-    // console.log(screenWidth)
-    // Clean up the event listener on component unmount
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [screenWidth]);
+  const  isMobile =  useDeviceType();
   return (
     <html lang="en" suppressHydrationWarning={true} className="dark">
       <Head>
@@ -45,9 +29,15 @@ export default function MainRootLayout({
 
       <body className="">
         <main className="layout__main-content" >
-          <ConstantContext.Provider value={screenWidth}>
+          {/* <ConstantContext.Provider value={isMobile}>
             {children}
-          </ConstantContext.Provider>
+          </ConstantContext.Provider> */}
+          {
+            isMobile ?  
+            <MobileLayout>{children}</MobileLayout>
+             : 
+             <DesktopLayout>{children}</DesktopLayout>
+          }
         </main>
 
 

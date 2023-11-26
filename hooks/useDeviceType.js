@@ -1,24 +1,12 @@
 'use client'
 import { useEffect , useState } from "react";
-
-const DeviceType = {
-    Mobile: 'mobile',
-    Tablet: 'tablet',
-    Desktop: 'desktop',
-  };
-  
   const useDeviceType = () => {
-    const [deviceType, setDeviceType] = useState(DeviceType.Desktop);
-    
+    const [deviceType, setDeviceType] = useState(false);
+    let isMobile;
     useEffect(() => {
       const handleResize = () => {
-        const  windowsize  = window.innerWidth;
-        // console.log(" ---  size  -- " , windowsize)
-        if (windowsize <= 768) {
-            setDeviceType(DeviceType.Mobile);
-        } else {
-          setDeviceType(DeviceType.Desktop);
-        }
+        isMobile = window.innerWidth < 768 ? true : false
+        setDeviceType(isMobile)
       };
   
       handleResize();

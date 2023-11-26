@@ -40,7 +40,7 @@ const UserSidebarLink = ({ link } : any) => {
   return (
     <div>
       <Link
-        href={'/desktop'+link.link}
+        href={link.link}
         key={link.id}
         className="flex justify-start items-start py-4 menu-link px-2"
       >

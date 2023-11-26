@@ -24,7 +24,7 @@ const SidebarLink = ({ link  } :any) => {
 
   const Icon = icons[link.icon];
   return (
-    <Link href={'/desktop' + link.link} key ={link.id} className="flex justify-start items-start py-4 menu-link px-2">
+    <Link href={link.link} key ={link.id} className="flex justify-start items-start py-4 menu-link px-2">
       <Icon
         size={25}
         className={clsx(

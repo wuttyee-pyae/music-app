@@ -28,21 +28,20 @@ const MusicPlayer = () => {
   
   // const [duration, setDuration] = useState(0);
   // const [seekTime, setSeekTime] = useState(0);
-  const [currentSong, setCurrentSong] = useState(storage.getItem('play-music', 'session'));
+  // const [currentSong, setCurrentSong] = useState(storage.getItem('play-music', 'session'));
   const [volume, setVolume] = useState(0.3);
   const [repeat, setRepeat] = useState(false);
   const [shuffle, setShuffle] = useState(false);
-  const [musicPlaying, setMusicPlaying] = useState(false);
   useEffect( () => {
-    console.log( " active song  in use effect -- "  , activeSong , isActive , volume)
+    console.log( " active song  in use effect -- "  , activeSong , isPlaying , volume)
+    // dispatch(playPause(false));
    const subscription = subscribeToValue((value : any) => {
-
+    console.log("subscription")
     const sessionSong = storage.getItem('play-music', 'session');
       dispatch(setActiveSong(sessionSong))
-    console.log( " active song  in use effect -- "  , sessionSong , activeSong , isActive)
-    dispatch(playPause(true));
+    console.log( " active song  in use effect -- "  ,isPlaying )
       // if(sessionSong && isPlaying) {
-        setCurrentSong(sessionSong)
+        // setCurrentSong(sessionSong)
       // }
     });
     
@@ -54,12 +53,13 @@ const MusicPlayer = () => {
 
   const handlePlayPause = () => {
     // if (!isActive) return;
+    console.log("handle play -- " , isPlaying)
     if (isPlaying) {
       dispatch(playPause(false));
     } else {
       dispatch(playPause(true));
     }
-    setMusicPlaying(isPlaying)
+    
   };
 
   const handleNextSong = () => {
@@ -87,12 +87,12 @@ const MusicPlayer = () => {
       <Track
         isPlaying={isPlaying}
         isActive={isActive}
-        activeSong={currentSong}
-        data={currentSong}
+        activeSong={activeSong}
+        data={activeSong}
       />
       <div className="flex-1 flex flex-col items-center justify-center lg:col-span-6 col-span-8">
         <Controls
-          isPlaying={musicPlaying}
+          isPlaying={isPlaying}
           repeat={repeat as any}
           setRepeat={setRepeat as any}
           shuffle={shuffle as any}
@@ -102,9 +102,9 @@ const MusicPlayer = () => {
           handleNextSong={handleNextSong}
         />
        <Player
-          activeSong={currentSong}
+          activeSong={activeSong}
           volume={volume}
-          isPlaying={musicPlaying}
+          isPlaying={isPlaying}
           // seekTime={seekTime}
           repeat={repeat}
           onEnded={handleNextSong}
