@@ -29,14 +29,11 @@ export default function MainRootLayout({
 
       <body className="">
         <main className="layout__main-content" >
-          {/* <ConstantContext.Provider value={isMobile}>
-            {children}
-          </ConstantContext.Provider> */}
           {
             isMobile ?  
             <MobileLayout>{children}</MobileLayout>
              : 
-             <DesktopLayout>{children}</DesktopLayout>
+            <DesktopLayout>{children}</DesktopLayout>
           }
         </main>
 

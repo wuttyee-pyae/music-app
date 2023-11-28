@@ -15,9 +15,11 @@ import Track from "./Track";
 import VolumeBar from "./VolumeBar";
 import { LyricsIcon } from "./LyricsIcon";
 import useStorage from "@/hooks/useStorage";
-import { subscribeToValue } from '@/hooks/observableService';
+import { subscribeToValue, updateActiveValue } from '@/hooks/observableService';
 import { Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from '@nextui-org/react';
 import LyricsCard from './lyrics/LyricsCard';
+import { updateValue } from '@/hooks/observableService';
+
 
 const MusicPlayer = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -32,17 +34,14 @@ const MusicPlayer = () => {
   const [volume, setVolume] = useState(0.3);
   const [repeat, setRepeat] = useState(false);
   const [shuffle, setShuffle] = useState(false);
+  const [repeatAll, setRepeatAll] = useState(false);
   useEffect( () => {
-    console.log( " active song  in use effect -- "  , activeSong , isPlaying , volume)
     // dispatch(playPause(false));
    const subscription = subscribeToValue((value : any) => {
-    console.log("subscription")
+    // console.log("subscription" , value)
     const sessionSong = storage.getItem('play-music', 'session');
       dispatch(setActiveSong(sessionSong))
-    console.log( " active song  in use effect -- "  ,isPlaying )
-      // if(sessionSong && isPlaying) {
-        // setCurrentSong(sessionSong)
-      // }
+    // console.log( " active song  in use effect -- "  ,isPlaying )
     });
     
     return () => {
@@ -50,35 +49,63 @@ const MusicPlayer = () => {
     };
     
   }, []);
-
+ 
+  
   const handlePlayPause = () => {
     // if (!isActive) return;
-    console.log("handle play -- " , isPlaying)
     if (isPlaying) {
       dispatch(playPause(false));
     } else {
       dispatch(playPause(true));
     }
-    
   };
 
   const handleNextSong = () => {
-    dispatch(playPause(false));
+    if(songList.length > 0){
+      dispatch(playPause(false));
     if (!shuffle) {
-      dispatch(nextSong((currentIndex + 1) % songList.length));
+      if(currentIndex < songList.length ){
+        dispatch(nextSong((currentIndex)));
+        storage.setItem('play-music',songList[currentIndex], 'session');
+      }else{
+        dispatch(nextSong((0)));
+        storage.setItem('play-music',songList[0], 'session');
+      }
+      repeatAll ? dispatch(playPause(true)) : null
+      
     } else {
-      dispatch(nextSong(Math.floor(Math.random() * songList.length)));
+      const random = Math.floor(Math.random() * songList.length)
+      dispatch(nextSong(random));
+      storage.setItem('play-music',songList[random], 'session');
+      repeatAll ? dispatch(playPause(true)) : null
     }
+    updateActiveValue(true)
+    }else{
+      dispatch(playPause(false));
+    }
+    
   };
 
   const handlePrevSong = () => {
-    if (currentIndex === 0) {
-      dispatch(prevSong(songList.length - 1));
-    } else if (shuffle) {
-      dispatch(prevSong(Math.floor(Math.random() * songList.length)));
-    } else {
-      dispatch(prevSong(currentIndex - 1));
+    // if (currentIndex === 1) {
+    //   dispatch(prevSong(songList.length - 1));
+    // } else 
+    if(songList.length > 0 ){
+      if (shuffle) {
+        const random = Math.floor(Math.random() * songList.length)
+        dispatch(prevSong(random));
+        storage.setItem('play-music',songList[random], 'session');
+      } else {
+        if(currentIndex != 1){
+          dispatch(prevSong(currentIndex - 2));
+          storage.setItem('play-music',songList[currentIndex - 2], 'session');
+        }
+      }
+      updateActiveValue(true)
+    }else{
+      dispatch(playPause(false));
     }
+    
   };
   
   
@@ -95,6 +122,8 @@ const MusicPlayer = () => {
           isPlaying={isPlaying}
           repeat={repeat as any}
           setRepeat={setRepeat as any}
+          repeatAll={repeatAll as any}
+          setRepeatAll={setRepeatAll as any}
           shuffle={shuffle as any}
           setShuffle={setShuffle as any}
           handlePlayPause={handlePlayPause}

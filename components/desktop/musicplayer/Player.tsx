@@ -1,11 +1,6 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import { Slider } from '@nextui-org/react';
 import React, { useRef, useEffect, useState } from 'react';
-import { subscribeToValue } from '@/hooks/observableService';
-import { useDispatch } from 'react-redux';
-import {
-  playPause,
-} from "../../../redux/features/playMusicSlice";
 
 
 const Player = ({ activeSong, volume, isPlaying, repeat ,  onEnded } : 
@@ -18,49 +13,40 @@ const Player = ({ activeSong, volume, isPlaying, repeat ,  onEnded } :
   const getTime = (time : any) => `${Math.floor(time / 60)}:${(`0${Math.floor(time % 60)}`).slice(-2)}`;
 
 
-  // const maxTime = getTime(max)
   useEffect(() => {
-    console.log(activeSong , isPlaying , volume  )
-    audioRef.current.volume = volume;
-    setSeekTime(audioRef.current.currentTime);
-    setMaxTime(audioRef.current.duration || 0);
-    // const subscription = subscribeToValue((value : any) => {
-    //   console.log("subscription in player componnet -- ")
-    //   isPlaying ? dispatch(playPause(true))  : dispatch(playPause(false))
-    // });
+    // console.log(activeSong , isPlaying , volume  , maxTime )
     if(audioRef.current || activeSong){
+      audioRef.current.volume = volume;
+      setSeekTime(audioRef.current.currentTime);
+      setMaxTime(audioRef.current.duration || null);
     if (isPlaying) {
       audioRef.current.play();
     } 
     else {
        audioRef.current.pause()
     }
-    
     }
-    return () => {
-      // subscription.unsubscribe();
-    };
   }, [isPlaying,maxTime, volume ]);
-
- 
+  
+  
   return (
     <>
     <div className="flex flex-row justify-center items-center w-full gap-4">
     <button type="button" onClick={() => setMaxTime(appTime - 5)} className="lg:mr-4 lg:block text-white">
       -
     </button>
-    <p className="text-white">{maxTime === 0 ? '0:00' : getTime(appTime)}</p>
+    <p className="text-white">{maxTime === 0 ? '0:00' : getTime(seekTime)}</p>
 
-    <Slider   
-      size="sm"
-      step={0.01} 
-      maxValue={1} 
-      minValue={0} 
+    <input   
+      type="range"
+      max={maxTime} 
+      min={0} 
       color="secondary"
-      showOutline={true}
-      value={seekTime}
-      aria-label="Temperature"
-      className="max-w-md" 
+      value={seekTime || 0}
+      onChange={(e : any) => setSeekTime(e.target.value)}
+      onMouseUp={(e : any) =>{ audioRef.current.currentTime = e.target.value , setSeekTime(audioRef.current.currentTime) , setAppTime(audioRef.current.currentTime)} }
+      onTouchEnd={(e : any) => { audioRef.current.currentTime = e.target.value , setSeekTime(audioRef.current.currentTime) , setAppTime(audioRef.current.currentTime)} }
+      className="md:block w-24 md:w-56 2xl:w-96 h-1 mx-4 2xl:mx-6 rounded-lg"
     />
     <p className="text-white">{maxTime === 0 ? '0:00' : getTime(maxTime)}</p>
     <button type="button" onClick={() => setMaxTime(appTime + 5)} className="lg:ml-4 lg:block text-white">
@@ -72,7 +58,7 @@ const Player = ({ activeSong, volume, isPlaying, repeat ,  onEnded } :
       ref={audioRef}
       loop={repeat}
       onEnded={onEnded}
-      onTimeUpdate={(event : any ) => setAppTime(event.target.currentTime || 0.00)}
+      onTimeUpdate={(event : any ) => setSeekTime(event.target.currentTime || 0.00)}
       onLoadedData={(event : any ) => setMaxTime(event.target.currentTime || 0.00)}
     />
     </>

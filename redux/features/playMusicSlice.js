@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import useStorage from "@/hooks/useStorage";
 
 const initialState = {
   songList: [],
@@ -8,6 +9,7 @@ const initialState = {
   activeSong: {},
   genreListId: '',
 };
+const storage = useStorage();
 
 const playMusicSlice = createSlice({
   name: 'musicplay',
@@ -15,37 +17,21 @@ const playMusicSlice = createSlice({
   reducers: {
     setActiveSong: (state, action) => {
       state.activeSong = action.payload;
-      // if (action.payload?.data?.tracks?.hits) {
-      //   state.currentSongs = action.payload.data.tracks.hits;
-      // } else if (action.payload?.data?.properties) {
-      //   state.currentSongs = action.payload?.data?.tracks;
-      // } else {
-      //   state.currentSongs = action.payload.data;
-      // }
-
-      // state.currentIndex = action.payload.i;
+      state.currentIndex = action.payload?.id;
       state.isActive = true;
+      storage.setItem('play-music',action.payload , 'session')
     },
 
     nextSong: (state, action) => {
-      if (state.currentSongs[action.payload]?.track) {
-        state.activeSong = state.currentSongs[action.payload]?.track;
-      } else {
-        state.activeSong = state.currentSongs[action.payload];
-      }
+        state.activeSong = state.songList[action.payload];
 
-      state.currentIndex = action.payload;
+      state.currentIndex = state.activeSong.id;
       state.isActive = true;
     },
 
     prevSong: (state, action) => {
-      if (state.currentSongs[action.payload]?.track) {
-        state.activeSong = state.currentSongs[action.payload]?.track;
-      } else {
-        state.activeSong = state.currentSongs[action.payload];
-      }
-
-      state.currentIndex = action.payload;
+      state.activeSong = state.songList[action.payload];
+      state.currentIndex = state.activeSong.id;
       state.isActive = true;
     },
 
@@ -59,7 +45,13 @@ const playMusicSlice = createSlice({
     },
 
     setSongLists: (state, action) => {
-      state.songList = action.payload;
+      const updatedList = action.payload.map((item) => {
+          if (item.id == state.activeSong?.id && item.name == state.activeSong?.name && item.picture == state.activeSong?.picture)
+            return { ...item, isPlaying: true }
+          else
+            return { ...item, isPlaying: false }
+        })
+        state.songList = updatedList
     },
   },
 });

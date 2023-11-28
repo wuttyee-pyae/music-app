@@ -10,64 +10,61 @@ import { HeartIcon } from "@/components/desktop/music/icons/HeartIcon";
 import MoreOption from "@/components/desktop/music/MoreOption";
 import NowPlaying from "./NowPlaying";
 import useStorage from "@/hooks/useStorage";
-import { updateValue } from '@/hooks/observableService';
+import { subscribeToActiveValue, updateValue } from '@/hooks/observableService';
 
 import {
   playPause,
   setActiveSong,
   setSongLists
 } from "../../../redux/features/playMusicSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function PopularSongList(props: any) {
   const storage = useStorage();
   const dispatch = useDispatch();
-  const [songList, setSongList] = React.useState(props?.data || null);
+  const { activeSong , songList } = useSelector((state : any) => state.musicplay);
+  const [propsSongList, setPropsSongList] = React.useState(props?.data || null);
   const [playingSong, setPlayingSong] = useState<any>(storage.getItem('play-music', 'session') || null);
   const [favSongs, setFavSongs] = useState<any>(storage.getItem('fav-songs', 'local') || []);
-  
 
 
   useEffect(() => {
     setPlayingSong(storage.getItem('play-music', 'session') || null)
     setFavSongs(storage.getItem('fav-songs', 'local') || [])
     dispatch(setActiveSong(playingSong))
-    // For active music from session storage
-    const updatedList = songList.map((item: any) => {
-      if (item.id == playingSong?.id && item.name == playingSong?.name && item.picture == playingSong?.picture)
-        return { ...item, isPlaying: true }
-      else
-        return { ...item, isPlaying: false }
-    })
-    setSongList(updatedList);
-    // console.log("songList ----- ", songList)
+    dispatch(setSongLists(propsSongList))
 
     // For Fav List from local storage
     if(favSongs && favSongs.length > 0){
-      songList.map((obj1:any )=>
+      propsSongList.map((obj1:any )=>
         favSongs.some((obj2:any) => {
           if(obj1.id === obj2.id && obj1.name === obj2.name && obj1.picture === obj2.picture)
           obj1.liked = true
         })
         );
     }
-    const getFavList  = storage.getItem('fav-songs', 'local')
-    console.log("get fav list --- " , getFavList)
+  //   const getFavList  = storage.getItem('fav-songs', 'local')
+  //  console.log("fav - list --- " , getFavList)
+
+  const subscription = subscribeToActiveValue((value : any) => {
+    dispatch(setSongLists(propsSongList))
+    });
+    
+    return () => {
+      subscription.unsubscribe();
+    };
   }, [])
 
   const playMusic = async (data: any, index: number) => {
     const setData = storage.setItem('play-music', data, 'session');
     setPlayingSong(storage.getItem('play-music', 'session'))
     dispatch(playPause(true))
-    console.log(" ----  "  , playingSong)
     updateValue(setData);
     const updateSongList = await songList.map((item: any, i: number) => {
       if (i == index) return { ...item, isPlaying: true }
       else return { ...item, isPlaying: false }
     })
     dispatch(setSongLists(updateSongList))
-    
-    await setSongList(updateSongList);
   }
 
   const handleFavouriteList = async (data: any, liked?: any) => {
@@ -75,7 +72,7 @@ export default function PopularSongList(props: any) {
       if (item.id === data.id) return { ...item, liked: !liked };
       return item;
     });
-    await setSongList(updatedItems);
+    await setPropsSongList(updatedItems);
 
     const favList : any[] = [];
     await updatedItems.map((item: any) => {

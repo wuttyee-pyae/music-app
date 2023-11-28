@@ -2,6 +2,7 @@ import { BehaviorSubject } from 'rxjs';
 
 // Initialize BehaviorSubject with an initial value
 const behaviorSubject = new BehaviorSubject(null);
+const activeBehavSub = new BehaviorSubject(null)
 
 // Function to update the value of the BehaviorSubject
 const updateValue = (newValue) => {
@@ -15,4 +16,14 @@ const subscribeToValue = (callback) => {
   });
 };
 
-export { updateValue, subscribeToValue };
+const updateActiveValue = (newValue) => {
+  activeBehavSub.next(newValue);
+};
+
+const subscribeToActiveValue = (callback) => {
+  return activeBehavSub.subscribe({
+    next: callback,
+  });
+};
+
+export { updateValue, subscribeToValue , updateActiveValue ,subscribeToActiveValue };
