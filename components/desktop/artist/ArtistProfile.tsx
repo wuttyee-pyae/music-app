@@ -6,11 +6,11 @@ import ArtistMoreIcon from "./ArtistsMoreIcon";
 import FollowBtn from "./FollowBtn";
 import styles from "./artistprofile.module.css";
 import Albumcover from "./albums/AlbumCover";
-import VideoList from "./video/videolist";
 import { Tabs, Tab } from "@nextui-org/react";
 import PopularSongList from "./PopularSongList";
 import Breadcrumb from "./Breadcrumb";
 import Crbtitems from "../crbt/Crbtitems";
+import VideoCard from "./video/VideoCard";
 
 export default function ArtistProfile(props: any) {
   const artist = props.data;
@@ -92,7 +92,7 @@ export default function ArtistProfile(props: any) {
                           <p className="text-lg text-white mb-4">
                             Popular songs
                           </p>
-                          <PopularSongList data={artist.songs} />
+                          <PopularSongList data={artist.songs}  />
                           <Albumcover />
                         </div>
                       </div>
@@ -115,7 +115,26 @@ export default function ArtistProfile(props: any) {
                       <div className="tabs py-10">
                         <div className="flex flex-col gap-4 pb-32 mb-36">
                           <p className="text-lg text-white mb-4">MTV Music</p>
-                          <VideoList />
+                          <div className="grid grid-cols-2 gap-4 xl:grid-cols-4 md:grid-cols-2">
+                            {artist?.video?.map(
+                              (
+                                item: {
+                                  name: any;
+                                  picture: any;
+                                  viewer: any;
+
+                                },
+                                index: any
+                              ) => (
+                                <VideoCard
+                                  key={index}
+                                  picture={item?.picture}
+                                  name={item?.name}
+                                  viewer={item?.viewer}
+                                />
+                              )
+                            )}
+                          </div>
                         </div>
                       </div>
                     </Tab>

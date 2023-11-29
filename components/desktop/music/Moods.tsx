@@ -9,7 +9,7 @@ import Mood04 from "@/assets/music_images/moods/mood_card-3.png";
 
 export default function Moods() {
   return (
-    <div className="mb-10">
+    <div className="mb-4">
       <h3 className="title mb-2">Moods</h3>
       <div className="grid grid-cols-3 gap-4 xl:grid-cols-5 md:grid-cols-4">
         {/* Loop Moods Id */}

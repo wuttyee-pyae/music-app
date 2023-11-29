@@ -10,19 +10,24 @@ export default function UserAvatar() {
     <div className="flex gap-4 items-center">
       <Badge
         isOneChar
+        className="add_phto"
         content={
-          <Button radius="full" className="add_phto">
-            <AddIcon size={20} height={20} width={20} />
+          <Button radius="full" className="w-full" style={{
+            background: "none",
+          }}>
+            <AddIcon size={20} height={20} width={20}  />
           </Button>
         }
         color="danger"
         shape="circle"
         placement="top-right"
       >
-        <Button radius="full" className="add_phto_avatar">
+        <Button radius="full" className="w-full h-20 text-large" style={{
+            background: "none",
+          }}>
           <Avatar
             radius="full"
-            className="w-20 h-20 text-large"
+            className="w-full h-20 text-large"
             src="https://i.pravatar.cc/300?u=a042581f4e29026704f"
           />
         </Button>

@@ -3,12 +3,12 @@ import React from "react";
 import Image from "next/image";
 import { Card, CardFooter, Button } from "@nextui-org/react";
 import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Recommended(props: any) {
-  const artistsList = props.data
-  const router = useRouter()
-  const pathname = usePathname()
-
+  const {data:artistsList,pathname} = props
+  
+  
   return (
     <div className="pt-6">
       <div className="mb-4 wapper mx-4 pb-4">
@@ -16,7 +16,7 @@ export default function Recommended(props: any) {
         <div className="grid grid-cols-3 gap-4 xl:grid-cols-7 md:grid-cols-5">
 
           {artistsList.map((data: any) => (
-            <div id="recommended_artists_id" key={data.id} onClick={() => router.push(`${pathname}/${data.id}`)}>
+            <Link href={`/${pathname}/${data.id}`} id="recommended_artists_id" key={data.id} className="block">
               <Card isFooterBlurred radius="lg" className="border-none" >
                 <Image
                   className="rounded-lg"
@@ -45,7 +45,7 @@ export default function Recommended(props: any) {
                 }
               </Card>
               <div className="artist_list_name my-2">{data.name}</div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

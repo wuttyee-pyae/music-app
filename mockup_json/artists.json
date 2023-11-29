@@ -232,46 +232,46 @@
     "video": [
       {
         "id": 1,
-        "name": "Frances Jenkins",
-        "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
-        "type": "jazz",
-        "singer": "Farley Flynn",
+        "name": "Chan Khae",
+        "picture": "/artists/idiots/mtv/chan_khae/cover.jpg",
+        "type": "rock",
+        "singer": "IDIOTS",
         "viewer": 601910209,
         "liked": false
       },
       {
         "id": 2,
-        "name": "Whitehead Stein",
-        "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
-        "type": "pop",
-        "singer": "Susan Castaneda",
+        "name": "Min Nae Nnee Phot",
+        "picture": "/artists/idiots/mtv/min_nae_nee_phot/cover.jpg",
+        "type": "rock",
+        "singer": "IDIOTS",
         "viewer": 5623451858,
         "liked": false
       },
       {
         "id": 3,
-        "name": "Felicia Ayala",
-        "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
+        "name": "Nga Bawa Pyan You",
+        "picture": "/artists/idiots/mtv/nga_bawa_pyan_you/cover.jpg",
         "type": "rock",
-        "singer": "Lorene Mcguire",
+        "singer": "IDIOTS",
         "viewer": 2496513560,
         "liked": false
       },
       {
         "id": 4,
-        "name": "Horne Reyes",
-        "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
-        "type": "jazz",
-        "singer": "Isabella Garrison",
+        "name": "Su Taung",
+        "picture": "/artists/idiots/mtv/su_taung/cover.jpg",
+        "type": "rock",
+        "singer": "IDIOTS",
         "viewer": 4668096891,
         "liked": false
       },
       {
         "id": 5,
-        "name": "Catalina Yates",
-        "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
-        "type": "pop",
-        "singer": "Kristy Irwin",
+        "name": "Tar Ggyi Doh Aye Say",
+        "picture": "/artists/idiots/mtv/tar_gyi_doh_aye_say/cover.jpg",
+        "type": "rock",
+        "singer": "IDIOTS",
         "viewer": 1761150809,
         "liked": false
       }
@@ -573,46 +573,46 @@
     "video": [
       {
         "id": 1,
-        "name": "Figueroa Travis",
-        "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
-        "type": "jazz",
-        "singer": "Susie Foreman",
+        "name": "A Chit Ttay Ka Byar",
+        "picture": "/artists/aung_htet/mtv/a_chit_tay_kabyar/cover.jpg",
+        "type": "pop",
+        "singer": "Aung Htet",
         "viewer": 779566935,
         "liked": false
       },
       {
         "id": 2,
-        "name": "Franks Alexander",
-        "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
+        "name": "Ko Yet Chit Thu",
+        "picture": "/artists/aung_htet/mtv/ko_yet_chitthu/cover.jpg",
         "type": "pop",
-        "singer": "Alexandria Cohen",
+        "singer": "Aung Htet",
         "viewer": 3613071536,
         "liked": false
       },
       {
         "id": 3,
-        "name": "Humphrey Copeland",
-        "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
-        "type": "rock",
-        "singer": "Terry Stephenson",
+        "name": "Min Net Htike Tet Lu",
+        "picture": "/artists/aung_htet/mtv/min_net_htike_tet_lu/cover.jpg",
+        "type": "pop",
+        "singer": "Aung Htet",
         "viewer": 7256406625,
         "liked": false
       },
       {
         "id": 4,
-        "name": "Emilia William",
-        "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
-        "type": "rock",
-        "singer": "Mary Conrad",
+        "name": "Nout Bawa",
+        "picture": "/artists/aung_htet/mtv/nout_bawa/cover.jpg",
+        "type": "pop",
+        "singer": "Aung Htet",
         "viewer": 1030941442,
         "liked": false
       },
       {
         "id": 5,
-        "name": "Fuentes Fuentes",
-        "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
+        "name": "Ta Bar Wa Nhit Twe Sone Chin",
+        "picture": "/artists/aung_htet/mtv/tha_bawa_net_twae_sone_chinn/cover.jpg",
         "type": "pop",
-        "singer": "Karin Stanton",
+        "singer": "Aung Htet",
         "viewer": 8835165643,
         "liked": false
       }

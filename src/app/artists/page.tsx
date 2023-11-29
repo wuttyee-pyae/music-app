@@ -10,7 +10,7 @@ export default async function Artist() {
   return (
     <div className="">
       {/* <p>Data from Child: {dataFromChild}</p> */}
-        <Recommended data={localData} />
+        <Recommended data={localData} pathname='artists'/>
         <BrowseArtists />
     </div>
   );
