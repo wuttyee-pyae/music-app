@@ -1,6 +1,6 @@
 import React from "react";
 import {ScrollShadow} from "@nextui-org/react";
-import {Content} from "./Content";
+import Content from "./Content";
 
 export default function LyricsCard() {
   return (

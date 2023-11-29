@@ -18,7 +18,6 @@ import useStorage from "@/hooks/useStorage";
 import { subscribeToValue, updateActiveValue } from '@/hooks/observableService';
 import { Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from '@nextui-org/react';
 import LyricsCard from './lyrics/LyricsCard';
-import { updateValue } from '@/hooks/observableService';
 
 
 const MusicPlayer = () => {
@@ -28,13 +27,9 @@ const MusicPlayer = () => {
   const { activeSong ,songList ,  currentIndex  , isActive  , isPlaying  } =
   useSelector((state : any) => state.musicplay);
   
-  // const [duration, setDuration] = useState(0);
-  // const [seekTime, setSeekTime] = useState(0);
-  // const [currentSong, setCurrentSong] = useState(storage.getItem('play-music', 'session'));
   const [volume, setVolume] = useState(0.3);
-  const [repeat, setRepeat] = useState(false);
+  const [repeatStatus, setRepeatStatus] = useState(null);
   const [shuffle, setShuffle] = useState(false);
-  const [repeatAll, setRepeatAll] = useState(false);
   useEffect( () => {
     // dispatch(playPause(false));
    const subscription = subscribeToValue((value : any) => {
@@ -71,13 +66,13 @@ const MusicPlayer = () => {
         dispatch(nextSong((0)));
         storage.setItem('play-music',songList[0], 'session');
       }
-      repeatAll ? dispatch(playPause(true)) : null
+      repeatStatus === 'repeatAll' ? dispatch(playPause(true)) : null
       
     } else {
       const random = Math.floor(Math.random() * songList.length)
       dispatch(nextSong(random));
       storage.setItem('play-music',songList[random], 'session');
-      repeatAll ? dispatch(playPause(true)) : null
+      repeatStatus === 'repeatAll' ? dispatch(playPause(true)) : null
     }
     updateActiveValue(true)
     }else{
@@ -87,9 +82,6 @@ const MusicPlayer = () => {
   };
 
   const handlePrevSong = () => {
-    // if (currentIndex === 1) {
-    //   dispatch(prevSong(songList.length - 1));
-    // } else 
     if(songList.length > 0 ){
       if (shuffle) {
         const random = Math.floor(Math.random() * songList.length)
@@ -120,10 +112,8 @@ const MusicPlayer = () => {
       <div className="flex-1 flex flex-col items-center justify-center lg:col-span-6 col-span-8">
         <Controls
           isPlaying={isPlaying}
-          repeat={repeat as any}
-          setRepeat={setRepeat as any}
-          repeatAll={repeatAll as any}
-          setRepeatAll={setRepeatAll as any}
+          repeatStatus={repeatStatus as any}
+          setRepeatStatus={setRepeatStatus as any}
           shuffle={shuffle as any}
           setShuffle={setShuffle as any}
           handlePlayPause={handlePlayPause}
@@ -134,8 +124,7 @@ const MusicPlayer = () => {
           activeSong={activeSong}
           volume={volume}
           isPlaying={isPlaying}
-          // seekTime={seekTime}
-          repeat={repeat}
+          repeatStatus={repeatStatus}
           onEnded={handleNextSong}
           // onTimeUpdate={(event : any ) => setAppTime(event.target.currentTime)}
           // onLoadedData={(time  : any) =>  setDuration(time)}
@@ -164,7 +153,7 @@ const MusicPlayer = () => {
                   <p>{activeSong.name}</p>
                 </ModalHeader>
                 <ModalBody className="text-white">
-                  <LyricsCard />
+                  <LyricsCard/>
                 </ModalBody>
                 <ModalFooter></ModalFooter>
               </>

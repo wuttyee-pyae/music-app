@@ -8,6 +8,7 @@ const initialState = {
   isPlaying: false,
   activeSong: {},
   genreListId: '',
+  currentTimer:0
 };
 const storage = useStorage();
 
@@ -53,9 +54,13 @@ const playMusicSlice = createSlice({
         })
         state.songList = updatedList
     },
+
+    setCurrentTimer: (state, action) => {
+      state.currentTimer = action.payload;
+    },
   },
 });
 
-export const { setActiveSong, nextSong, prevSong, playPause, selectGenreListId, setSongLists } = playMusicSlice.actions;
+export const { setActiveSong, nextSong, prevSong, playPause, selectGenreListId, setSongLists, setCurrentTimer } = playMusicSlice.actions;
 
 export default playMusicSlice.reducer;

@@ -1,11 +1,10 @@
 /* eslint-disable jsx-a11y/media-has-caption */
-import { Slider } from '@nextui-org/react';
 import React, { useRef, useEffect, useState } from 'react';
+import { updateCurrentTimeValue } from '@/hooks/observableService';
 
 
-const Player = ({ activeSong, volume, isPlaying, repeat ,  onEnded } : 
-  { activeSong : any, volume : any , isPlaying : boolean , repeat : any, onEnded : any }) => {
-    // const dispatch = useDispatch();
+const Player = ({ activeSong, volume, isPlaying, repeatStatus ,  onEnded  } : 
+  { activeSong : any, volume : any , isPlaying : boolean , repeatStatus : any, onEnded : any }) => {
   const audioRef = useRef<any>(null);
   const [maxTime,setMaxTime] = useState(0)
   const [appTime, setAppTime] = useState(0);
@@ -28,13 +27,16 @@ const Player = ({ activeSong, volume, isPlaying, repeat ,  onEnded } :
     }
   }, [isPlaying,maxTime, volume ]);
   
-  
+  const onChangeCurrentTime = () =>{
+    updateCurrentTimeValue(audioRef.current.currentTime)
+  }
+
   return (
     <>
     <div className="flex flex-row justify-center items-center w-full gap-4">
-    <button type="button" onClick={() => setMaxTime(appTime - 5)} className="lg:mr-4 lg:block text-white">
+    {/* <button type="button" onClick={() => setMaxTime(appTime - 5)} className="lg:mr-4 lg:block text-white">
       -
-    </button>
+    </button> */}
     <p className="text-white">{maxTime === 0 ? '0:00' : getTime(seekTime)}</p>
 
     <input   
@@ -43,22 +45,22 @@ const Player = ({ activeSong, volume, isPlaying, repeat ,  onEnded } :
       min={0} 
       color="secondary"
       value={seekTime || 0}
-      onChange={(e : any) => setSeekTime(e.target.value)}
+      onChange={(e : any) => {setSeekTime(e.target.value) }}
       onMouseUp={(e : any) =>{ audioRef.current.currentTime = e.target.value , setSeekTime(audioRef.current.currentTime) , setAppTime(audioRef.current.currentTime)} }
       onTouchEnd={(e : any) => { audioRef.current.currentTime = e.target.value , setSeekTime(audioRef.current.currentTime) , setAppTime(audioRef.current.currentTime)} }
       className="md:block w-24 md:w-56 2xl:w-96 h-1 mx-4 2xl:mx-6 rounded-lg"
     />
     <p className="text-white">{maxTime === 0 ? '0:00' : getTime(maxTime)}</p>
-    <button type="button" onClick={() => setMaxTime(appTime + 5)} className="lg:ml-4 lg:block text-white">
+    {/* <button type="button" onClick={() => setMaxTime(appTime + 5)} className="lg:ml-4 lg:block text-white">
       +
-    </button>
+    </button> */}
   </div>
     <audio 
       src={activeSong?.audio || ''}
       ref={audioRef}
-      loop={repeat}
+      loop={repeatStatus === 'repeat' ? true : false}
       onEnded={onEnded}
-      onTimeUpdate={(event : any ) => setSeekTime(event.target.currentTime || 0.00)}
+      onTimeUpdate={(event : any ) => {setSeekTime(event.target.currentTime || 0.00), onChangeCurrentTime() }}
       onLoadedData={(event : any ) => setMaxTime(event.target.currentTime || 0.00)}
     />
     </>
