@@ -56,7 +56,7 @@ export default function ArtistProfile(props: any) {
                 style={{ objectFit: "cover" }}
                 width={200}
                 height={200}
-                // layout="responsive"
+                layout="responsive"
                 suppressHydrationWarning
               />
             </div>

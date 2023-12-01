@@ -5,7 +5,6 @@ import { PreviousIcon } from "../crbtplayer/PreviousIcon";
 import { RepeatOneIcon } from "../crbtplayer/RepeatOneIcon";
 import { ShuffleIcon } from "../crbtplayer/ShuffleIcon";
 import { RepeatAllIcon } from "../crbtplayer/RepeatAllIcon";
-import { repeat } from "rxjs";
 
 const Controls = ({
   isPlaying,
@@ -26,7 +25,6 @@ const Controls = ({
   handlePrevSong: any;
   handleNextSong: any;
 }) => {
-  console.log(" --- ", repeatStatus);
 
   const handleStatus = () => {
     if (repeatStatus == null) {
@@ -56,9 +54,6 @@ const Controls = ({
             className="cursor-pointer"
           />
         )}
-
-        {/* <RepeatOneIcon size={20} color={repeatStatus == 'repeat' ? 'blue' : 'white'} onClick={() => setRepeatStatus((repeat: any) => !repeat)} className="sm:block cursor-pointer" />
-      <RepeatAllIcon size={20} color={repeatStatus == 'repeatAll' ? 'blue' : 'white'} onClick={() => setRepeatStatus((repeatAll: any) => !repeatAll)} className="sm:block cursor-pointer" /> */}
 
         <PreviousIcon
           size={30}
