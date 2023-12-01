@@ -150,7 +150,7 @@ const MusicPlayer = () => {
             {(onClose) => (
               <>
                 <ModalHeader className="flex flex-col gap-1 text-white">
-                  <p>{activeSong.name}</p>
+                  <p>{activeSong?.name}</p>
                 </ModalHeader>
                 <ModalBody className="text-white">
                   <LyricsCard/>

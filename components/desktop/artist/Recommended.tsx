@@ -16,7 +16,7 @@ export default function Recommended(props: any) {
         <div className="grid grid-cols-3 gap-4 xl:grid-cols-7 md:grid-cols-5">
 
           {artistsList.map((data: any) => (
-            <Link href={`/${pathname}/${data.id}`} id="recommended_artists_id" key={data.id} className="block">
+            <Link href={`/${pathname}/${data.id}`} as= {`/hello/${data.id}`} id="recommended_artists_id" key={data.id} className="block">
               <Card isFooterBlurred radius="lg" className="border-none" >
                 <Image
                   className="rounded-lg"

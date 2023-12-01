@@ -44,11 +44,13 @@ const Content = () => {
   }, []);
 
   const getCurrentLyric = () => {
-    return lyrics.find((lyric: any) => lyric.time > currentTime) || { text: '' };
+
+    return lyrics.find((lyric: any) =>lyric.time > currentTime) || { text: '' };
   };
 
   return (
     <div className="text-2xl text-white">
+       <div>{getCurrentLyric().text}</div>
       <div>
         {
           lyrics.map((item: any) => {
