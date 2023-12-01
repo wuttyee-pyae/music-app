@@ -1,17 +1,15 @@
 import { subscribeToCurrentTimeValue } from "@/hooks/observableService";
 import React, { useEffect, useState } from "react";
 const Content = () => {
-  const [lyrics, setLyrics] = useState([]);
+  const [lyrics, setLyrics] = useState([ { time: 0, text: '' }]);
   const [currentTime, setCurrentTime] = useState(0);
 
   useEffect(() => {
     fetch('/artists/aung_htet/albums/anyone.lrc')
       .then((response) => response.text())
       .then(async (data: any) => {
-        // console.log('LRC file content:', data);
         const lines = await data.split('\n');
         const parsedLyrics: any = await lines.map((line: string, index: number) => {
-          // console.log(" in map line --- " , line , index)
           let [time, text] = line.split(']');
           time = time.substring(1);
           const timeComponents = time.split(':');
@@ -43,24 +41,30 @@ const Content = () => {
     };
   }, []);
 
-  const getCurrentLyric = () => {
-
-    return lyrics.find((lyric: any) =>lyric.time > currentTime) || { text: '' };
-  };
+  const getCurrentLyric  = () => {
+    const lyricIndex =  lyrics.findIndex((lyric: any) =>lyric.time > currentTime)
+    const currentLyric = lyrics[lyricIndex - 1] || { text: '' };
+    // const element : any = document.getElementById("box");
+    // element.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+  return currentLyric
+};
 
   return (
     <div className="text-2xl text-white">
        <div>{getCurrentLyric().text}</div>
       <div>
         {
-          lyrics.map((item: any) => {
+          lyrics.map((item: any , index : number) => {
             if (item.text == getCurrentLyric().text) {
               return (
-                <p className="bg-pink-700" >{item.text}</p>
+                <div key={index} id="active-lyrics">
+                  <p className="bg-pink-700"  >{item.text}</p>
+                </div>
+                
               )
             } else {
               return (
-                <p  >{item.text}</p>
+                <p key={item.time} >{item.text}</p>
               )
             }
           })

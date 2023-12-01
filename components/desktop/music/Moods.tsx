@@ -6,8 +6,15 @@ import Mood01 from "@/assets/music_images/moods/mood_card.png";
 import Mood02 from "@/assets/music_images/moods/mood_card-1.png";
 import Mood03 from "@/assets/music_images/moods/mood_card-2.png";
 import Mood04 from "@/assets/music_images/moods/mood_card-3.png";
+import { getAllGenres } from "../../../services/music.service";
 
 export default function Moods() {
+  
+  const data = getAllGenres('/genres').then((response)=>{
+    console.log(" ---- " , response)
+    return response
+  })
+  
   return (
     <div className="mb-4">
       <h3 className="title mb-2">Moods</h3>

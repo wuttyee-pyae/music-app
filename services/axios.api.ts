@@ -7,6 +7,7 @@ import axiosInterceptorInstance from './axios.interceptor';
 
       // Handle the response data here
       console.log(response.data);
+      return response.data
     } catch (error) {
       // Handle the error here
       console.error(error);
