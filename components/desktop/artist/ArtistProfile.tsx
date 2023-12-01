@@ -12,6 +12,7 @@ import Breadcrumb from "./Breadcrumb";
 import Crbtitems from "../crbt/Crbtitems";
 import VideoCard from "./video/VideoCard";
 
+
 export default function ArtistProfile(props: any) {
   const artist = props.data;
   const variants = ["underlined"];

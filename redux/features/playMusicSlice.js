@@ -46,7 +46,7 @@ const playMusicSlice = createSlice({
     },
 
     setSongLists: (state, action) => {
-      const updatedList = action.payload.map((item) => {
+      const updatedList = action.payload?.map((item) => {
           if (item.id == state.activeSong?.id && item.name == state.activeSong?.name && item.picture == state.activeSong?.picture)
             return { ...item, isPlaying: true }
           else

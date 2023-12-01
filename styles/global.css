@@ -610,6 +610,9 @@ thead {
   background: none !important;
   color: #fff;
 } */
+[onclick],a {
+  cursor: pointer;
+}
 
 @media screen and (max-width: 1024px) {
   .pb-36 {

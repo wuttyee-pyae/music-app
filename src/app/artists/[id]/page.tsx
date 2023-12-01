@@ -1,5 +1,4 @@
 import React from "react";
-import { Card, CardFooter, Button } from "@nextui-org/react";
 import Artistscover from "@/components/desktop/artist/ArtistsCover";
 import ArtistProfile from "@/components/desktop/artist/ArtistProfile";
 import { getArtistsDataById } from "@/lib/artists";
