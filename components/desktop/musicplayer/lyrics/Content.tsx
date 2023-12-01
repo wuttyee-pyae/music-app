@@ -51,7 +51,6 @@ const Content = ({data}: {data: any}) => {
 
   return (
     <div className="text-2xl text-white">
-       <div>{getCurrentLyric().text}</div>
       <div>
       {
           lyrics.length > 0 ? 
