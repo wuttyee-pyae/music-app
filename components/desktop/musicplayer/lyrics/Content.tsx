@@ -1,11 +1,11 @@
 import { subscribeToCurrentTimeValue } from "@/hooks/observableService";
 import React, { useEffect, useState } from "react";
-const Content = () => {
-  const [lyrics, setLyrics] = useState([ { time: 0, text: '' }]);
+const Content = ({data}: {data: any}) => {
+  const [lyrics, setLyrics] = useState([{ time: 0, text: '' }]);
   const [currentTime, setCurrentTime] = useState(0);
 
   useEffect(() => {
-    fetch('/artists/aung_htet/albums/anyone.lrc')
+    fetch(data?.lyric)
       .then((response) => response.text())
       .then(async (data: any) => {
         const lines = await data.split('\n');
@@ -53,21 +53,24 @@ const Content = () => {
     <div className="text-2xl text-white">
        <div>{getCurrentLyric().text}</div>
       <div>
-        {
-          lyrics.map((item: any , index : number) => {
-            if (item.text == getCurrentLyric().text) {
-              return (
-                <div key={index} id="active-lyrics">
-                  <p className="bg-pink-700"  >{item.text}</p>
-                </div>
-                
-              )
-            } else {
-              return (
-                <p key={item.time} >{item.text}</p>
-              )
-            }
-          })
+      {
+          lyrics.length > 0 ? 
+          
+            lyrics.map((item: any , index : number) => {
+              if (item.text == getCurrentLyric().text) {
+                return (
+                  <div key={index} id="active-lyrics">
+                    <p className="bg-pink-700" key={index} >{item.text}</p>
+                  </div>
+                  
+                )
+              } else {
+                return (
+                  <p key={index} >{item.text}</p>
+                )
+              }
+            })
+           : <p className="text-5xl">Not available this music in Lyric Servie</p>
         }
       </div>
     </div>

@@ -153,7 +153,7 @@ const MusicPlayer = () => {
                   <p>{activeSong?.name}</p>
                 </ModalHeader>
                 <ModalBody className="text-white">
-                  <LyricsCard/>
+                  <LyricsCard data={activeSong} />
                 </ModalBody>
                 <ModalFooter></ModalFooter>
               </>
