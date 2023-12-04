@@ -25,7 +25,7 @@ const Content = ({data}: {data: any}) => {
             return null;
           }
         }).filter(Boolean);
-        console.log('Parsed lyrics:', parsedLyrics);
+        // console.log('Parsed lyrics:', parsedLyrics);
         setLyrics(parsedLyrics);
       })
       .catch((error) => {

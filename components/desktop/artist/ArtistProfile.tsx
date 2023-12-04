@@ -52,7 +52,7 @@ export default function ArtistProfile(props: any) {
               <Image
                 className="rounded-lg shadow-lg mb-4"
                 alt="..."
-                src={artist.picture}
+                src={artist?.picture}
                 style={{ objectFit: "cover" }}
                 width={200}
                 height={200}
@@ -69,7 +69,7 @@ export default function ArtistProfile(props: any) {
               <div className="flex flex-wrap gap-4 items-center py-4">
                 <div>
                   <p className="artist_name lg:text-5xl md:text-3xl sm:text-4xl">
-                    {artist.name}
+                    {artist?.name}
                   </p>
                 </div>
                 <div>
@@ -93,7 +93,7 @@ export default function ArtistProfile(props: any) {
                           <p className="text-lg text-white mb-4">
                             Popular songs
                           </p>
-                          <PopularSongList data={artist.songs}  />
+                          <PopularSongList data={artist?.songs}  />
                           <Albumcover />
                         </div>
                       </div>
@@ -104,9 +104,9 @@ export default function ArtistProfile(props: any) {
                       <div className="tabs py-10">
                         <div className="flex flex-col gap-4 pb-32 mb-36">
                           <p className="text-lg text-white mb-4">
-                            About {artist.name}
+                            About {artist?.name}
                           </p>
-                          <p className="text-white">{artist.about}</p>
+                          <p className="text-white">{artist?.about}</p>
                         </div>
                       </div>
                     </Tab>
