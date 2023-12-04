@@ -3,12 +3,13 @@ import { GET } from "./axios.api";
 
 export const getAllGenres = async (url: string) => {
     try {
-      await GET(url).then((res)=>{
+      let response ;
+      await GET(url).then(async(res)=>{
          // Handle the response data here
-      console.log(res);
-      return res
+      console.log( "musuc service --- " , res);
+      response = await res
       })
-     
+      
     } catch (error) {
       // Handle the error here
       console.error(error);

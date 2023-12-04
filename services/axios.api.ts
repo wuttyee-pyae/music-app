@@ -6,7 +6,7 @@ import axiosInterceptorInstance from './axios.interceptor';
       const response = await axiosInterceptorInstance.get(`${process.env.API_URL}${url}`); 
 
       // Handle the response data here
-      console.log(response.data);
+      console.log(" axio api --- " , response.data);
       return response.data
     } catch (error) {
       // Handle the error here

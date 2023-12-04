@@ -8,9 +8,9 @@ import { getAllArtists } from "../../../services/artist.service";
 export default async function Artist() {
   const localData = await getArtistsData()
 
-  const data = getAllArtists('/fs/').then(()=>{
-    return 
-  })
+  // const data = getAllArtists('/fs/').then(()=>{
+  //   return 
+  // })
   
   return (
     <div className="">

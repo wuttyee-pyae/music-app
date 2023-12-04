@@ -3,7 +3,7 @@ import { GET } from "./axios.api";
 
 export const getAllArtists = async (url: string) => {
     try {
-      const response = await GET('/artist').then((res)=>{
+      const response = await GET(url).then((res)=>{
          // Handle the response data here
       console.log(res);
       })

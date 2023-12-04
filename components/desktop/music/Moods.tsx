@@ -10,10 +10,10 @@ import { getAllGenres } from "../../../services/music.service";
 
 export default function Moods() {
   
-  const data = getAllGenres('/genres').then((response)=>{
-    console.log(" ---- " , response)
-    return response
-  })
+  // const data = getAllGenres('/genres').then(async (response : any)=>{
+  //   console.log(" ---- " , response)
+  //   return await response?.data || ''
+  // })
   
   return (
     <div className="mb-4">
