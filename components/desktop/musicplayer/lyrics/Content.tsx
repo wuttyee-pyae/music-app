@@ -45,7 +45,7 @@ const Content = ({data}: {data: any}) => {
   const getCurrentLyric  = () => {
     const lyricIndex =  lyrics.findIndex((lyric: any) =>lyric.time > currentTime)
     const currentLyric = (lyricIndex == lyrics.length-1 || lyricIndex == -1) ? (lyrics[lyrics.length-1]) : (lyrics[lyricIndex - 1]) ;
-    console.log(" --- " , lyricIndex , lyrics.length , currentLyric)
+    // console.log(" --- " , lyricIndex , lyrics.length , currentLyric)
   return currentLyric  || { text: '' }
 };
 
