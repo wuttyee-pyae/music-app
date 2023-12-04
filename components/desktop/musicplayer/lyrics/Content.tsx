@@ -1,3 +1,4 @@
+"use client"
 import { subscribeToCurrentTimeValue } from "@/hooks/observableService";
 import React, { useEffect, useState } from "react";
 const Content = ({data}: {data: any}) => {
