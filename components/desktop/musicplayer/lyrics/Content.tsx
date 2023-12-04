@@ -21,7 +21,7 @@ const Content = ({data}: {data: any}) => {
             const totalSeconds = minutes * 60 + seconds;
             return { time: totalSeconds, text: text.trim() };
           } else {
-            console.warn(`Invalid time format at line ${index + 1}: ${time}`);
+            // console.warn(`Invalid time format at line ${index + 1}: ${time}`);
             return null;
           }
         }).filter(Boolean);
@@ -45,8 +45,6 @@ const Content = ({data}: {data: any}) => {
   const getCurrentLyric  = () => {
     const lyricIndex =  lyrics.findIndex((lyric: any) =>lyric.time > currentTime)
     const currentLyric = lyricIndex == lyrics.length-1 ? (lyrics[lyricIndex] || { text: '' }) : lyrics[lyricIndex - 1] || { text: '' } ;
-    // const element : any = document.getElementById("box");
-    // element.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
   return currentLyric
 };
 

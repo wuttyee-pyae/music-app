@@ -11,7 +11,7 @@ export default function Breadcrumb(props: any) {
         Artist
       </BreadcrumbItem>
       <BreadcrumbItem key="artist_name" href="/desktop/artists" isCurrent={currentPage === "artist_name"}>
-        {artist.name}
+        {artist?.name}
       </BreadcrumbItem>
     </Breadcrumbs>
   );

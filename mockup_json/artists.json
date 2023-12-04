@@ -566,6 +566,7 @@
         "name": "Anyone",
         "picture": "/artists/idiots/albums/khit_thit_kyaut/cover.jpeg",
         "audio":"/artists/aung_htet/albums/anyone.mp3",
+        "lyric":"/artists/aung_htet/albums/anyone.lrc",
         "type": "Pop",
         "singer": "Justin Bieber",
         "viewer": 2537381817,
