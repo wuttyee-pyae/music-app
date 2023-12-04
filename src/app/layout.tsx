@@ -5,15 +5,17 @@ import "tailwindcss/tailwind.css";
 import "@/styles/global.css";
 
 import React from "react";
-import useDeviceType from '@/hooks/useDeviceType';
-import ConstantContext from "../../context/ConstantContent";
+import useDeviceType from "@/hooks/useDeviceType";
+import MobileLayout from "@/components/mobile/root/MobileLayout";
+import DesktopLayout from "@/components/desktop/root/DesktopLayout";
+
+
 export default function MainRootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const isMobile = useDeviceType() === 'mobile' ? true : false
-
+  const  isMobile =  useDeviceType();
   return (
     <html lang="en" suppressHydrationWarning={true} className="dark">
       <Head>
@@ -27,9 +29,12 @@ export default function MainRootLayout({
 
       <body className="">
         <main className="layout__main-content" >
-          <ConstantContext.Provider value={isMobile}>
-            {children}
-          </ConstantContext.Provider>
+          {
+            isMobile ?  
+            <MobileLayout>{children}</MobileLayout>
+             : 
+            <DesktopLayout>{children}</DesktopLayout>
+          }
         </main>
 
 

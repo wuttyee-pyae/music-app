@@ -107,9 +107,9 @@ body {
 .hederbar {
   position: fixed;
   top: 0px;
-  z-index: 1111;
+  z-index: 2 !important;
   width: 100%;
-  background: #00000085;
+  background: #00000085 !important;
 }
 
 .font-normal {
@@ -477,11 +477,11 @@ Convert HEX to RGBA - http://hex2rgba.devoth.com/
 .add_phto{
     width: 20px;
     height: 20px;
-    background: none;
+    position: absolute;
+    right: 25%;
 }
 
 .add_phto_avatar{
-  background: none;
   width: auto;
   height: 80px;
 }
@@ -602,6 +602,16 @@ thead {
 
 .col-span-6 {
   grid-column: span 6 / span 6;
+}
+
+
+/* span.absolute {
+  width: auto !important;
+  background: none !important;
+  color: #fff;
+} */
+[onclick],a {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1024px) {

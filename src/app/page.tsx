@@ -1,12 +1,10 @@
-
-import Mobile from "./mobile/page";
-import Desktop from "./desktop/page";
-import ConstantContext from "../../context/ConstantContent";
-import { useContext } from "react";
+'use client'
+import Desktop from "@/components/desktop/root/Desktop";
+import Mobile from "@/components/mobile/root/Mobile";
+import useDeviceType from "@/hooks/useDeviceType";
 
 export default function MainPage ()  {
-
-  const isMobile = useContext(ConstantContext);
+  const  isMobile =  useDeviceType();
   return  isMobile ? (
       <Mobile/>
     ) : (

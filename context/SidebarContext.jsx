@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState } from "react";
 
-const initialValue = { isCollapsed: false , toggleSidebarcollapse: {} };
+const initialValue = { isCollapsed: false , toggleSidebarcollapse: false };
 
 const SidebarContext = createContext(initialValue);
 

@@ -9,12 +9,11 @@ export default function Artistscover() {
       <div className="">
         <div className={styles.cover_gradient}>
         <Image
+        priority
                   className=""
                   alt="..."
                   src={Artistscover01}
                   style={{ objectFit: "cover" }}
-                  layout="responsive"
-                  suppressHydrationWarning
                 />
         </div>
             

@@ -15,44 +15,37 @@ import Track from "./Track";
 import VolumeBar from "./VolumeBar";
 import { LyricsIcon } from "./LyricsIcon";
 import useStorage from "@/hooks/useStorage";
-import { subscribeToValue } from '@/hooks/observableService';
+import { subscribeToValue, updateActiveValue } from '@/hooks/observableService';
+import { Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from '@nextui-org/react';
+import LyricsCard from './lyrics/LyricsCard';
+
 
 const MusicPlayer = () => {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const dispatch = useDispatch();
-  const { activeSong , currentSongs, currentIndex  , isActive  , isPlaying  } =
+  const storage = useStorage();
+  const { activeSong ,songList ,  currentIndex  , isActive  , isPlaying  } =
   useSelector((state : any) => state.musicplay);
   
-  const [duration, setDuration] = useState(0);
-  const [seekTime, setSeekTime] = useState(0);
-  const [appTime, setAppTime] = useState(0);
   const [volume, setVolume] = useState(0.3);
-  const [repeat, setRepeat] = useState(false);
+  const [repeatStatus, setRepeatStatus] = useState(null);
   const [shuffle, setShuffle] = useState(false);
-  const [music, setMusic] = useState({});
-  const [musicPlaying, setMusicPlaying] = useState(false);
-  const storage = useStorage();
-
-
-  useEffect(() => {
-    // setMusicPlaying(isPlaying)
-    // setSeekTime =
-    // if (currentSongs.length > 0) dispatch(playPause(true));
-    // let sessionSong = storage.getItem('play-music', 'session');
+  useEffect( () => {
+    // dispatch(playPause(false));
    const subscription = subscribeToValue((value : any) => {
+    // console.log("subscription" , value)
     const sessionSong = storage.getItem('play-music', 'session');
       dispatch(setActiveSong(sessionSong))
-    console.log(activeSong)
-    //   if(sessionSong && isPlaying) {
-
-    //   }
+    // console.log( " active song  in use effect -- "  ,isPlaying )
     });
     
     return () => {
       subscription.unsubscribe();
     };
     
-  }, [isPlaying]);
-
+  }, []);
+ 
+  
   const handlePlayPause = () => {
     // if (!isActive) return;
     if (isPlaying) {
@@ -60,26 +53,51 @@ const MusicPlayer = () => {
     } else {
       dispatch(playPause(true));
     }
-    setMusicPlaying(isPlaying)
   };
 
   const handleNextSong = () => {
-    dispatch(playPause(false));
+    if(songList.length > 0){
+      dispatch(playPause(false));
     if (!shuffle) {
-      dispatch(nextSong((currentIndex + 1) % currentSongs.length));
+      if(currentIndex < songList.length ){
+        dispatch(nextSong((currentIndex)));
+        storage.setItem('play-music',songList[currentIndex], 'session');
+      }else{
+        dispatch(nextSong((0)));
+        storage.setItem('play-music',songList[0], 'session');
+      }
+      repeatStatus === 'repeatAll' ? dispatch(playPause(true)) : null
+      
     } else {
-      dispatch(nextSong(Math.floor(Math.random() * currentSongs.length)));
+      const random = Math.floor(Math.random() * songList.length)
+      dispatch(nextSong(random));
+      storage.setItem('play-music',songList[random], 'session');
+      repeatStatus === 'repeatAll' ? dispatch(playPause(true)) : null
     }
+    updateActiveValue(true)
+    }else{
+      dispatch(playPause(false));
+    }
+    
   };
 
   const handlePrevSong = () => {
-    if (currentIndex === 0) {
-      dispatch(prevSong(currentSongs.length - 1));
-    } else if (shuffle) {
-      dispatch(prevSong(Math.floor(Math.random() * currentSongs.length)));
-    } else {
-      dispatch(prevSong(currentIndex - 1));
+    if(songList.length > 0 ){
+      if (shuffle) {
+        const random = Math.floor(Math.random() * songList.length)
+        dispatch(prevSong(random));
+        storage.setItem('play-music',songList[random], 'session');
+      } else {
+        if(currentIndex != 1){
+          dispatch(prevSong(currentIndex - 2));
+          storage.setItem('play-music',songList[currentIndex - 2], 'session');
+        }
+      }
+      updateActiveValue(true)
+    }else{
+      dispatch(playPause(false));
     }
+    
   };
   
   
@@ -93,41 +111,60 @@ const MusicPlayer = () => {
       />
       <div className="flex-1 flex flex-col items-center justify-center lg:col-span-6 col-span-8">
         <Controls
-          isPlaying={musicPlaying}
-          repeat={repeat as any}
-          setRepeat={setRepeat as any}
+          isPlaying={isPlaying}
+          repeatStatus={repeatStatus as any}
+          setRepeatStatus={setRepeatStatus as any}
           shuffle={shuffle as any}
           setShuffle={setShuffle as any}
           handlePlayPause={handlePlayPause}
           handlePrevSong={handlePrevSong}
           handleNextSong={handleNextSong}
         />
-        <Seekbar
-          value={appTime}
-          min= {0}
-          max={duration}
-          onInput={(event : any) => setSeekTime(event.target.value)}
-          setSeekTime={setSeekTime}
-          appTime={appTime}
-        />
        <Player
           activeSong={activeSong}
           volume={volume}
-          isPlaying={musicPlaying}
-          seekTime={seekTime}
-          repeat={repeat}
+          isPlaying={isPlaying}
+          repeatStatus={repeatStatus}
           onEnded={handleNextSong}
-          onTimeUpdate={(event : any ) => setAppTime(event.target.currentTime)}
-          onLoadedData={(time  : any) =>  setDuration(time)}
+          // onTimeUpdate={(event : any ) => setAppTime(event.target.currentTime)}
+          // onLoadedData={(time  : any) =>  setDuration(time)}
         /> 
       </div>
       <div className="flex-1 flex items-center justify-end gap-4 lg:col-span-3 col-span-4">
-        <LyricsIcon />
+        <Button
+          onPress={onOpen}
+          style={{
+            background: "none",
+          }}
+        >
+          <LyricsIcon />
+        </Button>
+        <Modal
+          isOpen={isOpen}
+          onOpenChange={onOpenChange}
+          size={"3xl"}
+          placement={"top-center"}
+          // backdrop={"blur"}
+        >
+          <ModalContent>
+            {(onClose) => (
+              <>
+                <ModalHeader className="flex flex-col gap-1 text-white">
+                  <p>{activeSong?.name}</p>
+                </ModalHeader>
+                <ModalBody className="text-white leading-10">
+                  <LyricsCard data={activeSong} />
+                </ModalBody>
+                <ModalFooter></ModalFooter>
+              </>
+            )}
+          </ModalContent>
+        </Modal>
         <VolumeBar
         value={volume}
         min={0}
         max={1}
-        onChange={(event : any) => setVolume(event.target.value)}
+        onChange={(event : any) => {setVolume(event.target.value)}}
       />
       </div>
       

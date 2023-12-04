@@ -13,17 +13,17 @@ const verifyJWT = async (jwt :  any) => {
 
 export default async function middleware(request: NextRequest , response : NextResponse) {
   const {pathname} = request.nextUrl
-  console.log("Path name -- ", request.nextUrl.pathname);
+  // console.log("Path name -- ", request.nextUrl.pathname);
   const requestHeaders = new Headers(request.headers);
    
-  const url = request.nextUrl
-  const { device } = userAgent(request)
-  const device_dir = device.type === 'mobile' ? 'mobile' : 'desktop'
+  // const url = request.nextUrl
+  // const { device } = userAgent(request)
+  // const device_dir = device.type === 'mobile' ? 'mobile' : 'desktop'
   // url.searchParams.set('viewport', viewport)
-  if(pathname.endsWith('/')){
-    request.nextUrl.pathname += device_dir
-    return NextResponse.redirect(request.nextUrl)
-  }
+  // if(pathname.endsWith('/')){
+  //   request.nextUrl.pathname += device_dir
+  //   return NextResponse.redirect(request.nextUrl)
+  // }
   
   if (
     pathname.startsWith("/_next") ||

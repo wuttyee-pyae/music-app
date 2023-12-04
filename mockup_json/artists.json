@@ -182,7 +182,8 @@
         "singer": "IDIOTS",
         "viewer": 5461573909,
         "liked": false,
-        "isPlaying": false
+        "isPlaying": false,
+        "lyric":"/artists/idiots/albums/lu_ah_gita/chan_khae.lrc"
       },
       {
         "id": 2,
@@ -193,7 +194,9 @@
         "singer": "IDIOTS",
         "viewer": 8532542578,
         "liked": false,
-        "isPlaying": false
+        "isPlaying": false,
+        "lyric":"/artists/idiots/albums/lu_ah_gita/min_nae_nee_phot.lrc"
+
       },
       {
         "id": 3,
@@ -232,46 +235,46 @@
     "video": [
       {
         "id": 1,
-        "name": "Frances Jenkins",
-        "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
-        "type": "jazz",
-        "singer": "Farley Flynn",
+        "name": "Chan Khae",
+        "picture": "/artists/idiots/mtv/chan_khae/cover.jpg",
+        "type": "rock",
+        "singer": "IDIOTS",
         "viewer": 601910209,
         "liked": false
       },
       {
         "id": 2,
-        "name": "Whitehead Stein",
-        "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
-        "type": "pop",
-        "singer": "Susan Castaneda",
+        "name": "Min Nae Nnee Phot",
+        "picture": "/artists/idiots/mtv/min_nae_nee_phot/cover.jpg",
+        "type": "rock",
+        "singer": "IDIOTS",
         "viewer": 5623451858,
         "liked": false
       },
       {
         "id": 3,
-        "name": "Felicia Ayala",
-        "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
+        "name": "Nga Bawa Pyan You",
+        "picture": "/artists/idiots/mtv/nga_bawa_pyan_you/cover.jpg",
         "type": "rock",
-        "singer": "Lorene Mcguire",
+        "singer": "IDIOTS",
         "viewer": 2496513560,
         "liked": false
       },
       {
         "id": 4,
-        "name": "Horne Reyes",
-        "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
-        "type": "jazz",
-        "singer": "Isabella Garrison",
+        "name": "Su Taung",
+        "picture": "/artists/idiots/mtv/su_taung/cover.jpg",
+        "type": "rock",
+        "singer": "IDIOTS",
         "viewer": 4668096891,
         "liked": false
       },
       {
         "id": 5,
-        "name": "Catalina Yates",
-        "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
-        "type": "pop",
-        "singer": "Kristy Irwin",
+        "name": "Tar Ggyi Doh Aye Say",
+        "picture": "/artists/idiots/mtv/tar_gyi_doh_aye_say/cover.jpg",
+        "type": "rock",
+        "singer": "IDIOTS",
         "viewer": 1761150809,
         "liked": false
       }
@@ -342,7 +345,7 @@
     "email": "cruzmoses@netur.com",
     "phone": "+95 (998) 465-3148",
     "address": "876 Furman Street, Machias, Illinois, 6097",
-    "about": "Ad nostrud officia nisi sit ullamco nisi culpa eiusmod aute cillum cupidatat commodo. Culpa officia quis aliquip nisi consectetur anim magna proident aliquip aliqua sunt. Lorem magna laborum non amet cillum esse officia eu nulla sunt magna aliqua magna ex. Veniam consequat anim esse consectetur consectetur voluptate commodo. Exercitation pariatur consequat quis nulla irure quis et ad eu adipisicing laboris.\r\n",
+    "about": "Aung Htet (Burmese: အောင်ထက်, born Thet Zin Htay on 17 August 1990) is a Burmese singer and musician.</h1> In addition to singing, he plays the guitar and piano. He gained popularity while competing on the first season of Eipmat Sone Yar-Yar That Pan (အိပ်မက်ဆုံရာ (ရာသက်ပန်)), a singing competition broadcast on Channel 7. During the competition, he was well received by audiences for innovative compositions of well-known Burmese songs. Aung Htet released his first album, Hey, Friend (ဟေ့...မိတ်ဆွေ) on 27 March 2016.\r\n",
     "registered": "2019-09-07T12:27:33 -07:-30",
     "albums": [
       {
@@ -557,51 +560,62 @@
         "viewer": 8250447112,
         "liked": false,
         "isPlaying": false
+      },
+      {
+        "id": 6,
+        "name": "Anyone",
+        "picture": "/artists/idiots/albums/khit_thit_kyaut/cover.jpeg",
+        "audio":"/artists/aung_htet/albums/anyone.mp3",
+        "type": "Pop",
+        "singer": "Justin Bieber",
+        "viewer": 2537381817,
+        "liked": false,
+        "isPlaying": false
       }
     ],
     "video": [
       {
         "id": 1,
-        "name": "Figueroa Travis",
-        "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
-        "type": "jazz",
-        "singer": "Susie Foreman",
+        "name": "A Chit Ttay Ka Byar",
+        "picture": "/artists/aung_htet/mtv/a_chit_tay_kabyar/cover.jpg",
+        "type": "pop",
+        "singer": "Aung Htet",
         "viewer": 779566935,
         "liked": false
       },
       {
         "id": 2,
-        "name": "Franks Alexander",
-        "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
+        "name": "Ko Yet Chit Thu",
+        "picture": "/artists/aung_htet/mtv/ko_yet_chitthu/cover.jpg",
         "type": "pop",
-        "singer": "Alexandria Cohen",
+        "singer": "Aung Htet",
         "viewer": 3613071536,
         "liked": false
       },
       {
         "id": 3,
-        "name": "Humphrey Copeland",
-        "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
-        "type": "rock",
-        "singer": "Terry Stephenson",
+        "name": "Min Net Htike Tet Lu",
+        "picture": "/artists/aung_htet/mtv/min_net_htike_tet_lu/cover.jpg",
+        "type": "pop",
+        "singer": "Aung Htet",
         "viewer": 7256406625,
         "liked": false
       },
       {
         "id": 4,
-        "name": "Emilia William",
-        "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
-        "type": "rock",
-        "singer": "Mary Conrad",
+        "name": "Nout Bawa",
+        "picture": "/artists/aung_htet/mtv/nout_bawa/cover.jpg",
+        "type": "pop",
+        "singer": "Aung Htet",
         "viewer": 1030941442,
         "liked": false
       },
       {
         "id": 5,
-        "name": "Fuentes Fuentes",
-        "picture": "/artists/aung_htet/about_image/aung-htet.jpg",
+        "name": "Ta Bar Wa Nhit Twe Sone Chin",
+        "picture": "/artists/aung_htet/mtv/tha_bawa_net_twae_sone_chinn/cover.jpg",
         "type": "pop",
-        "singer": "Karin Stanton",
+        "singer": "Aung Htet",
         "viewer": 8835165643,
         "liked": false
       }
