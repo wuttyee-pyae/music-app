@@ -44,7 +44,7 @@ const Content = ({data}: {data: any}) => {
 
   const getCurrentLyric  = () => {
     const lyricIndex =  lyrics.findIndex((lyric: any) =>lyric.time > currentTime)
-    const currentLyric = lyrics[lyricIndex - 1] || { text: '' };
+    const currentLyric = lyricIndex == lyrics.length-1 ? (lyrics[lyricIndex] || { text: '' }) : lyrics[lyricIndex - 1] || { text: '' } ;
     // const element : any = document.getElementById("box");
     // element.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
   return currentLyric

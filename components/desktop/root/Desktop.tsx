@@ -20,19 +20,6 @@ export default function Desktop() {
     <div className="drop-shadow-xl">
       <div className="">
         <div className="pt-6">
-          <div>
-            <Input
-              value={value}
-              type="email"
-              label="Email"
-              variant="bordered"
-              isInvalid={isInvalid}
-              color={isInvalid ? "danger" : "success"}
-              errorMessage={isInvalid && "Please enter a valid email"}
-              onValueChange={setValue}
-              className="max-w-xs input-error"
-            />
-          </div>
           <div className="mb-4 wapper mx-4">
             <Link
               href="/desktop/music"
