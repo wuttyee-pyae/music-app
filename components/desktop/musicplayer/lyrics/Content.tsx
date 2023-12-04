@@ -50,7 +50,7 @@ const Content = ({data}: {data: any}) => {
 };
 
   return (
-    <div className="text-2xl text-white">
+    <div className="text-2xl text-white mb-2 leading-10">
       <div>
       {
           lyrics.length > 0 ? 
@@ -58,14 +58,14 @@ const Content = ({data}: {data: any}) => {
             lyrics.map((item: any , index : number) => {
               if (item.text == getCurrentLyric().text) {
                 return (
-                  <div key={index} id="active-lyrics">
-                    <p className="bg-pink-700" key={index} >{item.text}</p>
+                  <div key={index} id="active-lyrics" className="pb-4">
+                    <p className="bg-pink-700 p-4" key={index} >{item.text}</p>
                   </div>
                   
                 )
               } else {
                 return (
-                  <p key={index} >{item.text}</p>
+                  <p className="text-gray-300" key={index} >{item.text}</p>
                 )
               }
             })

@@ -7,10 +7,10 @@ export default function Breadcrumb(props: any) {
 
   return (
     <Breadcrumbs underline="active" onAction={(key : any) => setCurrentPage(key)}>
-      <BreadcrumbItem key="artist" href="/desktop/artists">
+      <BreadcrumbItem key="artist" href="/artists">
         Artist
       </BreadcrumbItem>
-      <BreadcrumbItem key="artist_name" href="/desktop/artists" isCurrent={currentPage === "artist_name"}>
+      <BreadcrumbItem key="artist_name" href="/artists" isCurrent={currentPage === "artist_name"}>
         {artist?.name}
       </BreadcrumbItem>
     </Breadcrumbs>
