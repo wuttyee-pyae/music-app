@@ -144,7 +144,7 @@ const MusicPlayer = () => {
           onOpenChange={onOpenChange}
           size={"3xl"}
           placement={"top-center"}
-          backdrop={"blur"}
+          // backdrop={"blur"}
         >
           <ModalContent>
             {(onClose) => (
@@ -152,7 +152,7 @@ const MusicPlayer = () => {
                 <ModalHeader className="flex flex-col gap-1 text-white">
                   <p>{activeSong?.name}</p>
                 </ModalHeader>
-                <ModalBody className="text-white">
+                <ModalBody className="text-white leading-10">
                   <LyricsCard data={activeSong} />
                 </ModalBody>
                 <ModalFooter></ModalFooter>
