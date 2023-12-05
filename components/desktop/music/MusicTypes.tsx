@@ -12,7 +12,7 @@ import Genres2 from "@/assets/music_images/genres/genres_02.png";
 import Genres3 from "@/assets/music_images/genres/genres_03.png";
 import Genres4 from "@/assets/music_images/genres/genres_04.png";
 import Genres5 from "@/assets/music_images/genres/genres_05.png";
-import { getAllGenres } from "../../../services/music.service";
+import { getAllGenres, getAllMoods } from "../../../services/music.service";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
@@ -40,16 +40,20 @@ export default function MusicTypes(props: any) {
   ];
 
   const param = useSearchParams()?.get('title')
-  if(param != null){
-    // setTitle(param)
-  }  
-  console.log(props.title );
-  console.log(param );
+  const [moodList, setMoodList] = useState<any>([{name: ''}])
 
   useEffect(() => {
     title == "Genres"
       ? setMusicTypeList(genresList)
       : setMusicTypeList(moodsList);
+
+      const fetchData = async () => {
+        const genreList = await getAllGenres()
+        // const moodList = await getAllMoods()
+        console.log(" ----  main result " ,genreList)
+        setMoodList(genreList)
+      }
+      fetchData()
   }, []);
 
   return (
@@ -77,6 +81,7 @@ export default function MusicTypes(props: any) {
                 className=""
                 suppressHydrationWarning
               />
+              <p>{moodList[0].name}</p>
             </Link>
           </div>
         ))}
