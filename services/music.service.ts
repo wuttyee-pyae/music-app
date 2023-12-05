@@ -1,17 +1,10 @@
 import { GET } from "./axios.api";
 
 
-export const getAllGenres = async (url: string) => {
-    try {
-      let response ;
-      await GET(url).then(async(res)=>{
-         // Handle the response data here
-      console.log( "musuc service --- " , res);
-      response = await res
+export const getAllGenres = async () => {
+      const result = await GET('/genres').then( (res : any) => {
+        console.log(" genre  --- "  , res )
+        return  res
       })
-      
-    } catch (error) {
-      // Handle the error here
-      console.error(error);
-    }
+      return result.data
   };
