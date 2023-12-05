@@ -54,7 +54,6 @@ const Content = ({data}: {data: any}) => {
       <div>
       {
           lyrics.length > 0 ? 
-          
             lyrics.map((item: any , index : number) => {
               if (item.text == getCurrentLyric().text) {
                 return (

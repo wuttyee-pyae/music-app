@@ -1,7 +1,6 @@
-import React from "react";
+'use client'
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-
-
 import Mood01 from "@/assets/music_images/moods/mood_card.png";
 import Mood02 from "@/assets/music_images/moods/mood_card-1.png";
 import Mood03 from "@/assets/music_images/moods/mood_card-2.png";
@@ -9,11 +8,21 @@ import Mood04 from "@/assets/music_images/moods/mood_card-3.png";
 import { getAllGenres } from "../../../services/music.service";
 
 export default function Moods() {
+  const [moodList, setMoodList] = useState<any>([{name: ''}])
+
+   
+ 
+
+    useEffect(()=> {
+      // fetchData
+      const fetchData = async () => {
+        const genreList = await getAllGenres()
+        console.log(" ----  main result " ,genreList)
+        setMoodList(genreList)
+      }
+      fetchData()
+    },[])
   
-  // const data = getAllGenres('/genres').then(async (response : any)=>{
-  //   console.log(" ---- " , response)
-  //   return await response?.data || ''
-  // })
   
   return (
     <div className="mb-4">
@@ -29,6 +38,7 @@ export default function Moods() {
             className=""
             suppressHydrationWarning
           />
+          <p>hello {moodList[0].name}</p>
         </div>
         <div id="moods_id">
           <Image
