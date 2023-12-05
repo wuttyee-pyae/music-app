@@ -23,7 +23,7 @@ const NotFound = () => {
                 <p>We couldn't find the page</p>
                 <div className="my-4">
                   <Link href="/home" color="foreground" underline="always" showAnchorIcon>
-                    GO BACK HOEM
+                    GO BACK HOME
                   </Link>
                 </div>
               </div>
