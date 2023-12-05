@@ -4,7 +4,6 @@ import Glass from "@/components/desktop/login/Glass";
 import { store } from "../../../redux/store";
 import { Providers } from "../../../src/app/providers";
 import Footer from "../footer/Footer";
-
 export default function MobileLayout({children} : {children: React.ReactNode}){
     return(
         <>

@@ -18,6 +18,8 @@ import MoodCard from "@/components/mobile/musiccard/MoodCard";
 import CrbtItem from "@/components/mobile/crbt/CrbtItem";
 import MtvCard from "@/components/mobile/mtv/MtvCard";
 import CrbtList from "../crbt/ChildList";
+import "@/styles/mobile.css";
+
 
 export default function Mobile({}) {
   const scrollDirection = useScrollDirection();

@@ -3,7 +3,7 @@ import CrbtBanner from "@/components/desktop/crbt/Banner";
 import CrbtTag from "@/components/desktop/crbt/CrbtTag";
 import Crbtlist from "@/components/desktop/crbt/Crbtlist";
 import MusicGenres from "@/components/desktop/music/Genres";
-import MoodsGenres from "@/components/desktop/music/Moods";
+import MoodsGenres from "@/components/desktop/music/MusicTypes";
 import Recommended from "@/components/desktop/artist/Recommended";
 import BrowseArtists from "@/components/desktop/artist/BrowseArtists";
 import getArtistsData from "@/lib/artists";
