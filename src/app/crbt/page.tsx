@@ -7,6 +7,7 @@ import MoodsGenres from "@/components/desktop/music/MusicTypes";
 import Recommended from "@/components/desktop/artist/Recommended";
 import BrowseArtists from "@/components/desktop/artist/BrowseArtists";
 import getArtistsData from "@/lib/artists";
+import MusicTypes from "@/components/desktop/music/MusicTypes";
 
 export default async function Crbt(props: any) {
   const localData = await getArtistsData();
@@ -17,11 +18,11 @@ export default async function Crbt(props: any) {
           <Banner />
         </div>
         <div className="mx-4">
-          <MusicGenres />
-          <MoodsGenres />
+          <MusicTypes title={"Genres"} />
+          <MusicTypes title={"Moods"} />
         </div>
-        <Recommended data={localData} pathname='artists'/>
-          <BrowseArtists />
+        <Recommended data={localData} pathname="artists" />
+        <BrowseArtists />
       </div>
     </div>
   );

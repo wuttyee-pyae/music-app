@@ -30,10 +30,9 @@ export default function Recommended(props: any) {
 
                 />
                 {data.released == false &&
-                  <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
-                    <p className="text-tiny text-white/80">Available soon.</p>
+                  <CardFooter className="justify-between overflow-hidden py-1 absolute bottom-1">
                     <Button
-                      className="text-tiny text-white bg-black/20"
+                      className="text-tiny text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 w-full"
                       variant="flat"
                       color="default"
                       radius="lg"

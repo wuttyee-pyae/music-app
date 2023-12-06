@@ -12,8 +12,8 @@ const Logobar = () => {
     <div className="flex gap-4">
       <a
         className="navbar-brand ml-4"
-        href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-        target="_blank"
+        href="/home"
+        target="_self"
         rel="noopener noreferrer"
       >
         <Image

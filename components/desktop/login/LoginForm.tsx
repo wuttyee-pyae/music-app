@@ -36,7 +36,9 @@ export default function LoginForm(props: any) {
     <>
       <div className="flex flex-col w-full justify-center items-center">
         <Card className="max-w-full w-[400px] h-auto">
-        <div className="bg-danger- text-white w-full p-4">Incorrect username or password.</div>
+          <div className="bg-danger text-white w-full p-4">
+            Incorrect username or password.
+          </div>
 
           <CardBody className="overflow-hidden">
             <Tabs
@@ -85,6 +87,9 @@ export default function LoginForm(props: any) {
                       Sign up
                     </Link>
                   </p>
+                  <p className="text-center text-small">
+                    OR <Link size="sm" href="/forgot_password">Forgot password?</Link>
+                  </p>
                   <div className="flex gap-2 justify-end">
                     <MyButton>Log in</MyButton>
                   </div>
@@ -106,8 +111,34 @@ export default function LoginForm(props: any) {
                   />
                   <Input
                     isRequired
+                    label="Phone Number"
+                    placeholder="Enter your Phone Number"
+                    type="phone"
+                  />
+                  
+                  <Input
+                    isRequired
                     label="Password"
                     placeholder="Enter your password"
+                    type="password"
+                    endContent={
+                      <button
+                        className="focus:outline-none"
+                        type="button"
+                        onClick={toggleVisibility}
+                      >
+                        {isVisible ? (
+                          <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+                        ) : (
+                          <EyeFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+                        )}
+                      </button>
+                    }
+                  />
+                  <Input
+                    isRequired
+                    label="Repeat Password"
+                    placeholder="Repeat your password"
                     type="password"
                     endContent={
                       <button

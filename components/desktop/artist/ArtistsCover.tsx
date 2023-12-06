@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import styles from "./artistscover.module.css"
 
-import Artistscover01 from "@/assets/artists/big_bag/about_image/baner-01.jpg";
+import Artistscover01 from "../../../public/images/non-cover-bg.jpg";
 
 export default function Artistscover() {
   return (

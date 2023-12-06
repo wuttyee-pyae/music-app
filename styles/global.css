@@ -116,7 +116,7 @@ body {
   color: var(--main-rintext-color);
 }
 
-.mtv_title{
+.mtv_title {
   color: var(--main-rintext-color);
 }
 
@@ -202,11 +202,11 @@ a.menu-link a:hover,
   white-space: nowrap;
 }
 
-#recommended_artists_id{
+#recommended_artists_id {
   cursor: pointer;
 }
 
-.playlist_create_btn{
+.playlist_create_btn {
   width: 100%;
   height: 300px;
 }
@@ -413,7 +413,7 @@ Convert HEX to RGBA - http://hex2rgba.devoth.com/
   /* filter: blur(4px) saturate(0%); */
 }
 
-.play_hover{
+.play_hover {
   background: none;
   padding: 0px;
   box-shadow: none;
@@ -443,19 +443,19 @@ Convert HEX to RGBA - http://hex2rgba.devoth.com/
   border-radius: 50%;
   color: var(--main-rintext-color);
 }
-.music_hover{
-    background: none;
-    box-shadow: none;
-    position: relative;
-    margin-left: 112px;
+.music_hover {
+  background: none;
+  box-shadow: none;
+  position: relative;
+  margin-left: 112px;
 }
 
-.music_card{
+.music_card {
   width: 100%;
   height: auto;
   background: none;
 }
-.playlist_card{
+.playlist_card {
   width: 100%;
   height: auto;
   background: none;
@@ -474,14 +474,14 @@ Convert HEX to RGBA - http://hex2rgba.devoth.com/
   background: var(--main-gradient-scroll-hover);
 }
 
-.add_phto{
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    right: 25%;
+.add_phto {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 25%;
 }
 
-.add_phto_avatar{
+.add_phto_avatar {
   width: auto;
   height: 80px;
 }
@@ -604,14 +604,44 @@ thead {
   grid-column: span 6 / span 6;
 }
 
-
 /* span.absolute {
   width: auto !important;
   background: none !important;
   color: #fff;
 } */
-[onclick],a {
+[onclick],
+a {
   cursor: pointer;
+}
+
+.music_type_bg {
+  background: linear-gradient(91deg, #fd5759 0.52%, #8c52ff 99.54%);
+  height: 100px;
+}
+.music_type_title {
+  position: relative;
+  color: var(--main-rintext-color);
+  text-transform: uppercase;
+  line-height: 20px;
+}
+
+.music_type_img_bg {
+  fill: linear-gradient(180deg, #8c52ff 0%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 0px 3px 12px 0px rgba(0, 0, 0, 0.25) inset;
+  filter: drop-shadow(0px 3px 12px rgba(0, 0, 0, 0.25));
+  backdrop-filter: blur(12px);
+  transform: rotate(-45deg);
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+  position: absolute;
+  right: 12px;
+  top: 16px;
+}
+
+.music_type_img {
+  position: relative;
+  bottom: 4px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -626,4 +656,3 @@ thead {
     flex-direction: column;
 } */
 }
-
