@@ -24,7 +24,7 @@ export const UserDropdown = () => {
       </NavbarItem>
       <DropdownMenu
         aria-label="User menu actions"
-        onAction={(actionKey) => console.log({ actionKey })}
+        // onAction={(actionKey) => console.log({ actionKey })}
       >
         <DropdownItem
           key="profile"
@@ -46,7 +46,7 @@ export const UserDropdown = () => {
           </Link>
         </DropdownItem>
         <DropdownItem
-          key="request_arist_dashboard"
+          key="arist_dashboard"
           color="secondary"
           className="flex flex-col justify-start w-full items-start"
         >

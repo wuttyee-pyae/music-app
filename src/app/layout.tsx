@@ -8,6 +8,7 @@ import React from "react";
 import useDeviceType from "@/hooks/useDeviceType";
 import MobileLayout from "@/components/mobile/root/MobileLayout";
 import DesktopLayout from "@/components/desktop/root/DesktopLayout";
+import { usePathname } from "next/navigation";
 
 
 export default function MainRootLayout({
@@ -16,6 +17,9 @@ export default function MainRootLayout({
   children: React.ReactNode;
 }) {
   const  isMobile =  useDeviceType();
+  const pathname = usePathname();
+  const MobileLayoutComponent = pathname?.startsWith('/dashboard') ? React.Fragment : MobileLayout ;
+  const DesktopLayoutComponent = pathname?.startsWith('/dashboard') ? React.Fragment : DesktopLayout ;
   return (
     <html lang="en" suppressHydrationWarning={true} className="dark">
       <Head>
@@ -31,9 +35,9 @@ export default function MainRootLayout({
         <main className="layout__main-content" >
           {
             isMobile ?  
-            <MobileLayout>{children}</MobileLayout>
+            <MobileLayoutComponent>{children}</MobileLayoutComponent>
              : 
-            <DesktopLayout>{children}</DesktopLayout>
+            <DesktopLayoutComponent>{children}</DesktopLayoutComponent>
           }
         </main>
 
