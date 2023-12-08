@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FormEvent } from "react";
 import {
   Tabs,
   Tab,
@@ -14,24 +14,40 @@ import { EyeSlashFilledIcon } from "./EyeSlashFilledIcon";
 import MyButton from "./MyButton";
 import { TextEditerIcon } from "./TextEditerIcon";
 import styles from "./ErrorMessage.module.css";
+import { useFormik } from 'formik';
+import { loginSchema } from '../../../services/schema'
+import { login } from "../../../services/auth.service";
 
 export default function LoginForm(props: any) {
-  const [value, setValue] = React.useState("");
-
-  const validateEmail = (value: string) =>
-    value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
-
-  const isInvalid = React.useMemo(() => {
-    if (value === "") return false;
-
-    return validateEmail(value) ? false : true;
-  }, [value]);
-
-  console.log(isInvalid, "is isInvalid");
-
   const [selected, setSelected] = React.useState("login");
+  const [passwordType , setPasswordType] = React.useState('password')
   const [isVisible, setIsVisible] = React.useState(false);
-  const toggleVisibility = () => setIsVisible(!isVisible);
+  const onSubmit = async (values :any , actions : any) => {
+    console.log(" onsubmit" , values, errors)
+    // await new Promise((resolve) => setTimeout(resolve,1000))
+    // actions.resetForm()
+   
+    try {
+      await login(values)
+    } catch (err) {
+      throw err;
+    }
+  }
+  const { values,errors ,touched ,isSubmitting, handleBlur , handleChange , handleSubmit} = useFormik({
+    initialValues : {
+      username: '',
+      password: ''
+    },
+    validationSchema: loginSchema ,
+    onSubmit,
+  });
+
+  const toggleVisibility = () => {
+    isVisible ? setPasswordType('password') : setPasswordType('text')
+    setIsVisible(!isVisible)
+  };
+
+
   return (
     <>
       <div className="flex flex-col w-full justify-center items-center">
@@ -49,24 +65,32 @@ export default function LoginForm(props: any) {
               onSelectionChange={setSelected as any}
             >
               <Tab key="login" title="Login">
-                <form className="flex flex-col gap-4">
+                <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
                   <Input
-                    value={value}
-                    type="email"
-                    label="Email"
-                    placeholder="Enter your Name"
-                    variant="bordered"
-                    isInvalid={isInvalid}
-                    color={isInvalid ? "danger" : "secondary"}
-                    errorMessage={isInvalid && "Please enter a valid email"}
-                    onValueChange={setValue}
-                    className={styles.hidden}
+                    name="username"
+                    type="text"
+                    label="Email or Username"
+                    placeholder="Enter your Email or Username"
+                    value={values.username}
+                    // isInvalid={isInvalid}
+                    color={errors.username && touched.username ? "danger" : "secondary"}
+                    // errorMessage={isInvalid && "Please enter a valid username"}
+                    // className={styles.hidden}
+                    // className={errors.username && touched.username ? 'styles.input-error' : "" }
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                   />
+                  {errors.username && touched.username && <p className={styles.errorMessage} >{errors.username}</p>}
                   <Input
+                    onChange={handleChange}
+                    value={values.password}
+                    onBlur={handleBlur}
+                    name="password"
                     isRequired
                     label="Password"
                     placeholder="Enter your password"
-                    type="password"
+                    type={passwordType}
+                    color={errors.password && touched.password ? "danger" : "secondary"}
                     endContent={
                       <button
                         className="focus:outline-none"
@@ -81,6 +105,7 @@ export default function LoginForm(props: any) {
                       </button>
                     }
                   />
+                  {errors.password && touched.password && <p className={styles.errorMessage} >{errors.password}</p>}
                   <p className="text-center text-small">
                     Need to create an account?{" "}
                     <Link size="sm" onPress={() => setSelected("sign-up")}>
@@ -91,7 +116,7 @@ export default function LoginForm(props: any) {
                     OR <Link size="sm" href="/forgot_password">Forgot password?</Link>
                   </p>
                   <div className="flex gap-2 justify-end">
-                    <MyButton>Log in</MyButton>
+                    <MyButton isSubmitting={isSubmitting} >Log in</MyButton>
                   </div>
                 </form>
               </Tab>
@@ -161,7 +186,7 @@ export default function LoginForm(props: any) {
                     </Link>
                   </p>
                   <div className="flex gap-2 justify-end">
-                    <MyButton>Sing up</MyButton>
+                    <MyButton isSubmitting={isSubmitting}>Sing up</MyButton>
                   </div>
                 </form>
               </Tab>

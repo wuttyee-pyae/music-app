@@ -15,6 +15,7 @@ axiosInterceptorInstance.interceptors.request.use(
     // if (accessToken) {
     //   if (config.headers) config.headers.token = accessToken;
     // }
+    // console.log("request . use")
     return config;
   },
   (error) => {
@@ -31,7 +32,10 @@ axiosInterceptorInstance.interceptors.request.use(
 axiosInterceptorInstance.interceptors.response.use(
   (response) => {
     // Modify the response data here
-
+    console.log("response use ---  " , response)
+    if(response.status == 403){
+      // refresh token
+    }
     return response;
   },
   (error) => {

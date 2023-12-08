@@ -26,11 +26,8 @@ export default function MobileLayout({children} : {children: React.ReactNode}){
                           </div>
                         </div>
                       </Glass>
-
                     </div>
                     <Footer />
-
-
                   </Provider>
                 </Providers>
               </SidebarProvider>

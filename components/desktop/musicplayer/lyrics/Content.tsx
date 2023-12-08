@@ -1,9 +1,11 @@
 "use client"
 import { subscribeToCurrentTimeValue } from "@/hooks/observableService";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 const Content = ({data}: {data: any}) => {
   const [lyrics, setLyrics] = useState([{ time: 0, text: '' }]);
   const [currentTime, setCurrentTime] = useState(0);
+  const [lineHeight, setLineHeight] = useState(0)
+  const lyricsContainerRef = useRef<any>(null);
 
   useEffect(() => {
     fetch(data?.lyric)
@@ -31,12 +33,12 @@ const Content = ({data}: {data: any}) => {
       .catch((error) => {
         console.error('Error fetching or parsing lyrics:', error);
       });
-
-
+      
+     
     const subscription = subscribeToCurrentTimeValue((value: any) => {
       setCurrentTime(value)
     });
-
+  
     return () => {
       subscription.unsubscribe();
     };
@@ -44,20 +46,43 @@ const Content = ({data}: {data: any}) => {
 
   const getCurrentLyric  = () => {
     const lyricIndex =  lyrics.findIndex((lyric: any) =>lyric.time > currentTime)
-    const currentLyric = (lyricIndex == lyrics.length-1 || lyricIndex == -1) ? (lyrics[lyrics.length-1]) : (lyrics[lyricIndex - 1]) ;
+    const currentLyric : any  = (lyricIndex == lyrics.length-1 || lyricIndex == -1) ? (lyrics[lyrics.length-1]) : (lyrics[lyricIndex - 1]) ;
     // console.log(" --- " , lyricIndex , lyrics.length , currentLyric)
+   
+    // if (lyricsContainerRef.current ) {
+    //   const lineElement = lyricsContainerRef.current.querySelector('.lyric-line');
+    //   if (lineElement) {
+    //     const containerHeight = 200
+    //     const lyricHeight = lyricsContainerRef.current.children[lyricIndex]?.clientHeight;
+    //     const scrollCenter = (lyricIndex * lyricHeight) - (containerHeight / 2) + (lyricHeight / 2);
+       
+    //     // const res = (lyricIndex-1) * height
+    //     console.log(" --- " ,scrollCenter , lyricIndex  , containerHeight)  
+    //     if( lyricIndex != -1){
+    //       console.log("--- current ----")
+    //       lyricsContainerRef.current.scrollTo({
+    //         top: scrollCenter,
+    //         behavior: 'smooth',
+    //       });
+    //     }
+       
+    //   }
+    // }
+
+    
+  
   return currentLyric  || { text: '' }
 };
 
   return (
     <div className="text-2xl text-white mb-2 leading-10">
-      <div>
+      <div ref={lyricsContainerRef as any} style={{ maxHeight: '400px', overflowY: 'auto' }}>
       {
           lyrics.length > 0 ? 
             lyrics.map((item: any , index : number) => {
               if (item.text == getCurrentLyric().text) {
                 return (
-                  <div key={index} id="active-lyrics" className="pb-4">
+                  <div key={index} className="lyric-line" >
                     <p className="bg-pink-700 p-4" key={index} >{item.text}</p>
                   </div>
                   

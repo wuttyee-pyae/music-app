@@ -21,10 +21,6 @@ import "@/styles/ramdomcolors.css";
 export default function MusicTypes(props: any) {
   const [musicTypeList, setMusicTypeList] = useState<any>(null);
   const [title, setTitle] = useState<any>(props.title);
-  // const data = getAllGenres('/genres').then(async (response : any)=>{
-  //   console.log(" ---- " , response)
-  //   return await response?.data || ''
-  // })
   const colors = ["foreground", "primary", "secondary", "success", "warning", "danger"];
 
   const genresList = [
@@ -47,6 +43,9 @@ export default function MusicTypes(props: any) {
   const [moodList, setMoodList] = useState<any>([{ name: "" }]);
 
   useEffect(() => {
+   
+    setTitle(props.title)
+    console.log("prop ---- " , props , title , param)
     title == "Genres"
       ? setMusicTypeList(genresList)
       : setMusicTypeList(moodsList);
@@ -54,7 +53,7 @@ export default function MusicTypes(props: any) {
     const fetchData = async () => {
       const genreList = await getAllGenres();
       // const moodList = await getAllMoods()
-      console.log(" ----  main result ", genreList);
+      // console.log(" ----  main result ", genreList);
       setMoodList(genreList);
     };
     fetchData();
