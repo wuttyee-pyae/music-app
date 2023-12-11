@@ -1,12 +1,13 @@
 import CardBox from "@/components/dashboard/nav/card/CardBox";
 import Artistscover from "@/components/dashboard/nav/cover_banner/Artistscover";
+import { MusicIcon } from "@/components/mobile/nav/icons/MusicIcon";
 import React from "react";
 
 const page = () => {
   const cardList = [
-    { title: "Music", count: 20, color: "text-purple-600", icon:"MusicIcon" },
-    { title: "MTV", count: 20, color: "text-green-600", icon:"MusicIcon" },
-    { title: "Collection", count: null, color: "text-red-600", icon:"MusicIcon" },
+    { title: "Music", count: 20, color: "text-purple-600", icon:<MusicIcon color="red"/> },
+    { title: "MTV", count: 20, color: "text-green-600", icon:<MusicIcon color="white" /> },
+    { title: "Collection", count: null, color: "text-red-600", icon:<MusicIcon color="pink" /> },
   ];
   return (
     <div className="pt-20">
@@ -22,7 +23,7 @@ const page = () => {
         </div>
         <div className="grid grid-cols-3 gap-4 mb-4">
           {cardList.map((item, index) => (
-            <CardBox key="index" data={item} status="time"/>
+            <CardBox key="index" data={item} status="time" />
           ))}
         </div>
 
@@ -33,7 +34,7 @@ const page = () => {
         </div>
         <div className="grid grid-cols-3 gap-4 mb-4">
           {cardList.map((item, index) => (
-            <CardBox key="index" data={item}  status="quick" icon={item.icon}/>
+            <CardBox key="index" data={item}  status="quick" Icon={item.icon}/>
           ))}
         </div>
       </div>

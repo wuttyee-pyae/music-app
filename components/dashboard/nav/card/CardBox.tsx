@@ -1,8 +1,7 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import {Card, CardBody} from "@nextui-org/react";
-import { MusicIcon } from "@/components/mobile/nav/icons/MusicIcon";
 
-export default function CardBox({data , status , icon} : {data : any , status: string , icon?: React.ComponentType<any> }) {
+export default function CardBox({data , status , Icon} : {data : any , status: string , Icon?: React.ReactElement }) {
   return (
         <Card className="p-2 w-full">
             <CardBody className="text-center justify-center">
@@ -15,12 +14,12 @@ export default function CardBox({data , status , icon} : {data : any , status: s
                : 
                <div>
                 <p className={`text-2xl text-bold ${data.color}`} >{data.count || 0}</p>
-                <div className="flex justify-center items-center"><icon /></div>
+                <div className="flex justify-center items-center">
+                {Icon ? <Icon.type {...Icon.props} size={20}/> : <></>}
+                </div>
                 <p className="text-white">{data.title}</p>
                </div>
               }
-              
-                
             </CardBody>
             </Card>
   );
