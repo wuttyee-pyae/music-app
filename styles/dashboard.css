@@ -1,0 +1,79 @@
+.container{
+  max-width: 1280px;
+  margin: 0px auto;
+}
+
+.cover_postion_btn{
+    position: relative;
+    bottom: 60px;
+}
+
+span.absolute {
+  width: auto;
+  background: none;
+}
+
+.cover_btn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  align-content: start;
+  background-color: rgba(48, 48, 51, 0.4) !important;
+  box-shadow: 0px -3px 6px #000000eb;
+}
+
+.artist_profile_postion{
+  position: relative;
+  bottom: 74px;
+}
+
+.cover{
+  height: 180px;
+}
+.drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 500px;
+    max-height: 100%;
+    border-radius: 0;
+    margin: 0;
+  }
+
+  .menuber{
+    background-color: #171717;
+    width: 25% !important;
+  }
+  
+  .drawer-animated {
+    transform: translateX(100%);
+  }
+  
+  .drawer-animated-slide-in {
+    animation: slide-in 0.3s forwards;
+  }
+  
+  .drawer-animated-slide-out {
+    animation: slide-out 0.2s forwards;
+  }
+  
+  @keyframes slide-in {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+  
+  @keyframes slide-out {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }

@@ -1,9 +1,13 @@
+'use client'
 import React from 'react'
 import SidebarProvider from '../../../../context/SidebarContext'
 import { Providers } from '../../providers'
 import { store } from '../../../../redux/store'
 import Glass from '@/components/desktop/login/Glass'
-import { NavbarWrapper } from '@/components/mobile/nav/NavbarWrapper'
+import { NavbarWrapper } from '@/components/dashboard/nav/NavbarWrapper'
+import "@/styles/mobile.css";
+import "@/styles/dashboard.css";
+import Footer from '@/components/mobile/footer/Footer'
 
 const Dashboard = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -21,13 +25,15 @@ const Dashboard = ({ children }: { children: React.ReactNode }) => {
                     <div className="p-0">
                       <div className="drop-shadow-xl">
                         <div className="mb-4 pb-24 min-h-screen">
-                          <main className="layout__main-content" >{children}</main>
+                          <main className="layout__main-content container" >{children}</main>
                           {/* <Desktop  >{children}</Desktop> */}
                         </div>
                       </div>
                     </div>
                   </Glass>
                 </div>
+                <Footer />
+
               {/* </Provider> */}
             </Providers>
           </SidebarProvider>
