@@ -18,7 +18,11 @@ import { useFormik } from 'formik';
 import { loginSchema } from '../../../services/schema'
 import { login } from "../../../services/auth.service";
 
+import  { setAuth }  from "../../../redux/features/appSlice";
+import { useDispatch } from "react-redux";
+
 export default function LoginForm(props: any) {
+  const dispatch = useDispatch();
   const [selected, setSelected] = React.useState("login");
   const [passwordType , setPasswordType] = React.useState('password')
   const [isVisible, setIsVisible] = React.useState(false);
@@ -26,9 +30,12 @@ export default function LoginForm(props: any) {
     console.log(" onsubmit" , values, errors)
     // await new Promise((resolve) => setTimeout(resolve,1000))
     // actions.resetForm()
-   
+    
     try {
-      await login(values)
+      let userData = await login(values)
+      if(userData.jwt){
+        dispatch(setAuth(true))
+      }
     } catch (err) {
       throw err;
     }

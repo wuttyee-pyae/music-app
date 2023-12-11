@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import useStorage from "@/hooks/useStorage";
 
 const initialState = {
   songList: [],
@@ -10,7 +9,7 @@ const initialState = {
   genreListId: '',
   currentTimer:0
 };
-const storage = useStorage();
+
 
 const playMusicSlice = createSlice({
   name: 'musicplay',
@@ -20,12 +19,11 @@ const playMusicSlice = createSlice({
       state.activeSong = action.payload;
       state.currentIndex = action.payload?.id;
       state.isActive = true;
-      storage.setItem('play-music',action.payload , 'session')
+      // storage.setItem('play-music',action.payload , 'session')
     },
 
     nextSong: (state, action) => {
         state.activeSong = state.songList[action.payload];
-
       state.currentIndex = state.activeSong.id;
       state.isActive = true;
     },

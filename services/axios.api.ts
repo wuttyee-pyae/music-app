@@ -19,9 +19,7 @@ import axiosInterceptorInstance from './axios.interceptor';
   export const post = async (url: string ,requestData : any ) => {
     try {
       const response = await axiosInterceptorInstance.post(`${process.env.NEXT_PUBLIC_API_URL}${url}`, requestData);
-
-      // Handle the response data here
-      // console.log(response.data);
+      return response.data
     } catch (error) {
       // Handle the error here
       return Promise.reject(error);

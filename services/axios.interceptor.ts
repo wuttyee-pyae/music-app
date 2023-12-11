@@ -1,13 +1,17 @@
 import axios from 'axios';
+import {store} from '../redux/store';
 
 const axiosInterceptorInstance = axios.create({
   baseURL: process.env.API_URL, // Replace with your API base URL
 });
 
-
 // Request interceptor
 axiosInterceptorInstance.interceptors.request.use(
+  
   (config) => {
+    if(store.getState().app.auth){
+      if (config.headers) config.headers.Authorization = store.getState().app.token;
+    }
     // Modify the request config here (add headers, authentication tokens)
     //     const accessToken = JSON.parse(localStorage.getItem("token") || '');
 
@@ -16,6 +20,7 @@ axiosInterceptorInstance.interceptors.request.use(
     //   if (config.headers) config.headers.token = accessToken;
     // }
     // console.log("request . use")
+    console.log('what is currently in store', store.getState());
     return config;
   },
   (error) => {
