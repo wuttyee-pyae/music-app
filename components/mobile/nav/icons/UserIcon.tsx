@@ -11,6 +11,6 @@ export const UserIcon = (props:any) => (
     fill="none"
     {...props}
   >
-    <path d="M0,93.28H19.654v-2.8H0Zm0-6.992H19.654v-2.8H0ZM0,76.5v2.8H19.654V76.5Z" transform="translate(0 -76.5)" fill="currentColor"/>
+    <path d="M0,93.28H19.654v-2.8H0Zm0-6.992H19.654v-2.8H0ZM0,76.5v2.8H19.654V76.5Z" transform="translate(0 -76.5)" fill="#fff"/>
   </svg>
 );

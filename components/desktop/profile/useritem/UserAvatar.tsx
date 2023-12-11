@@ -4,39 +4,50 @@ import { Badge, Button, Avatar } from "@nextui-org/react";
 
 import styles from "./UserAvatar.module.css";
 import { AddIcon } from "./icons/AddIcon";
+import { TakePhoto } from "@/components/dashboard/nav/cover_banner/icons/TakePhoto";
 
 export default function UserAvatar() {
   return (
-    <div className="flex gap-4 items-center">
+    <div className="flex gap-4 items-end">
       <Badge
         isOneChar
         className="add_phto"
         content={
-          <Button radius="full" className="w-full" style={{
-            background: "none",
-          }}>
-            <AddIcon size={20} height={20} width={20}  />
+          <Button
+            isIconOnly
+            color="danger"
+            radius="full"
+            aria-label="Take Profile Photo"
+            className="cover_btn"
+            variant="bordered"
+          >
+            <TakePhoto size={18} />
           </Button>
         }
-        color="danger"
-        shape="circle"
-        placement="top-right"
+        placement="bottom-right"
       >
-        <Button radius="full" className="w-full h-20 text-large" style={{
+        <Button
+          radius="full"
+          className="w-full h-28 text-large"
+          style={{
             background: "none",
-          }}>
+          }}
+        >
           <Avatar
+          isBordered 
             radius="full"
-            className="w-full h-20 text-large"
+            className="w-full h-28 text-large"
             src="https://i.pravatar.cc/300?u=a042581f4e29026704f"
           />
         </Button>
       </Badge>
       <div className="flex-row">
         <div className="flex">
-          <p className={styles.user_name}>John</p> <p className={styles.user_name}>Doe</p>
+          <p className={styles.user_name}>Tun Myint Than Htike</p>
         </div>
-        <div><p className={styles.user_lable}>Free Account</p></div>
+        <div>
+          <p className={styles.user_lable}>Free Account</p>
+        </div>
       </div>
     </div>
   );
