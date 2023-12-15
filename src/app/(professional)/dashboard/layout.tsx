@@ -27,9 +27,9 @@ const Dashboard = ({ children }: { children: React.ReactNode }) => {
                     <div className="p-0">
                       <div className="drop-shadow-xl">
                         <div className="mb-4 pb-24 min-h-screen">
-                          <ProtectedRoutes >
+                          {/* <ProtectedRoutes > */}
                           <main className="layout__main-content container" >{children}</main>
-                          </ProtectedRoutes>
+                          {/* </ProtectedRoutes> */}
                         </div>
                       </div>
                     </div>

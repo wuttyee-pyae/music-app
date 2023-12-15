@@ -1,13 +1,15 @@
 import CardBox from "@/components/dashboard/nav/card/CardBox";
 import Artistscover from "@/components/dashboard/nav/cover_banner/Artistscover";
 import { MusicIcon } from "@/components/mobile/nav/icons/MusicIcon";
+import { VideoIcon } from "@/components/mobile/nav/icons/VideoIcon";
+import { url } from "inspector";
 import React from "react";
 
 const Dashboard = () => {
   const cardList = [
-    { title: "Music", count: 20, color: "text-purple-600", icon:<MusicIcon color="red"/> },
-    { title: "MTV", count: 20, color: "text-green-600", icon:<MusicIcon color="white" /> },
-    { title: "Collection", count: null, color: "text-red-600", icon:<MusicIcon color="pink" /> },
+    { title: "Music", count: 20, color: "text-purple-600", icon:<MusicIcon color="red"/>, url:"/dashboard/music" },
+    { title: "MTV", count: 20, color: "text-green-600", icon:<VideoIcon color="text-green-600" />, url:"/dashboard/music" },
+    { title: "Collection", count: null, color: "text-red-600", icon:<MusicIcon color="pink" />, url:"/dashboard/music" },
   ];
   return (
     <div className="pt-20">
