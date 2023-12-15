@@ -12,18 +12,25 @@ import Footer from "../Footer"
 import { Providers } from "../../../src/app/providers"
 import { PrimeReactProvider } from 'primereact/api';
 import { ConfirmDialog } from 'primereact/confirmdialog'; 
+import { useEffect, useState } from "react"
 
 export default function DesktopLayout({children} : {children : React.ReactNode}){
+  const [isCollapsed , setIsCollapsed] = useState(true)
+  const handleAsideBar = () => {
+    setIsCollapsed(!isCollapsed)
+  }
+  useEffect(()=>{
+    handleAsideBar
+  })
     return (
         <>
-        <SidebarProvider>
         <PrimeReactProvider>
                 <Providers>
                   <Provider store={store}>
                     <div className="layout">
                       <div className="flex hederbar items-center">
                         <div className="w-auto logobar">
-                          <Logobar />
+                          <Logobar  handleAsideBar={handleAsideBar} />
                         </div>
                         <div className="w-auto">
                           <BackNext />
@@ -32,11 +39,11 @@ export default function DesktopLayout({children} : {children : React.ReactNode})
                           <NavbarWrapper />
                         </div>
                       </div>
-                      <Glass className="w-full mx-auto top-area">
+                      <Glass className="flex mx-auto top-area">
 
-                        <Asidebar />
+                        <Asidebar collapsed={isCollapsed}/>
 
-                        <div className="p-0 lg:ml-64">
+                        <div className="p-0 ml-0">
                           <div className="mb-4 pb-36 min-h-screen">
                             <div className="drop-shadow-xl">
                             <ConfirmDialog />
@@ -53,7 +60,6 @@ export default function DesktopLayout({children} : {children : React.ReactNode})
                   </Provider>
                 </Providers>
                 </PrimeReactProvider>
-              </SidebarProvider>
               </>
     )
 }

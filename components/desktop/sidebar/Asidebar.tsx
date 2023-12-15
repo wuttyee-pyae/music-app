@@ -9,15 +9,13 @@ import { useSidebarContext } from "../../../context/SidebarContext";
 
 import { useState, useEffect } from 'react';
 
-const Asidebar = () => {
-  const {isCollapsed , toggleSidebarcollapse} = useSidebarContext()
+const Asidebar = ({collapsed}:{collapsed : boolean}) => {
+  const [isCollapsed , setIsCollapsed] = React.useState(true)
   useEffect(() => {
-    if(window.innerWidth < 1024){
-      toggleSidebarcollapse
-    }
-  },[toggleSidebarcollapse])
+    setIsCollapsed(collapsed)
+  },[collapsed])
   return (
-    <div  className={clsx("sidebar sidebar-dark left-bar left-0 z-30 w-64 transition-transform md:transition-translate-x-full lg:translate-x-0",isCollapsed ? 'hidden' :"block")}>
+    <div  className={clsx("sidebar-dark left-bar transition-transform md:transition-translate-x-full lg:translate-x-0" ,isCollapsed ? "w-64" :"w-0")}>
       <div className={` sidebar__wrapper overflow-y-auto`}>
       <aside
         id="sidebar-multi-level-sidebar"

@@ -1,21 +1,20 @@
-import React, { useId } from "react";
+import React from "react";
 import { UserIcon } from "@/components/mobile/nav/icons/UserIcon";
-import { Button, Spacer } from "@nextui-org/react";
+import { Sidebar } from 'primereact/sidebar';
 import Image from "next/image";
 
 // import component 👇
-import Drawer from "react-modern-drawer";
+// import Drawer from "react-modern-drawer";
 
 //import styles 👇
-import "react-modern-drawer/dist/index.css";
+// import "react-modern-drawer/dist/index.css";
 import UserSidebar from "@/components/desktop/sidebar/UserSidebar";
 import Artistscover from "./cover_banner/Artistscover";
 
-const DreawerMenu = () => {
-  const instanceId = "postType";
-  const [isOpen, setIsOpen] = React.useState(false);
+const DrawerMenu = () => {
+  const [visible, setVisible] = React.useState(false);
   const toggleDrawer = () => {
-    setIsOpen((prevState) => !prevState);
+    setVisible((prevState) => !prevState);
   };
 
   return (
@@ -23,17 +22,12 @@ const DreawerMenu = () => {
       <button onClick={toggleDrawer}>
         <UserIcon />
       </button>
-      <Drawer
-        open={isOpen}
-        onClose={toggleDrawer}
-        direction="left"
-        className=""
-      >
+      <Sidebar visible={visible} onHide={() => setVisible(false)} >
         <div className="sidebar sidebar-dark left-bar menuber text-white">
           <div className="flex items-center m-2">
-            <div>
+            {/* <div> */}
               <UserIcon onClick={toggleDrawer} className="m-2" />
-            </div>
+            {/* </div> */}
             <div>
               <a
                 className="navbar-brand"
@@ -58,9 +52,9 @@ const DreawerMenu = () => {
           </div> */}
           <UserSidebar />
         </div>
-      </Drawer>
+      </Sidebar>
     </>
   );
 };
 
-export default DreawerMenu;
+export default DrawerMenu;

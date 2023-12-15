@@ -1,5 +1,6 @@
 import axiosInterceptorInstance from './axios.interceptor';
 import { confirmDialog } from 'primereact/confirmdialog';
+import { confirmAlert } from "./alert.service";
 
   export const get = async (url: string , id?:any) => {
     try {
@@ -16,6 +17,8 @@ import { confirmDialog } from 'primereact/confirmdialog';
     //     accept: () => {return response.data} ,
     //     reject: () => {return response.data}
     // });
+
+   
     return response.data
     } catch (error) {
       // Handle the error here

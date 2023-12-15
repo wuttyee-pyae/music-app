@@ -2,7 +2,7 @@ import CardBox from "@/components/dashboard/nav/card/CardBox";
 import Artistscover from "@/components/dashboard/nav/cover_banner/Artistscover";
 import { MusicIcon } from "@/components/mobile/nav/icons/MusicIcon";
 import { VideoIcon } from "@/components/mobile/nav/icons/VideoIcon";
-import { url } from "inspector";
+import Link from "next/link";
 import React from "react";
 
 const Dashboard = () => {
@@ -80,6 +80,7 @@ const Dashboard = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

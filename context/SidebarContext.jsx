@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState } from "react";
 
-const initialValue = { isCollapsed: false , toggleSidebarcollapse: false };
+const initialValue = { isCollapsed: false , toggleSidebarcollapse: {} };
 
 const SidebarContext = createContext(initialValue);
 
@@ -10,6 +10,7 @@ const SidebarProvider = ({ children }) => {
   const [isCollapsed, setCollapse] = useState(false);
 
   const toggleSidebarcollapse = () => {
+    console.log("click toggle Side bar collapse ")
     setCollapse((prevState) => !prevState);
   };
 

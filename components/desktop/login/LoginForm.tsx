@@ -60,7 +60,6 @@ export default function LoginForm(props: any) {
 
 
   return (
-    <>
       <div className="flex flex-col w-full justify-center items-center">
         <Card className="max-w-full w-[400px] h-auto">
           <div className="bg-danger text-white w-full p-4">
@@ -205,6 +204,5 @@ export default function LoginForm(props: any) {
           </CardBody>
         </Card>
       </div>
-    </>
   );
 }
