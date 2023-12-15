@@ -4,7 +4,7 @@ import SidebarProvider from '../../../../context/SidebarContext'
 import { Providers } from '../../providers'
 import { store } from '../../../../redux/store'
 import Glass from '@/components/desktop/login/Glass'
-import { NavbarWrapper } from '@/components/mobile/nav/NavbarWrapper'
+import { NavbarWrapper } from '@/components/dashboard/nav/NavbarWrapper'
 import { Provider } from "react-redux";
 import "@/styles/mobile.css";
 import "@/styles/dashboard.css";
