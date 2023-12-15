@@ -10,6 +10,7 @@ const appSlice = createSlice({
   initialState,
   reducers: {
     setAuth: (state, action) => {
+      console.log(" --  app slice -- ",action.payload)
         state.auth = action.payload;
     },
     setToken: (state, action) => {

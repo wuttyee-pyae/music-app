@@ -55,6 +55,8 @@
     "next-video": "^0.8.1",
     "pnpm": "^8.6.12",
     "postcss": "8.4.31",
+    "primeicons": "^6.0.1",
+    "primereact": "^10.2.1",
     "react": "18.2.0",
     "react-aria": "^3.29.1",
     "react-aria-components": "^1.0.0-rc.0",

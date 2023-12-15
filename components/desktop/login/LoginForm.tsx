@@ -18,11 +18,13 @@ import { useFormik } from 'formik';
 import { loginSchema } from '../../../services/schema'
 import { login } from "../../../services/auth.service";
 
-import  { setAuth }  from "../../../redux/features/appSlice";
+import  { setAuth , setToken }  from "../../../redux/features/appSlice";
 import { useDispatch } from "react-redux";
+import { useRouter } from "next/navigation"
 
 export default function LoginForm(props: any) {
   const dispatch = useDispatch();
+  const router = useRouter()
   const [selected, setSelected] = React.useState("login");
   const [passwordType , setPasswordType] = React.useState('password')
   const [isVisible, setIsVisible] = React.useState(false);
@@ -33,17 +35,19 @@ export default function LoginForm(props: any) {
     
     try {
       let userData = await login(values)
-      if(userData.jwt){
-        dispatch(setAuth(true))
-      }
+      console.log("--  data " , userData)
+      dispatch(setAuth(true))
+      dispatch(setToken(userData.jwt))
+      // router.push('/')
+
     } catch (err) {
       throw err;
     }
   }
   const { values,errors ,touched ,isSubmitting, handleBlur , handleChange , handleSubmit} = useFormik({
     initialValues : {
-      username: '',
-      password: ''
+      username: 'myintmyatthein',
+      password: 'Myintmyatthein!1331'
     },
     validationSchema: loginSchema ,
     onSubmit,

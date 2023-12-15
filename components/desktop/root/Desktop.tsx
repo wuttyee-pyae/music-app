@@ -1,19 +1,12 @@
 'use client'
 import CadPlayList from "@/components/desktop/yoursplaylist/CadPlayList";
 import { Link } from "@nextui-org/react";
-import React from "react";
-import { Input } from "@nextui-org/react";
-
+import React, { useEffect } from "react";
 
 export default function Desktop() {
-  const [value, setValue] = React.useState("junior2nextui.org");
-  const validateEmail = (value: any) => value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
-
-  const isInvalid = React.useMemo(() => {
-    if (value === "") return false;
-
-    return validateEmail(value) ? false : true;
-  }, [value]);
+  useEffect(() => {
+    console.log(" current date time --  " ,(Math.round(new Date().getTime() / 1000)).toString())
+  })
 
 
   return (

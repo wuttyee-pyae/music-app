@@ -36,7 +36,6 @@ const MusicPlayer = () => {
     // console.log("subscription" , value)
     const sessionSong = storage.getItem('play-music', 'session');
       dispatch(setActiveSong(sessionSong))
-    // console.log( " active song  in use effect -- "  ,isPlaying )
     });
     
     return () => {

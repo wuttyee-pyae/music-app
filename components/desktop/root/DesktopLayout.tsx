@@ -10,11 +10,14 @@ import Glass from "../login/Glass"
 import Asidebar from "../sidebar/Asidebar"
 import Footer from "../Footer"
 import { Providers } from "../../../src/app/providers"
+import { PrimeReactProvider } from 'primereact/api';
+import { ConfirmDialog } from 'primereact/confirmdialog'; 
 
 export default function DesktopLayout({children} : {children : React.ReactNode}){
     return (
         <>
         <SidebarProvider>
+        <PrimeReactProvider>
                 <Providers>
                   <Provider store={store}>
                     <div className="layout">
@@ -36,6 +39,7 @@ export default function DesktopLayout({children} : {children : React.ReactNode})
                         <div className="p-0 lg:ml-64">
                           <div className="mb-4 pb-36 min-h-screen">
                             <div className="drop-shadow-xl">
+                            <ConfirmDialog />
                               <main className="layout__main-content">{children}</main>
                             </div>
                           </div>
@@ -48,6 +52,7 @@ export default function DesktopLayout({children} : {children : React.ReactNode})
                     </div>
                   </Provider>
                 </Providers>
+                </PrimeReactProvider>
               </SidebarProvider>
               </>
     )

@@ -10,24 +10,15 @@ axiosInterceptorInstance.interceptors.request.use(
   
   (config) => {
     if(store.getState().app.auth){
-      if (config.headers) config.headers.Authorization = store.getState().app.token;
+      if (config.headers) config.headers.Authorization = `Bearer ${store.getState().app.token}` ;
     }
-    // Modify the request config here (add headers, authentication tokens)
-    //     const accessToken = JSON.parse(localStorage.getItem("token") || '');
-
-    // // If token is present add it to request's Authorization Header
-    // if (accessToken) {
-    //   if (config.headers) config.headers.token = accessToken;
-    // }
-    // console.log("request . use")
-    console.log('what is currently in store', store.getState());
     return config;
   },
   (error) => {
-    // Handle request errors here
-
     return Promise.reject(error);
   }
+
+  // console.log("header -- " , )
 );
 // End of Request interceptor
 
@@ -37,9 +28,10 @@ axiosInterceptorInstance.interceptors.request.use(
 axiosInterceptorInstance.interceptors.response.use(
   (response) => {
     // Modify the response data here
-    console.log("response use ---  " , response)
-    if(response.status == 403){
+    // console.log("response use ---  " , response)
+    if(response.status == 403 && store.getState().app.token){
       // refresh token
+      console.log("refresh token")
     }
     return response;
   },
