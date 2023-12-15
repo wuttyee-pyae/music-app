@@ -45,7 +45,6 @@ export default function MusicTypes(props: any) {
   useEffect(() => {
    
     setTitle(props.title)
-    console.log("prop ---- " , props , title , param)
     title == "Genres"
       ? setMusicTypeList(genresList)
       : setMusicTypeList(moodsList);

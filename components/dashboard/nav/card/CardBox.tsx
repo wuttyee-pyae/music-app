@@ -15,7 +15,7 @@ export default function CardBox({data , status , Icon} : {data : any , status: s
                <div>
                 <p className={`text-2xl text-bold ${data.color}`} >{data.count || 0}</p>
                 <div className="flex justify-center items-center">
-                {Icon ? <Icon.type {...Icon.props} size={20}/> : <></>}
+                {Icon ? <Icon.type {...Icon.props} /> : <></>}
                 </div>
                 <p className="text-white">{data.title}</p>
                </div>

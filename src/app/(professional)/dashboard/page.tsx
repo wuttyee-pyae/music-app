@@ -3,7 +3,7 @@ import Artistscover from "@/components/dashboard/nav/cover_banner/Artistscover";
 import { MusicIcon } from "@/components/mobile/nav/icons/MusicIcon";
 import React from "react";
 
-const page = () => {
+const Dashboard = () => {
   const cardList = [
     { title: "Music", count: 20, color: "text-purple-600", icon:<MusicIcon color="red"/> },
     { title: "MTV", count: 20, color: "text-green-600", icon:<MusicIcon color="white" /> },
@@ -42,4 +42,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Dashboard;

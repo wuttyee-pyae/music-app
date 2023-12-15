@@ -1,5 +1,5 @@
 import axiosInterceptorInstance from './axios.interceptor';
-
+import { confirmDialog } from 'primereact/confirmdialog';
 
   export const get = async (url: string , id?:any) => {
     try {
@@ -8,7 +8,15 @@ import axiosInterceptorInstance from './axios.interceptor';
 
       // Handle the response data here
       // console.log(" axio api --- " , response);
-      return response.data
+    //   confirmDialog({
+    //     // trigger: event.currentTarget,
+    //     message: 'Are you sure you want to proceed?',
+    //     header: 'Confirmation',
+    //     icon: 'pi pi-exclamation-triangle',
+    //     accept: () => {return response.data} ,
+    //     reject: () => {return response.data}
+    // });
+    return response.data
     } catch (error) {
       // Handle the error here
       return Promise.reject(error);

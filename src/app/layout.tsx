@@ -10,6 +10,9 @@ import MobileLayout from "@/components/mobile/root/MobileLayout";
 import DesktopLayout from "@/components/desktop/root/DesktopLayout";
 import { usePathname } from "next/navigation";
 
+import "primereact/resources/themes/lara-light-cyan/theme.css";
+
+
 
 export default function MainRootLayout({
   children,

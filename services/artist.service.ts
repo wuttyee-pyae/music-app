@@ -1,9 +1,9 @@
-import { GET } from "./axios.api";
+import { get } from "./axios.api";
 
 
 export const getAllArtists = async (url: string) => {
     try {
-      const response = await GET(url).then((res)=>{
+      const response = await get(url).then((res : {})=>{
          // Handle the response data here
       console.log(res);
       })

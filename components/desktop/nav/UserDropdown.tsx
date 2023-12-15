@@ -24,11 +24,12 @@ export const UserDropdown = () => {
       </NavbarItem>
       <DropdownMenu
         aria-label="User menu actions"
-        onAction={(actionKey) => console.log({ actionKey })}
+        // onAction={(actionKey) => console.log({ actionKey })}
       >
         <DropdownItem
           key="profile"
           className="flex flex-col justify-start w-full items-start"
+          textValue=""
         >
           <Link href="/login">
             <p>Signed in as <br/> zoey@example.com</p>
@@ -40,6 +41,7 @@ export const UserDropdown = () => {
           key="request_arist_dashboard"
           color="secondary"
           className="flex flex-col justify-start w-full items-start"
+          textValue=""
         >
           <Link href="/request_form">
             <p>Request as < br/> Artist Dashboard</p>
@@ -49,12 +51,13 @@ export const UserDropdown = () => {
           key="arist_dashboard"
           color="secondary"
           className="flex flex-col justify-start w-full items-start"
+          textValue=""
         >
           <Link href="/dashboard">
             <p>Swich to <br/> Artist Dashboard</p>
           </Link>
         </DropdownItem>
-        <DropdownItem key="settings">My Settings</DropdownItem>
+        <DropdownItem key="settings" >My Settings</DropdownItem>
         <DropdownItem key="team_settings">Team Settings</DropdownItem>
         <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
         <DropdownItem key="logout" color="danger" className="text-danger">

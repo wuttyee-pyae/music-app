@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @font-face {
   font-family: "Nunito Sans 7pt";
   src: url("./fonts/NunitoSans_7pt-Regular.ttf") format("truetype");
