@@ -41,6 +41,23 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors:{
+        default:'#3f3f46',
+        primary:'#006FEE',
+        secondary:'#9353d3',
+        success:'#17c964',
+        warning: '#f5a524',
+        danger:'#f31260'
+      },
+      fontSize: {
+        sm: '0.8rem',
+        base: '1rem',
+        xl: '1.25rem',
+        '2xl': '1.563rem',
+        '3xl': '1.953rem',
+        '4xl': '2.441rem',
+        '5xl': '3.052rem',
+      }
     },
       
   },

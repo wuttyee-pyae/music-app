@@ -2,7 +2,7 @@ import React from "react";
 export const MusicIcon = (props: any) => (
   <svg
     aria-hidden="true"
-    fill="none"
+    fill="currentColor"
     focusable="false"
     height="20px"
     role="presentation"
