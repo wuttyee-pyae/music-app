@@ -13,11 +13,16 @@ const ProtectedRoutes = ({ children } : { children : React.ReactNode}) => {
         if (auth) {
             router.push("/dashboard")
         }
-
     }, [router,auth])
 
     if(!auth) {
-        return <Login />
+        return (
+            <div>
+                 <Login />
+            </div>
+               
+        
+        )
     }
 
     return children

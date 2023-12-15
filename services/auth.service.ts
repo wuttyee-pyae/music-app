@@ -6,9 +6,9 @@ export const login = async (data: any) => {
         identifier : data.username,
         password :  data.password
     }
-    const result = await post('/auth/log-in' , requestData).then( (res : any) => {
+    const result = await post('/auth/log-in' , requestData).then( async (res : any) => {
       useStorage().setItem("token",res.jwt, 'local')
-      useStorage().setItem("user-data",res.data, 'local')
+      await useStorage().setItem("user-data",res.data, 'local')
       return  res
     })
     return result

@@ -5,7 +5,7 @@ import { SearchIcon } from "@/components/mobile/nav/icons/SearchIcon";
 import { NotificationsDropdown } from "@/components/mobile/nav/NotificationsDropdown";
 import { UserDropdown } from "@/components/desktop/nav/UserDropdown";
 import { UserIcon } from "@/components/mobile/nav/icons/UserIcon";
-import DreawerMenu from "./DreawerMenu";
+import DrawerMenu from "./DrawerMenu";
 
 interface Props {
   children?: React.ReactNode;
@@ -24,9 +24,7 @@ export const NavbarWrapper = ({ children }: Props) => {
       >
         <div className="flex items-center m-2">
           <div>
-            <button>
-            <DreawerMenu />
-            </button>
+            <DrawerMenu />
           </div>
           {/* <div>
             <a

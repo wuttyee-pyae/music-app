@@ -657,3 +657,13 @@ a {
     flex-direction: column;
 } */
 }
+
+.p-sidebar-header{
+  display: none !important;
+}
+.p-sidebar{ 
+  width: 254px;
+  .p-sidebar-content {
+    padding: 0rem;
+  }
+}

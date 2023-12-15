@@ -1,13 +1,14 @@
 "use client";
 
 import clsx from "clsx";
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { useSidebarContext } from "../../../context/SidebarContext";
 
 
-const Logobar = () => {
-  const {toggleSidebarcollapse} = useSidebarContext()
+const Logobar = ({handleAsideBar} : {handleAsideBar : any}) => {
+
+  
   return (
     <div className="flex gap-4">
       <a
@@ -32,7 +33,7 @@ const Logobar = () => {
         aria-controls="cta-button-sidebar"
         type="button"
         className="inline-flex items-center p-2 ml-0"
-        onClick={()=> toggleSidebarcollapse}
+        onClick={()=> handleAsideBar()}
       >
         <span className="sr-only">Open sidebar</span>
         <svg

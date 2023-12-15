@@ -2,7 +2,7 @@ import CardBox from "@/components/dashboard/nav/card/CardBox";
 import Artistscover from "@/components/dashboard/nav/cover_banner/Artistscover";
 import { MusicIcon } from "@/components/mobile/nav/icons/MusicIcon";
 import { VideoIcon } from "@/components/mobile/nav/icons/VideoIcon";
-import { url } from "inspector";
+import Link from "next/link";
 import React from "react";
 
 const Dashboard = () => {
@@ -12,16 +12,19 @@ const Dashboard = () => {
     { title: "Collection", count: null, color: "text-red-600", icon:<MusicIcon color="pink" />, url:"/dashboard/music" },
   ];
   return (
+    <>
     <div className="pt-20">
       <div className="mb-4 wapper mx-4 pb-4">
         <Artistscover />
-
         <div className="mb-4 grid grid-cols-2 items-center gap-4">
           <div className="flex items-center gap-4">
             <h3 className="title text-white ">Real Time</h3>
             <p className="text-gray-300">24hr</p>
           </div>
-          <div className="flex justify-end text-gray-300">More</div>
+          <div className="flex justify-end text-gray-300">
+            <Link href="/dashboard/music" >More</Link>
+            
+          </div>
         </div>
         <div className="grid grid-cols-3 gap-4 mb-4">
           {cardList.map((item, index) => (
@@ -41,6 +44,7 @@ const Dashboard = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
