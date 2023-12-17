@@ -11,25 +11,25 @@ export default function CardBox({
   Icon?: React.ReactElement;
 }) {
   return (
-    <Card className="p-2 w-full">
+    <Card className="p-1 w-full">
       <Link href={data.url}>
         <CardBody className="text-center justify-center">
           {status == "time" ? (
             <div>
               <p className="music_type">{data.title}</p>
-              <p className={`text-2xl text-bold ${data.color}`}>
+              <p className={`text-2xl text-bold text-${data.color}`}>
                 {data.count || 0}
               </p>
             </div>
           ) : (
             <div>
-              <p className={`text-2xl text-bold ${data.color}`}>
+              {/* <p className={`text-2xl text-bold text-${data.color}`}>
                 {data.count || 0}
-              </p>
+              </p> */}
               <div className="flex justify-center items-center">
-                {Icon ? <Icon.type {...Icon.props} /> : <></>}
+                {Icon ? <Icon.type {...Icon.props} className={`text-${data.color}`} /> : <></>}
               </div>
-              <p className="text-white">{data.title}</p>
+              <p className="text-white text-sm md:text-base">{data.title}</p>
             </div>
           )}
         </CardBody>
