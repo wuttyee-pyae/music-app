@@ -19,7 +19,6 @@ const Asidebar = ({collapsed}:{collapsed : boolean}) => {
       <div className={` sidebar__wrapper overflow-y-auto overflow-x-hidden`}>
       <aside
         id="sidebar-multi-level-sidebar"
-        className=""
         aria-label="Sidebar"  
       >
         <Sidebar />    

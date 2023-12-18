@@ -10,15 +10,23 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
-
+import { useRouter } from "next/navigation"
 
 export const UserDropdown = () => {
   const userData = useStorage().getItem("user-data", 'local')
   const pathname = usePathname()
-
+  const storage = useStorage()
+  const router = useRouter()
   const [isUserLogin, setIsUserLogin] = useState(false);
   const [isUserArtist, setIsUserArtist] = useState(true);
   const [swithUser, setSwithUser] = useState(false);
+
+  const doLogout = async () =>{
+    storage.removeItem('user-data', 'local')
+    storage.removeItem('token', 'local')
+    setIsUserLogin(false)
+    router.push('/')
+  }
 
   useEffect(() => {
     if (userData) setIsUserLogin(true)
@@ -42,7 +50,7 @@ export const UserDropdown = () => {
       // onAction={(actionKey) => console.log({ actionKey })}
       >
         {
-          !isUserArtist ?
+          (!isUserArtist && isUserLogin) ?
             <DropdownItem
               key="arist_dashboard"
               color="secondary"
@@ -54,7 +62,7 @@ export const UserDropdown = () => {
               </Link>
             </DropdownItem> :
             (
-              (isUserArtist && !swithUser) ?
+              (isUserArtist && !swithUser && isUserLogin) ?
                 <DropdownItem
                   key="arist_dashboard"
                   color="secondary"
@@ -97,7 +105,8 @@ export const UserDropdown = () => {
               <Link href="/login">
                 <p>Signed in as <br /> name@example.com</p>
               </Link>
-            </DropdownItem>) : (<DropdownItem key="logout" color="danger" className="text-danger" textValue="Log out">
+            </DropdownItem>) : (
+            <DropdownItem key="logout" color="danger" className="text-danger" textValue="Log out" onClick={doLogout}>
               Log Out
             </DropdownItem>)
         }
