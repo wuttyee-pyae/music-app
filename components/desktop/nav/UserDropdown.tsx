@@ -1,3 +1,4 @@
+import useStorage from "@/hooks/useStorage";
 import {
   Avatar,
   Dropdown,
@@ -7,9 +8,23 @@ import {
   NavbarItem,
 } from "@nextui-org/react";
 import Link from "next/link";
-import React from "react";
+import { usePathname } from "next/navigation";
+import React, { useEffect, useState } from "react";
+
 
 export const UserDropdown = () => {
+  const userData = useStorage().getItem("user-data", 'local')
+  const pathname = usePathname()
+
+  const [isUserLogin, setIsUserLogin] = useState(false);
+  const [isUserArtist, setIsUserArtist] = useState(true);
+  const [swithUser, setSwithUser] = useState(false);
+
+  useEffect(() => {
+    if (userData) setIsUserLogin(true)
+    if (userData?.certified) setIsUserArtist(true)
+    if (pathname?.includes("dashboard")) setSwithUser(true)
+  }, [userData, pathname])
   return (
     <Dropdown>
       <NavbarItem>
@@ -24,45 +39,68 @@ export const UserDropdown = () => {
       </NavbarItem>
       <DropdownMenu
         aria-label="User menu actions"
-        // onAction={(actionKey) => console.log({ actionKey })}
+      // onAction={(actionKey) => console.log({ actionKey })}
       >
-        <DropdownItem
-          key="profile"
-          className="flex flex-col justify-start w-full items-start"
-          textValue="Sign in"
-        >
-          <Link href="/login">
-            <p>Signed in as <br/> zoey@example.com</p>
-          </Link>
-        </DropdownItem>
+        {
+          !isUserArtist ?
+            <DropdownItem
+              key="arist_dashboard"
+              color="secondary"
+              className="flex flex-col justify-start w-full items-start"
+              textValue="Switch to Artist Dashboard"
+            >
+              <Link href="/request_form">
+                <p>Request as < br /> Artist Dashboard</p>
+              </Link>
+            </DropdownItem> :
+            (
+              (isUserArtist && !swithUser) ?
+                <DropdownItem
+                  key="arist_dashboard"
+                  color="secondary"
+                  className="flex flex-col justify-start w-full items-start"
+                  textValue="Switch to Artist Dashboard"
+                >
+                  <Link href="/dashboard">
+                    <p>Swich to <br /> Artist Dashboard</p>
+                  </Link>
+                </DropdownItem> :
+                <DropdownItem className="hidden"></DropdownItem>
+            )
+        }
 
-        {/* Just only show in resgistered user for Request Artist Dashboard */}
-        <DropdownItem
-          key="request_arist_dashboard"
-          color="secondary"
-          className="flex flex-col justify-start w-full items-start"
-          textValue="Request as Artist Dashboard"
-        >
-          <Link href="/request_form">
-            <p>Request as < br/> Artist Dashboard</p>
-          </Link>
-        </DropdownItem>
-        <DropdownItem
-          key="arist_dashboard"
-          color="secondary"
-          className="flex flex-col justify-start w-full items-start"
-          textValue="Switch to Artist Dashboard"
-        >
-          <Link href="/dashboard">
-            <p>Swich to <br/> Artist Dashboard</p>
-          </Link>
-        </DropdownItem>
-        <DropdownItem key="settings"  textValue="My Setting" >My Settings</DropdownItem>
+        {
+          swithUser ?
+            <DropdownItem
+              key="swith_to_user"
+              color="secondary"
+              className="flex flex-col justify-start w-full items-start"
+              textValue="Request as Artist Dashboard"
+            >
+              <Link href="/">
+                <p>Swith To< br /> User Dashboard</p>
+              </Link>
+
+            </DropdownItem> :
+            <DropdownItem className="hidden"></DropdownItem>
+        }
+        <DropdownItem key="settings" textValue="My Setting" >My Settings</DropdownItem>
         <DropdownItem key="team_settings" textValue="Team Setting" >Team Settings</DropdownItem>
         <DropdownItem key="help_and_feedback" textValue="Help & Feedback" >Help & Feedback</DropdownItem>
-        <DropdownItem key="logout" color="danger" className="text-danger" textValue="Log out">
-          Log Out
-        </DropdownItem>
+        {
+          !isUserLogin ?
+            (<DropdownItem
+              key="profile"
+              className="flex flex-col justify-start w-full items-start"
+              textValue="Sign in"
+            >
+              <Link href="/login">
+                <p>Signed in as <br /> name@example.com</p>
+              </Link>
+            </DropdownItem>) : (<DropdownItem key="logout" color="danger" className="text-danger" textValue="Log out">
+              Log Out
+            </DropdownItem>)
+        }
       </DropdownMenu>
     </Dropdown>
   );
