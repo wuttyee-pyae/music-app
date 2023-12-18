@@ -6,13 +6,9 @@ import { getArtistsDataById } from "@/lib/artists";
 export default async function ArtistId({ params }: { params: { id: number } }) {
   const artist = await getArtistsDataById(params.id)
   return (
-    <div className="drop-shadow-xl">
-        <div>
+    <div className="">
         <Artistscover />
-        </div>
-        <div>
         <ArtistProfile data={artist} />
-        </div>
       </div>
   );
 }

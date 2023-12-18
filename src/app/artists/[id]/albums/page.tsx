@@ -6,10 +6,8 @@ import Albumcover from "@/components/desktop/artist/albums/AlbumCover";
 
 export default function ArtistAlbums() {
   return (
-    <div className="drop-shadow-xl">
       <div className="">
         <Albumcover />
       </div>
-    </div>
   );
 }

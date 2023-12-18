@@ -16,7 +16,7 @@ const Asidebar = ({collapsed}:{collapsed : boolean}) => {
   },[collapsed])
   return (
     <div  className={clsx("sidebar-dark left-bar transition-transform md:transition-translate-x-full lg:translate-x-0" ,isCollapsed ? "w-64" :"w-0")}>
-      <div className={` sidebar__wrapper overflow-y-auto`}>
+      <div className={` sidebar__wrapper overflow-y-auto overflow-x-hidden`}>
       <aside
         id="sidebar-multi-level-sidebar"
         className=""
