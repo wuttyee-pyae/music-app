@@ -80,7 +80,6 @@ const Dashboard = () => {
         ))}
       </div>
     </div>
-    </>
   );
 };
 

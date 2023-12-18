@@ -3,7 +3,12 @@
 // async function getAccessToken() {
 //   const url = "https://accounts.spotify.com/api/token";
 
+import Banner from "@/components/mobile/banner/Banner";
 import Crbt from "../crbt/page";
+import getArtistsData from "@/lib/artists";
+import MusicTypes from "@/components/desktop/music/MusicTypes";
+import Recommended from "@/components/desktop/artist/Recommended";
+import BrowseArtists from "@/components/desktop/artist/BrowseArtists";
 
 //   var formBody = new URLSearchParams();
 //   formBody.append("grant_type", "client_credentials");
@@ -29,12 +34,23 @@ import Crbt from "../crbt/page";
   
 // }
 
-export default async function Home() {
+export default async function Home(props: any) {
+  const localData = await getArtistsData()
+
   // getAccessToken();
 
   return (
     <div className="">
-        <Crbt />
+      <div className="grid grid-cols-1 mb-6">
+      <Banner />
+
+      </div>
+      <div className="mx-4">
+          <MusicTypes title={"Genres"} />
+          <MusicTypes title={"Moods"} />
+        </div>
+        <Recommended data={localData} pathname="artists" />
+        <BrowseArtists />
     </div>
   );
 }

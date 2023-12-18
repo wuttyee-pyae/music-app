@@ -43,7 +43,7 @@ export default function DesktopLayout({children} : {children : React.ReactNode})
 
                         <Asidebar collapsed={isCollapsed}/>
 
-                        <div className="p-0 ml-0">
+                        <div className="p-0 ml-0 w-full">
                           <div className="mb-4 pb-36 min-h-screen">
                             <div className="drop-shadow-xl">
                             <ConfirmDialog />
