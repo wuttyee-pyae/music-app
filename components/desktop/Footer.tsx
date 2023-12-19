@@ -21,13 +21,10 @@ export default function Footer() {
 
   useEffect(() => {
     const sessionSong = storage.getItem('play-music', 'session');
-    console.log(" -- " , sessionSong);
     if(sessionSong) {
-      console.log(" is not nulll ") ;
        setClosed(false) ;
     }else{
       setClosed(true)
-      console.log(" is nulll" , closed);
     }
 
    const subscription = subscribeToValue((value : any) => {
