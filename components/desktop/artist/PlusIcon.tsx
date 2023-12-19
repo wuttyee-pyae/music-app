@@ -2,7 +2,7 @@ import React from "react";
 export const PlusIcon = ({size = 24, width=24, height=24, ...props}) => (
   <svg
     aria-hidden="true"
-    fill="none"
+    fill="currentColor"
     focusable="false"
     height={size || height}
     role="presentation"
@@ -11,7 +11,7 @@ export const PlusIcon = ({size = 24, width=24, height=24, ...props}) => (
     {...props}
   >
     <g
-      fill="none"
+      fill="currentColor"
       stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
