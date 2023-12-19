@@ -27,13 +27,15 @@ import { confirmAlert } from "./alert.service";
   };
 
 
-  export const post = async (url: string ,requestData : any ) => {
+  export const post = async (url: string ,requestData : any , isLogin? : boolean) => {
     try {
       const response = await axiosInterceptorInstance.post(`${process.env.NEXT_PUBLIC_API_URL}${url}`, requestData);
       return response.data
     } catch (error) {
       // Handle the error here
-      return Promise.reject(error);
+      console.log(error)
+      
+      return isLogin ?  error : Promise.reject(error);
     }
   };
 

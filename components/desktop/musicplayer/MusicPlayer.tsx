@@ -20,22 +20,23 @@ import { Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDi
 import LyricsCard from './lyrics/LyricsCard';
 
 
-const MusicPlayer = () => {
+const MusicPlayer = ({doExpend , isExpand}: any) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const dispatch = useDispatch();
   const storage = useStorage();
   const { activeSong ,songList ,  currentIndex  , isActive  , isPlaying  } =
   useSelector((state : any) => state.musicplay);
-  
   const [volume, setVolume] = useState(0.3);
   const [repeatStatus, setRepeatStatus] = useState(null);
   const [shuffle, setShuffle] = useState(false);
+  
+
   useEffect( () => {
     // dispatch(playPause(false));
    const subscription = subscribeToValue((value : any) => {
     // console.log("subscription" , value)
     const sessionSong = storage.getItem('play-music', 'session');
-      dispatch(setActiveSong(sessionSong))
+    sessionSong && dispatch(setActiveSong(sessionSong))
     });
     
     return () => {
@@ -96,19 +97,23 @@ const MusicPlayer = () => {
     }else{
       dispatch(playPause(false));
     }
-    
   };
+
+ 
   
   
   return (
     <div className="relative sm:px-4 px-8 my-3 w-full items-center justify-between grid grid-cols-12 gap-4">
+      <div onClick={doExpend} className='flex grow'>
       <Track
         isPlaying={isPlaying}
         isActive={isActive}
         activeSong={activeSong}
         data={activeSong}
       />
-      <div className="flex-1 flex flex-col items-center justify-center lg:col-span-6 col-span-8">
+      </div>
+      
+      <div className="flex flex-col items-center justify-center lg:col-span-6 col-span-8">
         <Controls
           isPlaying={isPlaying}
           repeatStatus={repeatStatus as any}
@@ -129,7 +134,7 @@ const MusicPlayer = () => {
           // onLoadedData={(time  : any) =>  setDuration(time)}
         /> 
       </div>
-      <div className="flex-1 flex items-center justify-end gap-4 lg:col-span-3 col-span-4">
+      <div className="flex items-center justify-end gap-4 lg:col-span-3 col-span-4">
         <Button
           onPress={onOpen}
           style={{

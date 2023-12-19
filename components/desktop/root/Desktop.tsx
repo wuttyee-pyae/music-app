@@ -1,14 +1,8 @@
-'use client'
 import CadPlayList from "@/components/desktop/yoursplaylist/CadPlayList";
 import { Link } from "@nextui-org/react";
-import React, { useEffect } from "react";
+import React from "react";
 
 export default function Desktop() {
-  useEffect(() => {
-    console.log(" current date time --  " ,(Math.round(new Date().getTime() / 1000)).toString())
-  })
-
-
   return (
     <div className="drop-shadow-xl">
       <div className="">

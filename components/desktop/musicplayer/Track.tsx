@@ -11,7 +11,7 @@ const Track = ({ isPlaying, isActive, activeSong, data }: {
   isActive: any, activeSong: any, data: any
 }) => {
   return (
-    <div className="flex-1 flex items-center justify-start col-span-12 lg:col-span-3">
+    <div className="flex items-center justify-start col-span-12 lg:col-span-3">
       <div
         className={`${isPlaying && isActive ? "animate-[spin_3s_linear_infinite]" : ""
           }sm:block h-16 w-16 mr-4`}
