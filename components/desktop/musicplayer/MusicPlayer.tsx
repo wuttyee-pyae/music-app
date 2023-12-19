@@ -105,7 +105,7 @@ const MusicPlayer = ({doExpend , isExpand}: any) => {
   return (
     <div className={`relative sm:px-4 px-8 my-3 w-full items-center justify-between flex gap-4 ${isExpand && 'flex-col'}`}>
       
-      <div onClick={doExpend} className={`block w-full my-auto mx-0 ${isExpand && 'min-h-[50dvh]'}` }>
+      <div onClick={doExpend} className={`block my-auto mx-0 ${isExpand && 'min-h-[50dvh]  w-full'}` }>
       <Track
         isPlaying={isPlaying}
         isActive={isActive}
