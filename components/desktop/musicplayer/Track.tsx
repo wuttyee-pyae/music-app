@@ -4,16 +4,22 @@ import MusicCover from "@/assets/images/crbt_lg.jpg";
 import { Button, Progress } from "@nextui-org/react";
 
 import { HeartIcon } from "./HeartIcon";
+import React from "react";
 // const [liked, setLiked] = React.useState(false);
 
-const Track = ({ isPlaying, isActive, activeSong, data }: {
+const Track = ({ isPlaying, isActive, activeSong, data , isExpand}: {
   isPlaying: any,
-  isActive: any, activeSong: any, data: any
+  isActive: any, 
+  activeSong: any,
+   data: any,
+   isExpand: boolean
 }) => {
+  // const [imageWdith,setImageWidth] = React.useState(isExpand ? 200 : 50)
+
   return (
-    <div className="flex items-center justify-start col-span-12 lg:col-span-3">
+    <div className={`flex items-center justify-start col-span-12 lg:col-span-3 ${isExpand && 'flex-col'}`}>
       <div
-        className={`${isPlaying && isActive ? "animate-[spin_3s_linear_infinite]" : ""
+        className={`${(isPlaying && isActive) && "animate-[spin_3s_linear_infinite]"
           }sm:block h-16 w-16 mr-4`}
       >
         {/* <img src={activeSong?.images?.coverart} alt="cover art" className="rounded-full" /> */}
@@ -21,8 +27,8 @@ const Track = ({ isPlaying, isActive, activeSong, data }: {
           src={data?.picture || MusicCover}
           // src={MusicCover?.activeSong?.images?.coverart}
           style={{ objectFit: "cover" }}
-          width={58}
-          height={58}
+          width={100}
+          height={100}
           alt="Picture of the author"
           className="aspect-square right-0 rounded-md"
         />
