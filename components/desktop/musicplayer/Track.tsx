@@ -18,20 +18,21 @@ const Track = ({ isPlaying, isActive, activeSong, data , isExpand}: {
 
   return ( 
     //  ${isExpand && '  w-full'}
-    <div className={`flex items-center justify-start col-span-12 lg:col-span-3 ${isExpand && 'flex-col min-h-[50dvh]'}`}>
+    <div className={`flex items-center justify-start col-span-12 lg:col-span-3 gap-4 ${isExpand && 'flex-col min-h-[50dvh]'}`}>
       <div
         className={`${(isPlaying && isActive) && "animate-[spin_3s_linear_infinite]"
-          } sm:block mr-4 ${isExpand ? 'h-96 w-96' : 'h-16 w-16'}`}
+          } sm:block ${isExpand ? 'h-96 w-96 animate-none' : 'h-16 w-16'}`}
       >
         {/* <img src={activeSong?.images?.coverart} alt="cover art" className="rounded-full" /> */}
         <Image
           src={data?.picture || MusicCover}
           // src={MusicCover?.activeSong?.images?.coverart}
+          color={"secondary"}
           style={{ objectFit: "cover" }}
           width={100}
           height={100}
           alt="Picture of the author"
-          className={`aspect-square right-0 rounded-md ${isExpand && 'w-full h-full'}`}
+          className={`aspect-square right-0 rounded-full border-4 border-purple-600 shadow-lg ${isExpand && 'w-full h-full rounded-md'}`}
         />
       </div>
       <div className={`w-[55%] ${isExpand && 'text-center mt-5'} `}>
@@ -42,7 +43,7 @@ const Track = ({ isPlaying, isActive, activeSong, data , isExpand}: {
           {data?.singer ? data?.singer : "No active Artist"}
         </p>
       </div>
-      <div className="flex-initial m-4">
+      <div className="flex-initial">
         {/* <Button
         isIconOnly
         className="text-default-900/60 data-[hover]:bg-foreground/10 -translate-y-2 translate-x-2"

@@ -16,7 +16,7 @@ import VolumeBar from "./VolumeBar";
 import { LyricsIcon } from "./LyricsIcon";
 import useStorage from "@/hooks/useStorage";
 import { subscribeToValue, updateActiveValue } from '@/hooks/observableService';
-import { Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from '@nextui-org/react';
+import { Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, Tooltip, useDisclosure } from '@nextui-org/react';
 import LyricsCard from './lyrics/LyricsCard';
 
 
@@ -105,7 +105,7 @@ const MusicPlayer = ({doExpend , isExpand}: any) => {
   return (
     <div className={`relative sm:px-4 px-8 my-3 w-full items-center justify-between flex gap-4 ${isExpand && 'flex-col'}`}>
       
-      <div onClick={doExpend} className={`block my-auto mx-0 ${isExpand && 'w-full'}` }>
+      <div onClick={doExpend} className={`block my-auto mx-0 w-[25dvw] ${isExpand && 'w-full'}` }>
       <Track
         isPlaying={isPlaying}
         isActive={isActive}
@@ -115,7 +115,7 @@ const MusicPlayer = ({doExpend , isExpand}: any) => {
       />
       </div>
       
-      <div className="flex flex-col items-center justify-center lg:col-span-6 col-span-8 w-[50vw]">
+      <div className="flex flex-col items-center justify-center lg:col-span-6 col-span-8 w-[50dvw]">
         <Controls
           isPlaying={isPlaying}
           repeatStatus={repeatStatus as any}
@@ -136,7 +136,8 @@ const MusicPlayer = ({doExpend , isExpand}: any) => {
           // onLoadedData={(time  : any) =>  setDuration(time)}
         /> 
       </div>
-      <div className="flex items-center justify-end gap-4 lg:col-span-3 col-span-4">
+      <div className={`flex items-center justify-end gap-4 lg:col-span-3 col-span-4 w-[25dvw] ${isExpand && 'justify-center'}`}>
+      <Tooltip showArrow={true} content="Lyrics Card" color={"secondary"}>
         <Button
           onPress={onOpen}
           style={{
@@ -145,6 +146,7 @@ const MusicPlayer = ({doExpend , isExpand}: any) => {
         >
           <LyricsIcon />
         </Button>
+        </Tooltip>
         <Modal
           isOpen={isOpen}
           onOpenChange={onOpenChange}
