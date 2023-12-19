@@ -1,9 +1,14 @@
+"use client";
 import CardBox from "@/components/dashboard/nav/card/CardBox";
 import Artistscover from "@/components/dashboard/nav/cover_banner/Artistscover";
 import { MusicIcon } from "@/components/mobile/nav/icons/MusicIcon";
 import { VideoIcon } from "@/components/mobile/nav/icons/VideoIcon";
+import { NavbarWrapper } from "@/components/dashboard/nav/NavbarWrapper";
+import Footer from "@/components/mobile/footer/Footer";
+
 import Link from "next/link";
 import React from "react";
+
 
 const Dashboard = () => {
   const cardReport = [
@@ -55,7 +60,11 @@ const Dashboard = () => {
   ];
   return (
     <div>
+      <NavbarWrapper />
+
+      <div className="container">
       <Artistscover />
+
       <div className="mb-4 grid grid-cols-2 items-center gap-4">
         <div className="flex items-center gap-4">
           <h3 className="title text-white ">Real Time</h3>
@@ -79,6 +88,10 @@ const Dashboard = () => {
           <CardBox key="index" data={item} status="quick" Icon={item.icon} />
         ))}
       </div>
+      </div>
+
+      <Footer />
+
     </div>
   );
 };
