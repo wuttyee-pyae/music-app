@@ -9,7 +9,6 @@ import { Provider } from "react-redux";
 import "@/styles/mobile.css";
 import "@/styles/dashboard.css";
 import Footer from "@/components/mobile/footer/Footer";
-import ProtectedRoutes from "@/components/common/ProtectedRoute";
 
 const Dashboard = ({ children }: { children: React.ReactNode }) => {
   return (
