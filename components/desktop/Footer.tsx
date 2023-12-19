@@ -43,8 +43,7 @@ export default function Footer() {
 
   return (
     <div className={`${closed ? 'hidden' : 'block'}`}>
-      <footer className={`footer-container fixed-bottom border-gradient border-gradient-purple only-top ${isExpand ? 'top-0' : ''} `}>
-        
+      <footer className={`footer-container fixed-bottom border-gradient border-gradient-purple only-top ${isExpand && 'top-0 flex justify-center items-center'} `}>
         <MusicPlayer doExpend={doExpend} isExpand={isExpand} />
         <div className="absolute top-3 right-3 cursor-pointer gap-8 flex">
          {

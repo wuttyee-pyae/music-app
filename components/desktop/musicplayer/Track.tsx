@@ -16,11 +16,12 @@ const Track = ({ isPlaying, isActive, activeSong, data , isExpand}: {
 }) => {
   // const [imageWdith,setImageWidth] = React.useState(isExpand ? 200 : 50)
 
-  return (
-    <div className={`flex items-center justify-start col-span-12 lg:col-span-3 ${isExpand && 'flex-col'}`}>
+  return ( 
+    //  ${isExpand && '  w-full'}
+    <div className={`flex items-center justify-start col-span-12 lg:col-span-3 ${isExpand && 'flex-col min-h-[50dvh]'}`}>
       <div
         className={`${(isPlaying && isActive) && "animate-[spin_3s_linear_infinite]"
-          }sm:block h-16 w-16 mr-4`}
+          } sm:block mr-4 ${isExpand ? 'h-96 w-96' : 'h-16 w-16'}`}
       >
         {/* <img src={activeSong?.images?.coverart} alt="cover art" className="rounded-full" /> */}
         <Image
@@ -30,11 +31,11 @@ const Track = ({ isPlaying, isActive, activeSong, data , isExpand}: {
           width={100}
           height={100}
           alt="Picture of the author"
-          className="aspect-square right-0 rounded-md"
+          className={`aspect-square right-0 rounded-md ${isExpand && 'w-full h-full'}`}
         />
       </div>
-      <div className="w-[50%]">
-        <p className="truncate break-words music_name">
+      <div className={`w-[55%] ${isExpand && 'text-center mt-5'} `}>
+        <p   className="truncate break-words music_name">
           {data?.name ? data?.name : "No active Song"}
         </p>
         <p className="truncate break-words music_type">

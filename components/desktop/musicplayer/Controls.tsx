@@ -38,7 +38,7 @@ const Controls = ({
 
   return (
     <div>
-      <div className="flex items-center justify-around md:w-64 lg:w-52 2xl:w-80 gap-4">
+      <div className="flex items-center justify-around w-[25vw] gap-4">
         {repeatStatus == "repeatAll" ? (
           <RepeatAllIcon
             size={20}

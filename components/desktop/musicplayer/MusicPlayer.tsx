@@ -105,7 +105,7 @@ const MusicPlayer = ({doExpend , isExpand}: any) => {
   return (
     <div className={`relative sm:px-4 px-8 my-3 w-full items-center justify-between flex gap-4 ${isExpand && 'flex-col'}`}>
       
-      <div onClick={doExpend} className={`block my-auto mx-0 ${isExpand && 'min-h-[50dvh]  w-full'}` }>
+      <div onClick={doExpend} className={`block my-auto mx-0 ${isExpand && 'w-full'}` }>
       <Track
         isPlaying={isPlaying}
         isActive={isActive}
@@ -115,7 +115,7 @@ const MusicPlayer = ({doExpend , isExpand}: any) => {
       />
       </div>
       
-      <div className="flex flex-col items-center justify-center lg:col-span-6 col-span-8">
+      <div className="flex flex-col items-center justify-center lg:col-span-6 col-span-8 w-[50vw]">
         <Controls
           isPlaying={isPlaying}
           repeatStatus={repeatStatus as any}

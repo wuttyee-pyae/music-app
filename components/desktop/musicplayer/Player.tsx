@@ -48,7 +48,7 @@ const Player = ({ activeSong, volume, isPlaying, repeatStatus ,  onEnded  } :
       onChange={(e : any) => {setSeekTime(e.target.value) }}
       onMouseUp={(e : any) =>{ audioRef.current.currentTime = e.target.value , setSeekTime(audioRef.current.currentTime) , setAppTime(audioRef.current.currentTime)} }
       onTouchEnd={(e : any) => { audioRef.current.currentTime = e.target.value , setSeekTime(audioRef.current.currentTime) , setAppTime(audioRef.current.currentTime)} }
-      className="md:block w-24 md:w-56 2xl:w-96 h-1 mx-4 2xl:mx-6 rounded-lg"
+      className="md:block w-[28vw] h-1 mx-4 2xl:mx-6 rounded-lg"
     />
     <p className="text-white">{maxTime === 0 ? '0:00' : getTime(maxTime)}</p>
     {/* <button type="button" onClick={() => setMaxTime(appTime + 5)} className="lg:ml-4 lg:block text-white">
