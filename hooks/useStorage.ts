@@ -17,7 +17,6 @@ const useStorage = (): UseStorageReturnValue => {
     }else{
       return JSON.parse(response)
     }
-    
   };
 
   const setItem = (key: string, value: any, type?: StorageType): boolean => {
@@ -26,7 +25,6 @@ const useStorage = (): UseStorageReturnValue => {
       window[storageType(type)].setItem(key, storageValue);
       return true;
     }
-
     return false;
   };
 
