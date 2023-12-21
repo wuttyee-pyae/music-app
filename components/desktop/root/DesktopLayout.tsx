@@ -47,7 +47,7 @@ export default function DesktopLayout({children} : {children : React.ReactNode})
                           <div className="min-h-screen">
                             <div className="drop-shadow-xl">
                             <ConfirmDialog />
-                              <main className="layout__main-content">{children}</main>
+                              <main className="layout__main-content mb-36">{children}</main>
                             </div>
                           </div>
                         </div>

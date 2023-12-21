@@ -129,8 +129,7 @@ body {
 }
 
 .top-area {
-  top: 64.35px;
-  position: relative;
+  margin-top: 64.35px;
 }
 
 .logobar {
@@ -499,12 +498,10 @@ Convert HEX to RGBA - http://hex2rgba.devoth.com/
 }
 
 .tabs {
-  position: absolute;
   display: block;
   width: 100%;
   left: 0px;
   padding: 20px;
-  margin-top: 60px;
   background-color: #171717;
 }
 
@@ -643,6 +640,11 @@ a {
 .music_type_img {
   position: relative;
   bottom: 4px;
+}
+
+.artist_area{
+  margin-top: -40vh;
+
 }
 
 @media screen and (max-width: 1024px) {

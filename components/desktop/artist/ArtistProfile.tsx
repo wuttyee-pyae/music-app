@@ -44,8 +44,7 @@ export default function ArtistProfile(props: any) {
     },
   ];
   return (
-    <div className="relative">
-      <div className={styles.artist_area}>
+    <div className="relative artist_area">
         <div className="grid grid-cols-12 gap-4 mx-4 items-center">
           <div className="col-span-2">
             <div id="artists_id">
@@ -76,7 +75,30 @@ export default function ArtistProfile(props: any) {
                   <FollowBtn />
                 </div>
               </div>
-              <div className="flex flex-wrap gap-4">
+              
+            </div>
+          </div>
+
+          <div className="col-span-3">
+            <div className="grid grid-flow-row auto-rows-max">
+              <div className="grid grid-flow-col gap-8 auto-cols-max justify-end items-center">
+                <div>
+                  <ShuffPlayIcon />
+                </div>
+                <div>
+                  <ArtistMoreIcon />
+                </div>
+              </div>
+
+              <div className="grid grid-flow-col justify-end">
+                <p className={styles.follower_count}>490,451 Followers</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+            <div className="flex flex-wrap gap-4">
                 {variants.map((variant) => (
                   <Tabs
                     key={variant}
@@ -88,8 +110,8 @@ export default function ArtistProfile(props: any) {
                   >
                     {/* Get Overview data place tab */}
                     <Tab key="overview" title="Overview">
-                      <div className="tabs py-10 pb-36">
-                        <div className="flex flex-col pb-32 mb-36">
+                      <div className="tabs py-10">
+                        <div className="flex flex-col">
                           <p className="text-lg text-white mb-4">
                             Popular songs
                           </p>
@@ -102,7 +124,7 @@ export default function ArtistProfile(props: any) {
                     {/* Get About data place tab */}
                     <Tab key="about" title="About">
                       <div className="tabs py-10">
-                        <div className="flex flex-col gap-4 pb-32 mb-36">
+                        <div className="flex flex-col gap-4">
                           <p className="text-lg text-white mb-4">
                             About {artist?.name}
                           </p>
@@ -114,7 +136,7 @@ export default function ArtistProfile(props: any) {
                     {/* Get Videos data place tab */}
                     <Tab key="videos" title="Videos">
                       <div className="tabs py-10">
-                        <div className="flex flex-col gap-4 pb-32 mb-36">
+                        <div className="flex flex-col gap-4">
                           <p className="text-lg text-white mb-4">MTV Music</p>
                           <div className="grid grid-cols-2 gap-4 xl:grid-cols-4 md:grid-cols-2">
                             {artist?.video?.map(
@@ -143,7 +165,7 @@ export default function ArtistProfile(props: any) {
                     {/* Get CRBT data place tab */}
                     <Tab key="crbt" title="CRBT">
                       <div className="tabs py-10">
-                        <div className="flex flex-col pb-32 mb-36">
+                        <div className="flex flex-col">
                           <p className="text-lg text-white mb-4">CRBT</p>
                           <Crbtitems />
                           <Crbtitems />
@@ -155,27 +177,7 @@ export default function ArtistProfile(props: any) {
                   </Tabs>
                 ))}
               </div>
-            </div>
-          </div>
 
-          <div className="col-span-3">
-            <div className="grid grid-flow-row auto-rows-max">
-              <div className="grid grid-flow-col gap-8 auto-cols-max justify-end items-center">
-                <div>
-                  <ShuffPlayIcon />
-                </div>
-                <div>
-                  <ArtistMoreIcon />
-                </div>
-              </div>
-
-              <div className="grid grid-flow-col justify-end">
-                <p className={styles.follower_count}>490,451 Followers</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

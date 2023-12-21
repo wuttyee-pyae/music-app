@@ -4,10 +4,10 @@ import Artistscover from "@/components/dashboard/nav/cover_banner/Artistscover";
 import { MusicIcon } from "@/components/mobile/nav/icons/MusicIcon";
 import { VideoIcon } from "@/components/mobile/nav/icons/VideoIcon";
 import { NavbarWrapper } from "@/components/dashboard/nav/NavbarWrapper";
-import Footer from "@/components/mobile/footer/Footer";
 
 import Link from "next/link";
 import React from "react";
+import Footer from "@/components/dashboard/footer/Footer";
 
 
 const Dashboard = () => {
@@ -67,7 +67,7 @@ const Dashboard = () => {
 
       <div className="mb-4 grid grid-cols-2 items-center gap-4">
         <div className="flex items-center gap-4">
-          <h3 className="title text-white ">Real Time</h3>
+          <h3 className="title text-white">Real Time</h3>
           <p className="text-gray-300">24hr</p>
         </div>
         <div className="flex justify-end text-gray-300">More</div>

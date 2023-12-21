@@ -1,6 +1,8 @@
 .cover_gradient {
     position: relative;
     display: flex;
+    height: 300px;
+    background-image: url("../../../public/images/non-cover-bg.jpg");
 }
 
 .cover_gradient:after {

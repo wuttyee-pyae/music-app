@@ -26,7 +26,7 @@ const Music = (props: { children: string; isSubmitting: boolean }) => {
   }
 
   return (
-    <div className="container">
+    <div className="container mt-4">
       <div className="flex w-full flex-col">
         <Tabs aria-label="Dynamic tabs" items={tabs}>
           {(item) => (
