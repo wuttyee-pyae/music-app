@@ -130,6 +130,7 @@ body {
 
 .top-area {
   margin-top: 64.35px;
+  top: 0px !important;
 }
 
 .logobar {
