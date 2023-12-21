@@ -11,7 +11,7 @@ import { FullScreenIcon } from "../common/icons/FullScreenIcon";
 export default function Footer() {
   const storage = useStorage()
   const [isExpand, setIsExpand] = React.useState(false)
-  const [closed, setClosed] = React.useState(false)
+  const [closed, setClosed] = React.useState(true)
 
   const doExpend = () => {
     setIsExpand(!isExpand)
