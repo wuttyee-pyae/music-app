@@ -9,7 +9,7 @@ export default async function Artist() {
   const localData = await getArtistsData() || []
   
   return (
-    <div className="">
+    <div>
       {/* <p>Data from Child: {dataFromChild}</p> */}
         <Recommended data={localData} pathname='artists'/>
         <BrowseArtists />

@@ -6,7 +6,7 @@ import { getArtistsDataById } from "@/lib/artists";
 export default async function ArtistId({ params }: { params: { id: number } }) {
   const artist = await getArtistsDataById(params.id)
   return (
-    <div className="">
+    <div>
         <Artistscover />
         <ArtistProfile data={artist} />
       </div>

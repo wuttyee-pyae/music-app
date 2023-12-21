@@ -8,7 +8,7 @@ import Banner04 from "@/assets/collection_music_image/poster-04.jpg";
 
 export default function BrowseArtists() {
   return (
-      <div className="">
+      <div>
         <div className="mb-4 wapper mx-4">
           <h3 className="title mb-2">Browse Artists</h3>
           <div className="grid grid-cols-1 gap-4 xl:grid-cols-3 md:grid-cols-2">
