@@ -43,8 +43,8 @@ export default function DesktopLayout({children} : {children : React.ReactNode})
 
                         <Asidebar collapsed={isCollapsed}/>
 
-                        <div className="p-0 ml-0 w-full">
-                          <div className="mb-4 pb-36 min-h-screen">
+                        <div className="p-0 ml-0 w-full bg-back">
+                          <div className="min-h-screen">
                             <div className="drop-shadow-xl">
                             <ConfirmDialog />
                               <main className="layout__main-content">{children}</main>
@@ -54,9 +54,9 @@ export default function DesktopLayout({children} : {children : React.ReactNode})
                       </Glass>
                     </div>
 
-                    <div className="">
+                    {/* <div className=""> */}
                       <Footer />
-                    </div>
+                    {/* </div> */}
                   </Provider>
                 </Providers>
                 </PrimeReactProvider>
