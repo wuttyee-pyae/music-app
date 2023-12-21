@@ -6,7 +6,7 @@ import Artistscover01 from "../../../public/images/non-cover-bg.jpg";
 
 export default function Artistscover() {
   return (
-      <div className="">
+      <div>
         <div className={styles.cover_gradient}>
         {/* <Image
         priority
