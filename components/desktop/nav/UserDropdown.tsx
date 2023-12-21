@@ -19,7 +19,7 @@ export const UserDropdown = () => {
   const router = useRouter()
   const [isUserLogin, setIsUserLogin] = useState(false);
   const [isUserArtist, setIsUserArtist] = useState(false);
-  const [swithUser, setSwithUser] = useState(false);
+  const [swithUser, setSwithUser] = useState(true);
 
   const doLogout = async () =>{
     storage.removeItem('user-data', 'local')

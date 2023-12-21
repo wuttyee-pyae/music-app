@@ -44,6 +44,7 @@ export default function LoginForm(props: any) {
         setShowErrResponse(true)
       }else{
         if(userData.jwt){
+          console.log("jwt ===== ")
           dispatch(setAuth(true))
           dispatch(setToken(userData.jwt))
           router.push('/')
