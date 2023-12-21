@@ -8,6 +8,7 @@ import { NavbarWrapper } from "@/components/dashboard/nav/NavbarWrapper";
 import Link from "next/link";
 import React from "react";
 import Footer from "@/components/dashboard/footer/Footer";
+import FooterTab from "@/components/dashboard/footer/FooterTab";
 
 
 const Dashboard = () => {
@@ -90,7 +91,7 @@ const Dashboard = () => {
       </div>
       </div>
 
-      <Footer />
+      <FooterTab />
 
     </div>
   );
