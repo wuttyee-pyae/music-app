@@ -58,7 +58,7 @@ const Music = (props: { children: string; isSubmitting: boolean }) => {
                 </div>
               }
             >
-              <div className="w-52 mx-auto">
+              <div className="w-52 mx-auto mb-4">
                 <MyButton isSubmitting={false} startContent={<PlusIcon />}>
                   {item.id == "solo" ? "Solo Music" : "Album Music"}
                 </MyButton>
@@ -72,7 +72,7 @@ const Music = (props: { children: string; isSubmitting: boolean }) => {
                 /> */}
               </div>
               <ScrollShadow className="w-[auto] h-[100dvh]">
-                <div className="text-white m-4">
+                <div className="text-white">
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:grid-cols-2 gap-3">
                     <CardMusicList />
                     <CardMusicList />

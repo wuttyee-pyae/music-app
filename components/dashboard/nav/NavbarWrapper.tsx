@@ -14,7 +14,7 @@ interface Props {
 export const NavbarWrapper = ({ children }: Props) => {
   return (
     <div
-      className={`relative flex flex-col flex-1 items-center justify-center `}
+      className={`relative flex flex-col flex-1 items-center justify-center`}
     >
       <Navbar
         className="w-full"

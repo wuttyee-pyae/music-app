@@ -28,7 +28,7 @@ const Dashboard = ({ children }: { children: React.ReactNode }) => {
                     <div className="">
                       {/* <ProtectedRoutes > */}
                       <main className="layout__main-content overscroll-y-none">
-                          <div className="wapper">
+                          <div className="wapper mx-4">
                             {children}
                           </div>
                       </main>

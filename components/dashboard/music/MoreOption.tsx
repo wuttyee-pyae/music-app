@@ -17,7 +17,7 @@ import { PlusIcon } from "@/components/desktop/music/icons/PlusIcon";
 export default function MoreOption() {
   return (
     <div className="flex items-center gap-4">
-      <Dropdown placement="bottom-end">
+      <Dropdown placement="bottom-start">
         <DropdownTrigger>
           <Button
             isIconOnly
