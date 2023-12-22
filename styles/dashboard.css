@@ -13,10 +13,16 @@
 }
 
 span.absolute {
-  width: auto;
-  background: none;
+  width: 100%;
+  /* background: none !important;
+  box-shadow: none !important; */
 }
 
+
+.boder_line::after{
+  content: " ";
+ margin-bottom: 20px;
+}
 .cover_btn {
   position: absolute;
   display: flex;

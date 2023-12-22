@@ -19,7 +19,7 @@ export const NavbarWrapper = ({ children }: Props) => {
       <Navbar
         className="w-full"
         classNames={{
-          wrapper: "w-full max-w-full item-center",
+          wrapper: "w-full max-w-full item-center p-0",
         }}
       >
         <div className="flex items-center m-2">

@@ -63,7 +63,7 @@ const Dashboard = () => {
     <div>
       <NavbarWrapper />
 
-      <div className="container">
+      <div className="container mb-4">
       <Artistscover />
 
       <div className="mb-4 grid grid-cols-2 items-center gap-4">
@@ -73,11 +73,13 @@ const Dashboard = () => {
         </div>
         <div className="flex justify-end text-gray-300">More</div>
       </div>
+
       <div className="grid grid-cols-3 gap-4 mb-4">
         {cardReport.map((item, index) => (
           <CardBox key="index" data={item} status="time" />
         ))}
       </div>
+      
 
       <div className="mb-4 grid grid-cols-2 items-center gap-4">
         <div className="flex items-center gap-4">
@@ -89,6 +91,7 @@ const Dashboard = () => {
           <CardBox key="index" data={item} status="quick" Icon={item.icon} />
         ))}
       </div>
+
       </div>
 
       <FooterTab />
