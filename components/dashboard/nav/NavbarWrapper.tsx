@@ -14,12 +14,12 @@ interface Props {
 export const NavbarWrapper = ({ children }: Props) => {
   return (
     <div
-      className={`relative flex flex-col flex-1 items-center justify-center `}
+      className={`relative flex flex-col flex-1 items-center justify-center`}
     >
       <Navbar
         className="w-full"
         classNames={{
-          wrapper: "w-full max-w-full item-center",
+          wrapper: "w-full max-w-full item-center p-0",
         }}
       >
         <div className="flex items-center m-2">
