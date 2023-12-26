@@ -7,7 +7,7 @@ export default function AddTrack() {
   return (
     <div className="mb-8">
       <div className="max-w-fit justify-center my-0 mx-auto">
-        <MyButton isSubmitting={false} startContent={<PlusIcon />}>
+        <MyButton isDisabled={false} startContent={<PlusIcon />}>
           Add Tack
         </MyButton>
       </div>

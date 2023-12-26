@@ -19,14 +19,9 @@ export default function MoreOption() {
     <div className="flex items-center gap-4">
       <Dropdown placement="bottom-start">
         <DropdownTrigger>
-          <Button
-            isIconOnly
-            className="data-[hover]:bg-foreground/10"
-            radius="full"
-            variant="light"
-          >
-            <MoreIcon />
-          </Button>
+          <div>
+          <MoreIcon />
+          </div>
         </DropdownTrigger>
         <DropdownMenu aria-label="Music Actions" variant="flat">
           {/* <DropdownItem

@@ -1,12 +1,9 @@
 import clsx from "clsx";
 
-const Glass = ({ children, className } : { children: React.ReactNode, className: any }) => {
+const Glass = ({ children, className } : { children: React.ReactNode, className: string }) => {
   return (
     <div
-      className={clsx(
-        "",
-        className
-      )}
+      className={`${className}`}
     >
       {children}
     </div>

@@ -62,35 +62,34 @@ const Dashboard = () => {
   return (
     <div>
       <NavbarWrapper />
-
       <div className="container mb-4">
-      <Artistscover />
+        <Artistscover />
 
-      <div className="mb-4 grid grid-cols-2 items-center gap-4">
-        <div className="flex items-center gap-4">
-          <h3 className="title text-white">Real Time</h3>
-          <p className="text-gray-300">24hr</p>
+        <div className="mb-4 grid grid-cols-2 items-center gap-4">
+          <div className="flex items-center gap-4">
+            <h3 className="title text-white">Real Time</h3>
+            <p className="text-gray-300">24hr</p>
+          </div>
+          <div className="flex justify-end text-gray-300">More</div>
         </div>
-        <div className="flex justify-end text-gray-300">More</div>
-      </div>
 
-      <div className="grid grid-cols-3 gap-4 mb-4">
-        {cardReport.map((item, index) => (
-          <CardBox key="index" data={item} status="time" />
-        ))}
-      </div>
-      
-
-      <div className="mb-4 grid grid-cols-2 items-center gap-4">
-        <div className="flex items-center gap-4">
-          <h3 className="title text-white ">Quick Add</h3>
+        <div className="grid grid-cols-3 gap-4 mb-4">
+          {cardReport.map((item : {}, index : number) => (
+            <CardBox key={index} data={item} status="time" />
+          ))}
         </div>
-      </div>
-      <div className="grid grid-cols-3 gap-4 mb-4">
-        {cardAddQuick.map((item, index) => (
-          <CardBox key="index" data={item} status="quick" Icon={item.icon} />
-        ))}
-      </div>
+
+
+        <div className="mb-4 grid grid-cols-2 items-center gap-4">
+          <div className="flex items-center gap-4">
+            <h3 className="title text-white ">Quick Add</h3>
+          </div>
+        </div>
+        <div className="grid grid-cols-3 gap-4 mb-4">
+          {cardAddQuick.map((item: any, index : number) => (
+            <CardBox key={index} data={item} status="quick" Icon={item.icon} />
+          ))}
+        </div>
 
       </div>
 

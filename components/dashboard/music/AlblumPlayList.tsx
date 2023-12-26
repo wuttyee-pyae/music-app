@@ -23,6 +23,7 @@ export default function AlblumPlayList() {
       offset={-50}
       placement="right"
     >
+      <div>
       <Button className="playlist_card p-0 m-0 w-full">
         <Card className="py-4 mb-4">
           <CardBody className="overflow-visible py-2">
@@ -47,6 +48,7 @@ export default function AlblumPlayList() {
           </CardHeader>
         </Card>
       </Button>
+      </div>
     </Tooltip>
   );
 }

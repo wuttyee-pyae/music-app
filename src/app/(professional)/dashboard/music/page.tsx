@@ -3,18 +3,14 @@ import React from "react";
 import {
   Tabs,
   Tab,
-  Card,
-  CardBody,
-  CardHeader,
   ScrollShadow,
 } from "@nextui-org/react";
 import MyButton from "@/components/desktop/login/MyButton";
 import { PlusIcon } from "@/components/desktop/artist/PlusIcon";
-import { FileUpload } from "primereact/fileupload";
 import CardMusicList from "@/components/dashboard/music/CardMusicList";
 import AlblumPlayList from "@/components/dashboard/music/AlblumPlayList";
 
-const Music = (props: { children: string; isSubmitting: boolean }) => {
+const Music = () => {
   const variants = ["underlined"];
   const [selected, setSelected] = React.useState("overview");
 
@@ -59,17 +55,11 @@ const Music = (props: { children: string; isSubmitting: boolean }) => {
               }
             >
               <div className="w-52 mx-auto mb-4">
-                <MyButton isSubmitting={false} startContent={<PlusIcon />}>
+                <div> 
+                <MyButton isDisabled={false} startContent={<PlusIcon />}>
                   {item.id == "solo" ? "Solo Music" : "Album Music"}
                 </MyButton>
-                {/* <FileUpload
-                  mode="basic"
-                  name="demo[]"
-                  url="/api/upload"
-                  accept="image/*"
-                  maxFileSize={1000000}
-                  onUpload={onUpload} 
-                /> */}
+                </div>
               </div>
               <ScrollShadow className="w-[auto] h-[100dvh]">
                 <div className="text-white">
@@ -81,7 +71,7 @@ const Music = (props: { children: string; isSubmitting: boolean }) => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:grid-cols-2 gap-3">
                     <AlblumPlayList />
                     <AlblumPlayList />
-                    <AlblumPlayList />{" "}
+                    <AlblumPlayList />
                   </div>
                   {/* {item.content} */}
                 </div>

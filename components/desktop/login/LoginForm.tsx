@@ -142,7 +142,7 @@ export default function LoginForm(props: any) {
                   OR <Link size="sm" href="/forgot_password">Forgot password?</Link>
                 </p>
                 <div className="flex gap-2 justify-end">
-                  <MyButton isSubmitting={isSubmitting} >Log in</MyButton>
+                  <MyButton isDisabled={isSubmitting} >Log in</MyButton>
                 </div>
               </form>
             </Tab>
@@ -212,7 +212,7 @@ export default function LoginForm(props: any) {
                   </Link>
                 </p>
                 <div className="flex gap-2 justify-end">
-                  <MyButton isSubmitting={isSubmitting}>Sing up</MyButton>
+                  <MyButton isDisabled={isSubmitting}>Sing up</MyButton>
                 </div>
               </form>
             </Tab>

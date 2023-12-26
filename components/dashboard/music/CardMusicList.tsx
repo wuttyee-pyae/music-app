@@ -19,6 +19,7 @@ const CardMusicList = () => {
               alt="Picture of the author"
               className="aspect-square right-0 rounded-md"
             />
+            <div>
             <Button
               isIconOnly
               color="danger"
@@ -28,6 +29,8 @@ const CardMusicList = () => {
             >
               <PlayIcon />
             </Button>
+            </div>
+           
         </div>
         <div className="flex-auto w-64">
           <div className="truncate break-words music_name">Music Name</div>
