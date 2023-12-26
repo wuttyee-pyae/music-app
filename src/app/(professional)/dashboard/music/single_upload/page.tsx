@@ -1,12 +1,12 @@
-import SingelMusicUpload from '@/components/dashboard/music/SingelMusicUpload'
 import React from 'react'
+import SingleMusicUpload from '@/components/dashboard/music/SingleMusicUpload'
 
-const SingleMusicUpload = () => {
+const SingleMusicUploadPage = () => {
   return (
     <div className='container'>
-        <SingelMusicUpload />
+        <SingleMusicUpload />
     </div>
   )
 }
 
-export default SingleMusicUpload
+export default SingleMusicUploadPage
