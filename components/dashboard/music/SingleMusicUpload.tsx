@@ -4,8 +4,9 @@ import { Accordion, AccordionItem } from "@nextui-org/react";
 import { MusicIcon } from "@/components/mobile/nav/icons/MusicIcon";
 import ReleaseInfo from "./ReleaseInfo";
 import AddTrack from "./AddTrack";
+import { ReleseIcon } from "@/components/common/icons/ReleseIcon";
 
-export default function SingelMusicUpload() {
+export default function SingleMusicUpload() {
   const defaultContent =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
 
@@ -16,7 +17,7 @@ export default function SingelMusicUpload() {
         aria-label="Release Info"
         subtitle="Press to expand"
         title="Release Info"
-        startContent={<MusicIcon className="text-primary" />}
+        startContent={<ReleseIcon className="text-primary" />}
       >
         {/* {defaultContent} */}
         <ReleaseInfo />
