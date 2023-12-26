@@ -1,9 +1,3 @@
-import { Input, Progress } from "@nextui-org/react";
-import { MusicIcon } from "@/components/mobile/nav/icons/MusicIcon";
-import { LyricsIcon } from "@/components/desktop/musicplayer/LyricsIcon";
-import { Toast } from "primereact/toast";
-import { Tooltip } from "primereact/tooltip";
-import { FileUpload } from "primereact/fileupload";
 import React from 'react';
 
 export default function TackItem() {

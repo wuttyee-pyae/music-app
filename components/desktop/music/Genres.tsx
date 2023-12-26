@@ -15,57 +15,57 @@ export default function Genres() {
       <div className="grid grid-cols-3 gap-4 xl:grid-cols-5 md:grid-cols-4">
         {/* Loop Genres Id */}
         <Link href={"/music/genres/id"}>
-          <div id="genres_id">
+          <div id="genres_id1">
             <Image
               alt="..."
               src={Genre01}
               style={{ objectFit: "cover" }}
               // layout="responsive"
-              suppressHydrationWarning
+              
             />
           </div>
         </Link>
         <Link href={"/music/genres/id"}>
-          <div id="genres_id">
+          <div id="genres_id2">
             <Image
               alt="..."
               src={Genre02}
               style={{ objectFit: "cover" }}
               // layout="responsive"
-              suppressHydrationWarning
+              
             />
           </div>
         </Link>
         <Link href={"/music/genres/id"}>
-          <div id="genres_id">
+          <div id="genres_id3">
             <Image
               alt="..."
               src={Genre03}
               style={{ objectFit: "cover" }}
               // layout="responsive"
-              suppressHydrationWarning
+              
             />
           </div>
         </Link>
         <Link href={"/music/genres/id"}>
-          <div id="genres_id">
+          <div id="genres_id4">
             <Image
               alt="..."
               src={Genre04}
               style={{ objectFit: "cover" }}
               // layout="responsive"
-              suppressHydrationWarning
+              
             />
           </div>
         </Link>
         <Link href={"/music/genres/id"}>
-          <div id="genres_id">
+          <div id="genres_id5">
             <Image
               alt="..."
               src={Genre05}
               style={{ objectFit: "cover" }}
               // layout="responsive"
-              suppressHydrationWarning
+              
             />
           </div>
         </Link>
