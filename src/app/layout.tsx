@@ -11,6 +11,8 @@ import DesktopLayout from "@/components/desktop/root/DesktopLayout";
 import { usePathname } from "next/navigation";
 
 import "primereact/resources/themes/lara-light-cyan/theme.css";
+import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";
 
 
 

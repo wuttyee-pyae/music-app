@@ -30,7 +30,7 @@ export default function SingleMusicUpload() {
         startContent={<MusicIcon className="text-secondary" />}
 
       >
-        <div className="w-full justify-center max-w-md mx-auto my-0">
+        <div className="w-full justify-center max-w-lg mx-auto my-0">
         <AddTrack />
         </div>
       </AccordionItem>

@@ -98,3 +98,12 @@ span.absolute {
       transform: translateX(100%);
     }
   }
+
+
+  .p-tabview-nav-content{
+    display: none;
+  }
+  
+  .p-tabview-panels{
+    background-color: transparent;
+  }

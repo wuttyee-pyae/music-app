@@ -37,6 +37,7 @@ const Music = () => {
     <div className="container mt-4">
       <div className="flex w-full flex-col">
         <Tabs
+        className="sticky top-0"
           aria-label="Dynamic tabs"
           items={tabs}
           color="default"
@@ -54,14 +55,12 @@ const Music = () => {
                 </div>
               }
             >
-              <div className="w-52 mx-auto mb-4">
-                <div> 
+              <div className="w-52 mx-auto mb-4 sticky" style={{top:"4rem"}}>
                 <MyButton isDisabled={false} startContent={<PlusIcon />}>
                   {item.id == "solo" ? "Solo Music" : "Album Music"}
                 </MyButton>
-                </div>
               </div>
-              <ScrollShadow className="w-[auto] h-[100dvh]">
+              {/* <ScrollShadow className="w-[auto] h-[100dvh]"> */}
                 <div className="text-white">
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:grid-cols-2 gap-3">
                     <CardMusicList />
@@ -75,7 +74,7 @@ const Music = () => {
                   </div>
                   {/* {item.content} */}
                 </div>
-              </ScrollShadow>
+              {/* </ScrollShadow> */}
             </Tab>
           )}
         </Tabs>

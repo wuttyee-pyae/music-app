@@ -15,13 +15,12 @@ export default function Gender() {
         startContent={<GenreIcon />}
         color="default"
         aria-hidden="true"
-        tabIndex={0}
         aria-labelledby="genre"
         placeholder="Select genre"
         variant="bordered"
         selectedKeys={value}
         className="w-full"
-        onSelectionChange={(e : any) => setValue(e.target.value)}
+        onSelectionChange={(e : any) => setValue(e)}
         defaultSelectedKeys={["other"]}
         id="genre"
         aria-checked="false"
@@ -34,7 +33,6 @@ export default function Gender() {
             value={genre.value}
             role="checkbox"
             aria-checked="false"
-            tabIndex={0}
             aria-labelledby="genre"
           >
             {genre.label}
