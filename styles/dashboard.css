@@ -18,6 +18,17 @@ span.absolute {
   box-shadow: none !important; */
 }
 
+.image_boder{
+  width: 180px;
+  height: 180px;
+  border: 2px dashed purple;
+  border-image-slice: 1;
+  border-radius:8px ;
+  border-image-source: linear-gradient(to left, var(--pink), var(--blue));
+
+
+}
+
 
 .boder_line::after{
   content: " ";

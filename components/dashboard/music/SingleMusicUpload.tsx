@@ -13,21 +13,21 @@ export default function SingleMusicUpload() {
   return (
     <Accordion defaultExpandedKeys={["1"]}>
       <AccordionItem
-        key="1"
+      key="1"
         aria-label="Release Info"
         subtitle="Press to expand"
         title="Release Info"
-        startContent={<ReleseIcon className="text-primary" />}
+        startContent={<ReleseIcon className="text-secondary" />}
       >
         {/* {defaultContent} */}
         <ReleaseInfo />
       </AccordionItem>
       <AccordionItem
-        key="2"
+      key="2"
         aria-label="Track List"
         subtitle={<span>Press to expand</span>}
         title="Track List"
-        startContent={<MusicIcon className="text-primary" />}
+        startContent={<MusicIcon className="text-secondary" />}
 
       >
         <div className="w-full justify-center max-w-md mx-auto my-0">

@@ -2,6 +2,7 @@ import React from "react";
 import { Chip, Input } from "@nextui-org/react";
 import AddCoverImg from "./AddCoverImg";
 import Gender from "@/components/desktop/music/genre/Genre";
+import { PlusIcon } from "@/components/desktop/artist/PlusIcon";
 
 const ReleaseInfo = () => {
   const initialArtists = ["Artist Name", "Banana", "Cherry"];
@@ -23,7 +24,8 @@ const ReleaseInfo = () => {
             <Input
               type="text"
               variant={"bordered"}
-              label="Music Name"
+              // label="Music Name"
+              placeholder="Music Name"
               className="mb-8"
             />
           </div>
@@ -31,7 +33,8 @@ const ReleaseInfo = () => {
             <AddCoverImg />
           </div>
           <div>
-            <Input type="text" variant={"bordered"} label="Add Artist" />
+            <Input type="text" variant={"bordered"} placeholder="Add Artist"  endContent={<PlusIcon className="text-white" />}
+/>
 
             <div className="flex gap-2 mt-2">
               {artists.map((artist, index) => (
@@ -49,7 +52,7 @@ const ReleaseInfo = () => {
             <Gender />
           </div>
           <div>
-            <Input type="text" variant={"bordered"} label="Relese Date" />
+            <Input type="text" variant={"bordered"} label="Relese Date"  />
           </div>
         </div>
       </div>
