@@ -32,19 +32,18 @@ export default function PopularSongList(props: any) {
     setPlayingSong(storage.getItem('play-music', 'session') || null)
     setFavSongs(storage.getItem('fav-songs', 'local') || [])
     dispatch(setActiveSong(playingSong))
-    dispatch(setSongLists(propsSongList))
-
     // For Fav List from local storage
     if(favSongs && favSongs.length > 0){
-      propsSongList.map((obj1:any )=>
-        favSongs.some((obj2:any) => {
+      propsSongList.map(async (obj1:any )=>
+        await favSongs.some((obj2:any) => {
           if(obj1.id === obj2.id && obj1.name === obj2.name && obj1.picture === obj2.picture)
           obj1.liked = true
         })
         );
     }
-  //   const getFavList  = storage.getItem('fav-songs', 'local')
-  //  console.log("fav - list --- " , getFavList)
+
+    dispatch(setSongLists(propsSongList))
+    
 
   const subscription = subscribeToActiveValue((value : any) => {
     dispatch(setSongLists(propsSongList))
@@ -60,33 +59,37 @@ export default function PopularSongList(props: any) {
     setPlayingSong(storage.getItem('play-music', 'session'))
     dispatch(playPause(true))
     updateValue(setData);
-    const updateSongList = await songList.map((item: any, i: number) => {
+    const updateSongList = await propsSongList.map((item: any, i: number) => {
       if (i == index) return { ...item, isPlaying: true }
       else return { ...item, isPlaying: false }
     })
     dispatch(setSongLists(updateSongList))
   }
 
-  const handleFavouriteList = async (data: any, liked?: any) => {
-    const updatedItems = await songList.map((item: any) => {
-      if (item.id === data.id) return { ...item, liked: !liked };
+  const handleFavouriteList = async (data: any, liked?: any ) => {
+    const updatedItems = await propsSongList.map((item: any) => {
+      if (item.id === data.id && item.name === data.name)return { ...item, liked: !liked };
       return item;
     });
     await setPropsSongList(updatedItems);
-
-    const favList : any[] = [];
-    await updatedItems.map((item: any) => {
-      if (item.liked === true) favList.push(item) ;
-    });
-    favList.length > 0 ? storage.setItem('fav-songs',favList, 'local') : null
-    
+    if(!liked){
+      favSongs.push(data)
+    }else{
+    for (let i = 0 ; i < favSongs.length ; i++){
+      if(data.id == favSongs[i].id && data.name == favSongs[i].name &&  data.picture == favSongs[i].picture){
+        favSongs.splice(i, 1)
+        break;
+      }
+    }
+    }
+    storage.setItem('fav-songs',favSongs, 'local')
   };
 
 
   return (
     <>
       {
-        songList.map((item: any, index: number) => (
+        propsSongList.map((item: any, index: number) => (
 
           <Tooltip
             content={<BsPlayFill className="h-10 w-10 z-0" />}
@@ -154,7 +157,7 @@ export default function PopularSongList(props: any) {
                           className="text-default-900/60 data-[hover]:bg-foreground/10 -translate-y-2 translate-x-2 mt-4"
                           radius="full"
                           variant="light"
-                          onPress={() => { handleFavouriteList(item, item.liked) }}
+                          onPress={() => { handleFavouriteList(item, item.liked ) }}
                         >
 
                           <HeartIcon
