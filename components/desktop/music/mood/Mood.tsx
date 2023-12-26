@@ -8,7 +8,7 @@ export default function Mood() {
   const [value, setValue] = React.useState(new Set([]));
 
   return (
-    <div className="w-full mt-4">
+    <div className="w-full my-4">
       <p className="text-small text-default-600">Mood: {value}</p>
       <Select
         startContent={<MoodIcon />}
