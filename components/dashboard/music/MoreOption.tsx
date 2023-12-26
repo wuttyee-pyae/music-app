@@ -10,10 +10,7 @@ import {
   User,
 } from "@nextui-org/react";
 
-import { Tooltip } from "@nextui-org/react";
 import { MoreIcon } from "@/components/desktop/music/icons/MoreIcon";
-import { PlusIcon } from "@/components/desktop/music/icons/PlusIcon";
-
 export default function MoreOption() {
   return (
     <div className="flex items-center gap-4">
