@@ -1,7 +1,7 @@
+import FilesUpload from "@/components/common/FilesUpload";
 import { PlusIcon } from "@/components/desktop/artist/PlusIcon";
 import MyButton from "@/components/desktop/login/MyButton";
 import React from "react";
-import TackItem from "./TackItem";
 
 export default function AddTrack() {
   return (
@@ -12,7 +12,7 @@ export default function AddTrack() {
         </MyButton>
       </div>
 
-      <TackItem />
+      <FilesUpload />
     </div>
   );
 }

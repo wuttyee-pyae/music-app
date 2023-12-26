@@ -6,8 +6,6 @@ import ReleaseInfo from "./ReleaseInfo";
 import AddTrack from "./AddTrack";
 
 export default function SingelMusicUpload() {
-  const defaultContent =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
 
   return (
     <Accordion defaultExpandedKeys={["1"]}>
@@ -29,7 +27,7 @@ export default function SingelMusicUpload() {
         startContent={<MusicIcon className="text-primary" />}
 
       >
-        <div className="w-full justify-center max-w-md mx-auto my-0">
+        <div className="w-full justify-center max-w-lg mx-auto my-0">
         <AddTrack />
         </div>
       </AccordionItem>
