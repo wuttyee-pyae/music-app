@@ -1,30 +1,11 @@
 import React from "react";
-import { Tabs, Tab, ScrollShadow } from "@nextui-org/react";
+import { Tabs, Tab, Card, CardBody, Link } from "@nextui-org/react";
 import MyButton from "@/components/desktop/login/MyButton";
 import { PlusIcon } from "@/components/desktop/artist/PlusIcon";
-import CardMusicList from "@/components/dashboard/music/CardMusicList";
-import AlblumPlayList from "@/components/dashboard/music/AlblumPlayList";
-import { number } from "yup";
-import getArtistsData from "@/lib/artists";
+import CardMusicList from "../music/CardMusicList";
+import AlblumPlayList from "../music/AlblumPlayList";
 
 export default function Music() {
-  const [selected, setSelected] = React.useState("overview");
-
-  let tabs = [
-    {
-      id: "solo",
-      label: "Solo",
-      content:
-        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    },
-    {
-      id: "albums",
-      label: "Albums",
-      content:
-        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    },
-  ];
-
   const songList = [
     {
       id: 1,
@@ -251,65 +232,63 @@ export default function Music() {
     },
   ];
 
-  // console.log(albumList ,"MusicData");
-
-  const onUpload = (val: any) => {
-    console.log(val);
-  };
-
   return (
-    <div className="">
-      <div className="flex w-full flex-col">
-        <Tabs
-          className="sticky top-0 z-50"
-          aria-label="Dynamic tabs"
-          items={tabs}
-          color="default"
-          variant="underlined"
-          selectedKey={selected}
-          onSelectionChange={setSelected as any}
-        >
-          {(item) => (
-            <Tab
-              className="mt-4"
-              key={item.id}
-              title={
-                <div className="flex flex-col justify-center items-center">
-                  <span className="boder_line text-2xl">{item.label}</span>
-                </div>
-              }
+    <div className="flex w-full flex-col">
+      <Tabs
+        aria-label="Options"
+        color="default"
+        variant="underlined"
+        className="sticky top-0 z-50"
+      >
+        <Tab key="solo_soung" title="Solo" className="boder_line text-2xl my-4">
+          <div className="container my-4">
+            <div
+              className="mx-auto mb-4 sticky z-10 flex justify-center"
+              style={{ top: "4rem" }}
             >
+              <div className="w-52">
+                <Link href={"/dashboard/music/single_upload"}>
+                  <MyButton isDisabled={false} startContent={<PlusIcon />}>
+                    Create Solo Soung
+                  </MyButton>
+                </Link>
+              </div>
+            </div>
+            <div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:grid-cols-2 gap-6 my-4">
+                {songList.map((data, index) => (
+                  <CardMusicList key={index} data={data} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </Tab>
+        <Tab key="albums" title="Albums" className="boder_line text-2xl my-4">
+          <div className="container my4">
+            <div className="container my-4">
               <div
                 className="mx-auto mb-4 sticky z-10 flex justify-center"
                 style={{ top: "4rem" }}
               >
                 <div className="w-52">
-                  <MyButton isDisabled={false} startContent={<PlusIcon />}>
-                    {item.id == "solo" ? "Solo Music" : "Album Music"}
-                  </MyButton>
+                  <Link href={"/dashboard/music/single_upload"}>
+                    <MyButton isDisabled={false} startContent={<PlusIcon />}>
+                      Create Albums
+                    </MyButton>
+                  </Link>
                 </div>
-                
               </div>
-              {/* <ScrollShadow className="w-[auto] h-[100dvh]"> */}
-              <div className="container mb-4">
-                {item.id == "solo" ? (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:grid-cols-2 gap-6 my-4">
-                    {songList.map((data, index) => (
-                      <CardMusicList key={index} data={data} />
-                    ))}
-                  </div>
-                ) : (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:grid-cols-2 gap-3 z-0">
-                    {albumList.map((data, index) => (
-                      <AlblumPlayList key={index} data={data} />
-                    ))}
-                  </div>
-                )}
+              <div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:grid-cols-2 gap-3 z-0">
+                  {albumList.map((data, index) => (
+                    <AlblumPlayList key={index} data={data} />
+                  ))}
+                </div>
               </div>
-            </Tab>
-          )}
-        </Tabs>
-      </div>
+            </div>
+          </div>
+        </Tab>
+      </Tabs>
     </div>
   );
 }
