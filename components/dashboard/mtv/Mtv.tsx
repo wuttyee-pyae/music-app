@@ -59,6 +59,7 @@ const videoList = [
     {
       "id": 1,
       "album_name": "Khit Thit Kyaut",
+      "cover_image": "/artists/idiots/mtv/chan_khae/cover.jpg",
       "date": "Thu Jan 13 2016 05:14:52 GMT+0630 (Myanmar Time)",
       "songs": [
         {
@@ -159,7 +160,7 @@ const videoList = [
               </div>
               <div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:grid-cols-2 gap-3 z-0">
-                  {videoList.map((data, index) => (
+                  {mtvAlbumList.map((data, index) => (
                     <AlblumMtvList key={index} data={data} />
                   ))}
                 </div>
