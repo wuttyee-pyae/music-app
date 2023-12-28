@@ -13,14 +13,14 @@ import {
 import { MoreIcon } from "@/components/desktop/music/icons/MoreIcon";
 export default function MoreOption() {
   return (
-    <div className="flex items-center gap-4">
-      <Dropdown placement="bottom-start">
-        <DropdownTrigger>
-          <div>
-          <MoreIcon />
+    <div className="flex items-center gap-4 text-white cursor-pointer">
+      <Dropdown placement="bottom-end">
+        <DropdownTrigger >
+          <div className="z-0">
+          <MoreIcon color={"default"} />
           </div>
         </DropdownTrigger>
-        <DropdownMenu aria-label="Music Actions" variant="flat">
+        <DropdownMenu aria-label="Music Actions" variant="flat" color="default">
           {/* <DropdownItem
             key="new_project"
             endContent={<PlusIcon className="text-large" />}

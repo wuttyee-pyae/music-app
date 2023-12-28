@@ -141,8 +141,10 @@ export default function LoginForm(props: any) {
                 <p className="text-center text-small">
                   OR <Link size="sm" href="/forgot_password">Forgot password?</Link>
                 </p>
-                <div className="flex gap-2 justify-end">
-                  <MyButton isDisabled={isSubmitting} >Log in</MyButton>
+                <div className="flex gap-2 justify-center">
+                  <div className="w-full">
+                  <MyButton isDisabled={isSubmitting}>Log in</MyButton>
+                  </div>
                 </div>
               </form>
             </Tab>
@@ -211,8 +213,10 @@ export default function LoginForm(props: any) {
                     Login
                   </Link>
                 </p>
-                <div className="flex gap-2 justify-end">
+                <div className="flex gap-2 justify-center">
+                  <div className="w-full">
                   <MyButton isDisabled={isSubmitting}>Sing up</MyButton>
+                  </div>
                 </div>
               </form>
             </Tab>

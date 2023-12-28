@@ -14,12 +14,20 @@ import styles from "./cardmusicList.module.css";
 
 import MoreOption from "./MoreOption";
 
+export default function AlblumPlayList({
+  data,
+  status,
+}: {
+  data?: any;
+  status?: string;
+}) {
 
-export default function AlblumPlayList() {
+  console.log(data ,"MusicData" , data.cover_image);
+
   return (
     <Tooltip
       content={<Play />}
-      className="text-white play_hover"
+      className="text-white play_hover z-0"
       offset={-50}
       placement="right"
     >
@@ -30,15 +38,15 @@ export default function AlblumPlayList() {
             <Image
               alt="Card background"
               className="object-cover rounded-xl"
-              src="https://nextui.org/images/hero-card-complete.jpeg"
+              src={data.cover_image}
               width={270}
             />
           </CardBody>
           <CardHeader className="pb-0 pt-2 px-4 flex items-start">
             <div className="flex-col w-full text-left gap-4 overflow-hidden">
-              <div className="truncate break-words music_name">Album Name</div>
+              <div className="truncate break-words music_name">{data.name}</div>
               <div className="flex gap-2 items-center">
-                <div className={styles.music_type}>12 Tack</div>
+                <div className={styles.music_type}>{data?.songs.length || 0} Tack</div>
               </div>
             </div>
 

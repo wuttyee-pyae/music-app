@@ -12,11 +12,7 @@
     bottom: 60px;
 }
 
-span.absolute {
-  width: 100%;
-  /* background: none !important;
-  box-shadow: none !important; */
-}
+
 
 .image_boder{
   width: 180px;
@@ -80,6 +76,25 @@ span.absolute {
   .drawer-animated-slide-out {
     animation: slide-out 0.2s forwards;
   }
+
+  .bg-main{
+    bottom: 0px;
+    box-shadow: 0px -3px 6px #000000eb;
+    -webkit-backdrop-filter: blur(20px) saturate(100%);
+    backdrop-filter: blur(20px) saturate(100%);
+    /* filter: blur(4px) saturate(100%); */
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .p-tabview-panels {
+    padding: 0;
+    min-height: 100vh;
+}
+
+.tab_bg > span{
+    background: none !important;
+    box-shadow: none !important;
+  }
+
   
   @keyframes slide-in {
     from {
@@ -106,4 +121,12 @@ span.absolute {
   
   .p-tabview-panels{
     background-color: transparent;
+  }
+
+  .p-fileupload-content{
+    background-color: black !important;
+  }
+
+  .p-fileupload-buttonbar{
+    background: linear-gradient(90deg, #fd5759 0%, #8c52ff 100%) !important;
   }

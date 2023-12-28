@@ -11,7 +11,7 @@ const FooterTab = ({handleActiveIndex}:{handleActiveIndex: any}) => {
   // const artist = props.data;
   const variants = ["underlined"];
   const [selected, setSelected] = React.useState("overview");
-  const [index, setIndex] = React.useState(0);
+  const [activeIndex, setActiveIndex] = React.useState(0);
   let tabs = [
     {
       tabIndex: 0,
@@ -69,23 +69,24 @@ const FooterTab = ({handleActiveIndex}:{handleActiveIndex: any}) => {
 
   return (
     <footer
-      className="rounded-md footer-container sticky bottom-0" >
-      <div className="py-2 flex items-center z-10">
+      className="rounded-md footer-container sticky bottom-0 bg-main" >
+      <div className="py-4 flex items-center z-10">
         <div className="flex w-full flex-col">
           <Tabs
             aria-label="Dynamic tabs"
             items={tabs}
-            className={"block w-full justify-between"}
-            color="default"
-            variant="underlined"
+            className={"block w-full justify-between bg-none"}
+            // color="secondary"
+            variant="light"
             selectedKey={selected}
             onSelectionChange={setSelected as any}
           >
             {(item) => (
               <Tab
                 key={item.id}
+                className="tab_bg"
                 title={
-                  <div className="flex flex-col justify-center items-center" onClick={() => handleActiveIndex(item.tabIndex)}>
+                  <div className={`flex flex-col justify-center items-center ${activeIndex == item.tabIndex ? "text-secondary" : ""}`} onClick={() =>{ setActiveIndex(item.tabIndex); handleActiveIndex(item.tabIndex)}}>
                     {item.icon}
                     <span className="boder_line">{item.title}</span>
                   </div>

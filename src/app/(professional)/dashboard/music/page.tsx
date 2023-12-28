@@ -1,14 +1,7 @@
 "use client";
-import React from "react";
-import {
-  Tabs,
-  Tab,
-  ScrollShadow,
-} from "@nextui-org/react";
-import MyButton from "@/components/desktop/login/MyButton";
-import { PlusIcon } from "@/components/desktop/artist/PlusIcon";
-import CardMusicList from "@/components/dashboard/music/CardMusicList";
-import AlblumPlayList from "@/components/dashboard/music/AlblumPlayList";
+import React, { useState } from "react";
+import MusicPage from "@/components/dashboard/music/Music";
+import FooterTab from "@/components/dashboard/footer/FooterTab";
 
 const Music = () => {
   const variants = ["underlined"];
@@ -33,52 +26,16 @@ const Music = () => {
     console.log(val);
   };
 
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleActiveIndex = (index: number) => {
+    setActiveIndex(index);
+  };
+
   return (
-    <div className="container mt-4">
-      <div className="flex w-full flex-col">
-        <Tabs
-        className="sticky top-0"
-          aria-label="Dynamic tabs"
-          items={tabs}
-          color="default"
-          variant="underlined"
-          selectedKey={selected}
-          onSelectionChange={setSelected as any}
-        >
-          {(item) => (
-            <Tab
-              className="mt-4"
-              key={item.id}
-              title={
-                <div className="flex flex-col justify-center items-center">
-                  <span className="boder_line text-2xl">{item.label}</span>
-                </div>
-              }
-            >
-              <div className="w-52 mx-auto mb-4 sticky" style={{top:"4rem"}}>
-                <MyButton isDisabled={false} startContent={<PlusIcon />}>
-                  {item.id == "solo" ? "Solo Music" : "Album Music"}
-                </MyButton>
-              </div>
-              {/* <ScrollShadow className="w-[auto] h-[100dvh]"> */}
-                <div className="text-white">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:grid-cols-2 gap-3">
-                    <CardMusicList />
-                    <CardMusicList />
-                    <CardMusicList />
-                  </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:grid-cols-2 gap-3">
-                    <AlblumPlayList />
-                    <AlblumPlayList />
-                    <AlblumPlayList />
-                  </div>
-                  {/* {item.content} */}
-                </div>
-              {/* </ScrollShadow> */}
-            </Tab>
-          )}
-        </Tabs>
-      </div>
+    <div>
+      <MusicPage />
+      {/* <FooterTab handleActiveIndex={handleActiveIndex} /> */}
     </div>
   );
 };

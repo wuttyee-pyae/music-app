@@ -7,13 +7,19 @@ import { PlayIcon } from "@/components/mobile/musiccard/PlayIcon";
 
 import styles from "./cardmusicList.module.css";
 import MoreOption from "./MoreOption";
-const CardMusicList = () => {
+export default function CardMusicListexport ({
+  data,
+  status,
+}: {
+  data?: any;
+  status?: string;
+}) {
   return (
     <div className={styles.crbt_has_child}>
       <div className="flex gap-4 items-center">
         <div className="music-gradient flex">
             <Image
-              src="/images/crbt_lg.jpg"
+              src={data.picture}
               width={45}
               height={45}
               alt="Picture of the author"
@@ -33,10 +39,10 @@ const CardMusicList = () => {
            
         </div>
         <div className="flex-auto w-64">
-          <div className="truncate break-words music_name">Music Name</div>
+          <div className="truncate break-words music_name">{data.name}</div>
           <div className="flex gap-2 items-center">
-            <div className={styles.music_type}>Time</div>
-            <div className={styles.music_type}>3: 15</div>
+            <div className={styles.music_type}>{data.type}</div>
+            <div className={styles.music_type}>{data.time}</div>
           </div>
         </div>
         <div>
@@ -46,6 +52,4 @@ const CardMusicList = () => {
 
     </div>
   );
-};
-
-export default CardMusicList;
+}

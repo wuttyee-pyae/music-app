@@ -17,7 +17,7 @@ export const NavbarWrapper = ({ children }: Props) => {
       className={`relative flex flex-col flex-1 items-center justify-center`}
     >
       <Navbar
-        className="w-full"
+        className="w-full px-4"
         classNames={{
           wrapper: "w-full max-w-full item-center p-0",
         }}

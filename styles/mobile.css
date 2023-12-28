@@ -50,11 +50,11 @@ body {
   position: relative;
   z-index: 0;
 }
-
+/* 
 span.absolute {
   width: 70px;
   background-color: blueviolet;
-}
+} */
 
 .image-text {
   bottom: 70px;
@@ -179,9 +179,9 @@ span.absolute {
 }
 
 @media screen and (max-width: 420px) {
-  span.absolute {
+  /* span.absolute {
     width: 64px;
-  }
+  } */
 
   .image-text {
     bottom: 70px;

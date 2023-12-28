@@ -9,7 +9,7 @@ export const LyricsIcon = ({ size = 18, width=18, height=18, ...props }) => (
     viewBox="0 0 18 18"
     width={size || width}
     {...props}
-    className="text-white"
+    // className="text-white"
   >
     <path d="M0,0V8.1l6.8-4Z" fill="currentColor"  />
     <rect
