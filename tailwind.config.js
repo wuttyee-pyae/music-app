@@ -66,7 +66,10 @@ module.exports = {
           '0%': { transform: 'translateX(0%)' },
           '100%': { transform: 'translateX(-100%)' },
         }
-      }
+      },
+      aspectRatio: {
+        '4/3': '4 / 3',
+      },
     },
       
   },

@@ -15,7 +15,7 @@ export default function VideoCard({
   console.log(data ,"MusicData" , data.cover_image)
 
   return (
-    <div>
+    // <div>
       <Link href="/dashboard/player">
       <Image
         isZoomed
@@ -27,7 +27,7 @@ export default function VideoCard({
         // layout="responsive"
         suppressHydrationWarning
       />
-      </Link>
+     
       <div className="my-4">
         <div className="grid grid-cols-12 gap-4 items-center">
           <div className="col-span-10 mtv_title">{data.name}</div>
@@ -40,6 +40,7 @@ export default function VideoCard({
           <div className="music_type">like counts</div>
         </div>
       </div>
-    </div>
+    {/* </div> */}
+     </Link>
   );
 }
