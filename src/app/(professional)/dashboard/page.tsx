@@ -5,8 +5,8 @@ import FooterTab from "@/components/dashboard/footer/FooterTab";
 import { TabPanel, TabView } from "primereact/tabview";
 
 import Music from "@/components/dashboard/music/Music";
-import Home from "@/components/dashboard/home/Home";
 import Mtv from "@/components/dashboard/mtv/Mtv";
+import Home from "@/components/dashboard/home/home";
 
 const Dashboard = () => {
   const [activeIndex, setActiveIndex] = useState(0);

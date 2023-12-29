@@ -8,7 +8,7 @@ import { Tag } from "primereact/tag";
 import { DicIcon } from "./icons/DicIcon";
 import { LyricsIcon } from "../desktop/musicplayer/LyricsIcon";
 
-export default function FilesUpload() {
+export default function FilesUpload({data , handleValue} : {data: string , handleValue: any}) {
   const toast = useRef<any>(null);
   const [totalSize, setTotalSize] = useState(0);
   const fileUploadRef = useRef<any>(null);
@@ -223,7 +223,7 @@ export default function FilesUpload() {
         multiple
         accept="image/*"
         maxFileSize={1000000}
-        onUpload={onTemplateUpload}
+        onUpload={handleValue}
         onSelect={onTemplateSelect}
         onError={onTemplateClear}
         onClear={onTemplateClear}

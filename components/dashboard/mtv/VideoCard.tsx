@@ -2,6 +2,7 @@ import React from "react";
 
 import { Image } from "@nextui-org/react";
 import MoreOption from "../music/MoreOption";
+import Link from "next/link";
 
 export default function VideoCard({
   data,
@@ -15,6 +16,7 @@ export default function VideoCard({
 
   return (
     <div>
+      <Link href="/dashboard/player">
       <Image
         isZoomed
         alt={data.name}
@@ -25,6 +27,7 @@ export default function VideoCard({
         // layout="responsive"
         suppressHydrationWarning
       />
+      </Link>
       <div className="my-4">
         <div className="grid grid-cols-12 gap-4 items-center">
           <div className="col-span-10 mtv_title">{data.name}</div>
