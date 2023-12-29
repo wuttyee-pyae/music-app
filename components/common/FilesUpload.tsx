@@ -12,6 +12,7 @@ export default function FilesUpload({data , handleValue} : {data: string , handl
   const toast = useRef<any>(null);
   const [totalSize, setTotalSize] = useState(0);
   const fileUploadRef = useRef<any>(null);
+  const [chooseTemplate, setChooseTemplate] = useState(null);
 
   const onTemplateSelect = (e: any) => {
     let _totalSize = totalSize;
@@ -49,6 +50,8 @@ export default function FilesUpload({data , handleValue} : {data: string , handl
   };
 
   const headerTemplate = (options: any) => {
+    setChooseTemplate(options)
+    console.log(" ---- header temple -- " , options.chooseButton)
     const { className, chooseButton, uploadButton, cancelButton } = options;
     const value = totalSize / 10000;
     const formatedValue =
@@ -57,27 +60,28 @@ export default function FilesUpload({data , handleValue} : {data: string , handl
         : "0 B";
 
     return (
-      <div
-        className={className}
-        style={{
-          backgroundColor: "white",
-          display: "flex",
-          alignItems: "center",
-          borderBottom: "0.5px solid",
-        }}
-      >
-        {chooseButton}
-        {uploadButton}
-        {cancelButton}
-        <div className="flex align-items-center gap-3 ml-auto">
-          <span>{formatedValue} / 1 GB</span>
-          <ProgressBar
-            value={value}
-            showValue={false}
-            style={{ width: "10rem", height: "12px" }}
-          ></ProgressBar>
-        </div>
-      </div>
+      <div></div>
+      // <div
+      //   className={className}
+      //   style={{
+      //     backgroundColor: "white",
+      //     display: "flex",
+      //     alignItems: "center",
+      //     borderBottom: "0.5px solid",
+      //   }}
+      // >
+      //   {chooseButton}
+      //   {uploadButton}
+      //   {cancelButton}
+      //   <div className="flex align-items-center gap-3 ml-auto">
+      //     <span>{formatedValue} / 1 GB</span>
+      //     <ProgressBar
+      //       value={value}
+      //       showValue={false}
+      //       style={{ width: "10rem", height: "12px" }}
+      //     ></ProgressBar>
+      //   </div>
+      // </div>
     );
   };
 
@@ -139,12 +143,28 @@ export default function FilesUpload({data , handleValue} : {data: string , handl
   };
 
   const emptyTemplate = () => {
+    console.log("option template ---- " , chooseTemplate)
+    const { className, chooseButton } :  any = chooseTemplate 
+    
     return (
       <div id="track_id">
         <p className="text-white">Track 01</p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="flex items-center justify-center align-items-center flex-column w-full gap-6 border-2 border-dotted border-gray-400 p-6">
             <div>
+            <div
+        className={className || ""}
+        style={{
+          backgroundColor: "white",
+          // display: "flex",
+          // alignItems: "center",
+          // borderBottom: "0.5px solid",
+          width: "50px",
+          height: "50px"
+        }}
+      >
+        {chooseButton}
+      </div>
               <DicIcon
                 className="text-secondary"
                 width={50}
