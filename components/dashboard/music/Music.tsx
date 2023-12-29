@@ -249,7 +249,7 @@ export default function Music() {
               <div className="w-52">
                 <Link href={"/dashboard/music/single_upload"}>
                   <MyButton isDisabled={false} startContent={<PlusIcon />}>
-                    Create Solo Soung
+                    Create Solo Song
                   </MyButton>
                 </Link>
               </div>

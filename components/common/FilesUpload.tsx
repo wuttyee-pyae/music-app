@@ -70,7 +70,7 @@ export default function FilesUpload({data , handleValue} : {data: string , handl
         {uploadButton}
         {cancelButton}
         <div className="flex align-items-center gap-3 ml-auto">
-          <span>{formatedValue} / 1 MB</span>
+          <span>{formatedValue} / 1 GB</span>
           <ProgressBar
             value={value}
             showValue={false}
@@ -221,9 +221,9 @@ export default function FilesUpload({data , handleValue} : {data: string , handl
         name="demo[]"
         url="/api/upload"
         multiple
-        accept="image/*"
-        maxFileSize={1000000}
-        onUpload={handleValue}
+        accept="*"
+        maxFileSize={1000000000}
+        onUpload={onTemplateUpload}
         onSelect={onTemplateSelect}
         onError={onTemplateClear}
         onClear={onTemplateClear}
