@@ -125,6 +125,7 @@
 
   .p-fileupload-content{
     background-color: black !important;
+    padding: 10px;
   }
 
   .p-fileupload-buttonbar{

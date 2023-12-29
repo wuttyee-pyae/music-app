@@ -15,6 +15,7 @@ export default function FilesUpload() {
   const [chooseTemplate, setChooseTemplate] = useState(null);
 
   const onTemplateSelect = (e: any) => {
+    console.log("Total " , e)
     let _totalSize = totalSize;
     let files = e.files;
 
@@ -50,44 +51,42 @@ export default function FilesUpload() {
   };
 
   const headerTemplate = (options: any) => {
-    setChooseTemplate(options)
-    console.log(" ---- header temple -- " , options.chooseButton)
     const { className, chooseButton, uploadButton, cancelButton } = options;
-    const value = totalSize / 10000;
+    const value = totalSize / 10000000;
     const formatedValue =
       fileUploadRef && fileUploadRef.current
         ? fileUploadRef?.current?.formatSize(totalSize)
         : "0 B";
 
     return (
-      <div></div>
-      // <div
-      //   className={className}
-      //   style={{
-      //     backgroundColor: "white",
-      //     display: "flex",
-      //     alignItems: "center",
-      //     borderBottom: "0.5px solid",
-      //   }}
-      // >
-      //   {chooseButton}
-      //   {uploadButton}
-      //   {cancelButton}
-      //   <div className="flex align-items-center gap-3 ml-auto">
-      //     <span>{formatedValue} / 1 GB</span>
-      //     <ProgressBar
-      //       value={value}
-      //       showValue={false}
-      //       style={{ width: "10rem", height: "12px" }}
-      //     ></ProgressBar>
-      //   </div>
-      // </div>
+      <div
+        className={`${className} p-0`}
+        style={{
+          backgroundColor: "white",
+          display: "flex",
+          alignItems: "center",
+          borderBottom: "0.5px solid",
+        }}
+      >
+        {chooseButton}
+        {/* {uploadButton} */}
+        {cancelButton}
+        <div className="flex align-items-center gap-3 ml-auto mr-4">
+          <span>{formatedValue} / 1 GB</span>
+          <ProgressBar 
+          className="self-center"
+            value={value}
+            showValue={false}
+            style={{ width: "10rem", height: "12px" }}
+          ></ProgressBar>
+        </div>
+      </div>
     );
   };
 
   const itemTemplate = (file: any, props: any) => {
     return (
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 p-0">
         <div className="flex align-items-center flex-wrap">
           <div className="flex align-items-center" style={{ width: "40%" }}>
             <img
@@ -116,55 +115,27 @@ export default function FilesUpload() {
             onClick={() => onTemplateRemove(file, props.onRemove)}
           />
         </div>
-
-        <div className="flex align-items-center flex-wrap">
-          <div className="flex align-items-center" style={{ width: "40%" }}>
-            <span className="flex flex-column text-left ml-3">
-              {file.name}
-              <small className="ml-2  mt-1">
-                {new Date().toLocaleDateString()}
-              </small>
-            </span>
-          </div>
-          <Tag
-            value={props.formatSize}
-            severity="warning"
-            className="h-9 mt-6"
-          />
-          <Button
-            type="button"
-            icon="pi pi-times"
-            className="p-button-outlined p-button-rounded p-button-danger ml-auto "
-            onClick={() => onTemplateRemove(file, props.onRemove)}
-          />
-        </div>
       </div>
     );
   };
 
   const emptyTemplate = () => {
-    console.log("option template ---- " , chooseTemplate)
-    const { className, chooseButton } :  any = chooseTemplate 
-    
     return (
       <div id="track_id">
-        <p className="text-white">Track 01</p>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-6">
           <div className="flex items-center justify-center align-items-center flex-column w-full gap-6 border-2 border-dotted border-gray-400 p-6">
             <div>
-            <div
+            {/* <div
         className={className || ""}
         style={{
           backgroundColor: "white",
-          // display: "flex",
-          // alignItems: "center",
-          // borderBottom: "0.5px solid",
-          width: "50px",
-          height: "50px"
+          display: "flex",
+          alignItems: "center",
+          borderBottom: "0.5px solid",
         }}
       >
         {chooseButton}
-      </div>
+      </div> */}
               <DicIcon
                 className="text-secondary"
                 width={50}
@@ -181,27 +152,6 @@ export default function FilesUpload() {
                 className="my-5"
               >
                 Drag and Drop Audio File Here
-              </span>
-            </div>
-          </div>
-          <div className="flex items-center justify-center align-items-center flex-column w-full gap-6 border-2 border-dotted border-gray-400 p-6">
-            <div>
-              <LyricsIcon
-                className="text-secondary"
-                width={50}
-                height={50}
-                size={50}
-              />
-            </div>
-            <div>
-              <span
-                style={{
-                  fontSize: "1.2em",
-                  color: "var(--text-color-secondary)",
-                }}
-                className="my-5"
-              >
-                Drag and Drop Lyric File Here
               </span>
             </div>
           </div>
@@ -231,9 +181,9 @@ export default function FilesUpload() {
   return (
     <div className="my-4 w-full">
       <Toast ref={toast}></Toast>
-      <Tooltip target=".custom-choose-btn" content="Choose" position="bottom" />
+      {/* <Tooltip target=".custom-choose-btn" content="Choose" position="bottom" />
       <Tooltip target=".custom-upload-btn" content="Upload" position="bottom" />
-      <Tooltip target=".custom-cancel-btn" content="Clear" position="bottom" />
+      <Tooltip target=".custom-cancel-btn" content="Clear" position="bottom" /> */}
 
       <FileUpload
         className="bg-none"
