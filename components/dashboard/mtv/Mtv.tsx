@@ -1,5 +1,5 @@
 import React from "react";
-import { Tabs, Tab, Card, CardBody, Link } from "@nextui-org/react";
+import { Tabs, Tab, Link } from "@nextui-org/react";
 import MyButton from "@/components/desktop/login/MyButton";
 import { PlusIcon } from "@/components/desktop/artist/PlusIcon";
 import VideoCard from "./VideoCard";
@@ -127,7 +127,7 @@ const videoList = [
               style={{ top: "4rem" }}
             >
               <div className="w-52">
-                <Link href={"/dashboard/music/single_upload"}>
+                <Link href="/dashboard/music/single_upload">
                   <MyButton isDisabled={false} startContent={<PlusIcon />}>
                     Create Solo MTV
                   </MyButton>
@@ -151,7 +151,7 @@ const videoList = [
                 style={{ top: "4rem" }}
               >
                 <div className="w-52">
-                  <Link href={"/dashboard/music/single_upload"}>
+                  <Link href="/dashboard/music/single_upload">
                     <MyButton isDisabled={false} startContent={<PlusIcon />}>
                       Create Albums
                     </MyButton>
