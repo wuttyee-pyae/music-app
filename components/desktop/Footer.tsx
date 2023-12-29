@@ -7,9 +7,13 @@ import { CloseIcon } from "../common/icons/CloseIcon";
 import { MinusIcon } from "../common/icons/MinusIcon";
 import { MinimizeIcon } from "../common/icons/MinimizeIcon";
 import { FullScreenIcon } from "../common/icons/FullScreenIcon";
+import { useDispatch } from "react-redux";
+import { playPause } from "../../redux/features/playMusicSlice";
+
 
 export default function Footer() {
   const storage = useStorage()
+  const dispatch = useDispatch();
   const [isExpand, setIsExpand] = React.useState(false)
   const [closed, setClosed] = React.useState(true)
 
@@ -20,6 +24,7 @@ export default function Footer() {
   const closedMusic = () => {
     storage.removeItem('play-music', 'session')
     setClosed(true)
+    dispatch(playPause(false));
   }
 
   useEffect(() => {
@@ -37,6 +42,7 @@ export default function Footer() {
     
     return () => {
       subscription.unsubscribe();
+      
     };
     
   }, [subscribeToValue]);

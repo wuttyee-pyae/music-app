@@ -3,8 +3,8 @@ import React, { useRef, useEffect, useState } from 'react';
 import { updateCurrentTimeValue } from '@/hooks/observableService';
 
 
-const Player = ({ activeSong, volume, isPlaying, repeatStatus ,  onEnded  } : 
-  { activeSong : any, volume : any , isPlaying : boolean , repeatStatus : any, onEnded : any }) => {
+const Player = ({ activeSong, volume, isPlaying, repeatStatus ,  onEnded , isExpand } : 
+  { activeSong : any, volume : any , isPlaying : boolean , repeatStatus : any, onEnded : any , isExpand : boolean}) => {
   const audioRef = useRef<any>(null);
   const [maxTime,setMaxTime] = useState(0)
   const [appTime, setAppTime] = useState(0);
@@ -33,7 +33,7 @@ const Player = ({ activeSong, volume, isPlaying, repeatStatus ,  onEnded  } :
 
   return (
     <>
-    <div className="flex flex-row justify-center items-center w-full gap-4">
+    <div className={`flex flex-row justify-center items-center w-full gap-4 ${isExpand && 'mt-10'}`}>
     {/* <button type="button" onClick={() => setMaxTime(appTime - 5)} className="lg:mr-4 lg:block text-white">
       -
     </button> */}

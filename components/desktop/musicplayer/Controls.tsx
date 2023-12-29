@@ -14,7 +14,7 @@ const Controls = ({
   setShuffle,
   handlePlayPause,
   handlePrevSong,
-  handleNextSong,
+  handleNextSong
 }: {
   isPlaying: boolean;
   repeatStatus: string;
@@ -38,7 +38,7 @@ const Controls = ({
 
   return (
     <div>
-      <div className="flex items-center justify-around w-[25vw] gap-4">
+      <div className={`flex items-center justify-around gap-4 w-96 `} >
         {repeatStatus == "repeatAll" ? (
           <RepeatAllIcon
             size={20}

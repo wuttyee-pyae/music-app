@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import AddPlayIcon from "@/components/desktop/yoursplaylist/icons/AddPlayIcon";
+import { FileUpload } from "primereact/fileupload";
 
 export default function AddCoverImg() {
   return (
@@ -9,6 +10,7 @@ export default function AddCoverImg() {
         <div className="image_boder flex flex-col justify-center items-center">
           <div className="">
             <AddPlayIcon />
+            {/* <FileUpload mode="basic" name="demo[]" url="/api/upload" accept="image/*" maxFileSize={1000000} cancelLabel="yuo"/> */}
           </div>
           <div className="mt-4 text-white">Add Cover Image</div>
         </div>

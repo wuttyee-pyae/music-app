@@ -1,9 +1,10 @@
 import React from "react";
-import { Tabs, Tab, Card, CardBody, Link } from "@nextui-org/react";
+import { Tabs, Tab, Card, CardBody } from "@nextui-org/react";
 import MyButton from "@/components/desktop/login/MyButton";
 import { PlusIcon } from "@/components/desktop/artist/PlusIcon";
 import CardMusicList from "../music/CardMusicList";
 import AlblumPlayList from "../music/AlblumPlayList";
+import Link from "next/link";
 
 export default function Music() {
   const songList = [
@@ -247,7 +248,11 @@ export default function Music() {
               style={{ top: "4rem" }}
             >
               <div className="w-52">
-                <Link href={"/dashboard/music/single_upload"}>
+                <Link  
+                href={{
+                  pathname: "dashboard/music",
+                  query: { type: "single"},
+                }}>
                   <MyButton isDisabled={false} startContent={<PlusIcon />}>
                     Create Solo Song
                   </MyButton>
@@ -271,7 +276,11 @@ export default function Music() {
                 style={{ top: "4rem" }}
               >
                 <div className="w-52">
-                  <Link href={"/dashboard/music/single_upload"}>
+                  <Link  
+                  href={{
+                    pathname: '/dashboard/music',
+                    query: { type: "album"},
+                }}>
                     <MyButton isDisabled={false} startContent={<PlusIcon />}>
                       Create Albums
                     </MyButton>

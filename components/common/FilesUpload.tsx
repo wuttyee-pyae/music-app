@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Toast } from "primereact/toast";
 import { Tooltip } from "primereact/tooltip";
 import { FileUpload } from "primereact/fileupload";
@@ -8,14 +8,14 @@ import { Tag } from "primereact/tag";
 import { DicIcon } from "./icons/DicIcon";
 import { LyricsIcon } from "../desktop/musicplayer/LyricsIcon";
 
-export default function FilesUpload() {
+export default function FilesUpload({handleInfo} : {handleInfo:any}) {
   const toast = useRef<any>(null);
   const [totalSize, setTotalSize] = useState(0);
   const fileUploadRef = useRef<any>(null);
-  const [chooseTemplate, setChooseTemplate] = useState(null);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const onTemplateSelect = (e: any) => {
-    console.log("Total " , e)
+    e?.files.length > 0 ? setIsDisabled(true) : setIsDisabled(false)
     let _totalSize = totalSize;
     let files = e.files;
 
@@ -25,24 +25,15 @@ export default function FilesUpload() {
 
     setTotalSize(_totalSize);
   };
-
-  const onTemplateUpload = (e: any) => {
-    let _totalSize = 0;
-
-    e.files.forEach((file: any) => {
-      _totalSize += file.size || 0;
-    });
-
-    setTotalSize(_totalSize);
-    toast?.current.show({
-      severity: "info",
-      summary: "Success",
-      detail: "File Uploaded",
-    });
-  };
+  
+  useEffect(()=>{
+    handleInfo(isDisabled)
+  },[onTemplateSelect])
+  
 
   const onTemplateRemove = (file: any, callback: any) => {
     setTotalSize(totalSize - file.size);
+    file &&  setIsDisabled(false)
     callback();
   };
 
@@ -51,7 +42,7 @@ export default function FilesUpload() {
   };
 
   const headerTemplate = (options: any) => {
-    const { className, chooseButton, uploadButton, cancelButton } = options;
+    const { className, chooseButton } = options;
     const value = totalSize / 10000000;
     const formatedValue =
       fileUploadRef && fileUploadRef.current
@@ -69,8 +60,6 @@ export default function FilesUpload() {
         }}
       >
         {chooseButton}
-        {/* {uploadButton} */}
-        {cancelButton}
         <div className="flex align-items-center gap-3 ml-auto mr-4">
           <span>{formatedValue} / 1 GB</span>
           <ProgressBar 
@@ -125,17 +114,6 @@ export default function FilesUpload() {
         <div className="grid grid-cols-1 gap-6">
           <div className="flex items-center justify-center align-items-center flex-column w-full gap-6 border-2 border-dotted border-gray-400 p-6">
             <div>
-            {/* <div
-        className={className || ""}
-        style={{
-          backgroundColor: "white",
-          display: "flex",
-          alignItems: "center",
-          borderBottom: "0.5px solid",
-        }}
-      >
-        {chooseButton}
-      </div> */}
               <DicIcon
                 className="text-secondary"
                 width={50}
@@ -165,18 +143,6 @@ export default function FilesUpload() {
     iconOnly: true,
     className: "custom-choose-btn p-button-rounded p-button-outlined",
   };
-  const uploadOptions = {
-    icon: "pi pi-fw pi-cloud-upload",
-    iconOnly: true,
-    className:
-      "custom-upload-btn p-button-success p-button-rounded p-button-outlined",
-  };
-  const cancelOptions = {
-    icon: "pi pi-fw pi-times",
-    iconOnly: true,
-    className:
-      "custom-cancel-btn p-button-danger p-button-rounded p-button-outlined",
-  };
 
   return (
     <div className="my-4 w-full">
@@ -192,8 +158,8 @@ export default function FilesUpload() {
         url="/api/upload"
         multiple
         accept="*"
+        disabled={isDisabled}
         maxFileSize={1000000000}
-        onUpload={onTemplateUpload}
         onSelect={onTemplateSelect}
         onError={onTemplateClear}
         onClear={onTemplateClear}
@@ -201,8 +167,6 @@ export default function FilesUpload() {
         itemTemplate={itemTemplate}
         emptyTemplate={emptyTemplate}
         chooseOptions={chooseOptions}
-        uploadOptions={uploadOptions}
-        cancelOptions={cancelOptions}
       />
     </div>
   );

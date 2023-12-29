@@ -18,9 +18,11 @@ import useStorage from "@/hooks/useStorage";
 import { subscribeToValue, updateActiveValue } from '@/hooks/observableService';
 import { Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, Tooltip, useDisclosure } from '@nextui-org/react';
 import LyricsCard from './lyrics/LyricsCard';
+import useDeviceType from '@/hooks/useDeviceType';
 
 
 const MusicPlayer = ({doExpend , isExpand}: any) => {
+  const deviceType = useDeviceType();
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const dispatch = useDispatch();
   const storage = useStorage();
@@ -29,25 +31,26 @@ const MusicPlayer = ({doExpend , isExpand}: any) => {
   const [volume, setVolume] = useState(0.3);
   const [repeatStatus, setRepeatStatus] = useState(null);
   const [shuffle, setShuffle] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   
 
   useEffect( () => {
-    // dispatch(playPause(false));
+    setIsMobile(deviceType)
    const subscription = subscribeToValue((value : any) => {
     // console.log("subscription" , value)
     const sessionSong = storage.getItem('play-music', 'session');
     sessionSong && dispatch(setActiveSong(sessionSong))
     });
-    
     return () => {
       subscription.unsubscribe();
     };
     
-  }, []);
+  }, [deviceType]);
  
   
-  const handlePlayPause = () => {
-    // if (!isActive) return;
+  const handlePlayPause = (isExit? : boolean) => {
+    // if (!isActive) return; 
+    isExit && dispatch(playPause(false))
     if (isPlaying) {
       dispatch(playPause(false));
     } else {
@@ -98,9 +101,6 @@ const MusicPlayer = ({doExpend , isExpand}: any) => {
       dispatch(playPause(false));
     }
   };
-
- 
-  
   
   return (
     <div className={`relative sm:px-4 px-8 my-3 w-full items-center justify-between flex gap-4 ${isExpand && 'flex-col'}`}>
@@ -112,10 +112,11 @@ const MusicPlayer = ({doExpend , isExpand}: any) => {
         activeSong={activeSong}
         data={activeSong}
         isExpand={isExpand}
+        isMobile={(isMobile && !isExpand) ? true : false}
       />
       </div>
       
-      <div className="flex flex-col items-center justify-center lg:col-span-6 col-span-8 w-[50dvw]">
+      <div className={`flex flex-col items-center justify-center lg:col-span-6 col-span-8 ${(isMobile && !isExpand) && 'player-mobile' }`}>
         <Controls
           isPlaying={isPlaying}
           repeatStatus={repeatStatus as any}
@@ -126,17 +127,21 @@ const MusicPlayer = ({doExpend , isExpand}: any) => {
           handlePrevSong={handlePrevSong}
           handleNextSong={handleNextSong}
         />
-       <Player
-          activeSong={activeSong}
-          volume={volume}
-          isPlaying={isPlaying}
-          repeatStatus={repeatStatus}
-          onEnded={handleNextSong}
-          // onTimeUpdate={(event : any ) => setAppTime(event.target.currentTime)}
-          // onLoadedData={(time  : any) =>  setDuration(time)}
-        /> 
+        <div className={`${(isMobile && !isExpand) && 'hidden' }`}>
+          <Player
+            activeSong={activeSong}
+            volume={volume}
+            isPlaying={isPlaying}
+            repeatStatus={repeatStatus}
+            onEnded={handleNextSong}
+            isExpand={isExpand}
+            // onTimeUpdate={(event : any ) => setAppTime(event.target.currentTime)}
+            // onLoadedData={(time  : any) =>  setDuration(time)}
+          /> 
+        </div>
+       
       </div>
-      <div className={`flex items-center justify-end gap-4 lg:col-span-3 col-span-4 w-[25dvw] ${isExpand && 'justify-center'}`}>
+      <div className={`flex items-center justify-end gap-4 lg:col-span-3 col-span-4 w-[25dvw] ${isExpand && 'justify-center'} ${(isMobile && !isExpand) && 'hidden' }`}>
       <Tooltip showArrow={true} content="Lyrics Card" color={"secondary"}>
         <Button
           onPress={onOpen}

@@ -7,12 +7,13 @@ import { HeartIcon } from "./HeartIcon";
 import React from "react";
 // const [liked, setLiked] = React.useState(false);
 
-const Track = ({ isPlaying, isActive, activeSong, data , isExpand}: {
+const Track = ({ isPlaying, isActive, activeSong, data , isExpand , isMobile}: {
   isPlaying: any,
   isActive: any, 
   activeSong: any,
    data: any,
-   isExpand: boolean
+   isExpand: boolean,
+   isMobile: boolean
 }) => {
   // const [imageWdith,setImageWidth] = React.useState(isExpand ? 200 : 50)
 
@@ -35,7 +36,7 @@ const Track = ({ isPlaying, isActive, activeSong, data , isExpand}: {
           className={`aspect-square right-0 rounded-full border-4 border-purple-600 shadow-lg ${isExpand && 'w-full h-full rounded-md'}`}
         />
       </div>
-      <div className={`w-[55%] ${isExpand && 'text-center mt-5'} `}>
+      <div className={`w-[55%] ${isExpand && 'text-center mt-5'} ${isMobile && "hidden"}`}>
         <p   className="truncate break-words music_name">
           {data?.name ? data?.name : "No active Song"}
         </p>

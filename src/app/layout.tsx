@@ -13,6 +13,14 @@ import { usePathname } from "next/navigation";
 import "primereact/resources/themes/lara-light-cyan/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
+import Footer from "@/components/desktop/Footer";
+
+import Glass from "@/components/desktop/login/Glass";
+import { NavbarWrapper } from "@/components/dashboard/nav/NavbarWrapper";
+import { Provider } from "react-redux";
+import { Providers } from "./providers";
+import { store } from "../../redux/store";
+import { PrimeReactProvider } from "primereact/api";
 
 
 
@@ -21,10 +29,10 @@ export default function MainRootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const  isMobile =  useDeviceType();
+  const isMobile = useDeviceType();
   const pathname = usePathname();
-  const MobileLayoutComponent = pathname?.startsWith('/dashboard') ? React.Fragment : MobileLayout ;
-  const DesktopLayoutComponent = pathname?.startsWith('/dashboard') ? React.Fragment : DesktopLayout ;
+  const MobileLayoutComponent = pathname?.startsWith('/dashboard') ? React.Fragment : MobileLayout;
+  const DesktopLayoutComponent = pathname?.startsWith('/dashboard') ? React.Fragment : DesktopLayout;
   return (
     <html lang="en" suppressHydrationWarning={true} className="dark">
       <Head>
@@ -38,12 +46,31 @@ export default function MainRootLayout({
 
       <body className="">
         <main className="layout__main-content" >
-          {
-            isMobile ?  
-            <MobileLayoutComponent>{children}</MobileLayoutComponent>
-             : 
-            <DesktopLayoutComponent>{children}</DesktopLayoutComponent>
-          }
+          <PrimeReactProvider>
+            <Providers>
+              <Provider store={store}>
+                <div className="layout">
+                  <Glass className="w-full mx-auto">
+                    {
+                      isMobile ?
+                        <MobileLayoutComponent>{children}</MobileLayoutComponent>
+                        :
+                        <DesktopLayoutComponent>{children}</DesktopLayoutComponent>
+                    }
+
+                    {
+                     !(pathname?.startsWith('/dashboard')) &&
+                     <footer >
+                      <Footer />
+                    </footer>
+                    }
+                    
+                  </Glass>
+                </div>
+              </Provider>
+            </Providers>
+          </PrimeReactProvider>
+
         </main>
 
 

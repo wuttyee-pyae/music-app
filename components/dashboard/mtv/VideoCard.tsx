@@ -12,8 +12,6 @@ export default function VideoCard({
   status?: string;
 }) {
 
-  console.log(data ,"MusicData" , data.cover_image)
-
   return (
     // <div>
       <Link href="/dashboard/player">

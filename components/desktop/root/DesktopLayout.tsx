@@ -24,9 +24,9 @@ export default function DesktopLayout({children} : {children : React.ReactNode})
   })
     return (
         <>
-        <PrimeReactProvider>
+        {/* <PrimeReactProvider>
                 <Providers>
-                  <Provider store={store}>
+                  <Provider store={store}> */}
                     <div className="layout">
                       <div className="flex hederbar items-center">
                         <div className="w-auto logobar">
@@ -55,11 +55,11 @@ export default function DesktopLayout({children} : {children : React.ReactNode})
                     </div>
 
                     {/* <div className=""> */}
-                      <Footer />
+                      
                     {/* </div> */}
-                  </Provider>
+                  {/* </Provider>
                 </Providers>
-                </PrimeReactProvider>
+                </PrimeReactProvider> */}
               </>
     )
 }

@@ -127,7 +127,7 @@ const videoList = [
               style={{ top: "4rem" }}
             >
               <div className="w-52">
-                <Link href="/dashboard/music/single_upload">
+                <Link href="/dashboard/music">
                   <MyButton isDisabled={false} startContent={<PlusIcon />}>
                     Create Solo MTV
                   </MyButton>
@@ -151,7 +151,7 @@ const videoList = [
                 style={{ top: "4rem" }}
               >
                 <div className="w-52">
-                  <Link href="/dashboard/music/single_upload">
+                  <Link href="/dashboard/music">
                     <MyButton isDisabled={false} startContent={<PlusIcon />}>
                       Create Albums
                     </MyButton>

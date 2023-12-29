@@ -7,16 +7,16 @@ import Footer from "../footer/Footer";
 export default function MobileLayout({children} : {children: React.ReactNode}){
     return(
         <>
-        <SidebarProvider>
+        {/* <SidebarProvider>
                 <Providers>
                   <Provider store={store}>
-                    <div className="layout">
+                    <div className="layout"> */}
                       {/* <div className="flex hederbar items-center">
                     <div className="flex-auto">
                       <NavbarWrapper />
                     </div>
                   </div> */}
-                      <Glass className="w-full mx-auto">
+                      {/* <Glass className="w-full mx-auto"> */}
                         <div className="p-0">
                           <div className="drop-shadow-xl">
                             <div className="mb-4 pb-24 min-h-screen">
@@ -25,12 +25,12 @@ export default function MobileLayout({children} : {children: React.ReactNode}){
                             </div>
                           </div>
                         </div>
-                      </Glass>
+                      {/* </Glass>
                     </div>
                     <Footer />
                   </Provider>
                 </Providers>
-              </SidebarProvider>
+              </SidebarProvider> */}
         </>
     )
 }
