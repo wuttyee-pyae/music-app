@@ -12,11 +12,11 @@ import Mood from "./mood/Mood";
 
   export default function SelectBar() {
   return (
-    <div className="">
+    <div>
       <div className="w-full scroll-smooth sort_bg p-2 mb-4">
         <div className="mb-4 wapper mx-4">
           <div className="grid grid-cols-3 lg:grid-cols-6 xl:grid-cols-6 md:grid-cols-3 sm:grid-cols-3 gap-4 items-center">
-            <div className="">
+            <div>
               {/* <div className="flex items-center">
                 <Tooltip
                   color="secondary"

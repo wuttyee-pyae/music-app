@@ -8,7 +8,6 @@ export const UpIcon = (props: any) => (
     role="presentation"
     viewBox="0 0 13.061 7.591"
     width="1em"
-    className=""
     stroke="#fff"
     strokeWidth="1.5"
     {...props}

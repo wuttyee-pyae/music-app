@@ -40,7 +40,7 @@ export default async function Home(props: any) {
   // getAccessToken();
 
   return (
-    <div className="">
+    <div>
       <div className="grid grid-cols-1 mb-6">
       <Banner />
 

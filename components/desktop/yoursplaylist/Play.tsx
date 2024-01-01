@@ -4,7 +4,7 @@ import { PlayIcon } from "./icons/PlayIcon";
 
 export default function play() {
   return (
-    <div className="">
+    <div>
       <Button isIconOnly color="danger" radius="full" aria-label="Play" className="w-12 h-12">
         <PlayIcon />
       </Button>

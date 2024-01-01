@@ -7,7 +7,7 @@ import BgImg from "@/assets/playlist/banner/banner-01.jpg";
 
 const BannerImg = () => {
   return (
-    <div className="">
+    <div >
       <div className={styles.cover_gradient}>
         <Image
           className="absolute"

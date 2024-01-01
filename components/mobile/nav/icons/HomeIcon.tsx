@@ -9,8 +9,6 @@ export const HomeIcon = (props: any) => (
     viewBox="0 0 16.011 19.027"
     width="20px"
     size="20"
-    className=""
-   
     {...props}
   >
     <path

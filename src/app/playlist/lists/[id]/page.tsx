@@ -15,7 +15,7 @@ export default function PlaylistId() {
 
   return (
     <div className="drop-shadow-xl">
-      <div className="">
+      <div>
         <BannerImg />
         <div className="mb-4 wapper text-white mt-4 w-full">
           <div className="flex flex-col gap-4 content-between px-4 absolute top-2 w-full">

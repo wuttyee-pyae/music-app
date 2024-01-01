@@ -8,7 +8,7 @@ import styles from "./moodcover.module.css"
 
 export default function Moodscover() {
   return (
-      <div className="" id="mood_id">
+      <div id="mood_id">
             
       </div>
   );

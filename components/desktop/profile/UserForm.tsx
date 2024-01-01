@@ -19,7 +19,7 @@ const UserForm = () => {
           <Spacer y={4} />
 
           <div className="grid sm:grid-cols-2 grid-cols-1 gap-10">
-            <div className="">
+            <div>
               <Input
                 type="name"
                 label="Name"
@@ -27,7 +27,7 @@ const UserForm = () => {
                 variant="underlined"
               />
             </div>
-            <div className="">
+            <div>
               <Input
                 type="email"
                 label="Email"
@@ -39,7 +39,7 @@ const UserForm = () => {
           <Spacer y={4} />
 
           <div className="grid sm:grid-cols-2 grid-cols-1 gap-10">
-            <div className="">
+            <div>
               <Input
                 type="phone"
                 label="Phone"
@@ -80,7 +80,7 @@ const UserForm = () => {
                 ))}
               </Select>
             </div>
-            <div className="">
+            <div>
               <Select
                 label="Month"
                 placeholder="Select an Month"

@@ -3,7 +3,7 @@ import styles from "./nowplaying.module.css";
 
 export default function NowPlaying() {
   return (
-    <div className="">
+    <div>
       <div className={styles.playing}>
         <span />
         <span />

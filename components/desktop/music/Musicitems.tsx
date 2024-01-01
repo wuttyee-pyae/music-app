@@ -45,7 +45,7 @@ const Musicitems = (props: any, ref: any) => {
             </Button>
           </Tooltip>
         </div>
-        <div className="">
+        <div >
           {/* <Skeleton className="rounded-lg"> */}
             <Image
               src="/images/lazy_music_lg.jpg"
@@ -69,7 +69,7 @@ const Musicitems = (props: any, ref: any) => {
             <div className={styles.music_type}>Music Type</div>
           </div>
         </div>
-        <div className="">
+        <div >
           <div className={styles.news_item}>
             <p className={styles.music_time}>3:00</p>
           </div>

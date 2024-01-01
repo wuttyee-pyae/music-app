@@ -32,7 +32,7 @@ export default function VideoCard(props: any) {
       <div className="my-4">
         <div className="grid grid-cols-12 gap-4 items-center">
           <div className="col-span-10 mtv_title">{name}</div>
-          <div className="">
+          <div>
             <MoreOption />
           </div>
         </div>

@@ -12,8 +12,8 @@ import Banner from "@/components/mobile/banner/Banner";
 export default async function Crbt(props: any) {
   const localData = await getArtistsData();
   return (
-    <div className="">
-      <div className="">
+    <div>
+      <div>
         <div className="mb-4">
           <Banner />
         </div>

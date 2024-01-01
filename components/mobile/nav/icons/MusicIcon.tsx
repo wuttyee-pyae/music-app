@@ -9,7 +9,6 @@ export const MusicIcon = (props: any) => (
     viewBox="0 0 16.721 16.738"
     width="20px"
     size="20"
-    className=""
     {...props}
   >
     <path

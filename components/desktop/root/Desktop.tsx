@@ -5,7 +5,7 @@ import React from "react";
 export default function Desktop() {
   return (
     <div className="drop-shadow-xl">
-      <div className="">
+      <div>
         <div className="pt-6">
           <div className="mb-4 wapper mx-4">
             <Link

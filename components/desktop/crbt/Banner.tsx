@@ -10,9 +10,9 @@ import Banner04 from "@/assets/images/poster_04.jpg";
 
 export default function Banner() {
   return (
-    <div className="">
+    <div >
       <div className="relative h-96 w-full">
-        <Carousel slideInterval={5000} className="">
+        <Carousel slideInterval={5000} >
           <Image
             alt="..."
             src={Banner01}

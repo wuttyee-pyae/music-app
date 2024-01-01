@@ -34,8 +34,6 @@ export default function Moods() {
             alt="..."
             src={Mood01}
             style={{ objectFit: "cover" }}
-            // layout="responsive"
-            className=""
             suppressHydrationWarning
           />
           <p>hello {moodList[0].name}</p>
@@ -45,8 +43,6 @@ export default function Moods() {
             alt="..."
             src={Mood02}
             style={{ objectFit: "cover" }}
-            // layout="responsive"
-            className=""
             suppressHydrationWarning
           />
         </div>
@@ -55,8 +51,6 @@ export default function Moods() {
             alt="..."
             src={Mood03}
             style={{ objectFit: "cover" }}
-            // layout="responsive"
-            className=""
             suppressHydrationWarning
           />
         </div>
@@ -65,8 +59,6 @@ export default function Moods() {
             alt="..."
             src={Mood04}
             style={{ objectFit: "cover" }}
-            // layout="responsive"
-            className=""
             suppressHydrationWarning
           />
         </div>
@@ -75,8 +67,6 @@ export default function Moods() {
             alt="..."
             src={Mood01}
             style={{ objectFit: "cover" }}
-            // layout="responsive"
-            className=""
             suppressHydrationWarning
           />
         </div>

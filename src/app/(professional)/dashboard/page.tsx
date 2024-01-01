@@ -7,6 +7,7 @@ import { TabPanel, TabView } from "primereact/tabview";
 import Music from "@/components/dashboard/music/Music";
 import Mtv from "@/components/dashboard/mtv/Mtv";
 import Home from "@/components/dashboard/home/home";
+import Report from "@/components/dashboard/report/report";
 
 const Dashboard = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -17,7 +18,7 @@ const Dashboard = () => {
 
   return (
     <div>
-      <div className="">
+      <div>
         <TabView
           activeIndex={activeIndex}
           onTabChange={(e: any) => setActiveIndex(e.index)}
@@ -32,15 +33,7 @@ const Dashboard = () => {
             <Mtv />
           </TabPanel>
           <TabPanel>
-            <p className="m-0">
-              At vero eos et accusamus et iusto odio dignissimos ducimus qui
-              blanditiis praesentium voluptatum deleniti atque corrupti quos
-              dolores et quas molestias excepturi sint occaecati cupiditate non
-              provident, similique sunt in culpa qui officia deserunt mollitia
-              animi, id est laborum et dolorum fuga. Et harum quidem rerum
-              facilis est et expedita distinctio. Nam libero tempore, cum soluta
-              nobis est eligendi optio cumque nihil impedit quo minus.
-            </p>
+            <Report />
           </TabPanel>
         </TabView>
       </div>

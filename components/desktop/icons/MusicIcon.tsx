@@ -2,7 +2,7 @@
 import Icon from "./svgs/music.svg";
 
 const Example = () => (
-  <div className="">
+  <div>
     <Icon className="menu-icon"/>
   </div>
 );

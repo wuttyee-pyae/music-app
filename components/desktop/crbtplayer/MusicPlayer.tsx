@@ -145,7 +145,7 @@ export default function CrbtPlayer() {
 
       <div className="flex-auto w-32">
         <div className="flex items-center gap-4 justify-center mr-4">
-          <div className="">
+          <div>
             <LyricsIcon className="h-5 w-5" />
           </div>
           <VolumUp className="h-5 w-5" />

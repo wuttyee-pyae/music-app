@@ -7,6 +7,7 @@ import Artistscover from "@/components/dashboard/nav/cover_banner/Artistscover";
 import { MusicIcon } from "@/components/mobile/nav/icons/MusicIcon";
 import { VideoIcon } from "@/components/mobile/nav/icons/VideoIcon";
 import { NavbarWrapper } from "@/components/dashboard/nav/NavbarWrapper";
+import LineChart from "./LineChart";
 
 
 const Home = () => {

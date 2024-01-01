@@ -44,7 +44,7 @@ export default function MainRootLayout({
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <body className="">
+      <body>
         <main className="layout__main-content" >
           <PrimeReactProvider>
             <Providers>

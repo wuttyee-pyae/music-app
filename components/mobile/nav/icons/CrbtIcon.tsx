@@ -5,7 +5,6 @@ export const CrbtIcon = (props: any) => (
     height="20px"
     viewBox="0 0 22 24.3"
     fill="none"
-    className=""
     {...props}
   >
     <path

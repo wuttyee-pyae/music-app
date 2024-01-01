@@ -9,11 +9,10 @@ import UserAvatar from "@/components/desktop/profile/useritem/UserAvatar";
 
 export default function Artistscover() {
   return (
-    <div className="">
+    <div >
       <div className={styles.cover_gradient}>
         <Image
           priority
-          className=""
           alt="..."
           src={Artistscover01}
           style={{ objectFit: "cover" }}

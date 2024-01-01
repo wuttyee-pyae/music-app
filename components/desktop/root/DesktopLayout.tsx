@@ -53,8 +53,6 @@ export default function DesktopLayout({children} : {children : React.ReactNode})
                         </div>
                       </Glass>
                     </div>
-
-                    {/* <div className=""> */}
                       
                     {/* </div> */}
                   {/* </Provider>

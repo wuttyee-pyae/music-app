@@ -3,7 +3,7 @@ import { Button } from "@nextui-org/react";
 
 export default function FollowBtn () {
   return (
-    <div className="">
+    <div>
       <Button className="px-4" radius="full" aria-label="Shuffplay"  color="secondary"  variant="solid">
           Follow
       </Button>

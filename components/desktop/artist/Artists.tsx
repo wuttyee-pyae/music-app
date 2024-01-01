@@ -8,7 +8,7 @@ import Artist03 from "@/assets/artists/g_fatt/about_image/g-fatt.jpg";
 
 export default function Artists() {
   return (
-    <div className="">
+    <div>
       <h3 className="title mb-2">All Artists</h3>
       <div className="grid grid-cols-3 gap-4 xl:grid-cols-7 md:grid-cols-5">
         {/* Loop All Artists Id */}

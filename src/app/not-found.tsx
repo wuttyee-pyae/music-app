@@ -10,7 +10,7 @@ const NotFound = () => {
 
   return (
     <div className="drop-shadow-xl bg-pink-600">
-      <div className="">
+      <div>
         <div className="pt-6">
           <div className="mb-4 wapper mx-4">
             <div className="grid grid-cols-2 px-6 items-center">

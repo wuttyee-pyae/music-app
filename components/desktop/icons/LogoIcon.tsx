@@ -2,7 +2,7 @@
 import Icon from "./svgs/logo.svg";
 
 const Example = () => (
-  <div className="">
+  <div>
     <Icon className="menu-icon"/>
   </div>
 );

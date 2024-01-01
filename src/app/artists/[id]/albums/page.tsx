@@ -6,7 +6,7 @@ import Albumcover from "@/components/desktop/artist/albums/AlbumCover";
 
 export default function ArtistAlbums() {
   return (
-      <div className="">
+      <div>
         <Albumcover />
       </div>
   );

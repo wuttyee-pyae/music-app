@@ -19,7 +19,7 @@ export default function Footer(props: any, ref: any) {
   };
 
   return (
-    <div className="">
+    <div>
        
       <footer
         style={styling}
@@ -55,7 +55,7 @@ export default function Footer(props: any, ref: any) {
               </div>
             </div>
             <div>
-              <div className="">
+              <div>
                 <Tooltip
                   color="secondary"
                   showArrow={true}

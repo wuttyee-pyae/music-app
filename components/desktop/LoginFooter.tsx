@@ -13,8 +13,8 @@ export default function LoginFooter() {
             </p>
           </div>
           <div className="flex justify-end">
-            <Button color="default" size="lg" radius="full" className="">
-              Sing Up Free
+            <Button color="default" size="lg" radius="full" >
+              Sign Up Free
             </Button>
           </div>
         </div>
