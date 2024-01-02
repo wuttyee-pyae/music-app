@@ -3,6 +3,7 @@ import React from "react";
 import "@/styles/mobile.css";
 import "@/styles/dashboard.css";
 import Footer from "@/components/mobile/footer/Footer";
+import ProtectedRoutes from "@/components/common/ProtectedRoute";
 
 const Dashboard = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -11,13 +12,13 @@ const Dashboard = ({ children }: { children: React.ReactNode }) => {
                 <div className="p-0">
                   <div className="drop-shadow-xl">
                     <div>
-                      {/* <ProtectedRoutes > */}
+                      <ProtectedRoutes >
                       <main className="layout__main-content overscroll-y-none">
                           <div className="wapper mx-4 min-h-screen">
                             {children}
                           </div>
                       </main>
-                      {/* </ProtectedRoutes> */}
+                      </ProtectedRoutes>
                     </div>
                   </div>
                 </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FooterTab from "@/components/dashboard/footer/FooterTab";
 import { TabPanel, TabView } from "primereact/tabview";
 

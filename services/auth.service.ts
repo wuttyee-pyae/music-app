@@ -7,7 +7,7 @@ export const login = async (data: any) => {
         password :  data.password
     }
     const result = await post('/auth/log-in' , requestData , true).then( async (res : any) => {    
-      console.log("--- " , res)
+      console.log("--- " , res.data.updatedAt)
       useStorage().setItem("token",res.jwt, 'local')
       await useStorage().setItem("user-data",res.data, 'local')
       return  res

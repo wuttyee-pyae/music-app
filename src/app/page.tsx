@@ -13,6 +13,7 @@ export default function MainPage() {
   const checkStorage = async () => {
     const isLogin = localStorage.getItem("user-data", "local") && null
     const isToken = localStorage.getItem("token", "local") && null
+    console.log(isToken ,"---  " , isLogin)
     isLogin ? await dispatch(setAuth(true)) : null
     isToken ? await dispatch(setToken(isToken)) : null
   }

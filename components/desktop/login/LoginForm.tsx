@@ -47,12 +47,9 @@ export default function LoginForm(props: any) {
           console.log("jwt ===== ")
           dispatch(setAuth(true))
           dispatch(setToken(userData.jwt))
-          router.push('/')
+          router.push('/dashboard')
         }
-        
       }
-
-
     } catch (err) {
       throw err;
     }

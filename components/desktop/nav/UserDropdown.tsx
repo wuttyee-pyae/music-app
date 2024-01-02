@@ -85,7 +85,7 @@ export const UserDropdown = () => {
               className="flex flex-col justify-start w-full items-start"
               textValue="Request as Artist Dashboard"
             >
-              <Link href="/">
+              <Link href="/dashboard">
                 <p>Swith To< br /> User Dashboard</p>
               </Link>
 

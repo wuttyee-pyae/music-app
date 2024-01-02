@@ -10,7 +10,6 @@ import {
 
 import Controls from "./Controls";
 import Player from "./Player";
-import Seekbar from "./Seekbar";
 import Track from "./Track";
 import VolumeBar from "./VolumeBar";
 import { LyricsIcon } from "./LyricsIcon";
@@ -22,12 +21,13 @@ import useDeviceType from '@/hooks/useDeviceType';
 
 
 const MusicPlayer = ({doExpend , isExpand}: any) => {
+  const { activeSong ,songList ,  currentIndex  , isActive  , isPlaying  } =
+  useSelector((state : any) => state.musicplay);
   const deviceType = useDeviceType();
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const dispatch = useDispatch();
   const storage = useStorage();
-  const { activeSong ,songList ,  currentIndex  , isActive  , isPlaying  } =
-  useSelector((state : any) => state.musicplay);
+  
   const [volume, setVolume] = useState(0.3);
   const [repeatStatus, setRepeatStatus] = useState(null);
   const [shuffle, setShuffle] = useState(false);
