@@ -9,6 +9,7 @@ import getArtistsData from "@/lib/artists";
 import MusicTypes from "@/components/desktop/music/MusicTypes";
 import Recommended from "@/components/desktop/artist/Recommended";
 import BrowseArtists from "@/components/desktop/artist/BrowseArtists";
+import CadRadio from "@/components/desktop/radio/CadRadio";
 
 //   var formBody = new URLSearchParams();
 //   formBody.append("grant_type", "client_credentials");
@@ -51,6 +52,7 @@ export default async function Home(props: any) {
         </div>
         <Recommended data={localData} pathname="artists" />
         <BrowseArtists />
+        <CadRadio />
     </div>
   );
 }

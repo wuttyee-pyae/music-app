@@ -47,7 +47,7 @@ const ReleaseInfo = () => {
             <AddCoverImg />
           </div>
           <div>
-            <Input type="text" variant={"bordered"} placeholder="Add Artist"
+            <Input type="text" variant={"bordered"} placeholder="Add other Artist"
               endContent={<PlusIcon className="text-white" /> }
             />
 

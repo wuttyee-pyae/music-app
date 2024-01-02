@@ -7,7 +7,7 @@ export default function VideoPlayer(){
   let videosrc ="/artists/idiots/mtv/chan_khae/chan_khae.mp4";
 
   return (
-    <div className="w-full aspect-video">
+    <div className="w-full">
       {/* <h1>my custome player</h1> */}
       <ReactPlayer
     //   loop

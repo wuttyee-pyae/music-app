@@ -4,6 +4,7 @@ import MusicUpload from "@/components/common/MusicUpload";
 import { useSearchParams } from "next/navigation";
 import { Button } from "@nextui-org/react";
 import { PlusIcon } from "@/components/desktop/artist/PlusIcon";
+import { AppBar } from "@/components/dashboard/nav/AppBar";
 
 
 const Music = () => {
@@ -16,7 +17,8 @@ const Music = () => {
 
   console.log(type)
   return (
-    <div>
+    <div className="container">
+      <AppBar/>
       {
         type == "album" ?
           <div className="max-w-fit justify-center my-0 mx-auto pt-8">
