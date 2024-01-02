@@ -42,7 +42,7 @@ const Home = () => {
       count: 20,
       color: "secondary",
       icon: <MusicIcon color="secondary" />,
-      url: "http://localhost:3000/dashboard/music",
+      url: "/dashboard/music",
     },
     {
       title: "MTV",

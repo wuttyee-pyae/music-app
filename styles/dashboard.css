@@ -95,6 +95,10 @@
     box-shadow: none !important;
   }
 
+
+  .swiper-button-prev, .swiper-button-next{
+    color: white !important;
+  }
   
   @keyframes slide-in {
     from {
