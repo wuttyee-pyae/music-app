@@ -9,9 +9,19 @@ import { AppBar } from "@/components/dashboard/nav/AppBar";
 
 const Music = () => {
   const type = useSearchParams()?.get("type");
-  const [list, setList] = useState([1])
+  const item = {
+    name: null,
+    image: null,
+    imageName: null,
+    artistName: null,
+    releaseDate:null,
+    genre: null,
+    lyric: null,
+    lyricName: null,
+  }
+  const [list, setList] = useState([item])
   const addItem = () => {
-    const newList = [...list, list.length + 1];
+    const newList = [...list, item];
     setList(newList)
   }
 
@@ -33,7 +43,7 @@ const Music = () => {
             </Button>
           </div> : null
       }
-      <MusicUpload data={list} />
+      <MusicUpload data={list} type={type || ""}/>
     </div>
   );
 };

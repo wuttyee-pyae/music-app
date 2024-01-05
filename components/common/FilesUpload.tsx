@@ -15,17 +15,23 @@ export default function FilesUpload({handleInfo} : {handleInfo:any}) {
   const [isDisabled, setIsDisabled] = useState(false);
 
   const onTemplateSelect = (e: any) => {
+    console.log(" file upload --- " , e)
     e?.files.length > 0 ? setIsDisabled(true) : setIsDisabled(false)
     let _totalSize = totalSize;
     let files = e.files;
 
     Object.keys(files).forEach((key) => {
+      console.log("in loop -- " , files[key])
       _totalSize += files[key].size || 0;
     });
 
     setTotalSize(_totalSize);
   };
   
+  const onSelect = (file: any, callback: any) => {
+    console.log("new event " , file)
+  }
+
   useEffect(()=>{
     handleInfo(isDisabled)
   },[onTemplateSelect])
@@ -138,6 +144,10 @@ export default function FilesUpload({handleInfo} : {handleInfo:any}) {
     );
   };
 
+  const onUpload = (e : any) =>{
+    console.log("upload on -- " , e)
+  }
+
   const chooseOptions = {
     icon: "pi pi-fw pi-images",
     iconOnly: true,
@@ -155,8 +165,6 @@ export default function FilesUpload({handleInfo} : {handleInfo:any}) {
         className="bg-none"
         ref={fileUploadRef}
         name="demo[]"
-        url="/api/upload"
-        multiple
         accept="*"
         disabled={isDisabled}
         maxFileSize={1000000000}
@@ -167,6 +175,7 @@ export default function FilesUpload({handleInfo} : {handleInfo:any}) {
         itemTemplate={itemTemplate}
         emptyTemplate={emptyTemplate}
         chooseOptions={chooseOptions}
+        onUpload={onUpload}
       />
     </div>
   );

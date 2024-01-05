@@ -4,15 +4,12 @@ import {
   Tab,
   Input,
   Link,
-  Button,
   Card,
   CardBody,
-  CardHeader,
 } from "@nextui-org/react";
 import { EyeFilledIcon } from "./EyeFilledIcon";
 import { EyeSlashFilledIcon } from "./EyeSlashFilledIcon";
 import MyButton from "./MyButton";
-import { TextEditerIcon } from "./TextEditerIcon";
 import styles from "./ErrorMessage.module.css";
 import { useFormik } from 'formik';
 import { loginSchema } from '../../../services/schema'

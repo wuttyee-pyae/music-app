@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import AddPlayIcon from "@/components/desktop/yoursplaylist/icons/AddPlayIcon";
 import { FileUpload } from "primereact/fileupload";
 
-export default function AddCoverImg() {
+export default function AddCoverImg({setData} : {setData: any}) {
   const [imgSrc,setImgSrc] = useState<any>()
 
   const onImageChange = (event: any) => {
@@ -11,6 +11,7 @@ export default function AddCoverImg() {
         const reader = new FileReader();
 
         reader.onload = (e : any) => {
+          setData(e.target.result)
         setImgSrc(e.target.result);
       
     }

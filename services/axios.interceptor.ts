@@ -17,8 +17,6 @@ axiosInterceptorInstance.interceptors.request.use(
   (error) => {
     return Promise.reject(error);
   }
-
-  // console.log("header -- " , )
 );
 // End of Request interceptor
 

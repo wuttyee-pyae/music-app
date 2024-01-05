@@ -5,7 +5,7 @@ import { Select, SelectSection, SelectItem } from "@nextui-org/react";
 import { genres } from "./genredata";
 import { GenreIcon } from "./GenreIcon";
 
-export default function Gender() {
+export default function Gender({setData} : {setData : any}) {
   const [value, setValue] = React.useState(new Set([]));
 
   return (
@@ -20,13 +20,10 @@ export default function Gender() {
         variant="bordered"
         selectedKeys={value}
         className="w-full"
-        onSelectionChange={(e : any) => setValue(e)}
+        onSelectionChange={(e : any) => {setValue(e) , setData(e.currentKey)}}
         defaultSelectedKeys={["other"]}
         id="genre"
-        aria-checked="false"
-
-  
-      >
+        aria-checked="false">
         {genres.map((genre) => (
           <SelectItem
             key={genre.value}
