@@ -20,7 +20,7 @@ export default function App() {
             </div>
           }
         >
-          <Link onClick={() => router.back()} className="back">
+          <Link onClick={() => router.back()} className="back text-white">
             <BackIcon width={20} height={20} />
           </Link>
         </Tooltip>
@@ -36,7 +36,7 @@ export default function App() {
             </div>
           }
         >
-          <Link href="/" className="back" isDisabled>
+          <Link href="/" className="back text-white" isDisabled>
             <NextIcon width={20} height={20} />
           </Link>
         </Tooltip>

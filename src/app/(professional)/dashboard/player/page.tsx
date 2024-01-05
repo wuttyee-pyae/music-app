@@ -56,7 +56,7 @@ export default function Player() {
         </div>
         <div className="py-4">
 
-        <Swipper dataList={videoList} />
+        <Swipper dataList={videoList} title="Related video" />
         </div>
     </div>
   );

@@ -60,7 +60,7 @@ const radio = [
   },
 ];
 
-export default function CadRadio() {
+export default function CardRadio() {
   return (
     <div className="py-4 wapper mx-4">
       <h3 className="title mb-2">Radio Channel</h3>

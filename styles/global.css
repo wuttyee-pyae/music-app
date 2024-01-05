@@ -648,6 +648,11 @@ a {
 
 }
 
+.swiper-button-prev, .swiper-button-next{
+  color: white !important;
+}
+
+
 @media screen and (max-width: 1024px) {
   .pb-36 {
     padding-bottom: 13rem;

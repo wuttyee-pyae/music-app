@@ -6,7 +6,7 @@ import Play from "./Play";
 export default function CadPlayList() {
   return (
     <Tooltip content={<Play />} className="text-white play_hover" offset={-50} placement="right">
-      <Button className="playlist_card p-0">
+      <div className="playlist_card p-0">
         <Card className="py-4 mb-4">
           <CardBody className="overflow-visible py-2">
             <Image
@@ -24,7 +24,7 @@ export default function CadPlayList() {
             </h4>
           </CardHeader>
         </Card>
-      </Button>
+      </div>
     </Tooltip>
   );
 }
