@@ -2,11 +2,8 @@
 import {nextui} from "@nextui-org/react";
 
 module.exports = {
+  important: true,
   content: [
-    "./app/**/*.{js,ts,jsx,tsx}", // Note the addition of the `app` directory.
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-
     "./node_modules/flowbite-react/**/*.js",
     "./pages/**/*.{ts,tsx}",
     "./public/**/*.html",
@@ -32,7 +29,6 @@ module.exports = {
      "./node_modules/primereact/**/*.{js,ts,jsx,tsx}",
 
 
-
   ],
   theme: {
     extend: {
@@ -47,7 +43,22 @@ module.exports = {
         secondary:'#9353d3',
         success:'#17c964',
         warning: '#f5a524',
-        danger:'#f31260'
+        danger:'#f31260',
+
+        'red': {
+          50: '#fef2f2',
+          100: '#fee2e2',
+          200: '#fecaca',
+          300: '#fca5a5',
+          400: '#f87171',
+          500: '#ef4444',
+          600: '#dc2626',
+          700: '#b91c1c',
+          800: '#991b1b',
+          900: '#7f1d1d',
+          950: '#450a0a',
+        },
+
       },
       fontSize: {
         sm: '0.8rem',

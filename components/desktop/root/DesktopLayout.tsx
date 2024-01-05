@@ -32,7 +32,7 @@ export default function DesktopLayout({children} : {children : React.ReactNode})
                         <div className="w-auto logobar">
                           <Logobar handleAsideBar={handleAsideBar} />
                         </div>
-                        <div className="w-auto">
+                        <div className="w-auto text-white">
                           <BackNext />
                         </div>
                         <div className="flex-auto">

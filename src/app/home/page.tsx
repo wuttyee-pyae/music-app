@@ -9,7 +9,8 @@ import getArtistsData from "@/lib/artists";
 import MusicTypes from "@/components/desktop/music/MusicTypes";
 import Recommended from "@/components/desktop/artist/Recommended";
 import BrowseArtists from "@/components/desktop/artist/BrowseArtists";
-import CadRadio from "@/components/desktop/radio/CadRadio";
+import Swipper from "@/components/dashboard/swipper/Swipper";
+import CardRadio from "@/components/desktop/radio/CardRadio";
 
 //   var formBody = new URLSearchParams();
 //   formBody.append("grant_type", "client_credentials");
@@ -35,6 +36,57 @@ import CadRadio from "@/components/desktop/radio/CadRadio";
   
 // }
 
+const radioList = [
+  {
+    name: "City FM yangon",
+    picture: "/images/radio_music.gif",
+    url: "/",
+    frequency: "89.0"
+  },
+  {
+    name: "Mandaly FM",
+    picture: "/images/radio_music.gif",
+    url: "/",
+    frequency: "87.9"
+  },
+  {
+    name: "Shwe FM",
+    picture: "/images/radio_music.gif",
+    url: "/",
+    frequency: "88.9"
+  },
+  {
+    name: "Padamyar FM",
+    picture: "/images/radio_music.gif",
+    url: "/",
+    frequency: "88.6"
+  },
+  {
+    name: "Shwe Ayeyar FM",
+    picture: "/images/radio_music.gif",
+    url: "/",
+    frequency: "web"
+  },
+  {
+    name: "Cherry FM",
+    picture: "/images/radio_music.gif",
+    url: "/",
+    frequency: "89.3"
+  },
+  {
+    name: "Shwe Ayeyar FM",
+    picture: "/images/radio_music.gif",
+    url: "/",
+    frequency: "web"
+  },
+  {
+    name: "Dhamma Radio - Channel 1 ",
+    picture: "/images/radio_music.gif",
+    url: "/",
+    frequency: "web"
+  },
+];
+
 export default async function Home(props: any) {
   const localData = await getArtistsData()
 
@@ -52,7 +104,11 @@ export default async function Home(props: any) {
         </div>
         <Recommended data={localData} pathname="artists" />
         <BrowseArtists />
-        <CadRadio />
+        <div className="grid grid-cols-1">
+        <Swipper dataList={radioList} title="Radio Channel" />
+
+      </div>
+
     </div>
   );
 }

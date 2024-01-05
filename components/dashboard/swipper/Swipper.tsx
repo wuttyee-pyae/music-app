@@ -7,13 +7,14 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import SwipperSlider from "./SwipperSlide";
 
-export default function Swipper({ dataList }: { dataList: any }) {
+export default function Swipper({ dataList, title }: { dataList: any, title: string }) {
+  const cardType = title == "Radio Channel" ? "header" : "footer"
   return (
     <div>
       <div className="py-4">
-        <h2 className="title">Relataled MTV Video</h2>
+        <h2 className="title">{title}</h2>
       </div>
-      <div className="py-4">
+      <div className="py-4 flex">
         <Swiper
           slidesPerView={2}
           spaceBetween={16}
@@ -42,10 +43,9 @@ export default function Swipper({ dataList }: { dataList: any }) {
             <div>
                {dataList?.map((item : {}, index : number) => (
               <SwiperSlide key={index}>
-                <SwipperSlider data={item}/>
+                <SwipperSlider data={item} type={cardType}/>
                </SwiperSlide>
-            ))}
-            </div>
+            ))}            </div>
              : null
           }
          
