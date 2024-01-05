@@ -1,4 +1,4 @@
-import { get } from "./axios.api";
+import { get, post } from "./axios.api";
 
 
 export const getAllGenres = async () => {
@@ -14,6 +14,24 @@ export const getAllGenres = async () => {
     })
     return result.data
 };
+
+
+export const uploadMusicBySingle = async (data : any) => {
+  console.log("req data -- " , data)
+  const requestData = {
+    audioFile : data.musicFile,
+    title: data.title,
+    lyricsFile: data.lyricFile,
+    genreId: data.genre,
+    duration: data.duration,
+    releasedYear: data.releaseDate
+  }
+  const result = await post('/songs' , requestData , true).then( (res : any) => {
+    return  res
+  })
+  return result.data
+}
+
 
 export const base64ToFormData = async (dataURI: string , fileName? : string) =>{
   const file = await DataURIToBlob(dataURI)
@@ -31,4 +49,16 @@ const DataURIToBlob = (dataURI: string) => {
   for (let i = 0; i < byteString.length; i++)
       ia[i] = byteString.charCodeAt(i)
   return new Blob([ia], { type: mimeString })
+}
+
+export const getBase64 =  (file : any ,  callback: any) => {
+  let reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = async function () {
+      await callback(reader.result)
+
+  };
+  reader.onerror = function (error) {
+      console.log('Error: ', error);
+  };
 }

@@ -30,8 +30,6 @@ const ReleaseInfo = ({formData} : {formData : any}) => {
     }
   }
 
-  console.log("form data --- " , formData)
-
   return (
     <div className="my-8">
       <div className="w-full justify-center max-w-md mx-auto my-0">
@@ -42,12 +40,12 @@ const ReleaseInfo = ({formData} : {formData : any}) => {
               variant="bordered"
               placeholder="Music Name"
               className="mb-8"
-              defaultValue={formData.name}
-              onChange={(e: any) => formData.name = e.target.value}
+              defaultValue={formData.title}
+              onChange={(e: any) => formData.title = e.target.value}
             />
           </div>
           <div>
-            <AddCoverImg setData={(val: any)=>formData.image = val }/>
+            <AddCoverImg setData={(val: any)=>{formData.image = val.image ; formData.imageName = val.imageName } }/>
           </div>
           <div>
             <Input type="text" 
@@ -88,9 +86,16 @@ const ReleaseInfo = ({formData} : {formData : any}) => {
           <div>
             <Input type="text" 
             variant={"bordered"} 
-            label="Relese Date" 
+            label="Release Date" 
             defaultValue={formData.releaseDate}
             onChange={(e: any) => formData.releaseDate = e.target.value}/>
+          </div>
+          <div>
+            <Input type="text" 
+            variant={"bordered"} 
+            label="Duration" 
+            defaultValue={formData.duration}
+            onChange={(e: any) => formData.duration = e.target.value}/>
           </div>
         </div>
       </div>

@@ -10,7 +10,7 @@ import { AppBar } from "@/components/dashboard/nav/AppBar";
 const Music = () => {
   const type = useSearchParams()?.get("type");
   const item = {
-    name: null,
+    title: null,
     image: null,
     imageName: null,
     artistName: null,
@@ -18,6 +18,9 @@ const Music = () => {
     genre: null,
     lyric: null,
     lyricName: null,
+    music: null,
+    musicName: null,
+    duration: null
   }
   const [list, setList] = useState([item])
   const addItem = () => {

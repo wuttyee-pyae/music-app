@@ -11,15 +11,13 @@ export default function AddCoverImg({setData} : {setData: any}) {
         const reader = new FileReader();
 
         reader.onload = (e : any) => {
-          setData(e.target.result)
+          setData({image : e.target.result , imageName : event.target.files[0].name })
         setImgSrc(e.target.result);
       
     }
-
     reader.readAsDataURL(event.target.files[0]);
 }
 
-console.log("image -- " , imgSrc)
   }
   return (
     <div className="w-full h-auto font-bold mb-4">

@@ -7,30 +7,30 @@ import { Button } from "primereact/button";
 import { Tag } from "primereact/tag";
 import { DicIcon } from "./icons/DicIcon";
 import { LyricsIcon } from "../desktop/musicplayer/LyricsIcon";
+import { getBase64 } from "../../services/music.service";
 
-export default function FilesUpload({handleInfo} : {handleInfo:any}) {
+export default function FilesUpload({handleInfo, formData} : {handleInfo:any , formData : any}) {
   const toast = useRef<any>(null);
   const [totalSize, setTotalSize] = useState(0);
   const fileUploadRef = useRef<any>(null);
   const [isDisabled, setIsDisabled] = useState(false);
-
-  const onTemplateSelect = (e: any) => {
-    console.log(" file upload --- " , e)
+  const onTemplateSelect = async (e: any) => {
+    console.log(" file upload --- " , e , e.files[0])
     e?.files.length > 0 ? setIsDisabled(true) : setIsDisabled(false)
     let _totalSize = totalSize;
     let files = e.files;
 
     Object.keys(files).forEach((key) => {
-      console.log("in loop -- " , files[key])
       _totalSize += files[key].size || 0;
     });
 
+    await getBase64(e.files[0] , (res : any) =>{
+      formData.musicName = e.files[0].name
+      formData.music = res
+    })
+    
     setTotalSize(_totalSize);
   };
-  
-  const onSelect = (file: any, callback: any) => {
-    console.log("new event " , file)
-  }
 
   useEffect(()=>{
     handleInfo(isDisabled)

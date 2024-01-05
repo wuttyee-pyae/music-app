@@ -7,20 +7,20 @@ import AddTrack from "../dashboard/music/AddTrack";
 
 import { FieldArray, Form, Formik, FormikHelpers, FormikValues, getIn, useFormik } from 'formik';
 import { songUploadSchema } from "../../services/schema";
-import { base64ToFormData } from "../../services/music.service";
+import { base64ToFormData, uploadMusicBySingle } from "../../services/music.service";
 
 
 export default function MusicUpload({ data, type }: { data: any, type: string }) {
   const [showInfo, setShowInfo] = useState(false)
 
   const onSubmit = async (values: any, actions: any ) => {
-    console.log("--- ", values, actions ,  values.data[0].lyric) 
-    // if(type == 'single'){
-      const lyricFile = await base64ToFormData( values.data[0].lyric ,values.data[0].lyricName )
-      // const musicFile = await base64ToFormData( values.data[0]. ,values.data[0].lyricName )
-      const imageFile = await base64ToFormData( values.data[0].image )
-      console.log("result file --- " , lyricFile , imageFile)
-    // }
+    if(type == 'single'){
+     values.data[0].lyricFile = await base64ToFormData( values.data[0].lyric ,values.data[0].lyricName )
+      values.data[0].musicFile = await base64ToFormData( values.data[0].music ,values.data[0].musicName )
+      values.data[0].imageFile = await base64ToFormData( values.data[0].image , values.data[0].imageName )
+      console.log("result file --- " , values.data[0])
+      await uploadMusicBySingle(values.data[0])
+    }
   }
 
 
@@ -51,7 +51,7 @@ export default function MusicUpload({ data, type }: { data: any, type: string })
                         startContent={<MusicIcon className="text-secondary" />}
                       >
                         <div className="w-full justify-center mx-auto my-0">
-                          <AddTrack handleInfo={handleInfo} />
+                          <AddTrack handleInfo={handleInfo}  formData={item}/>
                           {/* {  showInfo ?  */}
                           <ReleaseInfo formData={item} />
                            {/* : null } */}
