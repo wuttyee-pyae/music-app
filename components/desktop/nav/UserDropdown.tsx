@@ -1,18 +1,23 @@
 import useStorage from "@/hooks/useStorage";
 import {
   Avatar,
+  Button,
   Dropdown,
   DropdownItem,
   DropdownMenu,
   DropdownTrigger,
   NavbarItem,
+  useDisclosure,
 } from "@nextui-org/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation"
+import ModalCard from "../login/ModalCard";
 
 export const UserDropdown = () => {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
   const userData = useStorage().getItem("user-data", 'local')
   const pathname = usePathname()
   const storage = useStorage()
@@ -102,9 +107,10 @@ export const UserDropdown = () => {
               className="flex flex-col justify-start w-full items-start"
               textValue="Sign in"
             >
-              <Link href="/login">
+              <Button onPress={onOpen}>
+              <ModalCard />
                 <p>Signed in as <br /> name@example.com</p>
-              </Link>
+              </Button>
             </DropdownItem>) : (
             <DropdownItem key="logout" color="danger" className="text-danger" textValue="Log out" onClick={doLogout}>
               Log Out

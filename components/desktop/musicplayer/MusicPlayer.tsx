@@ -146,7 +146,7 @@ const MusicPlayer = ({doExpend , isExpand}: any) => {
         <Button
           onPress={onOpen}
           style={{
-            background: "none",
+            background: "none !important",
           }}
         >
           <LyricsIcon />

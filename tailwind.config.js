@@ -2,7 +2,6 @@
 import {nextui} from "@nextui-org/react";
 
 module.exports = {
-  important: true,
   content: [
     "./node_modules/flowbite-react/**/*.js",
     "./pages/**/*.{ts,tsx}",

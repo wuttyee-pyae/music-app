@@ -18,7 +18,7 @@ export default function ModalCard(props: any, data: any) {
 
   return (
     <>
-      <Button onPress={onOpen}>Not! Log in</Button>
+      {/* <Button onPress={onOpen}>Not! Log in</Button> */}
       <Modal
         backdrop="opaque" 
         isOpen={isOpen}

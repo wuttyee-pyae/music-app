@@ -11,14 +11,14 @@ export default function UserAvatar() {
     <div className="flex gap-4 items-end">
       <Badge
         isOneChar
-        className="add_phto"
+        className="add_phto bg-none"
         content={
           <Button
             isIconOnly
             color="danger"
             radius="full"
             aria-label="Take Profile Photo"
-            className="cover_btn"
+            className="cover_btn bg-none"
             variant="bordered"
           >
             <TakePhoto size={18} />
@@ -30,7 +30,7 @@ export default function UserAvatar() {
           radius="full"
           className="w-full h-28 text-large"
           style={{
-            background: "none",
+            background: "none !important",
           }}
         >
           <Avatar

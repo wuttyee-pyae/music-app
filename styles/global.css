@@ -445,8 +445,8 @@ Convert HEX to RGBA - http://hex2rgba.devoth.com/
   color: var(--main-rintext-color);
 }
 .music_hover {
-  background: none;
-  box-shadow: none;
+  background: none !important;
+  box-shadow: none !important;
   position: relative;
   margin-left: 112px;
 }
@@ -503,9 +503,13 @@ Convert HEX to RGBA - http://hex2rgba.devoth.com/
   width: 100%;
   left: 0px;
   padding: 20px;
-  background-color: #171717;
+  /* background-color: #171717; */
 }
 
+.tab_item{
+  position: relative;
+  /* bottom: 10px; */
+}
 .artist_name {
   font-family: var(--lato-font-black);
   color: var(--main-rintext-color);
