@@ -4,7 +4,7 @@ import AddCoverImg from "./AddCoverImg";
 import Gender from "@/components/desktop/music/genre/Genre";
 import { PlusIcon } from "@/components/desktop/artist/PlusIcon";
 
-const ReleaseInfo = () => {
+const ReleaseInfo = ({formData} : {formData : any}) => {
   const initialArtists = ["Artist Name", "Banana", "Cherry"];
 
   const [artists, setAritsts] = React.useState(initialArtists);
@@ -18,13 +18,13 @@ const ReleaseInfo = () => {
   };
 
   const onUploadChange = (event: any) => {
-    console.log("file - " , event)
     setLyric(event.target.files[0].name)
+    formData.lyricName = event.target.files[0].name
     if (event.target.files.length !== 0) {
       const reader = new FileReader();
 
       reader.onload = (e: any) => {
-        // console.log(e.target.result);
+        formData.lyric = e.target.result
       }
       reader.readAsDataURL(event.target.files[0]);
     }
@@ -37,18 +37,23 @@ const ReleaseInfo = () => {
           <div>
             <Input
               type="text"
-              variant={"bordered"}
-              // label="Music Name"
+              variant="bordered"
               placeholder="Music Name"
               className="mb-8"
+              defaultValue={formData.title}
+              onChange={(e: any) => formData.title = e.target.value}
             />
           </div>
           <div>
-            <AddCoverImg />
+            <AddCoverImg setData={(val: any)=>{formData.image = val.image ; formData.imageName = val.imageName } }/>
           </div>
           <div>
-            <Input type="text" variant={"bordered"} placeholder="Add other Artist"
-              endContent={<PlusIcon className="text-white" /> }
+            <Input type="text" 
+            variant={"bordered"} 
+            placeholder="Add other Artist"
+            endContent={<PlusIcon className="text-white" /> }
+            defaultValue={formData.artistName}
+            onChange={(e: any) => formData.artistName = e.target.value}
             />
 
             <div className="flex gap-2 mt-2">
@@ -76,10 +81,21 @@ const ReleaseInfo = () => {
             />
           </div>
           <div>
-            <Gender />
+            <Gender setData={(val: any)=>formData.genre = val }/>
           </div>
           <div>
-            <Input type="text" variant={"bordered"} label="Relese Date" />
+            <Input type="text" 
+            variant={"bordered"} 
+            label="Release Date" 
+            defaultValue={formData.releaseDate}
+            onChange={(e: any) => formData.releaseDate = e.target.value}/>
+          </div>
+          <div>
+            <Input type="text" 
+            variant={"bordered"} 
+            label="Duration" 
+            defaultValue={formData.duration}
+            onChange={(e: any) => formData.duration = e.target.value}/>
           </div>
         </div>
       </div>

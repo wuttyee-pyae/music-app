@@ -13,3 +13,11 @@ export const loginSchema = yup.object().shape({
     // confirmPassword: yup.string().oneOf([yup.ref("password"),null],"Password must match"),
 })
 
+export const songUploadSchema = yup.object().shape({
+    song: yup.array().of(
+        yup.object().shape({
+          name: yup.string().min(2).required("Music name is required"),
+          image: yup.string().required("Song image is required")
+        })
+      )
+})

@@ -12,13 +12,13 @@ const Dashboard = ({ children }: { children: React.ReactNode }) => {
                 <div className="p-0">
                   <div className="drop-shadow-xl">
                     <div>
-                      <ProtectedRoutes >
+                      {/* <ProtectedRoutes > */}
                       <main className="layout__main-content overscroll-y-none">
                           <div className="wapper mx-4 min-h-screen">
                             {children}
                           </div>
                       </main>
-                      </ProtectedRoutes>
+                      {/* </ProtectedRoutes> */}
                     </div>
                   </div>
                 </div>
