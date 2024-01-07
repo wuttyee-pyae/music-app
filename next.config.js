@@ -28,6 +28,11 @@ module.exports = {
     return config;
   },
 };
+module.exports = {
+  flags: {
+    DEV_SSR: false,
+  }
+}
 
 module.exports = nextConfig
 

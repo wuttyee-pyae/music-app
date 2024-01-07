@@ -2,7 +2,6 @@
 import {nextui} from "@nextui-org/react";
 
 module.exports = {
-  important: true,
   content: [
     "./node_modules/flowbite-react/**/*.js",
     "./pages/**/*.{ts,tsx}",
@@ -28,7 +27,7 @@ module.exports = {
      "./*.{js,ts,jsx,tsx}",
      "./node_modules/primereact/**/*.{js,ts,jsx,tsx}",
 
-
+     './node_modules/@tailwindcss/tailwind-components/**/*.js',
   ],
   theme: {
     extend: {

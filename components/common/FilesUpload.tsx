@@ -7,7 +7,6 @@ import { Button } from "primereact/button";
 import { Tag } from "primereact/tag";
 import { DicIcon } from "./icons/DicIcon";
 import { LyricsIcon } from "../desktop/musicplayer/LyricsIcon";
-import { getBase64 } from "../../services/music.service";
 
 export default function FilesUpload({handleInfo, formData} : {handleInfo:any , formData : any}) {
   const toast = useRef<any>(null);
@@ -24,10 +23,10 @@ export default function FilesUpload({handleInfo, formData} : {handleInfo:any , f
       _totalSize += files[key].size || 0;
     });
 
-    await getBase64(e.files[0] , (res : any) =>{
-      formData.musicName = e.files[0].name
-      formData.music = res
-    })
+    // await getBase64(e.files[0] , (res : any) =>{
+    //   formData.musicName = e.files[0].name
+      formData.music = e.files[0]
+    // })
     
     setTotalSize(_totalSize);
   };

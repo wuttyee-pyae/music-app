@@ -5,7 +5,7 @@ import { Select, SelectSection, SelectItem } from "@nextui-org/react";
 import { genres } from "./genredata";
 import { GenreIcon } from "./GenreIcon";
 
-export default function Gender({setData} : {setData : any}) {
+export default function Gender({setData} : {setData? : any}) {
   const [value, setValue] = React.useState(new Set([]));
 
   return (

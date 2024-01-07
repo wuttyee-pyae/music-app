@@ -3,11 +3,11 @@ import React, { FC, ReactNode } from "react";
 import styles from "./ErrorMessage.module.css";
 import { PlusIcon } from "../artist/PlusIcon";
 
-const MyButton = (props: { children: string; isDisabled: boolean; startContent?: React.ReactNode; }) => {
+const MyButton = (props: { children: string; isDisabled?: boolean; startContent?: React.ReactNode; }) => {
   return (
     <div>
       <Button
-        disabled={props.isDisabled}
+        disabled={props.isDisabled || false}
         fullWidth
         startContent={props.startContent}
         // endContent

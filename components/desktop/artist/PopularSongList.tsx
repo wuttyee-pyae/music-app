@@ -90,7 +90,6 @@ export default function PopularSongList(props: any) {
     <>
       {
         propsSongList.map((item: any, index: number) => (
-
           <Tooltip
             content={<BsPlayFill className="h-10 w-10 z-0" />}
             className="text-white music_hover"

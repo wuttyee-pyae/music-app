@@ -21,12 +21,12 @@ const ReleaseInfo = ({formData} : {formData : any}) => {
     setLyric(event.target.files[0].name)
     formData.lyricName = event.target.files[0].name
     if (event.target.files.length !== 0) {
-      const reader = new FileReader();
+      // const reader = new FileReader();
 
-      reader.onload = (e: any) => {
-        formData.lyric = e.target.result
-      }
-      reader.readAsDataURL(event.target.files[0]);
+      // reader.onload = (e: any) => {
+        formData.lyric = event.target.files[0]
+      // }
+      // reader.readAsDataURL(event.target.files[0]);
     }
   }
 
@@ -45,7 +45,7 @@ const ReleaseInfo = ({formData} : {formData : any}) => {
             />
           </div>
           <div>
-            <AddCoverImg setData={(val: any)=>{formData.image = val.image ; formData.imageName = val.imageName } }/>
+            <AddCoverImg setData={(val: any)=>{formData.imageFile = val } }/>
           </div>
           <div>
             <Input type="text" 

@@ -1,7 +1,9 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import React, { useRef, useEffect, useState } from 'react';
 import { updateCurrentTimeValue } from '@/hooks/observableService';
-
+import useStorage from '@/hooks/useStorage';
+import { useDispatch } from 'react-redux';
+import {  playPause } from "../../../redux/features/playMusicSlice";
 
 const Player = ({ activeSong, volume, isPlaying, repeatStatus ,  onEnded , isExpand } : 
   { activeSong : any, volume : any , isPlaying : boolean , repeatStatus : any, onEnded : any , isExpand : boolean}) => {
@@ -10,7 +12,9 @@ const Player = ({ activeSong, volume, isPlaying, repeatStatus ,  onEnded , isExp
   const [appTime, setAppTime] = useState(0);
   const [seekTime, setSeekTime] = useState(0);
   const getTime = (time : any) => `${Math.floor(time / 60)}:${(`0${Math.floor(time % 60)}`).slice(-2)}`;
-
+  const localStorage = useStorage()
+  const isLogin = localStorage.getItem("user-data", "local") || null
+  const dispatch = useDispatch();
 
   useEffect(() => {
     // console.log(activeSong , isPlaying , volume  , maxTime )
@@ -18,6 +22,7 @@ const Player = ({ activeSong, volume, isPlaying, repeatStatus ,  onEnded , isExp
       audioRef.current.volume = volume;
       setSeekTime(audioRef.current.currentTime);
       setMaxTime(audioRef.current.duration || null);
+      
     if (isPlaying) {
       audioRef.current.play();
     } 
@@ -28,6 +33,9 @@ const Player = ({ activeSong, volume, isPlaying, repeatStatus ,  onEnded , isExp
   }, [isPlaying,maxTime, volume ]);
   
   const onChangeCurrentTime = () =>{
+    if(audioRef.current.currentTime > 30 &&  isLogin == null){
+      dispatch(playPause(false));
+    }
     updateCurrentTimeValue(audioRef.current.currentTime)
   }
 

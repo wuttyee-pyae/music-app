@@ -15,9 +15,8 @@ export default function MusicUpload({ data, type }: { data: any, type: string })
 
   const onSubmit = async (values: any, actions: any ) => {
     if(type == 'single'){
-     values.data[0].lyricFile = await base64ToFormData( values.data[0].lyric ,values.data[0].lyricName )
-      values.data[0].musicFile = await base64ToFormData( values.data[0].music ,values.data[0].musicName )
-      values.data[0].imageFile = await base64ToFormData( values.data[0].image , values.data[0].imageName )
+    //  values.data[0].lyricFile = await base64ToFormData( values.data[0].lyric ,values.data[0].lyricName )
+    //   values.data[0].musicFile = await base64ToFormData( values.data[0].music ,values.data[0].musicName )
       console.log("result file --- " , values.data[0])
       await uploadMusicBySingle(values.data[0])
     }

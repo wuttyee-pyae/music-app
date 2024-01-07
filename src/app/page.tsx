@@ -11,9 +11,8 @@ export default function MainPage() {
   const isMobile = useDeviceType();
   const localStorage = useStorage()
   const checkStorage = async () => {
-    const isLogin = localStorage.getItem("user-data", "local") && null
-    const isToken = localStorage.getItem("token", "local") && null
-    console.log(isToken ,"---  " , isLogin)
+    const isLogin = await localStorage.getItem("user-data", "local") || null
+    const isToken = await localStorage.getItem("token", "local") || null
     isLogin ? await dispatch(setAuth(true)) : null
     isToken ? await dispatch(setToken(isToken)) : null
   }

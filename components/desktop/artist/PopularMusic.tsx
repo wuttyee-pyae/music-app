@@ -15,9 +15,11 @@ import {
   Chip,
   User,
   SortDescriptor,
+  Tooltip,
 } from "@nextui-org/react";
 import { VerticalDotsIcon } from "./VerticalDotsIcon";
 import { columns, users, statusOptions } from "./data";
+import { BsPlayFill } from "react-icons/bs";
 
 const statusColorMap: any = {
   active: "success",
@@ -110,7 +112,7 @@ export default function PopularMusic() {
         return (
           <div className="gird gap-8">
             
-            {/* <div>
+            <div>
               <Tooltip
                 color="secondary"
                 showArrow={true}
@@ -131,7 +133,7 @@ export default function PopularMusic() {
                   <BsPlayFill className="h-8 w-8" />
                 </Button>
               </Tooltip>
-            </div> */}
+            </div>
 
             <User
               avatarProps={{ radius: "sm", size: "lg", src: user.avatar }}

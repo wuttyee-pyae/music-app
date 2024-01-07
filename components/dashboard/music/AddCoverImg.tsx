@@ -7,16 +7,17 @@ export default function AddCoverImg({setData} : {setData: any}) {
   const [imgSrc,setImgSrc] = useState<any>()
 
   const onImageChange = (event: any) => {
-    if(event.target.files.length !== 0) {
-        const reader = new FileReader();
+    // if(event.target.files.length !== 0) {
+    //     const reader = new FileReader();
 
-        reader.onload = (e : any) => {
-          setData({image : e.target.result , imageName : event.target.files[0].name })
-        setImgSrc(e.target.result);
-      
-    }
-    reader.readAsDataURL(event.target.files[0]);
-}
+    //     reader.onload = (e : any) => {
+          setData(event.target.files[0] )
+    //     setImgSrc(e.target.result);
+   
+    // }
+    // reader.readAsDataURL(event.target.files[0]);
+    if(event.target.files[0])setImgSrc(URL.createObjectURL(event.target.files[0]))
+// }
 
   }
   return (

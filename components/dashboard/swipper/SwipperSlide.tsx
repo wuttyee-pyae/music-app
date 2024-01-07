@@ -17,11 +17,18 @@ export default function SwipperSlider({
   type?: string;
 }) {
   // console.log(data, "MTVData", data.cover_image);
-  const [classname , setClassname] = React.useState(null)
+  const [classname , setClassname] = React.useState<string>()
+  
 const getClass = () => {
-  return(getRamDomClass(classList.red)+"")
+  if(classList.red){
+    const styleClass = classList.red[Math.floor(Math.random() * classList.red.length)];
+    console.log("=== " , styleClass)
+    setClassname(styleClass)
+  }
+  
 } 
-console.log( "Get Class", getClass())
+
+console.log( "Get Class", classname)
 
 useLayoutEffect(() => {
   getClass()
@@ -43,7 +50,7 @@ useLayoutEffect(() => {
 
         <Image
           alt="Woman listing to music"
-          className={`bg-[${getClass()}] object-cover rounded-md overflow-hidden h-40 `} 
+          className={`${classname} object-cover rounded-md overflow-hidden h-40 `} 
           height={150}
           src={data.picture}
           width={360}

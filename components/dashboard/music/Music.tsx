@@ -5,8 +5,10 @@ import { PlusIcon } from "@/components/desktop/artist/PlusIcon";
 import CardMusicList from "../music/CardMusicList";
 import AlblumPlayList from "../music/AlblumPlayList";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Music() {
+  const router = useRouter()
   const songList = [
     {
       id: 1,
@@ -233,6 +235,12 @@ export default function Music() {
     },
   ];
 
+  // const navigateRoute = () => {
+  //   router.push({
+  //     pathname: "/music",
+  //       query: { type: "single"}
+  //   });
+  // }
   return (
     <div className="flex w-full flex-col">
       <Tabs
@@ -248,12 +256,13 @@ export default function Music() {
               style={{ top: "4rem" }}
             >
               <div className="w-52">
-                <Link  
+                <Link 
                 href={{
-                  pathname: "dashboard/music",
-                  query: { type: "single"},
-                }}>
-                  <MyButton isDisabled={false} startContent={<PlusIcon />}>
+                  pathname: "/dashboard/music",
+                  query: { type: "single"}
+                }}
+                >
+                  <MyButton isDisabled={false} startContent={<PlusIcon />} >
                     Create Solo Song
                   </MyButton>
                 </Link>

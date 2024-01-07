@@ -44,7 +44,7 @@ export default function ForgetPassword(props: any) {
             />
             <div className="flex gap-2 justify-end">
               <Link href="/verify_email" passHref className="w-full">
-                <MyButton>Get New Password</MyButton>
+                <MyButton isDisabled={false}>Get New Password</MyButton>
               </Link>
             </div>
           </form>
