@@ -95,7 +95,7 @@ export default function ArtistProfile(props: any) {
         </div>
       </div>
 
-      <div>
+      <div className="border-t-1 border-purple-500 rounded-2xl pb-4">
         {variants.map((variant) => (
           <Tabs
             key={variant}
@@ -104,9 +104,10 @@ export default function ArtistProfile(props: any) {
             selectedKey={selected}
             onSelectionChange={setSelected as any}
             items={tabs}
+            className="px-4 mt-4"
           >
             {/* Get Overview data place tab */}
-            <Tab key="overview" title="Overview">
+            <Tab key="overview" title="Overview" className="px-0 mx-4 tab_item">
               <div className="tabs py-10">
                 <div className="flex flex-col">
                   <p className="text-lg text-white mb-4">Popular songs</p>
@@ -117,7 +118,7 @@ export default function ArtistProfile(props: any) {
             </Tab>
 
             {/* Get About data place tab */}
-            <Tab key="about" title="About">
+            <Tab key="about" title="About" className="px-0 mx-4 tab_item">
               <div className="tabs py-10">
                 <div className="flex flex-col gap-4">
                   <p className="text-lg text-white mb-4">
@@ -129,7 +130,7 @@ export default function ArtistProfile(props: any) {
             </Tab>
 
             {/* Get Videos data place tab */}
-            <Tab key="videos" title="Videos">
+            <Tab key="videos" title="Videos" className="px-0 mx-4 tab_item">
               <div className="tabs py-10">
                 <div className="flex flex-col gap-4">
                   <p className="text-lg text-white mb-4">MTV Music</p>
@@ -157,7 +158,7 @@ export default function ArtistProfile(props: any) {
             </Tab>
 
             {/* Get CRBT data place tab */}
-            <Tab key="crbt" title="CRBT">
+            <Tab key="crbt" title="CRBT" className="px-0 mx-4 tab_item">
               <div className="tabs py-10">
                 <div className="flex flex-col">
                   <p className="text-lg text-white mb-4">CRBT</p>

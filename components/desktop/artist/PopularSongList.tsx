@@ -102,7 +102,7 @@ export default function PopularSongList(props: any) {
               <div className="grid grid-cols-12 gap-4 items-center">
                 <div className="col-span-3 md:col-span-1">
                   <div className="flex items-center gap-4">
-                    <div className="ml-4">{index + 1} </div>
+                    <div className="ml-4">{index + 1} {item.isPlaying} </div>
                     {
                       item.isPlaying ? <NowPlaying /> : null
                     }
